@@ -1,0 +1,350 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{caption}
+
+\usepackage{subcaption}
+
+\usepackage[thmmarks, amsmath, amsthm]{ntheorem}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\newcommand{\bit}[1]{\ensuremath{\textbf{\textit{#1}}}}
+\newcommand{\dsp}{\ensuremath{\displaystyle}}
+\newcommand{\wave}[1]{\ensuremath{\widetilde{#1}}}
+
+\usepackage[
+backend=biber,
+style=ieee,
+sorting=none
+]{biblatex}
+
+
+\addbibresource{bibliography.bib}
+
+
+\begin{document}
+
+% \title{Dynamic DPD for various Tx powers\\
+% }
+\title{Dynamic PA power mode DPD on base of 2-dimensional Chebyshev polynomials\\
+}
+
+\author{\IEEEauthorblockN{Alexander Degtyarev}
+\IEEEauthorblockA{\textit{MIPT} \\
+Moscow, Russia \\
+degtyarev.aa@phystech.edu \\
+0009-0009-5386-8034}
+\and
+\IEEEauthorblockN{Nikita Bakholdin}
+\IEEEauthorblockA{\textit{MIPT} \\
+Moscow, Russia \\
+bakholdin.nikita@gmail.com  \\
+0000-0003-3341-3074}
+\and
+\IEEEauthorblockN{Anton Sushko}
+\IEEEauthorblockA{\textit{MIPT} \\
+Moscow, Russia \\
+a.sushko2000@gmail.com \\
+0009-0006-9243-2274}
+\and
+\IEEEauthorblockN{Sergei Bakhurin}
+\IEEEauthorblockA{\textit{MIPT} \\
+Moscow, Russia \\
+bakhurin.sa@mipt.ru \\
+0009-0004-5772-2554}
+
+}
+
+\maketitle
+
+\begin{abstract}
+
+This paper addresses the challenge of power amplifier (PA) behavioral modeling in scenarios with non-stationary dynamically varying PA output power. Since different PA power modes correspond to distinct nonlinearities, conventional behavioral models, such as the Generalized Memory Polynomial (GMP) or Chebyshev polynomials, require extensions to account for the characteristics of different PA power modes. In this work, a two-dimensional Chebyshev polynomial-based model is employed to capture nonlinear distortion across a wide range of PA output power levels, from 0.069 W to 0.912 W, and to predict nonlinear behavior for intermediate power modes. The proposed model achieves high performance, Adjacent Channel Leakage Ratio (ACLR) less than $-\textbf{45}$ dB for the considered PA power modes. Furthermore, the model demonstrates up to a 14 dB improvement in performance compared to a model with the same number of parameters that does not consider PA power mode information. 
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+digital pre-distortion (DPD), Chebyshev polynomials, power amplifier dynamic mode, least squares method (LS), adjacent channel leakage ratio (ACLR)
+\end{IEEEkeywords}
+
+\section{Introduction}
+Power amplifiers (PAs) generate nonlinearities that significantly impact the quality of radio frequency signals, reducing the performance of the transmitted signal. The distortions caused by PAs can be categorized as in-band and out-of-band interferences. Without a linearization method, these distortions result in an increased bit error rate (BER) at the receiver, generate interference signals and degrade the transmission quality of adjacent band signals. In order to prevent a distortions in modern base stations and cellular devices digital pre-distortion (DPD) techniques widely used \cite{behav_model_ghann, GuoYan_PA_DPD, GuoYan_PA_DPD_Poly}.
+
+The DPD device is introduced by a block with an inverse nonlinear characteristic, that changes the PA input signal in order to minimize non-linear distortion at the output of PA (fig.~\ref{fig:DPD_structure}). 
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\linewidth]{figures/DPD_structure.pdf}
+    \caption{DPD structure}
+    \label{fig:DPD_structure}
+\end{figure}
+
+Thus, proper implementation can increases PA usage efficiency, due to it can be exploited in highly non-linear modes~\cite{behav_model_ghann}.
+
+%Power amplifiers (PAs) generate nonlinearities that significantly impact the quality of radio frequency signals, reducing the performance of the transmitted signal. The distortions caused by PAs can be categorized as in-band and out-of-band interferences. Without a linearization method, these distortions result in an increased bit error rate (BER) at the receiver, generate interference signals, and degrade the transmission quality of adjacent band signals. To mitigate these effects in modern base stations and cellular devices, special techniques are applied to the PA to compensate for its nonlinear behavior and improve efficiency. One such widely used technique is digital pre-distortion (DPD) \cite{behav_model_ghann, GuoYan_PA_DPD, GuoYan_PA_DPD_Poly}. The DPD system introduces a block with an inverse nonlinear characteristic, placed at the PA input (fig.~\ref{fig:DPD_structure}) This block pre-distorts the PA's input signal to minimize nonlinear distortions at its output. With proper implementation, DPD can significantly enhance the PA's efficiency, enabling operation in highly nonlinear modes \cite{behav_model_ghann}.
+
+Digital pre-distortion optimization task can be expressed with mathematical equation~\cite{attention_masl}, which is in fact describes equalization of DPD input and PA output in block-wise mode:
+\begin{equation}
+    \dsp||\text{PA}(\bit{x} - \text{DPD}(\bit{x}, \bit{h})) - \bit{x}||_2^2 \rightarrow \dsp\min_{\bit{h}},
+    \label{dpd_task_general}
+\end{equation}
+where $\bit{x}\in\mathbb{C}^{N\times 1}$ -- PA input signal vector, $\bit{h}\in\mathbb{C}^{P\times 1}$ -- DPD model parameters vector, $N$ -- block length.
+Consider, that PA non-linear function $\text{PA}(\bit{x})$ could be linearized within the vicinity of PA input:
+\begin{equation}
+    \text{PA}(\text{\bit{x} $-$ DPD(\bit{x}, \bit{h})}) \approx \text{PA}(\bit{x}) - (D_{\bit{x}}\text{PA}(\bit{x}))\text{DPD}(\bit{x}, \bit{h}),
+    \label{dpd_decomp}
+\end{equation}
+where $D_{\bit{x}}\text{PA}(\bit{x})\in\mathbb{C^{N\times N}}$ -- PA output derivative w.r.t. the PA input. Since DPD must operate in such a mode of the PA that the level of nonlinear distortions remains significantly lower than the transmitter signal, then $D_{\bit{x}}\text{PA}(\bit{x})\approx\bit{I}$ -- identity matrix. Thus, substituting~\eqref{dpd_decomp} into~\eqref{dpd_task_general} we derive expression:
+\begin{equation}
+    \dsp||\text{DPD}(\bit{x}, \bit{h}) - \bit{e}||_2^2 \rightarrow \dsp\min_{\bit{h}},
+    \label{dpd_task_simplif}
+\end{equation}
+where $\bit{e}=\text{PA}(\bit{x}) - \bit{x}$ -- error vector. Current optimization problem~\eqref{dpd_task_simplif} is commonly considered in papers dedicated to DPD task~\cite{attention_masl, Dynamic_DPD_6G_AI, GuoYan_PA_DPD, GuoYan_PA_DPD_Poly, Dynamic_DPD_ANN, Dynamic_DPD_CNN}. Mentioned task usually solved by LS, RLS, LMS algorithms~\cite{haykin, haykin_nn} etc. In the proposed letter we exploit LS method for single-layer models training, due to it achieves quadratic loss function global optimum in one optimization step.
+
+%One of the critical parameters that influences on PA nonlinearity is power level of input signal.
+In the communication systems in order to meet certain requirements, resource blocks (RBs) in a data frame may be dynamically allocated according to real-time traffic, which can result in short time period power level changes thus reducing PA efficiency. This fact contradicts the assumption that DPD should operate in a stationary mode. Such problem was researched in \cite{Dynamic_DPD_RB_Alloc}. 
+
+On the other hand, it is necessary to significantly vary the input power levels of the PA in order to improve power efficiencies. To compensate the distortions caused by power changes DPD must be re-calibrated in real-time, which is not often economically justified in practice. 
+
+Moreover, transient processes during the switching between power modes of the PA result in distortions that are transmitted through the communication channel, causing brief communication protocol violations and degrading the spectral mask. This leads to a performance degradation when attempting to apply model parameters trained in one PA power mode to signals, corresponding to another mode, which is shown~in~fig.~\ref{fig:psd_instat}.
+
+% \begin{figure}[ht!]
+%     \centering
+%     \begin{subfigure}[b]{0.48\textwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{figures/experiments/psd/PSD_train_test_m0_4_m11_6.pdf}
+%         \captionsetup{justification=centering}
+%         \caption{Apply 1D model. Train on 0.912~W case, test on 0.069~W case}
+%         \label{fig:psd_high2low_high_range}
+%     \end{subfigure}
+    
+%     \vspace{0.3cm} % Разделитель между изображениями
+
+%     \begin{subfigure}[b]{0.48\textwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{figures/experiments/psd/PSD_train_test_m1_3_m2_3.pdf}
+%         \captionsetup{justification=centering}
+%         \caption{Apply 1D model. Train on 0.741~W case, test on 0.589~W case}
+%         \label{fig:psd_high2low_low_range}
+%     \end{subfigure}
+
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/PSD_train_test_0p069.pdf}
+        \captionsetup{justification=centering}
+        \caption{Apply 1D model. Train on 0.912~W case, test on 0.069~W case}
+        \label{fig:psd_high2low_high_range}
+    \end{subfigure}
+    
+    \vspace{0.3cm} % Разделитель между изображениями
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/PSD_train_test_0p589.pdf}
+        \captionsetup{justification=centering}
+        \caption{Apply 1D model. Train on 0.741~W case, test on 0.589~W case}
+        \label{fig:psd_high2low_low_range}
+    \end{subfigure}
+
+    \captionsetup{justification=centering}
+    \caption{PSD of PA output. Dynamic PA mode non-stationarity illustration}
+    \label{fig:psd_instat}
+\end{figure}
+In fig.~\ref{fig:psd_high2low_high_range} parameters of single-dimensinal polynomial, trained on 0.069~W (green), 0.912~W (blue) cases and both applied to 0.069~W case. One can observe up to 32 dB ACLR degradation because of different PA behavior for chosen power modes. 
+However, in case of model training on close PA output power modes 0.598 W (green) and 0.714 W (blue)~(fig.~\ref{fig:psd_high2low_low_range}) performance degradation is 7.5 dB. Nevertheless, in real applications, this is still not permissible.
+
+% Whereas fig.~\ref{fig:psd_high2low_low_range} represents the results of model, training on the 0.589~W and 0.741~W cases, with both sets of parameters applied to the 0.589~W case. In current case both approaches provide correspondingly $\text{ACLR}=-48.94\text{ dB}$ and $\text{ACLR}=-41.42\text{ dB}$. Current PA powers difference is much lower -- 1 dB, than in previous case -- 11.2 dB. Nevertheless, there is a 7.5 dB performance degradation. 
+
+As a result, increased non-linear distortions may propagate through the communication channel while adjustment of the parameter. Consequently, a more favorable approach is the prediction of non-linear distortions across all operating modes of the amplifier, rather than tracking power modes.
+
+In order to predict non-linear distortions caused by various PA power modes authors primarily propose different approaches of parameters re-calculation relatively to the those chosen as a reference. 
+
+For instance, the paper \cite{GuoYan_PA_DPD_2015} suggests to divide trainable model parameters into static and dynamic part, where dynamic parameters are switched in accordance with PA power mode. The work \cite{GuoYan_PA_DPD_Poly} extends the concept suggested in~\cite{GuoYan_PA_DPD_2015} by application of power adaptive decomposed vector rotation (PDVR) model. 
+
+Another remarkable approach is introduced by AI-based methods application \cite{Dynamic_DPD_ANN, Dynamic_DPD_CNN}. As an example, the paper \cite{Dynamic_DPD_ANN} suggest to use artificial neural network in order to gather information corresponding to different non-linearities and transform general memory polynomial (GMP) model parameters into those corresponding to the target power, i.e. predicting PA non-linearity related to the certain power mode.
+
+In current article we introduce another dynamic PA power accounting method which is based on 2-dimensional Chebyshev polynomial offline training. In fact it represents traditional approach, which takes into consideration dynamic conditions within 2-nd dimension of non-linear model.
+
+Note that general view of optimization problem, related to dynamic PA power scenario might be represented as the sum of loss functions corresponding to each power case~\eqref{dpd_task_simplif}:
+\begin{equation}
+    \dsp\sum_{i=0}^{C-1}||\text{DPD}(\bit{x}, \bit{p}, \bit{h}) - \bit{e}_i||_2^2 \rightarrow \dsp\min_{\bit{h}},
+    \label{dpd_task_simplif_dynamic}
+\end{equation}
+where $C$ -- number of PA power cases, $\bit{p}\in\mathbb{C}^{N\times1}$ -- vector of PA input power features. Thus, $(\bit{x}, \bit{p})$ -- 2-dimensional model input, $\bit{h}\in\mathbb{C}^{P\times 1}$ -- DPD model parameters vector.
+%transmission power requirements and improve power efficiencies, the input power levels of the PA may vary significantly.
+
+\section{2D Chebyshev Polynomial DPD Technique}
+
+Among non-linear digital signal processing tasks polynomials~\cite{GuoYan_PA_DPD_Poly, behav_model_ghann}, spline-based polynomials~\cite{spline_sic} are often used for the purpose of signal non-linearity description.
+Common single-dimensional DPD based on Chebyshev polynomial for one-dimensional input signal is represented as:
+\begin{equation}
+    \begin{array}{c}
+        \displaystyle z_n=\sum_{i=0}^{P-1}h_{i}x_nT_{i}(|x_n|), \\
+        \displaystyle T_{i}(|x_n|)=\cos(i\arccos(|x_n|)),
+    \end{array}
+    \label{1d_cheby_nonlin}
+\end{equation}
+here $P$ -- Chebyshev polynomial order, $\{h_{i}\}_{i=0}^{P-1}$ -- Chebyshev polynomial trainable parameters.
+
+Non-linear model is required to take into account non-linear memory of the PA. For this reason proposed model~\eqref{1d_cheby_nonlin_multibranch} is expanded to the sum of non-linearities, fed by delayed signals~$|x_{n-d}|$, where $d$ -- signal delay corresponding to the $d$-th branch. Thus, model output is shown as follows:
+\begin{equation}
+        \displaystyle y_n=\sum_{d=-D}^{D}\sum_{i=0}^{P-1}h_{k, i}x_{n-d}T_{i}(|x_{n-d}|),
+    \label{1d_cheby_nonlin_multibranch}
+\end{equation}
+where $B=2D+1$ -- number of model branches. Fig.~\ref{fig:cheby_scheme} shows general scheme of chosen parallel non-linear Chebyshev polynomial-based model.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figures/cheby_scheme/cheby_scheme.pdf}
+    \captionsetup{justification=centering}
+    \caption{$B$-branch non-linear Chebyshev polynomial-based model}
+    \label{fig:cheby_scheme}
+\end{figure}
+
+In current paper single-dimensional Chebyshev polynomial is tested on the case of dynamically changing PA output power. According to the results, represented in section~\ref{sec:results}, 1D non-linearity can`t absorb dynamically changing PA power properties. Thus, current article introduces 2-dimensional non-linearity, which is fed by both features: signal magnitude~$|x_n|$ and feature, which corresponds to current PA power mode~$p_n$. Therefore, 2-dimensional polynomial output is as following:
+\begin{equation}
+    \begin{array}{c}
+        \displaystyle z_n=\sum_{i=0}^{P_1-1}\sum_{j=0}^{P_2-1}h_{i, j}x_nT_{i, j}(|x_n|, p_n), \\
+        \displaystyle T_{i, j}(|x_n|, p_n)=T_{i}(|x_n|)T_{j}(p_n)=\\ \\
+        \displaystyle=\cos(i\arccos(|x_n|))\cos(j\arccos(p_n),
+    \end{array}
+    \label{2d_cheby_nonlin}
+\end{equation}
+here $P_1$, $P_2$ -- 2-dimensional Chebsyhev polynomial orders related to magnitude and power mode feature dimensions correspondingly, $\dsp\{h_{i,j}\}_{i=0,j=0}^{P_1-1,P_2-1}$ -- 2-dimensional Chebsyhev polynomial trainable parameters. 2D non-linearity basis functions $T_{i, j}(\cdot)$ are expressed through the multiplication of 1D non-linearity basis functions $T_{i}(\cdot)$,~$T_{j}(\cdot)$, related to input signal magnitude and PA power correspondingly. Multi-branch 2-dimensional model output is represented as:
+\begin{equation}
+    \displaystyle y_n=\sum_{d=-D}^{D}\sum_{i=0}^{P_1-1}\sum_{j=0}^{P_2-1}h_{i, j, k}x_{n-d}T_{i, j}(|x_{n-d}|, p_{n-d}),
+    \label{2d_cheby_nonlin_multibranch}
+\end{equation}
+where basis function $T_{i, j}$ is expressed similarly to~\eqref{2d_cheby_nonlin}.
+
+Note, that input signal magnitude~$|x_n|$ and PA mode featrure~$p_n$ are implied to be scaled into the same range~$[0, 1]$ for the purpose of data standardization and from the perspective of satisfying Chebyshev polynomial orthogonality conditions.
+
+\section{Testbench description}
+
+Testbench structure is shown in fig.~\ref{fig:testbench_scheme}.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{figures/testbench_blocks.pdf}
+    \caption{The scheme of testbench}
+    \label{fig:testbench_scheme}
+\end{figure}
+The measurement setup consists of personal computer (PC), signal generator (SG) R\&S SMW200A, spectrum analyzer (SA) R\&S FSW85 and power amplifier ZKY66291-11 under testing.
+
+PC loads baseband (BB) IQ data to SG which modulates BB to the carrier frequency and send to the PA input. PA output with nonlinear distortions transmitted to SA. After that IQ BB data send to the PC for further signal processing. 
+
+Power control was done by SG. Complex valued 20~MHz OFDM signal with 100~resource blocks, carrier $f_{LO}~=~1.8 $~GHz was used for experiments.
+
+% The measurement setup is depicted in fig.~\ref{fig:testbench_scheme} and consists of a personal computer (PC), on which baseband (BB) data are loaded and then transferred to the signal generator R\&S SMW200A. Signal is amplified by nonlinear PA ZKY66291-11, which has a gain 38 dB, 1 dB point $P_{1dB} = 36.3$ dBm. The output of PA is connected to the spectrum analyzer R\&S FSW85 which was used for data capturing. Finally, data were loaded to the PC for further signal processing.
+
+% Complex valued OFDM signal was used for the experiments with 18 MHz bandwidth -- 100 RB (resource blocks), carrier $f_{Tx}~=~1.8 $ GHz. The baseband (BB) LTE signal is transmitted by R\&S SMW 200A signal generator and amplified by PA. The PA output signal is captured by spectrum analyser FSW85.
+
+\begin{figure}[!b]
+    \centering
+    \includegraphics[width=\linewidth]{figures/performance.pdf}
+    \captionsetup{justification=centering}
+    \caption{Performance 1D- and 2D-dimensional Chebyshev polynomial on train and test datasets}
+    \label{fig:perform_all_data}
+\end{figure}
+
+\begin{figure*}[ht]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/experiments/psd/PSD_not_corrected_all_powers_cmap.pdf}
+     \captionsetup{justification=centering}
+        \caption{DPD off}
+        \label{fig:psd_not_corrected_cmap}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.95\linewidth]{figures/experiments/psd/PSD_corrected_NC_1d_2d_all_powers.pdf}
+        \captionsetup{justification=centering}
+        \caption{DPD off/on, 1D and 2D Chebyshev polynomials signals for all considered cases}
+        \label{fig:psd_1d_and_2d_corrected}
+    \end{subfigure}
+
+    \vskip\baselineskip
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/experiments/psd/PSD_corrected_1d_all_powers_cmap.pdf}
+    \captionsetup{justification=centering}
+        \caption{DPD on, 1D Chebyshev polynomial}
+        \label{fig:psd_1d_corrected_cmap}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/experiments/psd/PSD_corrected_2d_all_powers_cmap.pdf}
+    \captionsetup{justification=centering}
+        \caption{DPD on, 2D Chebyshev polynomial}
+        \label{fig:psd_2d_corrected_cmap}
+    \end{subfigure}
+
+    \caption{PSD of PA output. Application results of DPD on base of 1D and 2D Chebyshev polynomials}
+    \label{fig:psd}
+\end{figure*}
+
+Totally, $C=61$ power cases of the PA output powers are considered in dynamic range~11.2 dB in current simulations:
+\begin{align}
+    &0.069 \text{ }\text{W}, \text{ }0.107\text{ }\text{W}, \text{ }0.143\text{ }\text{W}, \cdots, 0.912 \text{ }\text{W} \\
+    -&11.6\text{ dBm},-9.7\text{ dBm},-8.4\text{ dBm}, \cdots,-0.4\text{ dBm} \nonumber
+    \label{powers_all}
+\end{align}
+Each PA power case consists of 147k complex samples. Even power cases are used for training: 
+\begin{align}
+    &0.069 \text{ }\text{W}, \text{ }0.143\text{ }\text{W}, \cdots, 0.912 \text{ }\text{W} \\
+    -&11.6\text{ dBm},-8.4\text{ dBm}, \cdots,-0.4\text{ dBm} \nonumber
+    \label{powers_train}
+\end{align}
+Odd power cases are considered for model performance evaluation:
+\begin{align}
+    &0.107 \text{ }\text{W}, \text{ }0.175\text{ }\text{W}, \cdots, 0.906 \text{ }\text{W} \\
+    -&9.7\text{ dBm},-7.6\text{ dBm}, \cdots,-0.4\text{ dBm}.\nonumber 
+    \label{powers_test_dBm}
+\end{align}
+
+\section{Experimental Results} \label{sec:results}
+
+% Pre-distortion problem (fig.~\ref{fig:DPD_structure}) was considered in terms of correction by means of single-dimensional~\eqref{1d_cheby_nonlin_multibranch} and two-dimensional~\eqref{2d_cheby_nonlin_multibranch} model training. 
+
+The number of branches in two-dimensional model~$B=9$. Thus, delays are in range~$[-4, \cdots, 4]$, which is enough to describe PA memory effects according to simulations results. The orders of Chebyshev polynomial along signal magnitude~$|x_n|$ and PA power feature~$p_n$ dimensions~$P_1=22$~and~$P_2=10$ correspondingly.
+
+Chebyshev polynomial order~$P_2$ is chosen to achieve acceptable ACLR values~$-45\text{ dB}$ in the whole range of powers
+
+Total number of parameters for single-dimensional model is chosen to equalize total number of parameters for both considered models.
+
+Thus, 1D and 2D polynomials-based models include the same number of trainable complex parameters equal 1980.
+
+Performance of both mentioned models is shown in fig.~\ref{fig:perform_all_data}. According to the simulations results 2-dimensional model provides $\text{ACLR}<-45$ dB in the whole range of PA output powers. Moreover, there is an improvement up to 14 dB comparing to 1-dimensional polynomial among all considered PA power modes.
+
+% In addition, blue curve in fig.~\ref{fig:perform_all_data} shows ACLR of transmitted signal after DPD correction by 1D model, applied and evaluated on each of the considered PA output power cases separately. One can see that its performance equals the performance provided by 2-dimensional model for high PA output power cases starting from 0.6 W. Nevertheless, for the cases less than 0.6 W performance difference is up to 8 dB. This is related to the fact that LS method trains 2-dimensional model parameters primarily to minimize highest elements of the sum~\eqref{dpd_task_simplif_dynamic}, which correspond to the highest PA power cases. Thus, performance degradation on low power modes is related to the weakness of non-linear distortions of mentioned cases.
+
+% This is related to the fact that LS method trains model parameters primarily to minimize highest elements of the sum~\eqref{dpd_task_simplif_dynamic}, which correspond to the highest PA power cases. This fact is also illustrated in fig.~\ref{fig:param_curve}. Where each curve shows performance dependence of 2D polynomial model on the number of parameters per signal magnitude dimension $P_1$~\eqref{2d_cheby_nonlin_multibranch} for corresponding PA output power case: one of 61 cases~\eqref{powers_all}. According to the fig.~\ref{fig:param_curve}, there is a performance degradation up to $\text{ACLR}=-31\text{ dB}$ for the low PA output power signals in case of small number of parameters per magnitude dimension $P_1$~\eqref{2d_cheby_nonlin_multibranch}. Therefore, parameter value $P_1=22$ is chosen on the one hand in order to reduce performance gap between different PA output power cases up to 4 dB. On the other hand it is chosen small enough to reduce model computational complexity, introduced by the number of parameters~\eqref{total_param_num_2d}.
+
+Figure~\ref{fig:psd} shows power spectral densities of transmitted signal before DPD-based correction and after application of pre-trained 1D and 2D Chebyshev polynomials. Model evaluation is made both on train and test data, resulting corrected PA output PSD plots are visualized in fig.~\ref{fig:psd}.
+
+Fig.~\ref{fig:psd_not_corrected_cmap} shows transmitted signal PSD color map before DPD application in correspondence to all PA output powers cases. Whereas fig.~\ref{fig:psd_1d_corrected_cmap}, \ref{fig:psd_2d_corrected_cmap} provide PSD color map of transmitted signal after application of DPD model based on 1D and 2D Chebyshev polynomials correspondingly. In addition, fig.~\ref{fig:psd_1d_and_2d_corrected} represents PSD of TX before and after DPD application in the same plot with normalized output powers for different cases. Thus, according to fig.~\ref{fig:perform_all_data}, \ref{fig:psd_1d_corrected_cmap}, \ref{fig:psd_2d_corrected_cmap} 2D-based DPD model provides significant performance improvement in comparison to the 1D-based model up to 14 dB among the whole chosen PA output power range:~$0.069 \text{ W}, \cdots, 0.912 \text{ W}$.
+
+\section{Conclusion}
+
+Suggested offline DPD model, based on 2-dimensional Chebyshev polynomials, which provides PA output signal correction within the wide range of PA power modes: from~0.069~W~to~0.912~W PA output power. The model if fed by PA input signal and the feature, which corresponds to PA input signal power. The model implemented and compared with DPD correction on base of 1-dimensional Chebyshev polynomials, fed by PA input signal.
+
+2D-based model provides $\text{ACLR}<-45\text{~dB}$ performance for the whole range of considered PA output power cases. 
+
+In addition, suggested model provides ACLR improvement up to~14~dB for different PA output power cases in comparison with 1D Chebyshev polynomial-based model with the same number of trainable complex parameters.
+
+Taking the aforementioned into account, 2D Chebyshev polynomial-based model enables prediction of PA behavior in response to changes in power mode and addresses the issue of non-stationarity during DPD parameter extraction.
+
+\printbibliography[]
+
+\end{document}

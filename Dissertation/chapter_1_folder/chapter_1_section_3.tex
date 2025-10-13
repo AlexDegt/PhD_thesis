@@ -1,0 +1,318 @@
+\section{Методы второго порядка для адаптации моделей нелинейных искажений}
+
+\subsection{Метод Ньютона}
+
+Несмотря на широкое распространение и простоту реализации методов первого порядка, их эффективность существенно снижается в задачах с жёсткими (плохо обусловленными) функциями, где направление антиградиента может существенно отличаться от направления наискорейшего убывания. Для ускорения сходимости и более точного учёта локальной геометрии целевой функции применяются методы второго порядка, использующие информацию не только о градиенте, но и о кривизне поверхности уровня. 
+
+Классическим представителем данного класса является \textit{метод Ньютона}, основанный на аппроксимации функции её локальным квадратичным разложением в окрестности текущей точки. Основная идея заключается в том, что, если функция \(J(\bit{z}, \bit{z}^*)\) близка к квадратичной, то минимум аппроксимации можно найти аналитически, что обеспечивает сверхлинейную сходимость. В отличие от методов первого порядка, метод Ньютона использует матрицу Гессе (матрицу вторых производных) для корректировки направления поиска, что позволяет автоматически масштабировать шаги в зависимости от локальной кривизны поверхности. 
+
+Таким образом, метод Ньютона интерпретируется как переход от \emph{направлений убывания} к \emph{направлениям оптимального спуска}, обеспечивающим более точное приближение минимума. 
+
+Для формального описания метода Ньютона введем следующие обозначения. Производная второго порядка скалярной вещественной функции $J$ по вектору параметров описывается следующим образом:
+
+\begin{equation}
+	D_{\bit{z}}(D_{\bit{z}}J)^T=H_{\bit{z}, \bit{z}}J\in\mathbb{C}^{K\times K}\text{-- матрица Гёссе}.
+	\label{hessian_calc}
+\end{equation}
+
+Для удобства записи алгоритма метода Ньютона введем вектор удвоенной длины, включающий вектор прямых и сопряженных параметров:
+\begin{equation}
+	\widetilde{\bit{z}}^T=\begin{pmatrix}
+		\bit{z} & \bit{z}^*
+	\end{pmatrix}^T
+	\label{param_vector_double}
+\end{equation}
+
+Используя введённые выше обозначения, дифференциал второго порядка функции $J$ может быть описан следующим образом \cite{complex_deriv}:
+\begin{equation}
+	d^2J=\begin{pmatrix}
+		d\bit{z}^T & d(\bit{z}^*)^T
+	\end{pmatrix}
+	\begin{pmatrix}
+		H_{\bit{z}, \bit{z}}J & H_{\bit{z}^*, \bit{z}}J \\
+		H_{\bit{z}, \bit{z}^*}J & H_{\bit{z}^*, \bit{z}^*}J
+	\end{pmatrix}
+	\begin{pmatrix}
+		d\bit{z} \\ d\bit{z}^*
+	\end{pmatrix}=
+	\widetilde{\bit{z}}^TH_{\widetilde{\bit{z}}, \widetilde{\bit{z}}}J\widetilde{\bit{z}}
+	\label{second_differential_complex}
+\end{equation}
+
+Таким образом, разностное уравнение метода Ньютона может быть представлен следующим образом:
+\begin{equation}
+	\widetilde{\bit{z}}_{k+1}=\widetilde{\bit{z}}_{k}-\mu(H_{\widetilde{\bit{z}}, \widetilde{\bit{z}}}J)^{-1}(D_{\widetilde{\bit{z}}^*}J)^T
+	\label{newton_method_full}
+\end{equation}
+
+Получим разностное уравнение метода Ньютона для функции потерь MSE~\eqref{mse_block}. Градиент функции потерь по вектору параметров удвоенной длины может быть получен из выражения~\eqref{loss_deriv_nonholomorphic}:
+\begin{equation}
+	(D_{\widetilde{\bit{z}}^*}J)^T=\begin{pmatrix}
+		D_{\bit{z}}J & D_{\bit{z}^*}J
+	\end{pmatrix}^T=\begin{pmatrix}
+		(D_{\bit{z}^*}J)^* & D_{\bit{z}^*}J
+	\end{pmatrix}^T,
+	\label{gradient_complex_double}
+\end{equation}
+где использовано свойство $(D_{\bit{z}^*}J)^*=D_{\bit{z}}J^*=D_{\bit{z}}J$ ввиду вещественности функции потерь $J\in\mathbb{R}$.
+
+Заметим также, что ввиду определения матрицы Гёссе~\eqref{hessian_calc}, достаточно найти две из четырех составляющих матрицы~\eqref{second_differential_complex}:
+\begin{align}
+	H_{\bit{z}, \bit{z}^*}J&=D_{\bit{z}^*}(D_{\bit{z}}J)^T=(D_{\bit{z}}(D_{\bit{z}^*}J)^T)^*=(H_{\bit{z}^*, \bit{z}}J)^*, \label{hessian_mixed_conj} \\
+	H_{\bit{z}, \bit{z}}J&=D_{\bit{z}}(D_{\bit{z}}J)^T=(D_{\bit{z}^*}(D_{\bit{z}^*}J)^T)^*=(H_{\bit{z}^*, \bit{z}^*}J)^*
+	\label{hessian_nonmixed_conj}
+\end{align}
+
+Найдем теперь матрицы Гессе для MSE из выражения~\eqref{loss_deriv_nonholomorphic}:
+\begin{equation}
+	d(D_{\bit{z}^*}J)^T=-d\begin{bmatrix}
+		(D_{\bit{z}}\bit{y})^H\bit{e}
+	\end{bmatrix}-d\begin{bmatrix}
+	(D_{\bit{z}^*}\bit{y})^T\bit{e}^*
+	\end{bmatrix}.
+	\label{differential_gradient}
+\end{equation}
+Найдем первое слагаемое выражения~\eqref{differential_gradient}:
+\begin{align}
+	d\begin{bmatrix}
+		(D_{\bit{z}}\bit{y})^H\bit{e}
+	\end{bmatrix}&=
+	d\begin{bmatrix}
+		\bit{I}_{K}(D_{\bit{z}}\bit{y})^H\bit{e}
+	\end{bmatrix}=
+	d\begin{bmatrix}
+		(\bit{e}^T\otimes\bit{I}_{K})\text{vec}(D_{\bit{z}}\bit{y})^H
+	\end{bmatrix}= \nonumber \\
+	&=(-d\bit{y}^T\otimes\bit{I}_{K})\text{vec}(D_{\bit{z}}\bit{y})^H+(\bit{e}^T\otimes\bit{I}_{K})d\text{vec}(D_{\bit{z}}\bit{y})^H= \nonumber \\
+	&=-(D_{\bit{z}}\bit{y})^Hd\bit{y}+(\bit{e}^T\otimes\bit{I}_{K})d\text{vec}(D_{\bit{z}}\bit{y})^H,
+	\label{different_gradient_1st_add}
+\end{align}
+где $\bit{I}_{K}\in\mathbb{R}^{K\times K}$ -- единичная матрица, $\otimes$ -- произведение Кронекера, $\text{vec}(\cdot)$ -- оператор векторизации матрицы, вытягивает матрицу в единый столбец. Отметим, что в выкладках~\eqref{different_gradient_1st_add} использовано свойство $\text{vec}(ABC)=(C^T\otimes A)\text{vec}(B)$~\cite{wirt_deriv_book}.
+
+В выражении~\eqref{different_gradient_1st_add} разложим вектор в ряд Тейлора до слагаемых первого порядка малости:
+\begin{equation}
+	d\text{vec}(D_{\bit{z}}\bit{y})^H=D_{\bit{z}}\text{vec}(D_{\bit{z}}\bit{y})^Hd\bit{z}+D_{\bit{z}^*}\text{vec}(D_{\bit{z}^*}\bit{y})^Hd\bit{z}^*.
+	\label{differential_aux}
+\end{equation}
+Подставим~\eqref{first_diff_model},~\eqref{differential_aux} в~\eqref{different_gradient_1st_add}:
+\begin{align}
+	d\begin{bmatrix}
+		(D_{\bit{z}}\bit{y})^H\bit{e}
+	\end{bmatrix}&=
+	-(D_{\bit{z}}\bit{y})^H(D_{\bit{z}}\bit{y})d\bit{z}-
+	(D_{\bit{z}}\bit{y})^H(D_{\bit{z}^*}\bit{y})d\bit{z}^*+ \nonumber \\
+	&+(\bit{e}^T\otimes\bit{I}_{K})D_{\bit{z}}\text{vec}(D_{\bit{z}}\bit{y})^Hd\bit{z}+
+	(\bit{e}^T\otimes\bit{I}_{K})D_{\bit{z}^*}\text{vec}(D_{\bit{z}}\bit{y})^Hd\bit{z}^*.
+	\label{different_gradient_1st_add_continue}
+\end{align}
+По аналогии с~\eqref{different_gradient_1st_add_continue} получаем выражение для второго слагаемого дифференциала градиента функции потерь MSE:
+\begin{align}
+	d\begin{bmatrix}
+		(D_{\bit{z}^*}\bit{y})^T\bit{e}^*
+	\end{bmatrix}&=
+	-(D_{\bit{z}^*}\bit{y})^T(D_{\bit{z}^*}\bit{y}^*)d\bit{z}^*-
+	(D_{\bit{z}^*}\bit{y})^T(D_{\bit{z}}\bit{y}^*)d\bit{z}+ \nonumber \\
+	&+(\bit{e}^H\otimes\bit{I}_{K})D_{\bit{z}}\text{vec}(D_{\bit{z}^*}\bit{y})^Td\bit{z}+
+	(\bit{e}^H\otimes\bit{I}_{K})D_{\bit{z}^*}\text{vec}(D_{\bit{z}^*}\bit{y})^Td\bit{z}^*.
+	\label{different_gradient_2nd_add_continue}
+\end{align}
+Подставим выражения~\eqref{different_gradient_1st_add_continue},~\eqref{different_gradient_2nd_add_continue} в~\eqref{differential_gradient} и приравняем выражения при дифференциалах $d\bit{z}$, $d\bit{z}^*$ с выражениями при дифференциалах в~\eqref{first_diff}, получим искомые Гессианы:
+\begin{align}
+	H_{\bit{z}^*, \bit{z}}J=D_{\bit{z}}(D_{\bit{z}^*}J)^T&=
+	(D_{\bit{z}}\bit{y})^H(D_{\bit{z}}\bit{y})-
+	(\bit{e}^T\otimes\bit{I}_{K})D_{\bit{z}}\text{vec}(D_{\bit{z}}\bit{y})^H+ \nonumber \\
+	&+(D_{\bit{z}^*}\bit{y})^T(D_{\bit{z}}\bit{y}^*)-(\bit{e}^H\otimes\bit{I}_{K})D_{\bit{z}}\text{vec}(D_{\bit{z}^*}\bit{y})^T,
+	\label{hessians_mixed}
+\end{align}
+\begin{align}
+	H_{\bit{z}^*, \bit{z}^*}J=D_{\bit{z}^*}(D_{\bit{z}^*}J)^T&=
+	(D_{\bit{z}}\bit{y})^H(D_{\bit{z}^*}\bit{y})-
+	(\bit{e}^T\otimes\bit{I}_{K})D_{\bit{z}^*}\text{vec}(D_{\bit{z}}\bit{y})^H+ \nonumber \\
+	&+(D_{\bit{z}^*}\bit{y})^T(D_{\bit{z}^*}\bit{y}^*)-(\bit{e}^H\otimes\bit{I}_{K})D_{\bit{z}^*}\text{vec}(D_{\bit{z}^*}\bit{y})^T.
+	\label{hessians_nonmixed}
+\end{align}
+
+Таким образом, выражения~\eqref{hessians_mixed},~\eqref{hessians_nonmixed},~\eqref{hessian_mixed_conj},~\eqref{hessian_nonmixed_conj} определяют полную матрицу вторых производных, а выражения~\eqref{gradient_complex_double},~\eqref{loss_deriv_nonholomorphic} полный градиент функции потерь MSE в разностном уравнении~\eqref{newton_method_full}.
+
+\subsection{Модификации метода Ньютона}
+Как отмечалось ранее, метод Ньютона сходится квадратично вблизи точки оптимума. При старте алгоритма с удалённой от оптимума начальной точки итеративная процедура может расходиться~\cite{polyak_optimiz}. Для обеспечения глобальной сходимости широко применяются модификации метода Ньютона.
+
+Алгоритм Левенберга-Марквардта~\cite{polyak_optimiz} является одной из модификаций метода Ньютона. Метод заключается в том, чтобы внести добавку к гессиану \eqref{newton_method_full} для улучшения численной устойчивости алгоритма при обращении матрицы:
+\begin{equation}
+	\bit{z}_{k+1}=\bit{z}_{k}-(\bit{H}_J(\bit{z}_{k})+
+	\lambda_k\bit{I}_{K})^{-1}D_{\bit{z}}J(\bit{z}_{k}),
+\end{equation}
+где $\lambda_k$ -- действительное положительное число. Добавка $\lambda_k\bit{I}_K$ -- регуляризация, которая изменяет направление шага алгоритма в сторону антиградиента тем больше, чем больше норма $||\lambda_k\bit{I}_K||$:
+\begin{equation*}
+	\lim_{\lambda_k\rightarrow\infty}(\bit{H}_J(\bit{z}_{k})+
+	\lambda_k\bit{I}_{K})^{-1}=\mu\bit{I}_K, \ \mu\rightarrow 0.
+\end{equation*}
+Число $\lambda_k$ подбирается каждую итерацию при помощи одномерной оптимизации. Такие алгоритмы подбора $\lambda_k$ вычислительно проще обращения матрицы.
+
+Кроме того, практическое применение находит демпфированный метод Ньютона~\cite{nesterov}, представленный алгоритмом \ref{alg:newton_damped}. Идея модификации заключается в том, чтобы на каждой итерации уменьшать шаг алгоритма до тех пор, пока значение целевой функции не станет меньше, чем при исходном значении шага. 
+
+На вход демпфированного метода Ньютона поступают векторы сигнала передатчика \bit{x} и принимаемого \bit{d} сигналов, начальные значения параметров модели \bit{z}, исходное значение шага $\mu$ и желаемое число итераций $P$. Функция $\text{model}(\cdot)$ выдает вектор сигналов на выходе адаптивной модели на основе текущих параметров и входа модели.
+
+Далее по методу Ньютона вычисляется вектор шага коэффициентов, после чего определяются новые значения коэффициентов с текущим значением шага $\mu$. 
+
+На основе новых параметров получаем выход модели и новое отклонение. Если значение критерия MSE стало меньше после обновления коэффициентов, то шаг $\mu$ удваивается. Такое увеличение шага будет происходить пока он меньше единицы. Параметры запоминаются, алгоритм переходит в новую итерацию. 
+
+Если значение критерия MSE ухудшилось, алгоритм будет уменьшать значение шага $\mu$ до тех пор, пока значение критерия не станет лучше исходного. После такой процедуры алгоритм запомнит значения параметров и запустится новая итерация.
+
+Ввиду того, что в задачах нелинейной обработки сигналов задача вообще говоря не является квадратичной, методу Ньютона понадобится больше одной итерации для поиска точки оптимума.
+\begin{algorithm}[!ht]
+	\caption{Damped Newton method}
+	\label{alg:newton_damped}
+	\KwData{$\bit{x}, \bit{d}, \bit{z}, P, \mu$}
+	\KwResult{Obtain \bit{z}}
+	\For{$i\in\overline{0,P-1}$}{
+		$\bit{y}_{prev}=\text{model}(\bit{z}, \bit{x})$;\\
+		$\bit{e}_{prev}=\bit{d}-\bit{y}_{prev}$;\\
+		$\Delta\bit{z}=\bit{H}_J^{-1}\nabla_{J}
+		(\bit{z})$;\\
+		$\bit{z}_{tmp}=\bit{z}+\mu\Delta\bit{z}$;\\
+		$\bit{y}_{curr}=\text{model}(\bit{z}_{tmp}, \bit{x})$;\\
+		$\bit{e}_{curr}=\bit{d}-\bit{y}_{curr}$;\\
+		\If{$MSE(\bit{e}_{prev})-MSE(\bit{e}_{curr})\geqslant0$}{
+			$\mu=\mu*2$;\\
+			\If{$\mu>1$}{$\mu=1$;}
+			$\bit{z}=\bit{z}_{tmp}$,
+		}
+		\Else{
+			$\text{flag}=True$;\\
+			\While{$\text{flag}$}{
+				$\mu=\mu/1.5$;\\
+				$\bit{z}_{tmp1}=\bit{z}+\mu\Delta\bit{z}$;\\
+				$\bit{y}_{div}=\text{model}(\bit{z}_{tmp1}, \bit{x})$;\\
+				$\bit{e}_{div}=\bit{d}-\bit{y}_{div}$;\\
+				\If{$MSE(\bit{e}_{prev})-MSE(\bit{e}_{div})\geqslant0$}{
+					$\text{flag}=False$;\\
+					$\bit{z}=\bit{z}_{div}$
+				}
+			}
+		}
+	}
+\end{algorithm}
+
+\subsection{Смешанный метод Ньютона}
+
+Смешанный метод Ньютона~--- модификация метода Ньютона~\eqref{newton_method_full} в условиях голоморфности вектора ошибки $\bit{e}=\bit{e}(\bit{z}m \bit{x})$. Иначе говоря смешанный метод Ньютона
+
+Для корректной работы алгоритма вектор ошибки $\bit{e}$~\eqref{mse} должен быть голоморфным относительно параметров модели \bit{z}, то есть должен не зависеть от сопряжённых параметров $\bit{z}^*$: $\bit{e}=\bit{e}(\bit{x}, \bit{z})$. В этом случае MNM обладает свойством отталкивания от седловых точек~\cite{mixed_newton}.
+
+Поскольку алгоритм MNM использует только смешанный гессиан $H_{\bit{z}^*, \bit{z}}J$ для обучения параметров модели~\cite{mixed_newton}, то разностное уравнения смешанного метода Ньютона может быть представлено следующим выражением:
+\begin{equation}
+	\bit{z}_{k+1}=\bit{z}_k-\mu (H_{\bit{z}^*, \bit{z}} J)^{-1}(D_{\bit{z}^*}J)^T,
+	\label{mixed_newton_eq}
+\end{equation}
+где $J$~--- MSE, определенная выражением \eqref{mse_block}.
+
+В то же время, согласно обозначению \eqref{hessian_calc} и выражению для градиента \eqref{grad}, смешанный гессиан можно рассчитать следующим способом:
+\begin{equation}
+	H_{\bit{z}^*, \bit{z}}J=D_{\bit{z}}(D_{\bit{z}^*}J)^T=-D_{\bit{z}}((D_{\bit{z}}\bit{y})^H\bit{e}).
+\end{equation}
+Поскольку вектор выхода модели \bit{y} является голоморфным относительно параметров модели, то смешанный гессиан может быть представлен как:
+\begin{equation}
+	H_{\bit{z}^*, \bit{z}}J=(D_{\bit{z}}\bit{y})^HD_{\bit{z}}\bit{y}.
+	\label{mixed_hessian}
+\end{equation}
+Таким образом, учитывая выражения \eqref{grad}, \eqref{mixed_hessian} и \eqref{mixed_newton_eq}, алгоритм смешанного метода Ньютона можно представить следующим разностным уравнением:
+\begin{equation}
+	\bit{z}_{k+1}=\bit{z}_k-\mu ((D_{\bit{z}}\bit{y})^HD_{\bit{z}}\bit{y})^{-1}(D_{\bit{z}}\bit{y})^H\bit{e}.
+	\label{mixed_newton_eq_jac}
+\end{equation}
+
+Отдельно отметим, что сложность хранения гессиана оценивается как $o(M^2)$ \cite{matrix_comput}, если $M\times M$ -- размерность гессиана. Обращение гессиана может быть сведено к решению системы из $M$ линейных уравнений. Вычислительная сложность такой операции может быть оценена как $o(M^3)$ \cite{matrix_comput}.
+
+Кроме того, отметим, что разностное уравнение \eqref{diff_equat_newton_hammerst} метода Ньютона применительно к модели Гаммерштейна также представляет собой итеративную LS-оценку.
+
+\subsection{Метод LS}
+Метод LS применим только к однослойным моделям, когда MSE задаётся квадратичной функцией, минимизация которой сводится к решению линейной системы~\cite{convex_opt}. Поэтому LS будем применять к адаптации КИХ-фильтра и модели нелинейности, заданной блоков PLA.
+
+Рассмотрим адаптацию линейного КИХ-фильтра порядка $M$ с коэффициентами~\bit{w}. Оптимальные коэффициенты с точки зрения среднего квадрата ошибки MSE задаются выражаются уравнением Винера-Хопфа \cite{adapt_filt_haykin}:
+\begin{equation}
+	\bit{w}_{opt}=\bit{R}_{xx}^{-1}\bit{r}_{dx},
+	\label{viner_hopf}
+\end{equation}
+где $\bit{R}_{xx}$ -- корреляционная матрица сигнала \eqref{autokorr_matr}, а $\bit{r}_{dx}$ -- вектор взаимной корреляции, который определяется:
+\begin{equation}
+	\bit{r}_{dx}=\mathbb{E}(\bit{u}_n^*d_n),
+	\label{corr_mutual}
+\end{equation}
+где $\bit{u}_n$ -- вектор состояния фильтра \eqref{fir_state_vec}.
+
+LS (Least Squares)-оценка является решением уравнения Винера-Хопфа в блочном режиме, то есть при ограниченной длине выборки.
+
+Определим задачу поиска оптимальных коэффициентов линейного КИХ-фильтра как задачу поиска решения системы линейных уравнений:
+\begin{equation}
+	\begin{cases}
+		\begin{matrix}
+			\textbf{\textit{d}}=\textbf{\textit{U}}\textbf{\textit{w}}_{opt},\\
+			\textbf{\textit{e}} = \textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}},\\
+			\textbf{\textit{w}}_{opt}=\arg\min_{\textbf{\textit{w}}}(\textbf{\textit{e}}^H\textbf{\textit{e}})
+		\end{matrix}
+	\end{cases}
+	\label{line_eq}
+\end{equation}
+$J(\textbf{\textit{w}})=\textbf{\textit{e}}^H\textbf{\textit{e}}$ -- вещественнозначная функция комплексного вектора $\textbf{\textit{w}}$. Градиент такой функции равен \cite{wirt_deriv_tech_rep}:
+\begin{equation}
+	\nabla_{J}(\textbf{\textit{w}})\equiv\frac{\partial J(\textbf{\textit{w}})}{\partial \textbf{\textit{w}}^H}=
+	\begin{pmatrix}\displaystyle
+		\frac{\partial J(\textbf{\textit{w}})}{\partial w_0^*} & 
+		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_1^*} &
+		\cdots & 
+		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_{M-1}^*}
+	\end{pmatrix}^T,
+	\label{gradient}
+\end{equation}
+\begin{equation}
+	\nabla_{J}^H(\textbf{\textit{w}})\equiv\frac{\partial J(\textbf{\textit{w}})}{\partial \textbf{\textit{w}}}=
+	\begin{pmatrix}
+		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_0} & 
+		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_1} &
+		\cdots & 
+		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_{M-1}}
+	\end{pmatrix},
+	\label{gradient_hermit}
+\end{equation}
+где под выражением $	\frac{\partial J(\textbf{\textit{w}})}{\partial w_i^*} \ \forall i=\overline{0, M-1}$ понимается производная Виртингера функции комплексных переменных \cite{wirt_deriv_book}.
+
+Ввиду того, что средний квадрат ошибки для однослойной модели, в данном случае КИХ-фильтра, является квадратичной функцией, то глобальным минимум метрики MSE может быть найден следующий образом:
+\begin{equation}
+	\frac{\partial J(\textbf{\textit{w}})}{\partial \textbf{\textit{w}}^H}\bigg |_{\textbf{\textit{w}}=\textbf{\textit{w}}_{opt}}=
+	\textbf{\textit{0}}
+\end{equation}
+Найдём экстремум фунции MSE для уравнения \eqref{line_eq}:
+\begin{eqnarray}
+	\nabla_{J}(\textbf{\textit{w}})=
+	\frac{\partial}{\partial \textbf{\textit{w}}^H}(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})^H(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})=\\
+	=\frac{\partial}{\partial \textbf{\textit{w}}^H}(\textbf{\textit{d}}^H-\textbf{\textit{w}}^H\textbf{\textit{U}}^H)(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})=\\
+	=-\textbf{\textit{U}}^H(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})=\textbf{\textit{U}}^H\textbf{\textit{U}}\textbf{\textit{w}}-\textbf{\textit{U}}^H\textbf{\textit{d}}=0
+\end{eqnarray}
+\begin{equation}
+	\hat{\textbf{\textit{w}}}_{opt}=(\textbf{\textit{U}}^H\textbf{\textit{U}})^{-1}\textbf{\textit{U}}^H\textbf{\textit{d}},
+\end{equation}
+где $\hat{\textbf{\textit{w}}}_{opt}$ -- оценка оптимальных коэффициентов. Отметим, что вектор:
+\begin{equation}
+	\check{\textbf{\textit{r}}}_{dx}=\textbf{\textit{U}}^H\textbf{\textit{d}}
+\end{equation}
+представляет собой смещенную оценку вектора взаимной корреляции. В то же время, как отмечалось раннее \eqref{autorokk_matrprod}, матрица:
+\begin{equation}
+	\check{\textbf{\textit{R}}}_{xx}=\textbf{\textit{U}}^H\textbf{\textit{U}}
+\end{equation}
+представляет собой смещенную оценку матрицы корреляции.
+
+Таким образом, оценки оптимальных коэффициентов КИХ-фильтра и блока PLA имеюи вид:
+\begin{equation}
+	\hat{\textbf{\textit{w}}}_{opt}=\check{\bit{R}}_{xx}^{-1}\textbf{\textit{r}}_{dx},
+	\label{viner_hopf_fir}
+\end{equation}
+\begin{equation}
+	\hat{\textbf{\textit{h}}}_{opt}=\check{\bit{R}}_{vv}^{-1}\textbf{\textit{r}}_{dv}.
+	\label{viner_hopf_pla}
+\end{equation}
+Уравнения \eqref{viner_hopf_fir}, \eqref{viner_hopf_pla} отражают связь между LS-оценкой и уравнением Винера-Хопфа для поиска оптимальных коэффициентов линейного КИХ-фильтра \eqref{viner_hopf}. 
+
+Отметим, что метод LS подразумевает накопление корреляционной матрицы, её обращение и выполнение операции матрично-векторного умножения. Такой метод поиска оптимальных коэффициентов трудный с точки зрения вычислительной сложности, однако применяется для оценки оптимальных коэффициентов моделей ввиду сходимости к вектору оптимальных коэффициентов за одну итерацию за счёт квадратичности целевой функции.
+
+Метод LS неприменим к модели Гаммерштейна, однако существует итеративная модификация метода LS. Эта модификация по сути представляет собой метод Ньютона \cite{nesterov}, который будет описан далее.

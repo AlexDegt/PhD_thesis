@@ -1,0 +1,60 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+\usetikzlibrary{automata,positioning}
+\usepackage[american]{circuitikz}
+
+\tikzset{
+state/.style={
+       rectangle split,
+       rectangle split parts=2,
+       draw=black,
+       minimum height=2em,
+       text width=0.75cm,
+       inner sep=2pt,
+       text centered,
+       }
+}
+
+\begin {document}
+\begin{tikzpicture}[%
+    node distance = 3cm,
+    on grid,
+    auto
+]
+
+\node(fsw) at (0.5,-5.5) [draw, minimum height=0.6cm] {\text{Анализатор спектра}};
+
+\node(dac) at (0,-1.5) [draw, minimum height=0.6cm] {\text{ЦАП}};
+\node(pnt1) at (-1.8, -1.5) [pnt, fill = black]{};
+\node(dac2) at (0,-3.5) [draw, minimum height=0.6cm] {\text{ЦАП}};
+\node(mix1) at (1.5, -1.5)[sum] {$\times$};
+\node(mix2) at (1.5, -3.5)[sum] {$\times$};
+\node(sum) at (2.5, -2.5) [sum]{$+$};
+\node(phase_spl) at (1.5, -2.5) [state]{\text{$0^\degree$} \nodepart{two} \text{$90^\degree$}};
+\node(lo_tx) at (-0.5, -2.5) [none] {\small$\cos(2\pi f_{гет}t)$};
+
+\draw [color=gray,thick](3.,-4) rectangle (-2,-1);
+
+\node(pa) at (4.5, -2.5)[draw, isosceles triangle, rotate=0] {{\rotatebox{0}{\textsc{УМ}}}};
+
+\node(pc) at (-3, -1.5) [draw, minimum height=0.6cm] {\textsc{ПК}};
+
+\draw[->] (pc) -- (dac);
+\draw[->] (dac) -- (mix1);
+\draw[->] (pnt1) |- (dac2);
+\draw[->] (dac2) -- (mix2);
+\draw[->] (mix1) -| (sum);
+\draw[->] (mix2) -| (sum);
+\draw[->] (lo_tx) -- (phase_spl);
+\draw[->] (phase_spl) -- (mix1);
+\draw[->] (phase_spl) -- (mix2);
+\draw[->] (sum) -- (pa);
+% \draw[->] (pa) |- (fsw);
+\draw[->] (fsw) -| (pc);
+\draw[->] (pa) -- (6.25, -2.5);
+\draw[->] (6., -2.6) -- (5.75, -2.6) -- (5.75, -5.5) -- (fsw);
+
+\node at (0.6, -0.5) [none] {Генератор сигналов};
+
+\end{tikzpicture}
+\end {document}

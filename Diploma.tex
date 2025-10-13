@@ -1,0 +1,74 @@
+\documentclass{mipt-thesis-ms}
+% Следующие 6 строк нужно для того, чтобы увеличить глубину нумерации подглав до 4. Дополнительный уровень глубины вызывается
+%\setcounter{secnumdepth}{5}
+%\setcounter{tocdepth}{5}
+% После первой компиляции в Содержании после римских цифр, обозначающих главы -- 1 точка, после второй компиляции появляется вторая точка. (Следующая строчка)
+\usepackage{misccorr}
+\usepackage[big]{titlesec}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\large\bfseries}{\thesubsubsection}{1em}{}
+\makeatletter
+\makeatother
+% Работа с колонтитулами
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt}
+
+\fancypagestyle{plain}{%
+	\fancyhead{}   
+	\renewcommand{\headrulewidth}{0pt}
+}
+%\fancyhead[LO]{\rightmark}
+% Следующие две строки нужны только для biblatex. Для inline-библиографии их следует убрать.
+\usepackage{mipt-thesis-biblatex}
+\addbibresource{bibliography.bib}
+
+\usepackage{algorithmic}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+% Привязка нумерации формул к секциям/подсекциям/главам
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{equation}{chapter}
+
+\newcommand{\bit}[1]{\ensuremath{\textbf{\textit{#1}}}}
+\newcommand{\din}[1]{\ensuremath{\Delta\bit{w}_{#1}}}
+\newcommand{\dsp}{\ensuremath{\displaystyle}}
+\newcommand{\wave}[1]{\ensuremath{\widetilde{#1}}}
+
+\def \figscale {0.7}
+
+\title{Модуль адаптивной компенсации нелинейных искажений в приемном и передающем трактах телекоммуникационных устройств}
+\author{Дегтярёв А.\,А.}
+\supervisor{Бахурин С.\,А.}
+\referee{д.т.н., проф. Андреев В.Г.}       % требуется только для mipt-thesis-ms
+\groupnum{М01-004а}
+
+\begin{document}
+\pagestyle{headings}
+\pagestyle{empty}
+\frontmatter
+\titlecontents
+\pagestyle{fancy}
+%\pagestyle{headings}
+
+\mainmatter
+
+\include{Dissertation/chapter_1_folder/chapter_1}
+\include{Dissertation/chapter_2_folder/chapter_2}
+\include{Dissertation/chapter_3_folder/chapter_3}
+
+\backmatter
+
+\concludecontents
+
+\printbib
+
+\backmatter
+\end{document}

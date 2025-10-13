@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\begin{document}
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=10cm,
+            height=8cm,
+            xlabel={$x$},
+            ylabel={$y$},
+            title={Filled Contour Plot},
+            colorbar,
+            colormap={hot}{[1.rgb]{0,0,0}  [0.7.rgb]{1,1,0}  [1.rgb]{1,0,0}} % Define colormap
+        ]
+        \addplot3[
+            contour gnuplot={number=10, labels=false}, % Adjust number of contour lines
+            thick,
+            samples=50,
+            domain=-3:3,
+            y domain=-3:3
+        ]
+        {sin(deg(x^2 + y^2))}; % Example function
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Example of a filled contour plot.}
+\end{figure}
+\end{document}

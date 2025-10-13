@@ -1,0 +1,2818 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.12)  13 OCT 2025 11:22
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./Diploma.tex
+(Diploma.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(mipt-thesis-ms.cls
+
+LaTeX Warning: You have requested document class `mipt-thesis-ms',
+               but the document class provides `mipt-thesis'.
+
+Document Class: mipt-thesis 2016/06/18 Class for the MS thesis in the MIPT
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/base\bk12.clo
+File: bk12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@chapter=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.st
+y
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.st
+y
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen141
+))
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count196
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count197
+\leftroot@=\count198
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count199
+\DOTSCASE@=\count266
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count267
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count268
+\dotsspace@=\muskip16
+\c@parentequation=\count269
+\dspbrk@lvl=\count270
+\tag@help=\toks18
+\row@=\count271
+\column@=\count272
+\maxfields@=\count273
+\andhelp@=\toks19
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks20
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks27
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.s
+ty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.
+sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/t2\mathtext.sty
+Package: mathtext 2018/04/13 v1.1 transparent text-and-math defs
+LaTeX Info: Redefining \halign on input line 119.
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2aenc.de
+f
+File: t2aenc.def 2023/11/07 v1.0k Cyrillic encoding definition file
+Now handling font encoding T2A ...
+... processing UTF-8 mapping file for font encoding T2A
+ (C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/base\t2aenc.dfu
+File: t2aenc.dfu 2022/06/07 v1.3c UTF-8 support
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0237 (decimal 567)
+   defining Unicode char U+0400 (decimal 1024)
+   defining Unicode char U+0401 (decimal 1025)
+   defining Unicode char U+0402 (decimal 1026)
+   defining Unicode char U+0403 (decimal 1027)
+   defining Unicode char U+0404 (decimal 1028)
+   defining Unicode char U+0405 (decimal 1029)
+   defining Unicode char U+0406 (decimal 1030)
+   defining Unicode char U+0407 (decimal 1031)
+   defining Unicode char U+0408 (decimal 1032)
+   defining Unicode char U+0409 (decimal 1033)
+   defining Unicode char U+040A (decimal 1034)
+   defining Unicode char U+040B (decimal 1035)
+   defining Unicode char U+040C (decimal 1036)
+   defining Unicode char U+040D (decimal 1037)
+   defining Unicode char U+040E (decimal 1038)
+   defining Unicode char U+040F (decimal 1039)
+   defining Unicode char U+0410 (decimal 1040)
+   defining Unicode char U+0411 (decimal 1041)
+   defining Unicode char U+0412 (decimal 1042)
+   defining Unicode char U+0413 (decimal 1043)
+   defining Unicode char U+0414 (decimal 1044)
+   defining Unicode char U+0415 (decimal 1045)
+   defining Unicode char U+0416 (decimal 1046)
+   defining Unicode char U+0417 (decimal 1047)
+   defining Unicode char U+0418 (decimal 1048)
+   defining Unicode char U+0419 (decimal 1049)
+   defining Unicode char U+041A (decimal 1050)
+   defining Unicode char U+041B (decimal 1051)
+   defining Unicode char U+041C (decimal 1052)
+   defining Unicode char U+041D (decimal 1053)
+   defining Unicode char U+041E (decimal 1054)
+   defining Unicode char U+041F (decimal 1055)
+   defining Unicode char U+0420 (decimal 1056)
+   defining Unicode char U+0421 (decimal 1057)
+   defining Unicode char U+0422 (decimal 1058)
+   defining Unicode char U+0423 (decimal 1059)
+   defining Unicode char U+0424 (decimal 1060)
+   defining Unicode char U+0425 (decimal 1061)
+   defining Unicode char U+0426 (decimal 1062)
+   defining Unicode char U+0427 (decimal 1063)
+   defining Unicode char U+0428 (decimal 1064)
+   defining Unicode char U+0429 (decimal 1065)
+   defining Unicode char U+042A (decimal 1066)
+   defining Unicode char U+042B (decimal 1067)
+   defining Unicode char U+042C (decimal 1068)
+   defining Unicode char U+042D (decimal 1069)
+   defining Unicode char U+042E (decimal 1070)
+   defining Unicode char U+042F (decimal 1071)
+   defining Unicode char U+0430 (decimal 1072)
+   defining Unicode char U+0431 (decimal 1073)
+   defining Unicode char U+0432 (decimal 1074)
+   defining Unicode char U+0433 (decimal 1075)
+   defining Unicode char U+0434 (decimal 1076)
+   defining Unicode char U+0435 (decimal 1077)
+   defining Unicode char U+0436 (decimal 1078)
+   defining Unicode char U+0437 (decimal 1079)
+   defining Unicode char U+0438 (decimal 1080)
+   defining Unicode char U+0439 (decimal 1081)
+   defining Unicode char U+043A (decimal 1082)
+   defining Unicode char U+043B (decimal 1083)
+   defining Unicode char U+043C (decimal 1084)
+   defining Unicode char U+043D (decimal 1085)
+   defining Unicode char U+043E (decimal 1086)
+   defining Unicode char U+043F (decimal 1087)
+   defining Unicode char U+0440 (decimal 1088)
+   defining Unicode char U+0441 (decimal 1089)
+   defining Unicode char U+0442 (decimal 1090)
+   defining Unicode char U+0443 (decimal 1091)
+   defining Unicode char U+0444 (decimal 1092)
+   defining Unicode char U+0445 (decimal 1093)
+   defining Unicode char U+0446 (decimal 1094)
+   defining Unicode char U+0447 (decimal 1095)
+   defining Unicode char U+0448 (decimal 1096)
+   defining Unicode char U+0449 (decimal 1097)
+   defining Unicode char U+044A (decimal 1098)
+   defining Unicode char U+044B (decimal 1099)
+   defining Unicode char U+044C (decimal 1100)
+   defining Unicode char U+044D (decimal 1101)
+   defining Unicode char U+044E (decimal 1102)
+   defining Unicode char U+044F (decimal 1103)
+   defining Unicode char U+0450 (decimal 1104)
+   defining Unicode char U+0451 (decimal 1105)
+   defining Unicode char U+0452 (decimal 1106)
+   defining Unicode char U+0453 (decimal 1107)
+   defining Unicode char U+0454 (decimal 1108)
+   defining Unicode char U+0455 (decimal 1109)
+   defining Unicode char U+0456 (decimal 1110)
+   defining Unicode char U+0457 (decimal 1111)
+   defining Unicode char U+0458 (decimal 1112)
+   defining Unicode char U+0459 (decimal 1113)
+   defining Unicode char U+045A (decimal 1114)
+   defining Unicode char U+045B (decimal 1115)
+   defining Unicode char U+045C (decimal 1116)
+   defining Unicode char U+045D (decimal 1117)
+   defining Unicode char U+045E (decimal 1118)
+   defining Unicode char U+045F (decimal 1119)
+   defining Unicode char U+0490 (decimal 1168)
+   defining Unicode char U+0491 (decimal 1169)
+   defining Unicode char U+0492 (decimal 1170)
+   defining Unicode char U+0493 (decimal 1171)
+   defining Unicode char U+0496 (decimal 1174)
+   defining Unicode char U+0497 (decimal 1175)
+   defining Unicode char U+0498 (decimal 1176)
+   defining Unicode char U+0499 (decimal 1177)
+   defining Unicode char U+049A (decimal 1178)
+   defining Unicode char U+049B (decimal 1179)
+   defining Unicode char U+049C (decimal 1180)
+   defining Unicode char U+049D (decimal 1181)
+   defining Unicode char U+04A0 (decimal 1184)
+   defining Unicode char U+04A1 (decimal 1185)
+   defining Unicode char U+04A2 (decimal 1186)
+   defining Unicode char U+04A3 (decimal 1187)
+   defining Unicode char U+04A4 (decimal 1188)
+   defining Unicode char U+04A5 (decimal 1189)
+   defining Unicode char U+04AA (decimal 1194)
+   defining Unicode char U+04AB (decimal 1195)
+   defining Unicode char U+04AE (decimal 1198)
+   defining Unicode char U+04AF (decimal 1199)
+   defining Unicode char U+04B0 (decimal 1200)
+   defining Unicode char U+04B1 (decimal 1201)
+   defining Unicode char U+04B2 (decimal 1202)
+   defining Unicode char U+04B3 (decimal 1203)
+   defining Unicode char U+04B6 (decimal 1206)
+   defining Unicode char U+04B7 (decimal 1207)
+   defining Unicode char U+04B8 (decimal 1208)
+   defining Unicode char U+04B9 (decimal 1209)
+   defining Unicode char U+04BA (decimal 1210)
+   defining Unicode char U+04BB (decimal 1211)
+   defining Unicode char U+04C0 (decimal 1216)
+   defining Unicode char U+04C1 (decimal 1217)
+   defining Unicode char U+04C2 (decimal 1218)
+   defining Unicode char U+04D0 (decimal 1232)
+   defining Unicode char U+04D1 (decimal 1233)
+   defining Unicode char U+04D2 (decimal 1234)
+   defining Unicode char U+04D3 (decimal 1235)
+   defining Unicode char U+04D4 (decimal 1236)
+   defining Unicode char U+04D5 (decimal 1237)
+   defining Unicode char U+04D6 (decimal 1238)
+   defining Unicode char U+04D7 (decimal 1239)
+   defining Unicode char U+04D8 (decimal 1240)
+   defining Unicode char U+04D9 (decimal 1241)
+   defining Unicode char U+04DA (decimal 1242)
+   defining Unicode char U+04DB (decimal 1243)
+   defining Unicode char U+04DC (decimal 1244)
+   defining Unicode char U+04DD (decimal 1245)
+   defining Unicode char U+04DE (decimal 1246)
+   defining Unicode char U+04DF (decimal 1247)
+   defining Unicode char U+04E2 (decimal 1250)
+   defining Unicode char U+04E3 (decimal 1251)
+   defining Unicode char U+04E4 (decimal 1252)
+   defining Unicode char U+04E5 (decimal 1253)
+   defining Unicode char U+04E6 (decimal 1254)
+   defining Unicode char U+04E7 (decimal 1255)
+   defining Unicode char U+04E8 (decimal 1256)
+   defining Unicode char U+04E9 (decimal 1257)
+   defining Unicode char U+04EC (decimal 1260)
+   defining Unicode char U+04ED (decimal 1261)
+   defining Unicode char U+04EE (decimal 1262)
+   defining Unicode char U+04EF (decimal 1263)
+   defining Unicode char U+04F0 (decimal 1264)
+   defining Unicode char U+04F1 (decimal 1265)
+   defining Unicode char U+04F2 (decimal 1266)
+   defining Unicode char U+04F3 (decimal 1267)
+   defining Unicode char U+04F4 (decimal 1268)
+   defining Unicode char U+04F5 (decimal 1269)
+   defining Unicode char U+04F8 (decimal 1272)
+   defining Unicode char U+04F9 (decimal 1273)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+3008 (decimal 12296)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+3009 (decimal 12297)
+   defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+27E8 (decimal 10216)
+   defining Unicode char U+27E9 (decimal 10217)
+   defining Unicode char U+FB00 (decimal 64256)
+   defining Unicode char U+FB01 (decimal 64257)
+   defining Unicode char U+FB02 (decimal 64258)
+   defining Unicode char U+FB03 (decimal 64259)
+   defining Unicode char U+FB04 (decimal 64260)
+   defining Unicode char U+FB05 (decimal 64261)
+   defining Unicode char U+FB06 (decimal 64262)
+)
+\symT2Aletters=\mathgroup6
+)
+LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 1
+12.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmr.fd
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+))
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks28
+\inpenc@posthook=\toks29
+) (C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.st
+y
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count274
+\U@D=\dimen150
+\l@unhyphenated=\language79
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.d
+ef)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count275
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\engl
+ish.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language73). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language73). Reported on input line 108.
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/babel-russian\russ
+ianb.ldf
+File: russianb.ldf 2021/01/10 1.3m Russian support for the Babel system
+Language: russian 2020/09/09 1.3k Russian support for the Babel system
+Package babel Info: Making " an active character on input line 124.
+Package babel Info: Default for \cyrdash is provided on input line 163.
+))
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/ru\
+babel-russian.tex
+Package babel Info: Importing font and identification data for russian
+(babel)             from babel-ru.ini. Reported on input line 11.
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\
+babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.
+sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.st
+y
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks30
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count276
+\Gm@cntv=\count277
+\c@Gm@tempcnt=\count278
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks31
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.
+cfg))
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.
+sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.
+sty
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.
+sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip56
+\f@nch@offset@elh=\skip57
+\f@nch@offset@erh=\skip58
+\f@nch@offset@olh=\skip59
+\f@nch@offset@orh=\skip60
+\f@nch@offset@elf=\skip61
+\f@nch@offset@erf=\skip62
+\f@nch@offset@olf=\skip63
+\f@nch@offset@orf=\skip64
+\f@nch@height=\skip65
+\f@nch@footalignment=\skip66
+\f@nch@widthL=\skip67
+\f@nch@widthC=\skip68
+\f@nch@widthR=\skip69
+\@temptokenb=\toks32
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/nopageno\nopageno.
+sty
+Package: nopageno 1989/01/01 no page numbers (DPC)
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.st
+y
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip70
+\cftbeforetoctitleskip=\skip71
+\cftaftertoctitleskip=\skip72
+\cftbeforepartskip=\skip73
+\cftpartnumwidth=\skip74
+\cftpartindent=\skip75
+\cftbeforechapskip=\skip76
+\cftchapindent=\skip77
+\cftchapnumwidth=\skip78
+\cftbeforesecskip=\skip79
+\cftsecindent=\skip80
+\cftsecnumwidth=\skip81
+\cftbeforesubsecskip=\skip82
+\cftsubsecindent=\skip83
+\cftsubsecnumwidth=\skip84
+\cftbeforesubsubsecskip=\skip85
+\cftsubsubsecindent=\skip86
+\cftsubsubsecnumwidth=\skip87
+\cftbeforeparaskip=\skip88
+\cftparaindent=\skip89
+\cftparanumwidth=\skip90
+\cftbeforesubparaskip=\skip91
+\cftsubparaindent=\skip92
+\cftsubparanumwidth=\skip93
+\cftbeforeloftitleskip=\skip94
+\cftafterloftitleskip=\skip95
+\cftbeforefigskip=\skip96
+\cftfigindent=\skip97
+\cftfignumwidth=\skip98
+\c@lofdepth=\count279
+\c@lotdepth=\count280
+\cftbeforelottitleskip=\skip99
+\cftafterlottitleskip=\skip100
+\cftbeforetabskip=\skip101
+\cfttabindent=\skip102
+\cfttabnumwidth=\skip103
+) (mipt-thesis.sty
+Package: mipt-thesis 2014/06/18 Supplementary packages of BS thesis class
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen159
+\ar@mcellbox=\box53
+\extrarowheight=\dimen160
+\NC@list=\toks33
+\extratabsurround=\skip104
+\backup@length=\skip105
+\ar@cellbox=\box54
+)
+\TX@col@width=\dimen161
+\TX@old@table=\dimen162
+\TX@old@col=\dimen163
+\TX@target=\dimen164
+\TX@delta=\dimen165
+\TX@cols=\count281
+\TX@ftn=\toks34
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.
+sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip106
+\multirow@cntb=\count282
+\multirow@dima=\skip107
+\bigstrutjot=\dimen166
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.st
+y
+Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count283
+\l__siunitx_number_exponent_fixed_int=\count284
+\l__siunitx_number_min_decimal_int=\count285
+\l__siunitx_number_min_integer_int=\count286
+\l__siunitx_number_round_precision_int=\count287
+\l__siunitx_number_lower_threshold_int=\count288
+\l__siunitx_number_upper_threshold_int=\count289
+\l__siunitx_number_group_first_int=\count290
+\l__siunitx_number_group_size_int=\count291
+\l__siunitx_number_group_minimum_int=\count292
+\l__siunitx_angle_tmp_dim=\dimen167
+\l__siunitx_angle_marker_box=\box55
+\l__siunitx_angle_unit_box=\box56
+\l__siunitx_compound_count_int=\count293
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/translations\trans
+lations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.
+sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count294
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdfte
+xcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwar
+err.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.
+sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+\l__siunitx_table_tmp_box=\box57
+\l__siunitx_table_tmp_dim=\dimen168
+\l__siunitx_table_column_width_dim=\dimen169
+\l__siunitx_table_integer_box=\box58
+\l__siunitx_table_decimal_box=\box59
+\l__siunitx_table_uncert_box=\box60
+\l__siunitx_table_before_box=\box61
+\l__siunitx_table_after_box=\box62
+\l__siunitx_table_before_dim=\dimen170
+\l__siunitx_table_carry_dim=\dimen171
+\l__siunitx_unit_tmp_int=\count295
+\l__siunitx_unit_position_int=\count296
+\l__siunitx_unit_total_int=\count297
+
+
+Package siunitx Warning: Option "binary-units" has been removed in this
+(siunitx)                release.
+
+) (C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/esint\esint.sty
+Package: esint 
+\symlargesymbolsA=\mathgroup7
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.
+sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.
+sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graph
+ics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdfte
+x.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen172
+\Gin@req@width=\dimen173
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption
+.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.st
+y
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.s
+ty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen174
+\captionmargin=\dimen175
+\caption@leftmargin=\dimen176
+\caption@rightmargin=\dimen177
+\caption@width=\dimen178
+\caption@indent=\dimen179
+\caption@parindent=\dimen180
+\caption@hangindent=\dimen181
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count298
+\c@continuedfloat=\count299
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count300
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count301
+)
+Package caption Info: Modify subtype `subfigure' on input line 14.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/chngcntr\chngcntr.
+sty
+Package: chngcntr 2018/04/09 v1.1a change counter resetting
+Package chngcntr Info: \counterwithout already defined.
+(chngcntr)             Quitting chngcntr on input line 21.
+))
+
+Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less.
+(fancyhdr)                Please consider using the `twoside' option on input l
+ine 164.
+
+
+Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less.
+(fancyhdr)                Please consider using the `twoside' option on input l
+ine 164.
+
+) (C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/t2\misccorr.sty
+Package: misccorr 1999/09/23 v0.1 misc corrections for russian typesetting
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.st
+y
+Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
+\@enLab=\toks35
+)
+\c@rlistctr=\count302
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.
+sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box63
+\beforetitleunit=\skip108
+\aftertitleunit=\skip109
+\ttl@plus=\dimen182
+\ttl@minus=\dimen183
+\ttl@toksa=\toks36
+\titlewidth=\dimen184
+\titlewidthlast=\dimen185
+\titlewidthfirst=\dimen186
+) (mipt-thesis-biblatex.sty
+Package: mipt-thesis-biblatex 2014/06/19 Some settings for Biblatex
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.
+sty
+Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoption
+s.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkey
+s.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count303
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count304
+\c@listtotal=\count305
+\c@listcount=\count306
+\c@liststart=\count307
+\c@liststop=\count308
+\c@citecount=\count309
+\c@citetotal=\count310
+\c@multicitecount=\count311
+\c@multicitetotal=\count312
+\c@instcount=\count313
+\c@maxnames=\count314
+\c@minnames=\count315
+\c@maxitems=\count316
+\c@minitems=\count317
+\c@citecounter=\count318
+\c@maxcitecounter=\count319
+\c@savedcitecounter=\count320
+\c@uniquelist=\count321
+\c@uniquename=\count322
+\c@refsection=\count323
+\c@refsegment=\count324
+\c@maxextratitle=\count325
+\c@maxextratitleyear=\count326
+\c@maxextraname=\count327
+\c@maxextradate=\count328
+\c@maxextraalpha=\count329
+\c@abbrvpenalty=\count330
+\c@highnamepenalty=\count331
+\c@lownamepenalty=\count332
+\c@maxparens=\count333
+\c@parenlevel=\count334
+\blx@tempcnta=\count335
+\blx@tempcntb=\count336
+\blx@tempcntc=\count337
+\c@blx@maxsection=\count338
+\blx@maxsegment@0=\count339
+\blx@notetype=\count340
+\blx@parenlevel@text=\count341
+\blx@parenlevel@foot=\count342
+\blx@sectionciteorder@0=\count343
+\blx@sectionciteorderinternal@0=\count344
+\blx@entrysetcounter=\count345
+\blx@biblioinstance=\count346
+\labelnumberwidth=\skip110
+\labelalphawidth=\skip111
+\biblabelsep=\skip112
+\bibitemsep=\skip113
+\bibnamesep=\skip114
+\bibinitsep=\skip115
+\bibparsep=\skip116
+\bibhang=\skip117
+\blx@bcfin=\read3
+\blx@bcfout=\write3
+\blx@langwohyphens=\language80
+\c@mincomprange=\count347
+\c@maxcomprange=\count348
+\c@mincompwidth=\count349
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.de
+f
+File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex citestyle data model...
+Package biblatex Info: ... file 'numeric-comp.dbx' not found.
+Package biblatex Info: Trying to load biblatex bibstyle data model...
+Package biblatex Info: ... file 'mipt-thesis.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count350
+\c@savedafterword=\count351
+\c@annotator=\count352
+\c@savedannotator=\count353
+\c@author=\count354
+\c@savedauthor=\count355
+\c@bookauthor=\count356
+\c@savedbookauthor=\count357
+\c@commentator=\count358
+\c@savedcommentator=\count359
+\c@editor=\count360
+\c@savededitor=\count361
+\c@editora=\count362
+\c@savededitora=\count363
+\c@editorb=\count364
+\c@savededitorb=\count365
+\c@editorc=\count366
+\c@savededitorc=\count367
+\c@foreword=\count368
+\c@savedforeword=\count369
+\c@holder=\count370
+\c@savedholder=\count371
+\c@introduction=\count372
+\c@savedintroduction=\count373
+\c@namea=\count374
+\c@savednamea=\count375
+\c@nameb=\count376
+\c@savednameb=\count377
+\c@namec=\count378
+\c@savednamec=\count379
+\c@translator=\count380
+\c@savedtranslator=\count381
+\c@shortauthor=\count382
+\c@savedshortauthor=\count383
+\c@shorteditor=\count384
+\c@savedshorteditor=\count385
+\c@labelname=\count386
+\c@savedlabelname=\count387
+\c@institution=\count388
+\c@savedinstitution=\count389
+\c@lista=\count390
+\c@savedlista=\count391
+\c@listb=\count392
+\c@savedlistb=\count393
+\c@listc=\count394
+\c@savedlistc=\count395
+\c@listd=\count396
+\c@savedlistd=\count397
+\c@liste=\count398
+\c@savedliste=\count399
+\c@listf=\count400
+\c@savedlistf=\count401
+\c@location=\count402
+\c@savedlocation=\count403
+\c@organization=\count404
+\c@savedorganization=\count405
+\c@origlocation=\count406
+\c@savedoriglocation=\count407
+\c@origpublisher=\count408
+\c@savedorigpublisher=\count409
+\c@publisher=\count410
+\c@savedpublisher=\count411
+\c@language=\count412
+\c@savedlanguage=\count413
+\c@origlanguage=\count414
+\c@savedoriglanguage=\count415
+\c@pageref=\count416
+\c@savedpageref=\count417
+\shorthandwidth=\skip118
+\shortjournalwidth=\skip119
+\shortserieswidth=\skip120
+\shorttitlewidth=\skip121
+\shortauthorwidth=\skip122
+\shorteditorwidth=\skip123
+\locallabelnumberwidth=\skip124
+\locallabelalphawidth=\skip125
+\localshorthandwidth=\skip126
+\localshortjournalwidth=\skip127
+\localshortserieswidth=\skip128
+\localshorttitlewidth=\skip129
+\localshortauthorwidth=\skip130
+\localshorteditorwidth=\skip131
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compa
+t.def
+File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.
+def
+File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+\c@textcitecount=\count418
+\c@textcitetotal=\count419
+\c@textcitemaxnames=\count420
+\c@biburlbigbreakpenalty=\count421
+\c@biburlbreakpenalty=\count422
+\c@biburlnumpenalty=\count423
+\c@biburlucpenalty=\count424
+\c@biburllcpenalty=\count425
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count426
+)
+Package biblatex Info: Trying to load bibliography style 'mipt-thesis'...
+Package biblatex Info: ... file 'mipt-thesis.bbx' found.
+ (mipt-thesis.bbx
+File: numeric-verb.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numer
+ic.bbx
+File: numeric.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\stand
+ard.bbx
+File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count427
+\c@bbx:relatedtotal=\count428
+))
+
+Package biblatex Warning: Macro 'volume+number+eid' already defined.
+(biblatex)                Using \renewbibmacro.
+
+)
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numer
+ic-comp.cbx
+File: numeric-comp.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count429
+\c@cbx@tempcntb=\count430
+\c@cbx@tempcntc=\count431
+\c@cbx@tempcntd=\count432
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.
+cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-01-04 L3 programming layer (loader) 
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backen
+d-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count433
+\l__pdf_internal_box=\box64
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2024-01-04 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-
+expl3.sty
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\
+xparse.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
+)))
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorit
+hmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count434
+\c@ALC@line=\count435
+\c@ALC@rem=\count436
+\c@ALC@depth=\count437
+\ALC@tlm=\skip132
+\algorithmicindent=\skip133
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/algorithm2e\algori
+thm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count438
+\algocf@hangindent=\skip134
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpag
+e.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count439
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.st
+y
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip135
+\skiplinenumber=\skip136
+\skiprule=\skip137
+\skiphlne=\skip138
+\skiptext=\skip139
+\skiplength=\skip140
+\algomargin=\skip141
+\skipalgocfslide=\skip142
+\algowidth=\dimen187
+\inoutsize=\dimen188
+\inoutindent=\dimen189
+\interspacetitleruled=\dimen190
+\interspacealgoruled=\dimen191
+\interspacetitleboxruled=\dimen192
+\algocf@ruledwidth=\skip143
+\algocf@inoutbox=\box65
+\algocf@inputbox=\box66
+\AlCapSkip=\skip144
+\AlCapHSkip=\skip145
+\algoskipindent=\skip146
+\algocf@nlbox=\box67
+\algocf@hangingbox=\box68
+\algocf@untilbox=\box69
+\algocf@skipuntil=\skip147
+\algocf@capbox=\box70
+\algocf@lcaptionbox=\skip148
+\algoheightruledefault=\skip149
+\algoheightrule=\skip150
+\algotitleheightruledefault=\skip151
+\algotitleheightrule=\skip152
+\c@algocfline=\count440
+\c@algocfproc=\count441
+\c@algocf=\count442
+\algocf@algoframe=\box71
+\algocf@algobox=\box72
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color
+.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor
+.ltx))
+
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count443
+\@quotereset=\count444
+(Diploma.aux (Dissertation/chapter_1_folder/chapter_1.aux)
+(Dissertation/chapter_2_folder/chapter_2.aux)
+(Dissertation/chapter_3_folder/chapter_3.aux))
+\openout1 = `Diploma.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Info: Redefining \th on input line 53.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 455.24411pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=731.23584pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-47.23828pt
+* \headheight=12.5pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=38.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package translations Info: no dictionary file `translations-basic-dictionary-ru
+ssian.trsl' found. on input line 53.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts
+\translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 53.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-p
+df.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count445
+\scratchdimen=\dimen193
+\scratchbox=\box73
+\nofMPsegments=\count446
+\nofMParguments=\count447
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count448
+\MPscratchDim=\dimen194
+\MPnumerator=\count449
+\makeMPintoPDFobject=\count450
+\everyMPtoPDFconversion=\toks38
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epsto
+pdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-
+sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+Package biblatex Info: Trying to load language 'russian'...
+Package biblatex Info: ... file 'russian.lbx' found.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\russi
+an.lbx
+File: russian.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\engli
+sh.lbx
+File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `Diploma.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'Diploma.bbl' found.
+ (Diploma.bbl)
+Package biblatex Info: Reference section=0 on input line 53.
+Package biblatex Info: Reference segment=0 on input line 53.
+
+Overfull \hbox (17.57585pt too wide) in paragraph at lines 57--57
+[]\T2A/cmr/m/n/12 Вследствие ком-пакт-но-сти рас-по-ло-же-ния ком-по-нент в RF-
+чипсете мо-биль-но-го устрой-
+ []
+
+[1
+
+
+
+{C:/Users/dwx1065688/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+(Diploma.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Font Warning: Font shape `T2A/cmr/m/up' undefined
+(Font)              using `T2A/cmr/m/n' instead on input line 2.
+
+LaTeX Font Info:    Trying to load font information for U+esint on input line 2
+.
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/esint\uesint.fd
+File: uesint.fd 
+)
+Overfull \hbox (11.63928pt too wide) in paragraph at lines 9--9
+ [][] []\T2A/cmr/m/n/12 Схема ком-пен-са-ции нели-ней-ных ис-ка-же-ний в пе-ре-
+дат-чи-ке приемо- 
+ []
+
+[2]
+Overfull \hbox (0.30548pt too wide) detected at line 34
+\T2A/cmr/bx/n/12 II.. 
+ []
+
+
+Overfull \hbox (6.08774pt too wide) in paragraph at lines 42--42
+ [][] []\T2A/cmr/m/n/12 Исследование опор-ных уров-ней ком-пен-са-ции ди-на-ми-
+че-ских нели- 
+ []
+
+
+Overfull \hbox (5.70694pt too wide) detected at line 43
+\T2A/cmr/bx/n/12 III.. 
+ []
+
+
+Overfull \hbox (3.38406pt too wide) in paragraph at lines 43--43
+ [][] []\T2A/cmr/bx/n/12 Практическая ре-а-ли-за-ция нели-ней-ных кор-рек-то-ро
+в в си-сте-мах свя- 
+ []
+
+[3])
+\tf@toc=\write4
+\openout4 = `Diploma.toc'.
+
+ [4]
+
+LaTeX Warning: Citation 'dig_front_end' on page 5 undefined on input line 57.
+
+
+LaTeX Warning: Citation '3gpp_36_804' on page 5 undefined on input line 57.
+
+
+LaTeX Warning: Citation 'dpd_thesis' on page 5 undefined on input line 57.
+
+
+Overfull \hbox (16.37549pt too wide) in paragraph at lines 57--57
+\T2A/cmr/m/n/12 че-рез нели-ней-ные эле-мен-ты, та-кие как дуп-лек-се-ры и уси-
+ли-те-ли мощ-но-сти [[]].
+ []
+
+
+Overfull \hbox (2.40457pt too wide) in paragraph at lines 57--57
+[]\T2A/cmr/m/n/12 Адаптивная ком-пен-са-ция па-ра-зит-ных нели-ней-ных по-мех п
+оз-во-ля-ет улуч-шить про-
+ []
+
+[5
+
+]
+\openout2 = `Dissertation/chapter_1_folder/chapter_1.aux'.
+
+ (Dissertation/chapter_1_folder/chapter_1.tex
+Р“Р»Р°РІР° I.
+
+Overfull \hbox (9.99799pt too wide) in paragraph at lines 1--1
+|\T2A/cmr/bx/n/24.88 Методы адап-тив-ной ком-пен-са-ции нели-
+ []
+
+(Dissertation/chapter_1_folder/chapter_1_section_1.tex
+Overfull \hbox (5.18315pt too wide) in paragraph at lines 4--5
+\T2A/cmr/m/n/12 па-ра-зит-ных по-мех, воз-ни-ка-ю-щих на при-јм-ни-ке приемо-пе
+редающего устрой-ства. При-
+ []
+
+
+LaTeX Warning: Citation '3gpp_36_104' on page 1 undefined on input line 11.
+
+[1
+
+
+
+]
+<figures/2t2r_interf_propagate_1_harmonic/2t2r_interf_propagate_1_harmonic.pdf,
+ id=28, 953.48218pt x 795.93356pt>
+File: figures/2t2r_interf_propagate_1_harmonic/2t2r_interf_propagate_1_harmonic
+.pdf Graphic file (type pdf)
+<use figures/2t2r_interf_propagate_1_harmonic/2t2r_interf_propagate_1_harmonic.
+pdf>
+Package pdftex.def Info: figures/2t2r_interf_propagate_1_harmonic/2t2r_interf_p
+ropagate_1_harmonic.pdf  used on input line 20.
+(pdftex.def)             Requested size: 381.38611pt x 318.36778pt.
+<figures/interf_example/first_harmonic/first_harmonic.pdf, id=29, 462.52798pt x
+ 346.89601pt>
+File: figures/interf_example/first_harmonic/first_harmonic.pdf Graphic file (ty
+pe pdf)
+<use figures/interf_example/first_harmonic/first_harmonic.pdf>
+Package pdftex.def Info: figures/interf_example/first_harmonic/first_harmonic.p
+df  used on input line 28.
+(pdftex.def)             Requested size: 370.02287pt x 277.51718pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[2 <./figures/2t2r_interf_propagate_1_harmonic/2t2r_interf_propagate_1_harmonic
+.pdf>]
+
+LaTeX Warning: Citation 'dig_front_end' on page 3 undefined on input line 37.
+
+
+LaTeX Warning: Citation 'adapt_filt' on page 3 undefined on input line 39.
+
+<figures/ident_problem/ident_problem.pdf, id=44, 687.52856pt x 297.02968pt>
+File: figures/ident_problem/ident_problem.pdf Graphic file (type pdf)
+<use figures/ident_problem/ident_problem.pdf>
+Package pdftex.def Info: figures/ident_problem/ident_problem.pdf  used on input
+ line 42.
+(pdftex.def)             Requested size: 412.52032pt x 178.21918pt.
+
+Overfull \hbox (13.98172pt too wide) in paragraph at lines 39--46
+\T2A/cmr/m/n/12 ции нели-ней-ной мо-де-ли по кри-те-рию ми-ни-му-ма сред-не-го 
+квад-ра-та ошиб-ки [[]].
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[3 <./figures/interf_example/first_harmonic/first_harmonic.pdf>]
+<figures/tx_digial_distortion/tx_digial_distortion.pdf, id=96, 462.52798pt x 34
+6.89601pt>
+File: figures/tx_digial_distortion/tx_digial_distortion.pdf Graphic file (type 
+pdf)
+<use figures/tx_digial_distortion/tx_digial_distortion.pdf>
+Package pdftex.def Info: figures/tx_digial_distortion/tx_digial_distortion.pdf 
+ used on input line 101.
+(pdftex.def)             Requested size: 370.02287pt x 277.51718pt.
+
+Overfull \hbox (12.19383pt too wide) in paragraph at lines 108--109
+[]\T2A/cmr/m/n/12 Для предот-вра-ще-ния ис-ка-же-ний в со-вре-мен-ных ба-зо-вых
+ стан-ци-ях и со-то-вых устрой-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[4 <./figures/ident_problem/ident_problem.pdf>]
+<figures/dpd_dynamic/dpd_scheme/dpd_scheme.pdf, id=122, 664.40218pt x 293.1753p
+t>
+File: figures/dpd_dynamic/dpd_scheme/dpd_scheme.pdf Graphic file (type pdf)
+<use figures/dpd_dynamic/dpd_scheme/dpd_scheme.pdf>
+Package pdftex.def Info: figures/dpd_dynamic/dpd_scheme/dpd_scheme.pdf  used on
+ input line 113.
+(pdftex.def)             Requested size: 398.64438pt x 175.90652pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[5 <./figures/tx_digial_distortion/tx_digial_distortion.pdf> <./figures/dpd_dyn
+amic/dpd_scheme/dpd_scheme.pdf>])
+(Dissertation/chapter_1_folder/chapter_1_section_2.tex
+
+LaTeX Warning: Citation 'adapt_filt_haykin' on page 6 undefined on input line 4
+3.
+
+
+LaTeX Warning: Citation 'adapt_filt_haykin' on page 6 undefined on input line 4
+5.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[6]
+
+LaTeX Warning: Citation 'convex_opt' on page 7 undefined on input line 51.
+
+
+LaTeX Warning: Citation 'sklyar_dig_telecom' on page 7 undefined on input line 
+65.
+
+
+LaTeX Warning: Citation 'polyak_optimiz' on page 7 undefined on input line 69.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[7]
+
+LaTeX Warning: Citation 'polyak_optimiz' on page 8 undefined on input line 93.
+
+
+LaTeX Warning: Citation 'wirt_deriv_book' on page 8 undefined on input line 95.
+
+
+
+LaTeX Warning: Citation 'wirt_deriv_book' on page 8 undefined on input line 108
+.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[8]
+
+LaTeX Warning: Citation 'polyak1964' on page 9 undefined on input line 148.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[9]
+
+LaTeX Warning: Citation 'nesterov1983method' on page 10 undefined on input line
+ 159.
+
+
+LaTeX Warning: Citation 'kingma2014adam' on page 10 undefined on input line 171
+.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[10]) (Dissertation/chapter_1_folder/chapter_1_section_3.tex
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[11]
+
+LaTeX Warning: Citation 'complex_deriv' on page 12 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'wirt_deriv_book' on page 12 undefined on input line 90
+.
+
+
+Overfull \hbox (13.9243pt too wide) in paragraph at lines 89--91
+\T2A/cmr/m/n/12 клад-ках [] ис-поль-зо-ва-но свой-ство $[]\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 ABC\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 C[] \OMS/cmsy/m/n/12 
+ \OML/cmm/m/it/12 A\OT1/cmr/m/n/12 )[](\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 )$ \T2
+A/cmr/m/n/12 [[]]. 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[12]
+
+LaTeX Warning: Citation 'polyak_optimiz' on page 13 undefined on input line 138
+.
+
+
+LaTeX Warning: Citation 'polyak_optimiz' on page 13 undefined on input line 140
+.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[13]
+
+LaTeX Warning: Citation 'nesterov' on page 14 undefined on input line 152.
+
+
+LaTeX Warning: Reference `mse' on page 14 undefined on input line 199.
+
+
+LaTeX Warning: Reference `mse' on page 14 undefined on input line 199.
+
+
+LaTeX Warning: Citation 'mixed_newton' on page 14 undefined on input line 199.
+
+
+LaTeX Warning: Citation 'mixed_newton' on page 14 undefined on input line 201.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[14]
+
+LaTeX Warning: Reference `grad' on page 15 undefined on input line 208.
+
+
+LaTeX Warning: Reference `grad' on page 15 undefined on input line 217.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[15]
+
+LaTeX Warning: Citation 'matrix_comput' on page 16 undefined on input line 223.
+
+
+
+LaTeX Warning: Citation 'matrix_comput' on page 16 undefined on input line 223.
+
+
+
+Overfull \hbox (75.0687pt too wide) in paragraph at lines 223--224
+[]\T2A/cmr/m/n/12 Отдельно от-ме-тим, что слож-ность хра-не-ния гес-си-а-на оце
+-ни-ва-ет-ся как $\OML/cmm/m/it/12 o\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 M[]\OT1/c
+mr/m/n/12 )$ \T2A/cmr/m/n/12 [[]],
+ []
+
+
+LaTeX Warning: Reference `diff_equat_newton_hammerst' on page 16 undefined on i
+nput line 225.
+
+
+LaTeX Warning: Citation 'convex_opt' on page 16 undefined on input line 228.
+
+
+LaTeX Warning: Citation 'adapt_filt_haykin' on page 16 undefined on input line 
+230.
+
+
+LaTeX Warning: Citation 'wirt_deriv_tech_rep' on page 16 undefined on input lin
+e 255.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[16]
+
+LaTeX Warning: Citation 'wirt_deriv_book' on page 17 undefined on input line 27
+6.
+
+
+LaTeX Warning: Citation 'nesterov' on page 17 undefined on input line 316.
+
+) (Dissertation/chapter_1_folder/chapter_1_section_4.tex
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[17]
+Overfull \hbox (3.22873pt too wide) in paragraph at lines 1--1
+\T2A/cmr/bx/n/17.28 ний не тре-бу-ю-щие яв-но-го вы-чис-ле-ния мат-ри-цы Гес-
+ []
+
+
+LaTeX Warning: Citation 'matrix_comput' on page 18 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'dcd_alg_thesis' on page 18 undefined on input line 8.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[18]
+
+LaTeX Warning: Citation 'dcd_alg_thesis' on page 19 undefined on input line 36.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[19]
+
+LaTeX Warning: Citation 'dcd_alg_thesis' on page 20 undefined on input line 110
+.
+
+
+LaTeX Warning: Reference `hammerst_out_fir_pla' on page 20 undefined on input l
+ine 148.
+
+
+LaTeX Warning: Reference `hammerst_matr_vec_comp' on page 20 undefined on input
+ line 148.
+
+
+Overfull \hbox (20.6837pt too wide) in paragraph at lines 148--149
+\T2A/cmr/m/n/12 блоч-ная ре-а-ли-за-ция гра-ди-ент-но-го спус-ка. Вы-ход мо-де-
+ли пред-став-ля-ет-ся в ви-де векторно-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[20]
+
+LaTeX Warning: Citation 'nesterov' on page 21 undefined on input line 173.
+
+
+LaTeX Warning: Reference `approx_second' on page 21 undefined on input line 177
+.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[21]
+
+LaTeX Warning: Reference `newton_alg' on page 22 undefined on input line 211.
+
+
+LaTeX Warning: Citation 'fletcher' on page 22 undefined on input line 234.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[22]
+Overfull \hbox (5.18599pt too wide) in paragraph at lines 251--253
+\T2A/cmr/m/n/12 Требование [] при-во-дит к ква-зи-нью-то-нов-ско-му урав-не-нию
+ (ан-гл. Secant equation): 
+ []
+
+
+LaTeX Warning: Citation 'pract_optimiz' on page 23 undefined on input line 279.
+
+
+
+LaTeX Warning: Citation 'bb_method' on page 23 undefined on input line 279.
+
+
+Overfull \hbox (79.2211pt too wide) in paragraph at lines 279--280
+[]\T2A/cmr/m/n/12 Далее рас-смот-рим та-кие при-ме-ры ква-зи-нью-то-нов-ских ме
+-то-дов, как DFP, BFGS [[]]
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[23]
+
+LaTeX Warning: Citation 'bb_method' on page 24 undefined on input line 300.
+
+
+Overfull \hbox (45.26216pt too wide) in paragraph at lines 299--301
+\T2A/cmr/m/n/12 где при-бли-жен-ное ра-вен-ство фор-ма-ли-зу-ет-ся сле-ду-ю-щей
+ за-да-чей ми-ни-ми-за-ции [[]]: 
+ []
+
+
+Overfull \hbox (1.7533pt too wide) in paragraph at lines 312--313
+[]\T2A/cmr/m/n/12 Данный ме-тод не яв-ля-ет-ся гра-ди-ент-ный спус-ком, по-скол
+ь-ку учи-ты-ва-ет два преды-
+ []
+
+
+LaTeX Warning: Citation 'pract_optimiz' on page 24 undefined on input line 314.
+
+
+
+LaTeX Warning: Citation 'pract_optimiz' on page 24 undefined on input line 314.
+
+
+
+LaTeX Warning: Citation 'fletcher' on page 24 undefined on input line 326.
+
+
+LaTeX Warning: Citation 'matrix_calc' on page 24 undefined on input line 336.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[24]
+
+LaTeX Warning: Citation 'pract_optimiz' on page 25 undefined on input line 350.
+
+
+
+LaTeX Warning: Citation 'bfgs_fletcher' on page 25 undefined on input line 362.
+
+
+
+Overfull \hbox (11.27536pt too wide) in paragraph at lines 361--363
+\T2A/cmr/m/n/12 Аналитическое ре-ше-ние за-да-чи [] за-пи-сы-ва-ет-ся в ви-де в
+ы-ра-же-ния [[]]: 
+ []
+
+
+LaTeX Warning: Citation 'lbfgs' on page 25 undefined on input line 379.
+
+) (Dissertation/chapter_1_folder/chapter_1_section_5.tex
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[25]
+
+LaTeX Warning: Citation 'dsp_layons' on page 26 undefined on input line 17.
+
+
+LaTeX Warning: Citation 'adapt_filt_haykin' on page 26 undefined on input line 
+40.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[26]
+Overfull \hbox (0.12823pt too wide) in paragraph at lines 63--65
+\T2A/cmr/m/n/12 рав-ную по-ло-вине дли-ны филь-тра. Та-кой спо-соб вы-ра-же-ния
+ вы-ход-ных от-сче-тов филь-
+ []
+
+
+LaTeX Warning: Citation 'dsp_oppenheim' on page 27 undefined on input line 66.
+
+
+LaTeX Warning: Citation 'adapt_filt_haykin' on page 27 undefined on input line 
+68.
+
+
+LaTeX Warning: Citation 'marpl_spectr' on page 27 undefined on input line 68.
+
+
+Overfull \hbox (1.491pt too wide) in paragraph at lines 66--69
+\T2A/cmr/m/n/12 Кор-ре-ля-ци-он-ная мат-ри-ца [[]] яв-ля-ет-ся цен-траль-ным об
+ъ-ек-том при
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[27]
+
+LaTeX Warning: Citation 'marpl_spectr' on page 28 undefined on input line 114.
+
+
+LaTeX Warning: Citation 'marpl_spectr' on page 28 undefined on input line 136.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[28]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[29]
+
+LaTeX Warning: Citation 'pa_models' on page 30 undefined on input line 212.
+
+
+LaTeX Warning: Citation 'dpd_models' on page 30 undefined on input line 212.
+
+
+Overfull \hbox (28.41245pt too wide) in paragraph at lines 212--213
+\T2A/cmr/m/n/12 мощ-но-сти [[]], та-ких как мо-дель Ви-не-ра, Гам-мер-штей-на, 
+Винера-Гаммерштейна,
+ []
+
+
+LaTeX Warning: Reference `fig:hammerstein' on page 30 undefined on input line 2
+14.
+
+
+LaTeX Warning: Reference `fig:hammerstein' on page 30 undefined on input line 2
+20.
+
+
+LaTeX Warning: Citation 'dpd_models' on page 30 undefined on input line 220.
+
+
+LaTeX Warning: Reference `fig:hammerstein' on page 30 undefined on input line 2
+25.
+
+
+LaTeX Warning: Reference `fig:hammerstein' on page 30 undefined on input line 2
+32.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[30]
+
+LaTeX Warning: Citation 'dpd_models' on page 31 undefined on input line 234.
+
+
+LaTeX Warning: Citation 'dpd_models' on page 31 undefined on input line 245.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[31]
+Underfull \hbox (badness 10000) detected at line 323
+ []$[]   \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 :$ [][]  
+ []
+
+
+LaTeX Warning: Citation 'dpd_models' on page 32 undefined on input line 327.
+
+
+LaTeX Warning: Citation 'spec_func' on page 32 undefined on input line 331.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[32]
+
+LaTeX Warning: Citation 'spec_func' on page 33 undefined on input line 341.
+
+
+LaTeX Warning: Citation 'spec_func' on page 33 undefined on input line 351.
+
+
+LaTeX Warning: Citation 'spec_func' on page 33 undefined on input line 361.
+
+
+LaTeX Warning: Reference `hammerstein_out_scalar' on page 33 undefined on input
+ line 485.
+
+
+LaTeX Warning: Reference `nonlin_pa_out_pla' on page 33 undefined on input line
+ 485.
+
+
+LaTeX Warning: Reference `fir_input' on page 33 undefined on input line 487.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[33]
+
+LaTeX Warning: Reference `state_matr_pla' on page 34 undefined on input line 50
+1.
+
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/submatrix_q/submatrix_q.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/submatrix_q/submatrix_q.pdf, id=287, 404.47108pt x 211.7511pt>
+File: figures/submatrix_q/submatrix_q.pdf Graphic file (type pdf)
+<use figures/submatrix_q/submatrix_q.pdf>
+Package pdftex.def Info: figures/submatrix_q/submatrix_q.pdf  used on input lin
+e 506.
+(pdftex.def)             Requested size: 485.36287pt x 254.10002pt.
+
+Overfull \hbox (30.11876pt too wide) in paragraph at lines 506--507
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[34 <./figures/submatrix_q/submatrix_q.pdf>]))
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[35]
+\openout2 = `Dissertation/chapter_2_folder/chapter_2.aux'.
+
+ (Dissertation/chapter_2_folder/chapter_2.tex
+Р“Р»Р°РІР° II.
+(Dissertation/chapter_2_folder/chapter_2_section_1.tex
+<figures/install/install.pdf, id=303, 1373.13pt x 637.42137pt>
+File: figures/install/install.pdf Graphic file (type pdf)
+<use figures/install/install.pdf>
+Package pdftex.def Info: figures/install/install.pdf  used on input line 8.
+(pdftex.def)             Requested size: 480.6027pt x 223.10081pt.
+
+Overfull \hbox (25.3586pt too wide) in paragraph at lines 8--9
+ [][] 
+ []
+
+
+LaTeX Warning: Citation '3gpp_sample_rate' on page 36 undefined on input line 1
+5.
+
+<figures/capture/capture.pdf, id=304, 462.52798pt x 345.4506pt>
+File: figures/capture/capture.pdf Graphic file (type pdf)
+<use figures/capture/capture.pdf>
+Package pdftex.def Info: figures/capture/capture.pdf  used on input line 20.
+(pdftex.def)             Requested size: 370.02287pt x 276.36086pt.
+<figures/signal_generation/tx_rb75.pdf, id=305, 505.89pt x 361.35pt>
+File: figures/signal_generation/tx_rb75.pdf Graphic file (type pdf)
+<use figures/signal_generation/tx_rb75.pdf>
+Package pdftex.def Info: figures/signal_generation/tx_rb75.pdf  used on input l
+ine 28.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/signal_generation/pa_out_rb75.pdf, id=306, 505.89pt x 361.35pt>
+File: figures/signal_generation/pa_out_rb75.pdf Graphic file (type pdf)
+<use figures/signal_generation/pa_out_rb75.pdf>
+Package pdftex.def Info: figures/signal_generation/pa_out_rb75.pdf  used on inp
+ut line 34.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 27--38
+[][]   [] 
+ []
+
+[36
+
+
+
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[37 <./figures/install/install.pdf> <./figures/capture/capture.pdf>]
+<figures/freq_resp/path2.pdf, id=347, 505.89pt x 361.35pt>
+File: figures/freq_resp/path2.pdf Graphic file (type pdf)
+<use figures/freq_resp/path2.pdf>
+Package pdftex.def Info: figures/freq_resp/path2.pdf  used on input line 55.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/signal_generation/rx_rb75_path2.pdf, id=348, 505.89pt x 361.35pt>
+File: figures/signal_generation/rx_rb75_path2.pdf Graphic file (type pdf)
+<use figures/signal_generation/rx_rb75_path2.pdf>
+Package pdftex.def Info: figures/signal_generation/rx_rb75_path2.pdf  used on i
+nput line 61.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 54--65
+[][]   [] 
+ []
+
+) (Dissertation/chapter_2_folder/chapter_2_section_2.tex
+
+LaTeX Warning: Citation '3gpp_36_211' on page 38 undefined on input line 2.
+
+
+LaTeX Warning: Citation '3gpp_36_211' on page 38 undefined on input line 4.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[38 <./figures/signal_generation/tx_rb75.pdf> <./figures/signal_generation/pa_o
+ut_rb75.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation '3gpp_36_211' on page 39 undefined on input line 37.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (Dissertation/chapter_2_folder/chapter_2_section_3.tex
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[39 <./figures/freq_resp/path2.pdf> <./figures/signal_generation/rx_rb75_path2.
+pdf>]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[40]
+<figures/adapt_curves/newton_simple_stogn_20_epoch.pdf, id=511, 462.52798pt x 3
+46.89601pt>
+File: figures/adapt_curves/newton_simple_stogn_20_epoch.pdf Graphic file (type 
+pdf)
+<use figures/adapt_curves/newton_simple_stogn_20_epoch.pdf>
+Package pdftex.def Info: figures/adapt_curves/newton_simple_stogn_20_epoch.pdf 
+ used on input line 15.
+(pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
+<figures/adapt_curves/newton_simple_stogn_400_epoch.pdf, id=512, 462.52798pt x 
+346.89601pt>
+File: figures/adapt_curves/newton_simple_stogn_400_epoch.pdf Graphic file (type
+ pdf)
+<use figures/adapt_curves/newton_simple_stogn_400_epoch.pdf>
+Package pdftex.def Info: figures/adapt_curves/newton_simple_stogn_400_epoch.pdf
+  used on input line 21.
+(pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 14--25
+[][]   [] 
+ []
+
+<figures/tx/tx_rb1.pdf, id=513, 505.89pt x 361.35pt>
+File: figures/tx/tx_rb1.pdf Graphic file (type pdf)
+<use figures/tx/tx_rb1.pdf>
+Package pdftex.def Info: figures/tx/tx_rb1.pdf  used on input line 38.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/freq_resp/path0.pdf, id=514, 505.89pt x 361.35pt>
+File: figures/freq_resp/path0.pdf Graphic file (type pdf)
+<use figures/freq_resp/path0.pdf>
+Package pdftex.def Info: figures/freq_resp/path0.pdf  used on input line 44.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 37--48
+[]$[]$   $[]$ 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/psd/psd_newton_rb1_path0.pdf, id=515, 505.89pt x 361.35pt>
+File: figures/psd/psd_newton_rb1_path0.pdf Graphic file (type pdf)
+<use figures/psd/psd_newton_rb1_path0.pdf>
+Package pdftex.def Info: figures/psd/psd_newton_rb1_path0.pdf  used on input li
+ne 55.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_newton_rb1_path0_expanded.pdf, id=516, 505.89pt x 361.35pt>
+File: figures/psd/psd_newton_rb1_path0_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_newton_rb1_path0_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_newton_rb1_path0_expanded.pdf  used on
+ input line 61.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 54--65
+[]$[]$   $[]$ 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[41 <./figures/adapt_curves/newton_simple_stogn_20_epoch.pdf> <./figures/adapt_
+curves/newton_simple_stogn_400_epoch.pdf>]
+<figures/tx/tx_rb50.pdf, id=595, 505.89pt x 361.35pt>
+File: figures/tx/tx_rb50.pdf Graphic file (type pdf)
+<use figures/tx/tx_rb50.pdf>
+Package pdftex.def Info: figures/tx/tx_rb50.pdf  used on input line 72.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/freq_resp/path1.pdf, id=596, 505.89pt x 361.35pt>
+File: figures/freq_resp/path1.pdf Graphic file (type pdf)
+<use figures/freq_resp/path1.pdf>
+Package pdftex.def Info: figures/freq_resp/path1.pdf  used on input line 78.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 71--82
+[][]   [] 
+ []
+
+<figures/psd/psd_newton_rb50_path1.pdf, id=597, 505.89pt x 361.35pt>
+File: figures/psd/psd_newton_rb50_path1.pdf Graphic file (type pdf)
+<use figures/psd/psd_newton_rb50_path1.pdf>
+Package pdftex.def Info: figures/psd/psd_newton_rb50_path1.pdf  used on input l
+ine 89.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_newton_rb50_path1_expanded.pdf, id=598, 505.89pt x 361.35pt>
+File: figures/psd/psd_newton_rb50_path1_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_newton_rb50_path1_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_newton_rb50_path1_expanded.pdf  used o
+n input line 95.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 88--99
+[][]   [] 
+ []
+
+<figures/tx/tx_rb100.pdf, id=599, 505.89pt x 361.35pt>
+File: figures/tx/tx_rb100.pdf Graphic file (type pdf)
+<use figures/tx/tx_rb100.pdf>
+Package pdftex.def Info: figures/tx/tx_rb100.pdf  used on input line 106.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+File: figures/freq_resp/path2.pdf Graphic file (type pdf)
+<use figures/freq_resp/path2.pdf>
+Package pdftex.def Info: figures/freq_resp/path2.pdf  used on input line 112.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 105--116
+[][]   [] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[42 <./figures/tx/tx_rb1.pdf> <./figures/freq_resp/path0.pdf> <./figures/psd/ps
+d_newton_rb1_path0.pdf> <./figures/psd/psd_newton_rb1_path0_expanded.pdf>]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[43 <./figures/tx/tx_rb50.pdf> <./figures/freq_resp/path1.pdf> <./figures/psd/p
+sd_newton_rb50_path1.pdf> <./figures/psd/psd_newton_rb50_path1_expanded.pdf>]
+<figures/psd/psd_newton_rb100_path2.pdf, id=931, 505.89pt x 361.35pt>
+File: figures/psd/psd_newton_rb100_path2.pdf Graphic file (type pdf)
+<use figures/psd/psd_newton_rb100_path2.pdf>
+Package pdftex.def Info: figures/psd/psd_newton_rb100_path2.pdf  used on input 
+line 123.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_newton_rb100_path2_expanded.pdf, id=932, 505.89pt x 361.35pt>
+File: figures/psd/psd_newton_rb100_path2_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_newton_rb100_path2_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_newton_rb100_path2_expanded.pdf  used 
+on input line 129.
+(pdftex.def)             Requested size: 197.2963pt x 140.92593pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 122--133
+[][]   [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[44 <./figures/tx/tx_rb100.pdf> <./figures/psd/psd_newton_rb100_path2.pdf> <./f
+igures/psd/psd_newton_rb100_path2_expanded.pdf>])
+(Dissertation/chapter_2_folder/chapter_2_section_4.tex
+Overfull \hbox (14.87245pt too wide) in paragraph at lines 10--10
+|[]\T2A/cmr/bx/n/14.4 Аппроксимация ди-на-ми-че-ской нели-ней-но-сти на ос-но-в
+е клас-
+ []
+
+))
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[45]
+\openout2 = `Dissertation/chapter_3_folder/chapter_3.aux'.
+
+ (Dissertation/chapter_3_folder/chapter_3.tex
+Р“Р»Р°РІР° III.
+
+Overfull \hbox (2.2276pt too wide) in paragraph at lines 6--6
+|\T2A/cmr/bx/n/24.88 Практическая ре-а-ли-за-ция нели-ней-ных
+ []
+
+(Dissertation/chapter_3_folder/chapter_3_section_1.tex
+<figures/adapt_curves/adapt_curve_rb1_path0.pdf, id=1065, 462.52798pt x 346.896
+01pt>
+File: figures/adapt_curves/adapt_curve_rb1_path0.pdf Graphic file (type pdf)
+<use figures/adapt_curves/adapt_curve_rb1_path0.pdf>
+Package pdftex.def Info: figures/adapt_curves/adapt_curve_rb1_path0.pdf  used o
+n input line 15.
+(pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
+ [46
+
+
+
+
+]
+<figures/psd/psd_gd_rb1_path0.pdf, id=1069, 505.89pt x 361.35pt>
+File: figures/psd/psd_gd_rb1_path0.pdf Graphic file (type pdf)
+<use figures/psd/psd_gd_rb1_path0.pdf>
+Package pdftex.def Info: figures/psd/psd_gd_rb1_path0.pdf  used on input line 2
+5.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_gd_rb1_path0_expanded.pdf, id=1070, 505.89pt x 361.35pt>
+File: figures/psd/psd_gd_rb1_path0_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_gd_rb1_path0_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_gd_rb1_path0_expanded.pdf  used on inp
+ut line 31.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 24--35
+[][]   [] 
+ []
+
+<figures/psd/psd_sgd_sgd_rb1_path0.pdf, id=1071, 505.89pt x 361.35pt>
+File: figures/psd/psd_sgd_sgd_rb1_path0.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_sgd_rb1_path0.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb1_path0.pdf  used on input l
+ine 40.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_sgd_sgd_rb1_path0_expanded.pdf, id=1072, 505.89pt x 361.35pt>
+File: figures/psd/psd_sgd_sgd_rb1_path0_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_sgd_rb1_path0_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb1_path0_expanded.pdf  used o
+n input line 46.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 39--50
+[][]   [] 
+ []
+
+<figures/psd/psd_sgd_dcd_rb1_path0.pdf, id=1073, 505.89pt x 361.35pt>
+File: figures/psd/psd_sgd_dcd_rb1_path0.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_dcd_rb1_path0.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb1_path0.pdf  used on input l
+ine 55.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_sgd_dcd_rb1_path0_expanded.pdf, id=1074, 505.89pt x 361.35pt>
+File: figures/psd/psd_sgd_dcd_rb1_path0_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_dcd_rb1_path0_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb1_path0_expanded.pdf  used o
+n input line 61.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 54--65
+[][]   [] 
+ []
+
+<figures/adapt_curves/adapt_curve_rb50_path1.pdf, id=1075, 462.52798pt x 346.89
+601pt>
+File: figures/adapt_curves/adapt_curve_rb50_path1.pdf Graphic file (type pdf)
+<use figures/adapt_curves/adapt_curve_rb50_path1.pdf>
+Package pdftex.def Info: figures/adapt_curves/adapt_curve_rb50_path1.pdf  used 
+on input line 73.
+(pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[47 <./figures/adapt_curves/adapt_curve_rb1_path0.pdf> <./figures/psd/psd_gd_rb
+1_path0.pdf> <./figures/psd/psd_gd_rb1_path0_expanded.pdf>]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[48 <./figures/psd/psd_sgd_sgd_rb1_path0.pdf> <./figures/psd/psd_sgd_sgd_rb1_pa
+th0_expanded.pdf> <./figures/psd/psd_sgd_dcd_rb1_path0.pdf> <./figures/psd/psd_
+sgd_dcd_rb1_path0_expanded.pdf>]
+<figures/psd/psd_gd_rb50_path1.pdf, id=1390, 505.89pt x 361.35pt>
+File: figures/psd/psd_gd_rb50_path1.pdf Graphic file (type pdf)
+<use figures/psd/psd_gd_rb50_path1.pdf>
+Package pdftex.def Info: figures/psd/psd_gd_rb50_path1.pdf  used on input line 
+85.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_gd_rb50_path1_expanded.pdf, id=1391, 505.89pt x 361.35pt>
+File: figures/psd/psd_gd_rb50_path1_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_gd_rb50_path1_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_gd_rb50_path1_expanded.pdf  used on in
+put line 91.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 84--95
+[]$[]$   $[]$ 
+ []
+
+<figures/psd/psd_sgd_sgd_rb50_path1.pdf, id=1392, 505.89pt x 361.35pt>
+File: figures/psd/psd_sgd_sgd_rb50_path1.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_sgd_rb50_path1.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb50_path1.pdf  used on input 
+line 100.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_sgd_sgd_rb50_path1_expanded.pdf, id=1393, 505.89pt x 361.35pt>
+
+File: figures/psd/psd_sgd_sgd_rb50_path1_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_sgd_rb50_path1_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb50_path1_expanded.pdf  used 
+on input line 106.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 99--110
+[]$[]$   $[]$ 
+ []
+
+<figures/psd/psd_sgd_dcd_rb50_path1.pdf, id=1394, 505.89pt x 361.35pt>
+File: figures/psd/psd_sgd_dcd_rb50_path1.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_dcd_rb50_path1.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb50_path1.pdf  used on input 
+line 115.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_sgd_dcd_rb50_path1_expanded.pdf, id=1395, 505.89pt x 361.35pt>
+
+File: figures/psd/psd_sgd_dcd_rb50_path1_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_dcd_rb50_path1_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb50_path1_expanded.pdf  used 
+on input line 121.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 114--125
+[]$[]$   $[]$ 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/adapt_curves/adapt_curve_rb100_path2.pdf, id=1396, 462.52798pt x 346.8
+9601pt>
+File: figures/adapt_curves/adapt_curve_rb100_path2.pdf Graphic file (type pdf)
+<use figures/adapt_curves/adapt_curve_rb100_path2.pdf>
+Package pdftex.def Info: figures/adapt_curves/adapt_curve_rb100_path2.pdf  used
+ on input line 132.
+(pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
+<figures/psd/psd_gd_rb100_path2.pdf, id=1397, 505.89pt x 361.35pt>
+File: figures/psd/psd_gd_rb100_path2.pdf Graphic file (type pdf)
+<use figures/psd/psd_gd_rb100_path2.pdf>
+Package pdftex.def Info: figures/psd/psd_gd_rb100_path2.pdf  used on input line
+ 138.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_gd_rb100_path2_expanded.pdf, id=1398, 505.89pt x 361.35pt>
+File: figures/psd/psd_gd_rb100_path2_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_gd_rb100_path2_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_gd_rb100_path2_expanded.pdf  used on i
+nput line 144.
+(pdftex.def)             Requested size: 197.2963pt x 140.92593pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 137--148
+[]$[]$   $[]$ 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[49 <./figures/adapt_curves/adapt_curve_rb50_path1.pdf> <./figures/psd/psd_gd_r
+b50_path1.pdf> <./figures/psd/psd_gd_rb50_path1_expanded.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[50 <./figures/psd/psd_sgd_sgd_rb50_path1.pdf> <./figures/psd/psd_sgd_sgd_rb50_
+path1_expanded.pdf> <./figures/psd/psd_sgd_dcd_rb50_path1.pdf> <./figures/psd/p
+sd_sgd_dcd_rb50_path1_expanded.pdf> <./figures/adapt_curves/adapt_curve_rb100_p
+ath2.pdf>]
+<figures/psd/psd_sgd_sgd_rb100_path2.pdf, id=1757, 505.89pt x 361.35pt>
+File: figures/psd/psd_sgd_sgd_rb100_path2.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_sgd_rb100_path2.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb100_path2.pdf  used on input
+ line 158.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_sgd_sgd_rb100_path2_expanded.pdf, id=1758, 505.89pt x 361.35pt
+>
+File: figures/psd/psd_sgd_sgd_rb100_path2_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_sgd_rb100_path2_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb100_path2_expanded.pdf  used
+ on input line 164.
+(pdftex.def)             Requested size: 197.2963pt x 140.92593pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 157--168
+[]$[]$   $[]$ 
+ []
+
+<figures/psd/psd_sgd_dcd_rb100_path2.pdf, id=1759, 505.89pt x 361.35pt>
+File: figures/psd/psd_sgd_dcd_rb100_path2.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_dcd_rb100_path2.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb100_path2.pdf  used on input
+ line 173.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_sgd_dcd_rb100_path2_expanded.pdf, id=1760, 505.89pt x 361.35pt
+>
+File: figures/psd/psd_sgd_dcd_rb100_path2_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_sgd_dcd_rb100_path2_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb100_path2_expanded.pdf  used
+ on input line 179.
+(pdftex.def)             Requested size: 197.2963pt x 140.92593pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 172--183
+[]$[]$   $[]$ 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[51 <./figures/psd/psd_gd_rb100_path2.pdf> <./figures/psd/psd_gd_rb100_path2_ex
+panded.pdf> <./figures/psd/psd_sgd_sgd_rb100_path2.pdf> <./figures/psd/psd_sgd_
+sgd_rb100_path2_expanded.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[52 <./figures/psd/psd_sgd_dcd_rb100_path2.pdf> <./figures/psd/psd_sgd_dcd_rb10
+0_path2_expanded.pdf>]
+
+LaTeX Warning: Reference `fig:adapt_curves_rb1_path1' on page 53 undefined on i
+nput line 261.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb1_path2' on page 53 undefined on i
+nput line 261.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[53]
+
+LaTeX Warning: Reference `fig:adapt_curves_rb25_path0' on page 54 undefined on 
+input line 263.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb25_path1' on page 54 undefined on 
+input line 263.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb25_path2' on page 54 undefined on 
+input line 263.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb50_path0' on page 54 undefined on 
+input line 263.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb50_path2' on page 54 undefined on 
+input line 263.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb75_path0' on page 54 undefined on 
+input line 265.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb75_path1' on page 54 undefined on 
+input line 265.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb75_path2' on page 54 undefined on 
+input line 265.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb100_path0' on page 54 undefined on
+ input line 267.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb100_path1' on page 54 undefined on
+ input line 267.
+
+) (Dissertation/chapter_3_folder/chapter_3_section_2.tex
+Overfull \hbox (12.76907pt too wide) in paragraph at lines 1--1
+|[]\T2A/cmr/bx/n/17.28 Сокращение ре-сур-сов при ре-а-ли-за-ции мо-де-лей нели-
+
+ []
+
+) (Dissertation/chapter_3_folder/chapter_3_section_3.tex
+Overfull \hbox (12.76907pt too wide) in paragraph at lines 1--1
+|[]\T2A/cmr/bx/n/17.28 Сокращение ре-сур-сов при ре-а-ли-за-ции мо-де-лей нели-
+
+ []
+
+
+Overfull \hbox (12.76907pt too wide) in paragraph at lines 3--3
+|[]\T2A/cmr/bx/n/17.28 Сокращение ре-сур-сов при ре-а-ли-за-ции мо-де-лей нели-
+
+ []
+
+) (Dissertation/chapter_3_folder/chapter_3_section_4.tex
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[54]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[55]
+
+LaTeX Warning: Citation 'fir_quant' on page 56 undefined on input line 14.
+
+
+LaTeX Warning: Citation 'fir_quant' on page 56 undefined on input line 24.
+
+
+Overfull \hbox (12.03079pt too wide) in paragraph at lines 26--27
+[]\T2A/cmr/m/up/12 Приведјм при-ме-ры ра-бо-ты ал-го-рит-ма для со-кра-ще-ния ч
+ис-ла умно-жи-те-лей линейно-
+ []
+
+<figures/linear_phase_lpf/LPF_ir.pdf, id=2043, 275.5906pt x 228.20659pt>
+File: figures/linear_phase_lpf/LPF_ir.pdf Graphic file (type pdf)
+<use figures/linear_phase_lpf/LPF_ir.pdf>
+Package pdftex.def Info: figures/linear_phase_lpf/LPF_ir.pdf  used on input lin
+e 33.
+(pdftex.def)             Requested size: 275.58992pt x 228.20602pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/linear_phase_lpf/LPF_spectrum.pdf, id=2044, 293.7133pt x 256.97908pt>
+File: figures/linear_phase_lpf/LPF_spectrum.pdf Graphic file (type pdf)
+<use figures/linear_phase_lpf/LPF_spectrum.pdf>
+Package pdftex.def Info: figures/linear_phase_lpf/LPF_spectrum.pdf  used on inp
+ut line 43.
+(pdftex.def)             Requested size: 293.71259pt x 256.97845pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[56]
+<figures/linear_phase_bpf/BPF_ir.pdf, id=2049, 287.81226pt x 224.56898pt>
+File: figures/linear_phase_bpf/BPF_ir.pdf Graphic file (type pdf)
+<use figures/linear_phase_bpf/BPF_ir.pdf>
+Package pdftex.def Info: figures/linear_phase_bpf/BPF_ir.pdf  used on input lin
+e 53.
+(pdftex.def)             Requested size: 287.81154pt x 224.56842pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[57 <./figures/linear_phase_lpf/LPF_ir.pdf> <./figures/linear_phase_lpf/LPF_spe
+ctrum.pdf>]
+<figures/linear_phase_bpf/BPF_spectrum.pdf, id=2109, 293.7133pt x 256.97908pt>
+File: figures/linear_phase_bpf/BPF_spectrum.pdf Graphic file (type pdf)
+<use figures/linear_phase_bpf/BPF_spectrum.pdf>
+Package pdftex.def Info: figures/linear_phase_bpf/BPF_spectrum.pdf  used on inp
+ut line 63.
+(pdftex.def)             Requested size: 293.71259pt x 256.97845pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[58 <./figures/linear_phase_bpf/BPF_ir.pdf> <./figures/linear_phase_bpf/BPF_spe
+ctrum.pdf>]
+<figures/minimum_phase_lpf/min_phase_LPF_ir.pdf, id=2161, 287.81226pt x 224.573
+pt>
+File: figures/minimum_phase_lpf/min_phase_LPF_ir.pdf Graphic file (type pdf)
+<use figures/minimum_phase_lpf/min_phase_LPF_ir.pdf>
+Package pdftex.def Info: figures/minimum_phase_lpf/min_phase_LPF_ir.pdf  used o
+n input line 76.
+(pdftex.def)             Requested size: 287.81154pt x 224.57243pt.
+<figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf, id=2162, 298.71399pt x 2
+57.39865pt>
+File: figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf Graphic file (type p
+df)
+<use figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf>
+Package pdftex.def Info: figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf  
+used on input line 88.
+(pdftex.def)             Requested size: 298.71326pt x 257.39801pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Citation 'fir_quant' on page 59 undefined on input line 92.
+
+))
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[59 <./figures/minimum_phase_lpf/min_phase_LPF_ir.pdf>]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[60 <./figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf>] [61
+
+
+
+
+]
+
+LaTeX Warning: Empty bibliography on input line 71.
+
+(Diploma.aux (Dissertation/chapter_1_folder/chapter_1.aux)
+(Dissertation/chapter_2_folder/chapter_2.aux)
+(Dissertation/chapter_3_folder/chapter_3.aux))
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Diploma
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'Diploma.run.xml'.
+\openout1 = `Diploma.run.xml'.
+
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 38 (\begingroup)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 22434 strings out of 474485
+ 479228 string characters out of 5741373
+ 1949542 words of memory out of 5000000
+ 44379 multiletter control sequences out of 15000+600000
+ 580664 words of font info for 84 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 103i,23n,108p,1592b,11811s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/l
+h-t2a/dpi600\larm1095.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/lj
+four/lh/lh-t2a/dpi600\labx0800.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fo
+nts/pk/ljfour/lh/lh-t2a/dpi600\lati1200.pk> <C:\Users\dwx1065688\AppData\Local\
+MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm0800.pk> <C:\Users\dwx1065688\AppDa
+ta\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labi0800.pk> <C:\Users\dwx1065
+688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labi1200.pk> <C:\User
+s\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.p
+k> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
+abx1440.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
+/dpi600\labx1728.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/
+lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/p
+k/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\dwx1065688\AppData\Local\MiKTe
+X\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2488.pk><C:/Users/dwx1065688/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/dwx10656
+88/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb>
+<C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmmi12.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/dwx1065688/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/dwx1065688/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/dw
+x1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
+><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr12.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/dwx1065688/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/dwx1065688/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/dwx10
+65688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C
+:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/symbols/msam10.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Diploma.pdf (66 pages, 3355424 bytes).
+PDF statistics:
+ 2799 PDF objects out of 2984 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+

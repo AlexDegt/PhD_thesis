@@ -1,0 +1,10 @@
+*.pyc
+*.swp
+*.png
+*.pdf
+
+/doc/_build
+/doc/generated
+/build
+/dist
+/scikit_commpy.egg-info

@@ -1,0 +1,67 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\begin {document}
+\begin{tikzpicture}
+
+\begin{axis}[
+width=10cm,
+height = 4cm,
+xshift = 0cm,
+xmin = -0.5,
+xmax = 0.5,
+ymin = -90,
+ymax = 10,
+ylabel = {$|H(\omega)|^2$, dB}, 
+xtick={-0.5,  -0.25, 0, 0.25, 0.5},
+xticklabels={, , ,  ,  },
+grid = major,
+minor tick num=3]
+\addplot + [thick,  draw=black, mark = none,] table {BPF/bpf_freq_resp.txt};
+\node[fill = white] at (axis cs: -0.35, -20) {139 MULTs};
+\end{axis}
+
+\begin{axis}[
+width=10cm,
+height = 4cm,
+xshift = 0cm,
+yshift = -2.7cm,
+xmin = -0.5,
+xmax = 0.5,
+ymin = -90,
+ymax = 10,
+xtick={-0.5,  -0.25, 0, 0.25, 0.5},
+xticklabels={, , ,  ,  },
+ylabel = {$|G(\omega)|^2$, dB}, 
+grid = major,
+minor tick num=3]
+\addplot + [thick,  draw=black, mark = none,] table {BPF/bpf_reduced_freq_resp.txt};
+
+\node[fill = white] at (axis cs: -0.35, -20) {25 MULTs};
+\end{axis}
+
+\begin{axis}[
+width=10cm,
+height = 4cm,
+xshift = 0cm,
+yshift = -5.4cm,
+xmin = -0.5,
+xmax = 0.5,
+ymin = -90,
+ymax = 10,
+xtick={-0.5,  -0.25, 0, 0.25, 0.5},
+xticklabels={$-\pi$,$-\frac{\pi}{2}$ ,0 ,$\frac{\pi}{2}$  , $\pi$ },
+ylabel = {$|E(\omega)|^2$, dB}, 
+xlabel = $\omega$,
+grid = major,
+minor tick num=3]
+\addplot + [thick,  draw=black, mark = none,] table {BPF/bpf_error_freq_resp.txt};
+\node[fill = white] at (axis cs: -0.2, -20) {$|E(\omega)|^2  = |H(\omega) - G(\omega)|^2$};
+\draw[<->] (axis cs: 0.3, -60) -- (axis cs: 0.3, 0);
+\node [fill = white, above, rotate = 90]  at (axis cs: 0.3, -30){60 dB};
+\end{axis}
+
+
+
+\end{tikzpicture}
+\end {document}

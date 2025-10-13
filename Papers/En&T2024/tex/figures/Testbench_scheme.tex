@@ -1,0 +1,26 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\begin{document}
+\begin{tikzpicture}
+
+    \node(PC)[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.25\textwidth]{figures/PC.jpg}};
+    \node at (1.5, 4) [none] {\Huge PC};
+    % \draw[red,ultra thick,rounded corners] (7.5,5.3) rectangle (9.4,6.2);
+    \node(SG)[anchor=south west,inner sep=0] at (10,0.5) {\includegraphics[width=0.5\textwidth]{figures/SMW200A.jpg}};
+    \node at (13, 3.5) [none] {\Huge SMW200A};
+    %\node(PA) at (11, -6.1)[draw, isosceles triangle, rotate=180] {{\rotatebox{180}{\textsc{\Huge PA}}}};
+    
+    \node(PA)[anchor=south west,inner sep=0] at (10, -8) {\includegraphics[width=0.5\textwidth]{figures/SKY66291_11_EVB_Top_web_600.png}};
+    \node at (13, -4) [none] {\Huge SKY66 291-11};
+    
+    \node(SA)[anchor=south west,inner sep=0] at (2,-9) {\includegraphics[width=0.5\textwidth]{figures/FSW85.jpg}};
+    \node at (5, -4) [none] {\Huge FSW85};
+
+    \draw[->, line width=1mm] (PC) -- (SG);
+    \draw[->, line width=1mm] (SG) -- (PA);
+    \draw[->, line width=1mm] (PA) -- (SA);
+    \draw[->, line width=1mm] (SA) -| (PC);
+    
+\end{tikzpicture}
+\end{document}

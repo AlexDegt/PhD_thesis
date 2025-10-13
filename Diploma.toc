@@ -1,0 +1,51 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{Аннотация}{i}{}%
+\contentsline {chapter}{Введение}{v}{}%
+\contentsline {chapter}{\numberline {I.}Методы адаптивной компенсации нелинейных искажений сигнала в приемо-передающих устройствах систем связи}{1}{}%
+\contentsline {section}{\numberline {1}Постановка задачи адаптивной компенсации нелинейных искажений в устройствах связи}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Проблема возникновения паразитных помех в приёмном тракте приемо-передающего устройства}{1}{}%
+\contentsline {subsection}{\numberline {1.2}Схема компенсации паразитных нелинейных помех в приёмном тракте мобильного терминала}{3}{}%
+\contentsline {subsection}{\numberline {1.3}Проблема возникновения нелинейных искажений сигнала передающего тракта}{4}{}%
+\contentsline {subsection}{\numberline {1.4}Схема компенсации нелинейных искажений в передатчике приемо-передающего устройства}{5}{}%
+\contentsline {subsection}{\numberline {1.5}Критерий компенсации нелинейных искажений в устройствах связи}{6}{}%
+\contentsline {section}{\numberline {2}Методы первого порядка для адаптации моделей нелинейных искажений}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Метод градиентного спуска}{8}{}%
+\contentsline {subsection}{\numberline {2.2}Модификации метода градиентного спуска}{10}{}%
+\contentsline {section}{\numberline {3}Методы второго порядка для адаптации моделей нелинейных искажений}{11}{}%
+\contentsline {subsection}{\numberline {3.1}Метод Ньютона}{11}{}%
+\contentsline {subsection}{\numberline {3.2}Модификации метода Ньютона}{13}{}%
+\contentsline {subsection}{\numberline {3.3}Смешанный метод Ньютона}{14}{}%
+\contentsline {subsection}{\numberline {3.4}Метод LS}{16}{}%
+\contentsline {section}{\numberline {4}Методы адаптации моделей нелинейных искажений не требующие явного вычисления матрицы Гессе}{18}{}%
+\contentsline {subsection}{\numberline {4.1}Метод сопряженных градиентов}{18}{}%
+\contentsline {subsection}{\numberline {4.2}Метод DCD}{18}{}%
+\contentsline {subsection}{\numberline {4.3}Квазиньютоновские методы}{21}{}%
+\contentsline {subsection}{\numberline {4.4}Метод Barzilai-Borwein}{23}{}%
+\contentsline {subsection}{\numberline {4.5}Метод DFP}{24}{}%
+\contentsline {subsection}{\numberline {4.6}Метод BFGS}{25}{}%
+\contentsline {section}{\numberline {5}Математические модели линейных и нелинейных искажений в системах связи}{25}{}%
+\contentsline {subsection}{\numberline {5.1}Линейная модель искажений сигнала в системах связи}{26}{}%
+\contentsline {subsection}{\numberline {5.2}Полиномиальная нелинейных искажений в системах связи}{30}{}%
+\contentsline {subsection}{\numberline {5.3}Модель Вольтерра нелинейных искажений в системах связи}{33}{}%
+\contentsline {subsection}{\numberline {5.4}Модель Гаммерштейна нелинейных искажений в системах связи}{33}{}%
+\contentsline {subsection}{\numberline {5.5}Модель Винера нелинейных искажений в системах связи}{35}{}%
+\contentsline {subsection}{\numberline {5.6}Модель Винера-Гаммерштейна нелинейных искажений в системах связи}{35}{}%
+\contentsline {subsection}{\numberline {5.7}Нейросетевые структуры аппроксимации нелинейных искажений приемо-передающего тракта}{35}{}%
+\contentsline {chapter}{\numberline {II.}Исследование эффективности методов адаптивной компенсации нелинейных помех в приёмном тракте мобильного терминала}{36}{}%
+\contentsline {section}{\numberline {1}Структура тестовой платформы}{36}{}%
+\contentsline {section}{\numberline {2}Формирование тестового набора данных}{38}{}%
+\contentsline {section}{\numberline {3}Исследование алгоритмов компенсации стационарной паразитной помехи на приёмнике}{40}{}%
+\contentsline {subsection}{\numberline {3.1}Аппроксимация стационарных нелинейных искажений на приемнике устройства связи на основе классических и нейросетевых структур}{40}{}%
+\contentsline {subsection}{\numberline {3.2}Исследование опорных уровней компенсации стационарной помехи методами второго порядка}{40}{}%
+\contentsline {section}{\numberline {4}Исследование моделей цифрового предыскажения сигнала передающего устройства в условиях динамического изменения выходной мощности нелинейного усилителя}{45}{}%
+\contentsline {subsection}{\numberline {4.1}Аппроксимация динамической нелинейности на основе классических и нейросетевых структур}{45}{}%
+\contentsline {subsection}{\numberline {4.2}Исследование опорных уровней компенсации динамических нелинейных искажений}{45}{}%
+\contentsline {chapter}{\numberline {III.}Практическая реализация нелинейных корректоров в системах связи}{46}{}%
+\contentsline {section}{\numberline {1}Исследование компенсации неинейных искажений методами не требующими явного вычисления матрицы Гессе}{46}{}%
+\contentsline {section}{\numberline {2}Сокращение ресурсов при реализации моделей нелинейных искажений засчет канонического тензорного разложения}{55}{}%
+\contentsline {section}{\numberline {3}Сокращение ресурсов при реализации моделей нелинейных искажений засчет канонического тензорного разложения}{55}{}%
+\contentsline {section}{\numberline {4}Сокращение ресурсов при реализации моделей нелинейных искажений путем оптимизации гиперпараметров модели}{55}{}%
+\contentsline {subsection}{\numberline {4.1}Метод Orthogonal Least Squares}{55}{}%
+\contentsline {subsection}{\numberline {4.2}Метод Proximal Policy Optimization}{55}{}%
+\contentsline {section}{\numberline {5}Методы экономии ресурсов при реализации адаптивных фильтров}{55}{}%
+\contentsline {chapter}{Заключение}{61}{}%

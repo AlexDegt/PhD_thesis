@@ -1,0 +1,532 @@
+\section{Математические модели линейных и нелинейных искажений в системах связи}
+В этом разделе изложена теория, необходимая для описания слоёв модели Гаммерштейна, а также алгоритмы адаптации модели. Алгоритмы адаптации разделены на блочные -- методы, применяющие накопление сигнала передатчика для вычисления шага алгоритма и стохастические -- оценивающие градиент целевой функции по единственному отсчёту сигнала ошибки.
+
+Рассматриваются методы первого и второго порядка, а также квазиньютоновские методы адаптации модели нелинейных помех.
+
+Таким образом, обзор математических моделей паразитных помех разбит на следующие части:
+\begin{itemize}
+	\item Аппроксимация импульсного отклика канала распространения помехи в чипсете
+	\item Аппроксимация нелинейности усилителя мощности чипсета мобильного терминала
+\end{itemize}
+
+%\subsection{Аппроксимация импульсного отклика канала распространения помехи в чипсете}
+%В модели Гаммерштейна (рис. \ref{fig:hammerstein}) канал распространения паразитных помех из передатчика в приёмник можно считать линейным и описывать при помощи КИХ-фильтра. Рассмотрим математические объекты, используемые для адаптации коэффициентов фильтра: матрица состояния и корреляционная матрица.
+\subsection{Линейная модель искажений сигнала в системах связи}
+%\subsection{Матрица состояния КИХ-фильтра}
+\label{sec:fir_descript}
+КИХ-фильтр описывается набором комплексных коэффициентов $\{w_n \in \mathbb{C}\}_{n=0}^{M}$, которые можно представить в векторной форме $\textbf{\textit{w}}=\{w_n\}_{n=0}^{M}$, здесь $M$ -- порядок фильтра. Выход КИХ-фильтра описывается линейной свёрткой \cite{dsp_layons}:
+\begin{equation}
+	y_n=\sum_{k=0}^{M}w_kx_{n-k}.
+	\label{lin_conv}
+\end{equation}
+В векторном виде выход КИХ-фильтра будет иметь следующий вид:
+\begin{equation}
+	y_n=\textbf{\textit{u}}_{n}^{T}\textbf{\textit{w}}=
+	\begin{pmatrix} x_n & x_{n-1} & \cdots &  x_{n-M }\end{pmatrix}\begin{pmatrix} w_0 \\ w_1 \\ \vdots \\ w_M\end{pmatrix},
+	\label{lin_conv_vect}
+\end{equation}
+где $\textbf{\textit{u}}_{n}$ -- вектор состояния КИХ-фильтра $M$-ого порядка в момент времени $n$:
+\begin{equation}
+	\textbf{\textit{u}}_{n}^{T}=
+	\begin{pmatrix} x_n & x_{n-1} & \cdots &  x_{n-M }\end{pmatrix}.
+	\label{fir_state_vec}
+\end{equation}
+
+Рассмотрим последовательность из $N$ комплексных отсчетов сигнала на входе фильтра:
+\begin{equation}
+	\textbf{\textit{x}}=\{x_n \in \mathbb{C}\}_{n=0}^{N-1}.
+	\label{input_sig}
+\end{equation}
+Введём матрицу состояния \cite{adapt_filt_haykin} фильтра $\textbf{\textit{U}}\in\mathbb{C}^{N\times M+1}$:
+\begin{equation}
+	\textbf{\textit{U}}=
+	\begin{pmatrix}
+		\textbf{\textit{u}}_{0}^{T}\\
+		\textbf{\textit{u}}_{1}^{T}\\
+		\vdots\\
+		\textbf{\textit{u}}_{N-2}^{T}\\
+		\textbf{\textit{u}}_{N-1}^{T}
+	\end{pmatrix}=
+	\begin{pmatrix}
+		x_{\frac{M-1}{2}} & \cdots & x_1 & x_0 & 0 & \cdots & 	0\\
+		x_{\frac{M-1}{2}+1} & \cdots & x_2 & x_1 & x_0 & 	\cdots & 0\\
+		\vdots & & & \ddots & & & \vdots\\
+		0 & \cdots & x_{N-1} & x_{N-2} & x_{N-3} & \cdots & 	x_{N-2-\frac{M-1}{2}}\\
+		0 & \cdots & 0 & x_{N-1} & x_{N-2} & \cdots & 	x_{N-1-\frac{M-1}{2}}
+	\end{pmatrix}.
+	\label{fir_state_matr}
+\end{equation}
+Тогда отсчеты на выходе фильтра можно получить в виде векторно-матричного произведения:
+\begin{equation}
+	\textbf{\textit{y}}=\textbf{\textit{U}}\textbf{\textit{w}}.
+	\label{fir_out}
+\end{equation}
+Матрица состояния фильтра в уравнении \eqref{fir_out} учитывает задержку фильтра $D_{FIR}$ равную половине длины фильтра. Такой способ выражения выходных отсчетов фильтра предлагается для того чтобы сохранить неизменными размерности векторов $\textbf{\textit{y}}\in\mathbb{C}^{N\times 1}$ и $\textbf{\textit{x}}\in\mathbb{C}^{N\times 1}$, что в дальнейшем будет необходимо для реализации численных алгоритмов.
+
+Ввиду того, что изначально при симуляции алгоритмов адаптации неизвестна задержка сигнала \bit{x} передатчика от сигнала помехи \bit{d}, то не имеет значение, какой именно задавать задержку $D_{FIR}$. Для выравнивания отсчётов передатчика относительно отсчётов приёмника по времени, предлагается задать $D_{FIR}$ равной половине длины фильтра, поскольку такая структура позволит описать как минимальнофазовые, так и линейно-фазовые каналы распространения помехи \cite{dsp_oppenheim}.
+%\subsection{Корреляционная матрица сигнала}
+Корреляционная матрица \cite{adapt_filt_haykin} является центральным объектом при построении алгоритмов адаптации линейных фильтров. Последовательность комплексных отсчетов входного сигнала является дискретным случайным процессом, автокорреляционная функция \cite{marpl_spectr}, которого определяется: 
+\begin{equation}
+	r_{xx}(k, l)=\mathbb{E}(x_kx_l^*).
+	\label{autokorr_gen}
+\end{equation}
+Здесь и далее будем считать, что такой процесс \eqref{input_sig} является стационарным в широком смысле. Одним из необходимых условий стационарности процесса является тот факт, что его автокорреляционная функция не зависит одновременно от двух временных индексов $k$ и $l$, а определяется только интервалами наблюдения $m=k-l$. Тогда определение \eqref{autokorr_gen} можно переписать следующим образом:
+\begin{equation}
+	r_{xx}(k, l)=r_{xx}(m)=\mathbb{E}(x_{n+m}x_n^*),
+	\label{autokorr}
+\end{equation}
+где $\mathbb{E}(\cdot)$ -- оператор матожидания по переменной $n$. Перечислим некоторые важные свойства автокорреляционной функции:
+\begin{equation}
+	r_{xx}(-m)=r_{xx}^*(m)
+	\label{autokorr_prop1}
+\end{equation}
+\begin{equation}
+	r_{xx}(0)\geqslant\begin{vmatrix}r_{xx}^*(m)\end{vmatrix} \ \forall m
+	\label{autokorr_prop2}
+\end{equation}
+Опираясь на выражение \eqref{autokorr} определим корреляционную матрицу сигнала, проходящего через КИХ-фильтр порядка $M$, следующим образом:
+\begin{equation}
+	\textbf{\textit{R}}_{xx}=
+	\begin{pmatrix}
+		r_{xx}(0) & r_{xx}(-1) & \cdots & r_{xx}(-M)\\
+		r_{xx}(1) & r_{xx}(0) & \cdots & r_{xx}(-M+1)\\
+		\vdots & & \ddots & \vdots\\
+		r_{xx}(M) & r_{xx}(M-1) & \cdots & r_{xx}(0)
+	\end{pmatrix},
+	\label{autokorr_matr1}
+\end{equation}
+используя свойство \eqref{autokorr_prop1} получим:
+\begin{equation}
+	\textbf{\textit{R}}_{xx}=
+	\begin{pmatrix}
+		r_{xx}(0) & r_{xx}^*(1) & \cdots & r_{xx}^*(M)\\
+		r_{xx}(1) & r_{xx}(0) & \cdots & r_{xx}^*(M-1)\\
+		\vdots & & \ddots & \vdots\\
+		r_{xx}(M) & r_{xx}(M-1) & \cdots & r_{xx}(0)
+	\end{pmatrix}.
+	\label{autokorr_matr}
+\end{equation}
+Отметим, также, что корреляционная матрица является эрмитовой, поскольку из \eqref{autokorr_matr} видно, что:
+\begin{equation}
+	\textbf{\textit{R}}_{xx}=\textbf{\textit{R}}_{xx}^H
+\end{equation}
+
+Для численной реализации алгоритмов адаптации введём понятие оценки автокорреляционной функции и корреляционной матрицы. Предположим, как и ранее, что на вход КИХ-фильтра порядка $M$ поступает ограниченная выборка из $N$ комлексных отсчетов сигнала \bit{x} в соответствии с \eqref{input_sig}. Несмещенная, состоятельная оценка автоорреляционной функции задается выражением \cite{marpl_spectr}:
+\begin{equation}
+	\hat{r}_{xx}(m)=
+	\begin{cases}
+		\begin{matrix}
+			\displaystyle\frac{1}{N-m}\sum_{n=0}^{N-1}x_{n+m}x_n^*, &  0\leqslant m<N\\
+			\displaystyle\frac{1}{N+m}\sum_{n=0}^{N-1}x_{n-m}^*x_n, & -N<m<0
+		\end{matrix}
+	\end{cases}
+	\label{autokorr_estim_better}
+\end{equation}
+Отметим, что более привлекательной и удобной с точки зрения реализации является смещенная оценка автокорреляционной функции \eqref{autokorr_estim}:
+\begin{equation}
+	\check{r}_{xx}(m)=
+	\begin{cases}
+		\begin{matrix}
+			\displaystyle\frac{1}{N}\sum_{n=0}^{N-1}x_{n+m}x_n^*, & 0\leqslant m<N\\
+			\displaystyle\frac{1}{N}\sum_{n=0}^{N-1}x_{n-m}^*x_n, & -N<m<0
+		\end{matrix}
+	\end{cases},
+	\label{autokorr_estim}
+\end{equation}
+поскольку при увеличении диапазона задержек $m$ дисперсия оценки автокорреляционной функции на краях выборочной оценки $\check{r}_{xx}(m)$ не увеличивается в отличие от несмещенной оценки $\hat{r}_{xx}(m)$ \cite{marpl_spectr}.
+
+Корреляционную матрицу также можно описать при помощи векторного произведения векторов \eqref{fir_state_vec} состояния КИХ-фильтра $M$-ого порядка. Обозначим векторное произведение:
+\begin{equation}
+	P_n=\begin{pmatrix}
+		\textbf{\textit{u}}_n\textbf{\textit{u}}_n^H
+	\end{pmatrix}^T=
+	\textbf{\textit{u}}_n^{*}\textbf{\textit{u}}_n^{T}.
+\end{equation}
+Распишем подробно:
+\begin{multline}
+	P_n=
+	\begin{bmatrix}
+		\begin{pmatrix}
+			x_n^*\\x_{n-1}^{*}\\\vdots\\x_{n-M}^*
+		\end{pmatrix},
+		\begin{pmatrix}
+			x_n & x_{n-1} & \cdots & x_{n-M}
+		\end{pmatrix}		
+	\end{bmatrix}=\\
+	=\begin{pmatrix}
+		x_n^*x_n & x_n^*x_{n-1} & \cdots & x_n^*x_{n-M}\\
+		x_{n-1}^*x_n & x_{n-1}^*x_{n-1} & \cdots & x_{n-1}^*x_{n-M}\\
+		\vdots & & \ddots & \vdots\\
+		x_{n-M}^*x_n & x_{n-M}^*x_{n-1} & \cdots & x_{n-M}^*x_{n-M}
+	\end{pmatrix}.
+\end{multline}
+Просуммируем каждый элемент матрицы по индексу времени $n$:
+\begin{multline}
+	\frac{1}{N}\begin{pmatrix}
+		\displaystyle\sum_{n=0}^{N-1}x_n^*x_n & \displaystyle\sum_{n=0}^{N-1}x_n^*x_{n-1} & \cdots & \displaystyle\sum_{n=0}^{N-1}x_n^*x_{n-M}\\
+		\displaystyle\sum_{n=0}^{N-1}x_{n-1}^*x_n & \displaystyle\sum_{n=0}^{N-1}x_{n-1}^*x_{n-1} & \cdots & \dsp\sum_{n=0}^{N-1}x_{n-1}^*x_{n-M}\\
+		\vdots & & \ddots & \vdots\\
+		\displaystyle\sum_{n=0}^{N-1}x_{n-M}^*x_n & \displaystyle\sum_{n=0}^{N-1}x_{n-M}^*x_{n-1} & \cdots & \dsp\sum_{n=0}^{N-1}x_{n-M}^*x_{n-M}
+	\end{pmatrix}=\\
+	=\begin{pmatrix}
+		\check{r_{xx}}(0) & \check{r_{xx}}^*(1) & \cdots & \check{r_{xx}}^*(M)\\
+		\check{r_{xx}}(1) & \check{r_{xx}}(0) & \cdots & \check{r_{xx}}^*(M-1)\\
+		\vdots & & \ddots & \vdots\\
+		\check{r_{xx}}(M) & \check{r_{xx}}(M-1) & \cdots & \check{r_{xx}}(0)
+	\end{pmatrix}
+	=\check{\textbf{\textit{R}}}_{xx}=	\frac{1}{N}\sum_{n=0}^{N-1}
+	\textbf{\textit{u}}_n^{*}
+	\textbf{\textit{u}}_n^{T}.
+	\label{autorokk_derive}
+\end{multline}
+Из \eqref{autorokk_derive} следует, что оценка корреляционной матрицы сигнала может быть представлена в виде оценки матожидания векторного произведения векторов состояния фильтра:
+\begin{equation}
+	\check{\textbf{\textit{R}}}_{xx}=	\frac{1}{N}\sum_{n=0}^{N-1}\textbf{\textit{u}}_n^{*} \textbf{\textit{u}}_n^{T}\equiv\check{\mathbb{E}}
+	\begin{pmatrix}
+		\textbf{\textit{u}}_n^{*}
+		\textbf{\textit{u}}_n^{T}
+	\end{pmatrix}.
+	\label{autokorr_expect}
+\end{equation}
+С другой стороны корреляционную матрицу \eqref{autorokk_derive} можно представить в виде произведения матриц состояния фильтра \eqref{fir_state_matr}:
+\begin{equation}
+	\check{\textbf{\textit{R}}}_{xx}=\textbf{\textit{U}}^{H}\textbf{\textit{U}}
+	\label{autorokk_matrprod}
+\end{equation}
+Выражения \eqref{autokorr_expect} и \eqref{autorokk_matrprod} демонстрируют важное свойство, связанное с тем, что оценку корреляционной матрицы можно получить двумя способами. 
+
+Уравнение \eqref{autokorr_expect} отражает итеративный способ накопления корреляционно матрицы: 
+\begin{equation}
+	\check{\textbf{\textit{R}}}_{xx,n}=
+	\check{\textbf{\textit{R}}}_{xx,n-1}+
+	\textbf{\textit{u}}_{n-1}^{*}
+	\textbf{\textit{u}}_{n-1}^{T}
+\end{equation}
+В данном случае оценка тем ближе к истинному значению матожидания, чем больше отсчетов сигнала поступило на вход системы. Такой подход связан с реализацией стохастических методов и успешно применяется в случае потоковой обработки сигнала. 
+
+В выражении \eqref{autorokk_matrprod} матрица вычисляется по ограниченной выборке отсчётов сигнала. Такой способ вычисления применяется в случае блочной обработки сигнала и удобен на этапе симуляции алгоритмов.
+
+\subsection{Полиномиальная нелинейных искажений в системах связи}
+
+%\subsection{Аппроксимация нелинейности усилителя мощности чипсета мобильного терминала}
+Существует множество моделей, аппроксимирующих нелинейность усилителей мощности \cite{pa_models}, таких как модель Винера, Гаммерштейна, Винера-Гаммерштейна, а также полиномиальные модели с памятью и без памяти \cite{dpd_models}. Перечисленные модели являются следствием упрощения ряда Вольтерра. 
+
+Основной моделью паразитных нелинейных помех в приёмном тракте мобильного терминала является модель Гаммерштейна (рис. \ref{fig:hammerstein}). Поскольку модель содержит КИХ-фильтр, который помимо задержек распространения помехи по различным путям от приёмника к передатчику учитывает инерционность усилителя мощности, то модель усилителя мощности можно выбирать безынерционной. Среди перечисленных моделей нелинейности усилителя безынерционной является полиномиальная модель без памяти.
+
+В данном разделе рассматриваются две основные модели нелинейности: полиномиальная модель без памяти, а также метод улучшения численной устойчивости при адаптации этой модели, и модель кусочно-линейной аппроксимации.
+%\subsection{Полиномиальная модель нелинейности усилителя мощности}
+Перед тем, как рассмотреть полиномиальную модель нелинейности усилителя мощности, рассмотрим общий способ описания нелинейной амплитудной характеристики. 
+
+На вход модели усилителя $g(\cdot)$ в модели Гаммерштейна (рис. \ref{fig:hammerstein}) поступает последовательность из $N$ отсчетов модуля входного сигнала $\{|x_n|\}|_{n=0}^{N-1}$. Общая модель нелинейности усилителя мощности описывается выражением \cite{dpd_models}:
+\begin{equation}
+	g(|x_n|)=\displaystyle\sum_{p=0}^{P}h_p\varphi_p(|x_n|)
+	\label{arbitr_pa_model_scalar}
+\end{equation}
+где $\{\varphi_p(|x|)\}|_{p=0}^{P}$ -- набор базисных функций модели усилителя, $P$ -- порядок модели усилителя. На вход КИХ фильтра (рис. \ref{fig:hammerstein}) поступают отсчеты:
+\begin{equation}
+	z_n=g(|x_n|)x_n^2=\begin{bmatrix}
+		\displaystyle\sum_{p=0}^{P}h_p\varphi_p(|x_n|)
+	\end{bmatrix}x_n^2,
+	\label{fir_input_arbitr_scalar}
+\end{equation}
+выражение \eqref{fir_input_arbitr_scalar} учитывает тот факт, что в качестве нелинейной помехи рассматривается вторая гармоника сигнала передатчика, а значит в модели Гаммертшейна (рис. \ref{fig:hammerstein}) степень $q=2$. 
+
+Рассмотрим полиномиальную модель без памяти, описывающую нелинейность усилителя мощности. Базисные функции полиномиальной модели без памяти имеют вид \cite{dpd_models}:
+\begin{equation}
+	\varphi_p(|x_n|)=|x_n|^p,
+	\label{basis_polynom_no_mem}
+\end{equation}
+тогда модель нелинейности будет иметь вид:
+\begin{equation}
+	g(|x_n|)=\displaystyle\sum_{p=0}^{P}h_p|x_n|^p.
+	\label{nonlin_pa_out_polinom}
+\end{equation}
+
+В случае использования данной модели для описания нелинейной характеристики AM-AM \cite{dpd_models} усилителя мощности на вход КИХ-фильтра в модели Гаммерштейна постуают отсчеты:
+\begin{equation}
+	z_n=g(|x_n|)x_n^2=\begin{bmatrix}
+		\displaystyle\sum_{p=0}^{P}h_p|x_n|^p
+	\end{bmatrix}x_n^2,
+	\label{fir_input_polynom_scalar}
+\end{equation}
+в векторной форме входные отсчёты КИХ-фильтра будут иметь вид:
+\begin{multline}
+	z_n=\bit{h}_n^T\bit{v}_n=
+	\begin{pmatrix}
+		h_0 & h_1 & \cdots & h_P
+	\end{pmatrix}
+	\begin{pmatrix}
+		x_n^2\varphi_0(|x_n|) &
+		x_n^2\varphi_1(|x_n|) &
+		\cdots
+		x_n^2\varphi_P(|x_n|)
+	\end{pmatrix}^T=\\
+	=\begin{pmatrix}
+		h_0 & h_1 & \cdots & h_P
+	\end{pmatrix}
+	\begin{pmatrix}
+		x_n^2 &
+		x_n^2|x_n| &
+		\cdots
+		x_n^2|x_n|^P
+	\end{pmatrix}^T
+	\label{polynom_model_vect},
+\end{multline}
+где \bit{v} -- вектор состояния модели нелинейности, который вводится по аналогии с вектором состояния фильтра \eqref{fir_state_vec}.
+
+Матрицу состояния полиномиальной модели для случая блочной обработки по ограниченной выборке сигнала можно ввести по аналогии с матрицей состояния КИХ-фильтра через вектора состояния \eqref{fir_state_matr}:
+\begin{equation}
+	\textbf{\textit{V}}=
+	\begin{pmatrix}
+		\textbf{\textit{v}}_{0}^{T}\\
+		\textbf{\textit{v}}_{1}^{T}\\
+		\vdots\\
+		\textbf{\textit{v}}_{N-1}^{T}
+	\end{pmatrix}=
+	\begin{pmatrix}
+		x_0^2 &
+		x_0^2|x_0| &
+		\cdots & 
+		x_0^2|x_0|^P\\
+		x_1^2 &
+		x_1^2|x_1| &
+		\cdots & 
+		x_1^2|x_1|^P\\
+		\vdots & & \ddots & \vdots\\
+		x_{N-1}^2 &
+		x_{N-1}^2|x_{N-1}| &
+		\cdots & 
+		x_{N-1}^2|x_{N-1}|^P
+	\end{pmatrix}.
+	\label{state_matr_polinom}
+\end{equation}
+%\subsection{Корреляционная матрица полиномиальной модели нелинейности усилителя мощности}
+Введём понятие корреляционной матрицы полиномиальной модели без памяти $\bit{R}_{pp}\in \mathbb{C}^{P+1\times P+1}$ по аналогии с понятием корреляционной матрицы сигнала \eqref{autokorr_matr}. Эта матрица отражает корреляционные связи между значениями базисных функций для каждого нового отсчёта. Оценка корреляционной матрицы полиномиальной модели без памяти вводится по аналогии с выражением \eqref{autorokk_derive}:
+\begin{multline*}
+	\displaystyle\check{\textbf{\textit{R}}}_{pp}=\frac{1}{N}\sum_{n=0}^{N-1}
+	\textbf{\textit{v}}_n^{*} \textbf{\textit{v}}_n^{T}=\\
+	\displaystyle=\frac{1}{N}\begin{pmatrix}
+		\displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2\varphi_0(|x_n|)\varphi_0(|x_n|) & \cdots & \displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2\varphi_0(|x_n|)\varphi_P(|x_n|)\\
+		\displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2\varphi_1(|x_n|)\varphi_0(|x_n|) & \cdots & \displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2\varphi_1(|x_n|)\varphi_P(|x_n|)\\
+		\vdots & \ddots & \vdots\\
+		\displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2\varphi_P(|x_n|)\varphi_0(|x_n|) & \cdots & \displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2\varphi_P(|x_n|)\varphi_P(|x_n|)
+	\end{pmatrix}=
+\end{multline*}
+\begin{multline}
+	=\frac{1}{N}\begin{pmatrix}
+		\displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2 & \displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2|x_n| & \cdots & \displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2|x_n|^P\\
+		\displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2|x_n| & \displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2|x_n|^2 & \cdots & \displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2|x_n|^{P+1}\\
+		\vdots & & \ddots & \vdots\\
+		\displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2|x_n|^P & \displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2|x_n|^{P+1} & \cdots & \displaystyle\sum_{n=0}^{N-1}(x_n^2)^*x_n^2|x_n|^{P^2}
+	\end{pmatrix}.
+	\label{autorokk_polynom}
+\end{multline}
+
+В выражении \eqref{autorokk_polynom} для матрицы, описывающей корреляционные связи между базисными функциями, степень $P$ может принимать сколь угодно большие конечные значения. Неортоганальность степенных базисных функций $|x_n|^p$ приводит к ухудшению обусловленности матрицы $\check{\bit{R}}_{pp}$ c ростом степени $P$. Максимальный порядок, при котором можно использовать численные алгоритмы при гарантированной численной устойчивости $P=6$. 
+
+Для улучшения обусловленности кореляционной матрицы модели используются ортогональные полиномы. Использование ортогональных полиномов позволяет повысить порядок полинома вплоть до $P=100$ с сохранением численной устойчивости алгоритмов адаптации. В случае полиномиальной модели без памяти базисные функции будут иметь вид \cite{dpd_models}:
+\begin{equation}
+	\varphi_p(|x_n|)= P_p(|x_n|^p).
+\end{equation}
+Полиномы Лежандра \cite{spec_func}:
+\begin{equation}
+	\begin{matrix}
+		\displaystyle P_{p+1}(x)=\frac{2p+1}{p+1}xP_p(x)-\frac{p}{p+1}P_{p-1}(x),\\ \\
+		P_0(x)=1, P_1(x)=x,
+	\end{matrix}
+	\label{polynom_legandr}
+\end{equation}
+являются ортогональными на отрезке $[-1; 1]$.
+
+Полиномы Чебышёва $1$-ого рода \cite{spec_func}:
+\begin{equation}
+	\begin{matrix}
+		T_{p+1}(x)=2xT_p(x)-T_{p-1}(x),\\ \\
+		T_0(x)=1, T_1(x)=x,
+	\end{matrix}
+	\label{polynom_chebi_1}
+\end{equation}
+являются ортогональными на отрезке $[-1; 1]$. Кроме того, полином Чебышёва 1-ого рода степени $n$ меньше всего отклоняется от нуля на отрезке $[-1; 1]$ среди полиномов степени $n$.
+
+Полиномы Чебышёва $2$-ого рода \cite{spec_func}:
+\begin{equation}
+	\begin{matrix}
+		U_{p+1}(x)=2xU_p(x)-U_{p-1}(x),\\ \\
+		U_0(x)=1, U_1(x)=2x,
+	\end{matrix}
+	\label{polynom_chebi_2}
+\end{equation}
+являются ортогональными на отрезке $[-1; 1]$. Кроме того, интеграл модуля полинома Чебышёва 2-ого рода степени $n$ меньше всего отклоняется от нуля на отрезке $[-1; 1]$ среди полиномов степени $n$.
+
+Полиномы Эрмита \cite{spec_func}:
+\begin{equation}
+	\begin{matrix}
+		H_{p+1}(x)=2xH_p(x)-2nH_{p-1}(x),\\ \\
+		H_0(x)=1, H_1(x)=2x,
+	\end{matrix}
+	\label{polynom_hermit}
+\end{equation}
+являются ортогональными на всей числовой оси.
+
+%\subsection{Кусочно-линейная модель нелинейной амплитудной характеристики усилителя мощности}
+%\label{sec:pla_descript}
+%PLA (англ. Piecewise Linear Approximation) -- кусочно-линейная аппроксимация. Метод кусочно-линейной аппроксимации активно используется в цифровой технике для аппроксимации выходных характеристик нелинейных компонент, таких как аналоговые усилители мощности, дуплексеры и другие \cite{dpd_lut}. В данном разделе приводится математический аппарат, позволяющий описать модель нелинейности характеристики AM-AM усилителя мощности $g(\cdot)$ в модели Гаммерштейна при помощи кусочно-линейной аппроксимации.
+%
+%Пусть на вход модели Гаммерштейна поступает последовательность из $N$ отсчетов $\textbf{\textit{x}}=\{x_n\}|_{n=0}^{N-1}$, где $x_n \in \mathbb{C}$, тогда на вход блока PLA поступает последовательность из $N$ действительных отсчётов модуля сигнала: $\{|x_n|\}|_{n=0}^{N-1}$. 
+%
+%На входе КИХ-фильтра -- последовательность отсчетов $z_n=x_n^2g(|x_n|)$, где функция $g(\cdot)$ (рис. \ref{fig:hammerstein}) описывает функцию кусочно-линейной аппроксимации. Зададим данную функцию при помощи вектора коэффициентов $\textbf{\textit{h}}=\{h_k\}|_{k=0}^{L-1}$ длины $L$. 
+%
+%Такая кусочно-линейная функция может быть задана, как на рис. \ref{fig:1dpla}.
+%\begin{figure}
+%	\centering
+%	\includegraphics[scale=1.2]{figures/1dpla/1dpla.pdf}
+%	\caption{Кусочно-линейная функция $g(|x_n|)$ модуля 1D PLA}
+%	\label{fig:1dpla}
+%\end{figure}
+%Здесь расстояние между отсчетами коэффициентов $h_k$ равно 1. 
+%
+%Обозначим $\Delta_{\textit{n}}$ -- расстояние между модулем входного отсчета $|x_n|$ и ближайшим целым $l<|x_n|$ по оси абсцисс, $h_l$ -- отсчет с координатой $l$ по оси абсцисс. Тогда
+%\begin{equation}
+%	\frac{\Delta_{\textit{n}}}{1}=\frac{g(|x_n|)-h_l}{h_{l+1}-h_l},
+%\end{equation}
+%\begin{equation}
+%	g(|x_n|)=\Delta_{\textit{n}}h_{l+1}+(1-\Delta_{\textit{n}})h_l.
+%	\label{nonlin_pa_out_pla}
+%\end{equation}
+%Подставим выражение \eqref{nonlin_pa_out_pla} в выражение для входных отсчётов КИХ-фильтра \eqref{fir_input} и перепишем в виде произведения векторов:
+%\begin{equation}
+%	\begin{matrix}
+	%		z_n={\textbf{\textit{v}}_\textit{n}^{T}}{\textbf{\textit{h}}}=\begin{pmatrix} 0 & ... & 0 & (1-\Delta_{\textit{n}})x_n^2 & \Delta_{\textit{n}}x_n^2 & 0 & ... & 0 \end{pmatrix}\cdot\\\cdot{\begin{pmatrix} h_0 & ... & h_{l-1} & h_{l} & h_{l+1} & h_{l+2} & ... & h_{L-1} \end{pmatrix}}^T,
+	%		\label{pla_out_vec}
+	%	\end{matrix}
+%\end{equation}
+%где $\textbf{\textit{v}}_\textit{n}^{T}$ -- строка матрицы состояния модуля, которая представляет собой вектор состояния модуля PLA:
+%\begin{equation}
+%	{\textbf{\textit{v}}_\textit{n}^{T}}=\begin{pmatrix} 0 & ... & 0 & (1-\Delta_{\textit{n}})x_n^2 & \Delta_{\textit{n}}x_n^2 & 0 & ... & 0\end{pmatrix}.
+%	\label{pla_state_vec}
+%\end{equation}
+%Полная матрица состояния может быть раписана следующим образом:
+%\begin{equation}
+%	\textbf{V}=\begin{pmatrix}\textbf{\textit{v}}_\textit{0}^{T} \\ \textbf{\textit{v}}_\textit{1}^{T} \\ \vdots \\ \textbf{\textit{v}}_\textit{N-1}^{T}\end{pmatrix}=\begin{pmatrix} 0 & \cdots & 0 & (1-\Delta_{\textit{0}})x_n^2 & \Delta_{\textit{0}}x_n^2 & 0 & \cdots & 0 \\ 0 & \cdots & (1-\Delta_{\textit{1}})x_n^2 & \Delta_{\textit{1}}x_n^2 & 0 & 0 & \cdots & 0 \\ \vdots & & & \ddots & & & & \vdots \\ 0 & \cdots & 0 & (1-\Delta_{\textit{N-1}})x_n^2 & \Delta_{\textit{N-1}}x_n^2 & 0 & \cdots & 0 \end{pmatrix}
+%	\label{state_matr_pla}
+%\end{equation}
+%Вектор выходных отсчетов \bit{z} может быть раписан:
+%\begin{equation}
+%	\textbf{\textit{z}}=\textbf{V}\textbf{\textit{h}}.
+%	\label{vec_matr_out}
+%\end{equation}
+%
+%Отметим также, что кусочно-линейная функция, аппроксимирующая нелинейную амплитудную характеристику усилителя мощности может быть представлена через базисные функции \eqref{arbitr_pa_model_scalar} следующего вида \cite{dpd_lut}:
+%\begin{equation}
+%	\varphi_p(|x_n|)=
+%	\begin{cases}
+	%		|x_n|-(p-1), \ \ \text{если} \ \ (p-1\leqslant|x_n|<p) \vee (0<p\leqslant L),\\
+	%		-|x_n|+(p+1), \ \ \text{если} \ \ (p\leqslant|x_n|<p+1) \vee (0\leqslant p<L).
+	%	\end{cases}
+%\end{equation}
+%
+%\subsection{Корреляционная матрица кусочно-линейной модели нелинейной амплитудной характеристики усилителя мощности}
+%Рассмотрим вектор состояния блока PLA, который определяется $n$-ым отсчетом входного сигнала $x_n$. Пусть $k\leqslant|x_n|\leqslant k+1$, тогда
+%\begin{equation}
+%	\begin{matrix}
+	%		\textbf{\textit{v}}_n^T=
+	%		\begin{pmatrix}
+		%			0 & \cdots & 0 & v_k & v_{k+1} & 0 & \cdots & 0
+		%		\end{pmatrix},\\
+	%		v_k=(1-\Delta_n)x_n^2,\\
+	%		v_{k+1}=\Delta_nx_n^2.
+	%	\end{matrix}
+%	\label{pla_state_vec_definite}
+%\end{equation}
+%Пусть $\textbf{\textit{A}}$ - множество номеров отсчетов, таких что $\forall n\in\textbf{\textit{A}}$ выполняется $k\leqslant|x_n|\leqslant k+1$. Это значит, что абсолютные величины всех отсчетов с номерами из $\textbf{\textit{A}}$ попадают в отрезок от $k$ до $k+1$. Введём оценку автокорреляционной функции в случае блока PLA по аналогии с \eqref{autokorr_estim}:
+%\begin{equation}
+%	\check{r}_k(m)=\frac{1}{|\textbf{\textit{A}}|}\sum_{n\in\textbf{\textit{A}}}v_{n+m}v_n.
+%	\label{autocorr_func_pla}
+%\end{equation}
+%
+%Ввиду того, что вектор состояния \eqref{pla_state_vec_definite} содержит всего лишь два ненулевых элемента, расположенных последовательно, то функция \eqref{autocorr_func_pla}, введённая по аналогии с автокорреляционной функцией сигнала, будет содержать три ненулевых элемента:
+%\begin{equation}
+%	\check{r}_k(m)=0, \ \forall m\in [-M;M]\backslash\{-1; 0; 1\}
+%	\label{autokorr_blockdiag_prop}
+%\end{equation}
+%
+%По аналогии с корреляционной матрицей сигнала \eqref{autokorr_expect}, \eqref{autorokk_matrprod} введём матрицу корреляции блока PLA:
+%\begin{equation}
+%	\check{\textbf{\textit{R}}}_{vv}=\check{\mathbb{E}}
+%	\begin{pmatrix}
+	%		\textbf{\textit{v}}_n^{*}
+	%		\textbf{\textit{v}}_n^{T}
+	%	\end{pmatrix},
+%	\label{autokorr_expect_pla}
+%\end{equation}
+%\begin{equation}
+%	\check{\textbf{\textit{R}}}_{vv}=\textbf{\textit{V}}^{H}\textbf{\textit{V}},
+%	\label{autorokk_matrprod_pla}
+%\end{equation}
+%где $\mathbb{E}$ -- оператор матожидания по временному индексу $n$. Матрица корреляции для блока кусочно-линейной аппроксимации будет иметь блочно-диагональный вид, в силу свойства \eqref{autokorr_blockdiag_prop}:
+%\begin{equation}
+%	\check{\textbf{\textit{R}}}_{vv}=
+%	\begin{pmatrix}
+	%		\check{r_{0}}(0) & \check{r_{0}}^*(1) & \cdots & 0 & 0\\
+	%		\check{r_{0}}(1) & \check{r_{1}}(0) & \cdots & 0 & 0\\
+	%		\vdots & & \ddots & & \vdots\\
+	%		0 & 0 & \cdots & \check{r_{L-2}}(0) & \check{r_{L-2}}^*(1)\\
+	%		0 & 0 & \cdots & \check{r_{L-2}}(1) & \check{r_{L-1}}(0)
+	%	\end{pmatrix}.
+%	\label{autokorr_pla_final}
+%\end{equation}
+%Для получения окончательного вида корреляционной матрицы для блока PLA \eqref{autokorr_pla_final} мы воспользовались свойством \eqref{autokorr_prop1}.
+%
+%Отметим, что матрицы трёхдиагональной структуры позволяют использовать эффективные алгоритмы линейной алгебры для инверсии \cite{matrix_calc}.
+
+\subsection{Модель Вольтерра нелинейных искажений в системах связи}
+
+\subsection{Модель Гаммерштейна нелинейных искажений в системах связи}
+Ранее отмечалось, что выходные отсчёты модели Гаммерштейна описываются выражением \eqref{hammerstein_out_scalar}, где функция $g(|x_n|)$ определяется выражениями \eqref{nonlin_pa_out_polinom}, \eqref{nonlin_pa_out_pla} для случаев, когда в качестве модели нелинейности амплитудной характеристики усилителя мощности используются полиномиальная модель без памяти и кусочно-линейная модель соответственно.
+
+В модели Гаммерштейна на вход КИХ-фильтра поступает вектор отсчётов $\textbf{\textit{z}}$, элементы которого определяются выражением \eqref{fir_input}. Матрица состояния фильтра будет иметь вид:
+\begin{equation}
+	\textbf{\textit{U}}=
+	\begin{pmatrix}
+		z_{D_{FIR}} & \cdots & z_1 & z_0 & 0 & \cdots & 0\\
+		z_{D_{FIR}+1} & \cdots & z_2 & z_1 & z_0 & \cdots & 0\\
+		\vdots & & & \ddots & & & \vdots\\
+		0 & \cdots & z_{N-1} & z_{N-2} & z_{N-3} & \cdots & z_{N-2-D_{FIR}}\\
+		0 & \cdots & 0 & z_{N-1} & z_{N-2} & \cdots & z_{N-1-D_{FIR}}
+	\end{pmatrix},
+	\label{fir_state_matr_hammerst}
+\end{equation}
+где $D_{FIR}=\frac{M-1}{2}$. Выход модели Гаммерштейна определяется выражением \eqref{fir_out}.
+
+Аналогично выход модели Гаммертшейна можно выразить через вектор коэффициентов \bit{h} и модификацию матрицы состояния \bit{V} модели нелинейности амплитудной характеристики усиителя мощности $g(\cdot)$. Матрица состояния модели нелинейности определяется выражениями \eqref{state_matr_polinom}, \eqref{state_matr_pla} для полиномиальной модели без памяти и кусочно-линейной модели соответственно.
+
+Представим $n$-ый отсчет на выходе модели в виде матрично-векторного произведения. Для этого выделим из матрицы состояния $\textbf{\textit{V}}$ подматрицу $\textbf{\textit{Q}}_n$ размерности $M\times L$ (рис. \ref{fig:submatrix_q}), где $L$ -- длина вектора состояния $\bit{v}_n$ блока нелинейности $g(\cdot)$.
+\begin{figure}
+	\centering
+	\includegraphics[scale=1.2]{figures/submatrix_q/submatrix_q.pdf}
+	\caption{Выделение подматрицы $\bit{Q}_n$ из матрицы состояния блока нелинейности \bit{V}}
+	\label{fig:submatrix_q}
+\end{figure}
+Отсчет $y_n$ на выходе модели можно представить в виде:
+\begin{equation}
+	y_n=\textbf{\textit{w}}^T\textbf{\textit{Q}}_n\textbf{\textit{h}}=\textbf{\textit{h}}^T(\textbf{\textit{Q}}_n^T\textbf{\textit{w}}).
+	\label{hammerst_out}
+\end{equation}
+Ввиду ассоциативности векторно-матричного умножения из \eqref{hammerst_out} следует, что сначала можно умножить вектор коэффициентов фильтра на $\textbf{\textit{Q}}_n$, после чего на вектор $\textbf{\textit{h}}^T$, но построчное умножение $\textbf{\textit{Q}}_n^T\textbf{\textit{w}}$ равносильно фильтрации столбцов матрицы \bit{V}. Таким образом, вектор отсчетов на выходе модели Гаммерштейна можно представить:
+\begin{equation}
+	\textbf{\textit{y}}=\textbf{\textit{V}}_f\textbf{\textit{h}},
+	\label{hammerst_out_pla}
+\end{equation}
+где в $\textbf{\textit{V}}_f$ каждый столбец -- свёртка столбца матрицы $\textbf{\textit{V}}$ с вектором коэффициентов фильтра.
+
+\subsection{Модель Винера нелинейных искажений в системах связи}
+
+\subsection{Модель Винера-Гаммерштейна нелинейных искажений в системах связи}
+
+\subsection{Нейросетевые структуры аппроксимации нелинейных искажений приемо-передающего тракта}
+
+%\subsection{Аппроксимация нелинейных искажений приемо-передающего тракта на основе нейросетевых структур}
+
+%\subsection{Аппроксимация нелинейных искажений приемо-передающего тракта на основе многослойной сверточной нейросетевой структуры}
+%
+%\subsection{Аппроксимация нелинейных искажений приемо-передающего тракта на основе многослойной рекурренотной нейросетевой структуры, а также механизма внимания}

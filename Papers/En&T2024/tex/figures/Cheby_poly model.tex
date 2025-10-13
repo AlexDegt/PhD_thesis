@@ -1,0 +1,76 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{amsmath,amsfonts,amssymb}
+\usetikzlibrary{automata,positioning}
+
+\begin {document}
+\begin{tikzpicture}
+
+\node(x) at (0, 0) {$x_n$};
+\node(p) at (0, -0.5) {$p_n$};
+
+\node(abs)[draw, minimum height=0.5cm, opacity = 1] at (1.25, 0) {$|\cdot|$};
+
+\node(pnt1) at (2.5, 0) [pnt, fill = black]{};
+\node(pnt2) at (2, -0.5) [pnt, fill = black]{};
+
+\node(del1)[draw, minimum height=0.7cm, minimum width=1.cm, opacity = 1] at (3.5, -0.25) {$z^D$};
+
+\draw[->] (x) -- (abs); \draw[->] (abs) -- (pnt1) -- (3, 0);
+\draw[->] (p) -- (pnt2) -- (3, -0.5);
+
+\node(pnt3) at (2.5, -2) [pnt, fill = black]{};
+\node(pnt4) at (2, -2.5) [pnt, fill = black]{};
+
+\node(del2)[draw, minimum height=0.7cm, minimum width=0.4cm, opacity = 1] at (3.5, -2.25) {$z^{D-1}$};
+\draw[->] (pnt1) -- (pnt3) -- (3., -2);
+\draw[->] (pnt2) -- (pnt4) -- (3., -2.5);
+
+\node(del3)[draw, minimum height=0.7cm, minimum width=1cm, opacity = 1] at (3.5, -5.25) {$z^{-D}$};
+
+\draw[->] (pnt3) -- (2.5, -5) -- (3., -5);
+\draw[->] (pnt4) -- (2, -5.5) -- (3., -5.5);
+
+\node(poly1)[draw, minimum height=0.7cm, minimum width=1.cm, opacity = 1] at (6.5, -0.25) {\shortstack{Chebyshev \\ polynomial \\ branch 0}};
+
+\node(poly2)[draw, minimum height=0.7cm, minimum width=1.cm, opacity = 1] at (6.5, -2.25) {\shortstack{Chebyshev \\ polynomial \\ branch 1}};
+
+\node(poly3)[draw, minimum height=0.7cm, minimum width=1.cm, opacity = 1] at (6.5, -5.25) {\shortstack{Chebyshev \\ polynomial \\ branch B-1}};
+
+\node(dots) at (3.5, -3.75) {\shortstack{.\\.\\.}};
+\node(dots) at (6.5, -3.75) {\shortstack{.\\.\\.}};
+
+\draw[->] (4, 0) -- (5.55, 0);
+\draw[->] (4, -0.5) -- (5.55, -0.5);
+
+\draw[->] (4., -2) -- (5.55,-2);
+\draw[->] (4., -2.5) -- (5.55, -2.5);
+
+\draw[->] (4., -5) -- (5.55, -5);
+\draw[->] (4., -5.5) -- (5.55, -5.5);
+
+\node(sum1) at (9, -0.25)[sum]{$+$};
+\node(sum2) at (9, -2.25)[sum]{$+$};
+
+\draw[->] (poly3) -| (sum2);
+\draw[->] (poly2) -- (sum2);
+\draw[->] (poly1) -- (sum1);
+\draw[->] (sum2) -- (sum1);
+
+\node(y) at (10, 0) {$y_n$};
+\node(z0) at (8, 0.05) {$z_{0,n}$};
+\node(z1) at (8, -2) {$z_{1,n}$};
+\node(zb) at (8.1, -5) {$z_{B-1,n}$};
+
+\draw[->] (sum1) -- (10, -0.25);
+
+
+
+
+
+\end{tikzpicture}
+\end {document}

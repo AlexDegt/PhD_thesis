@@ -1,0 +1,252 @@
+\documentclass{beamer}
+\usepackage[american,russian]{babel}
+\usepackage{subcaption}
+\usetheme{CambridgeUS}
+\title{Магистерская диссертация}
+\subtitle{Разработка новых методов широкополосной передачи сигналов с модуляцией OFDM при большом уровне помех}
+\author[Дорохин Семен]{Студент группы М01-904а Дорохин Семен \\ 
+\small Научный руководитель: к.т.н. Иртюга В.А.}
+\institute{МФТИ (НИУ)}
+\date{\today}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Содержание}
+\tableofcontents
+\end{frame}
+
+
+\section{Введение}
+\subsection{Актуальность}
+
+\begin{frame}
+\frametitle{О модуляции ISS-OFDM}
+Interleaved Spread Spectrum OFDM, предложена в 2006 году.
+\begin{itemize}
+\item Классические методы расширения спектра (DSSS, FHSS)
+неустойчивы к замираниям в канале
+\item ISS-OFDM -- система расширенного спектра, сохраняющая свойства OFDM
+\item ISS-OFDM можно рассматривать как новый метод расширения спектра, устойчивый к многолучевому распространению
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Свойства ISS-OFDM}
+
+\begin{figure}
+\centering
+
+\subfloat[Кривые BER-SNR\label{fig:a}]{\includegraphics[scale=0.24]
+{../figures/BER_SNR_AWGN.png}}\qquad
+ \subfloat[Спектр OFDM и ISS-OFDM\label{fig:b}]{\includegraphics[scale=0.27]{../figures/spectrum.png}}
+\end{figure}
+
+Применения: тактическая связь, сети маломощных сенсоров, приём при низких SNR.
+\end{frame}
+
+\subsection{Цель и задачи}
+
+\begin{frame}
+\frametitle{Постановка задачи}
+ISS-OFDM ранее изучалась в предположении идеальной синхронизации.
+
+Не учитывалось Sampling Clock Offset $\zeta = f_s^{TX} - f_s^{RX}$ и 
+Carrier Frequency Offset $\Delta f = f_c^{TX} - f_c^{RX}$.
+
+Цель -- решить проблему синхронизации сигналов ISS-OFDM.
+Задачи:
+\begin{itemize}
+\item Разработать алгоритм временной синхронизации
+\item Разработать алгоритм частотной синхронизации
+\item Исследовать влияние многолучевого распространения
+\item Разработать прототип системы связи с модуляцией ISS-OFDM
+\end{itemize}
+
+Методы исследования: теоретический анализ, мат. моделирование, экспериментальная проверка
+\end{frame}
+
+\section{Синхронизация}
+\subsection{Грубая временная и частотная синхронизация}
+\begin{frame}
+\frametitle{Коррелятор и циклический префикс}
+\begin{figure}
+\subfloat[Схема алгоритма\label{fig:a}]{\includegraphics[scale=0.20]
+{../figures/corr_illustration.png}}\qquad
+\subfloat[Модуль корреляции\label{fig:b}]{\includegraphics[scale=0.12]{../figures/corr_plot.png}}
+\end{figure}
+\begin{itemize}
+\item Используется циклический префикс
+\item Метод корреляции для грубой веременной и частотной синхронизации
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Точность в гауссовом канале}
+\begin{figure}
+\subfloat[Ошибка временной синхронизации\label{fig:a}]{\includegraphics[scale=0.12]
+{../figures/time_coarse_error.png}}
+ \subfloat[Ошибка частотной синхронизации\label{fig:b}]{\includegraphics[scale=0.12]{../figures/CFO_est_sigma.png}}
+\begin{itemize}
+\item Усреднение по нескольким символам
+\item Ошибка временной синхронизации должна быть меньше $N_c/2$
+\end{itemize}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Уточнение временной синхронизации}
+\begin{figure}
+\subfloat[Грубая синхронизация\label{fig:a}]{\includegraphics[scale=0.2]
+{../figures/Upsampled_Tracker.pdf}}
+ \subfloat[Корреляция\label{fig:b}]{\includegraphics[scale=0.15]{../figures/TimeTracker1.png}}
+\begin{itemize}
+\item Циклический сдвиг индивидуален для каждой точки созвездия
+\item Необходима грубая временная синхронизация с точностью до одного временного отсчёта
+\end{itemize}
+\end{figure}
+
+\end{frame}
+
+\subsection{Точная временная синхронизация}
+
+\begin{frame}
+\frametitle{Компенсация}
+\begin{figure}
+\subfloat[Компенсация фазы\label{fig:a}]{\includegraphics[scale=0.25]
+{../figures/phase_comp_time_sync.png}}
+ \subfloat[Комп. амплитудных искажений\label{fig:b}]{\includegraphics[scale=0.24]{../figures/perfect_time_sync.png}}
+ \begin{itemize}
+ \item При временном сдвиге $\varepsilon$: $\hat{a}_{k} = sinc(\pi \varepsilon) a_k e^{-2 \pi j \frac{k \varepsilon}{N_c^2}}
+ e^{\pi j \varepsilon} + ICI$
+ \item Компенсация по оценке $\hat{\varepsilon}$:
+ $a^{restored} = \hat{a}_k e^{2 \pi j \frac{k \hat{\varepsilon}}{N_c^2}}
+\cdot \frac{1}{sinc(\pi \hat{\varepsilon})}$
+ \end{itemize}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Влияние SCO на кривые BER-SNR}
+\begin{figure}
+\includegraphics[scale=0.22]{../figures/BER_SNR_eps_compensation.png}
+\begin{itemize}
+\item Сложные созвездия более чувствительны
+\item При 64-QAM нужно больше символов для усреднения, чем при QPSK
+\end{itemize}
+\end{figure}
+\end{frame}
+
+\subsection{Точная частотная синхронизация}
+\begin{frame}
+\frametitle{Влияние CFO и SCO}
+\begin{figure}
+\includegraphics[scale=0.2]{../figures/eps_estim.png}
+\end{figure}
+\begin{itemize}
+\item OFDM: CFO даёт фазовый сдвиг, постоянный для всех несущих и символов
+\item ISS-OFDM: сдвиг от CFO растёт линейно с номером символа
+\item OFDM: разность фаз от SCO постоянна для всех символов
+\item ISS-OFDM: эта разность фаз линейно меняется между символами
+\end{itemize}
+\end{frame}
+
+\subsection{Оценка канальной характеристики}
+\begin{frame}
+\frametitle{Демодуляция методом параллельных БПФ}
+\begin{figure}
+\includegraphics[scale=0.22]{../figures/multipath_full.png}
+\end{figure}
+\begin{itemize}
+\item Нельзя распознать лучи с задержкой более $N_c$ временных отсчётов
+\item Задержки меньше временного отсчёта требуют интерполяции спектра
+\item Пример (EVA): $\tau = 30-2500\ ns$, $f_s = 100 \ MHz$, задержка $3-250$ отсчётов
+\item Требуется дальнейшее исследование
+\end{itemize}
+\end{frame}
+
+\subsection{Оценка отношения сигнал/шум}
+\begin{frame}
+\frametitle{Проблема оценки низких SNR}
+\begin{figure}
+\includegraphics[scale=0.25]{../figures/SNR_estimation.png}
+\end{figure}
+\begin{itemize}
+\item SNR оценивается по искажениям пилотов
+\item Неточность синхронизации влияет на оценку SNR
+\end{itemize}
+\end{frame}
+
+\section{Результаты}
+\begin{frame}
+\frametitle{Результаты экспериментов и моделирования}
+\begin{figure}
+\includegraphics[scale=0.23]{../figures/experimental_BER_SNR.png}
+\end{figure}
+\begin{itemize}
+\item Алгоритмы корректно работают на экспериментальных данных
+\item Результаты эксперимента совпадают с результатами моделирования в пределах погрешности
+\end{itemize}
+\end{frame}
+
+\section{Выводы}
+\begin{frame}
+\frametitle{Достигнутые цели и дальнейшие исследования}
+\begin{itemize}
+\item Решена задача синхронизации
+\item Аналитически исследовано влияние SCO и CFO
+\item Предложены новые алгоритмы точной и грубой синхронизации
+\item Исследовано влияние многолучевого распространения
+\item Апробация результатов (конф. DCCN, En\&T, DSPA)
+\item Потери синхронизации не превышают $0.5\ dB$ на кривой BER-SNR
+\item Требуется дальнейшее исследование алгоритмов оценки канала
+\item Требуется более масштабная экспериментальная проверка
+\end{itemize}
+\end{frame}
+
+\section{Приложение}
+
+\begin{frame}
+Схема DTF-S-OFDM (5G uplink)
+\includegraphics[width=\linewidth]{../figures/dft_s_ofdm.png}
+Вычислительная сложность $O(M log (M))$ против $O(\sqrt{M} log(\sqrt{M}))$ у ISS-OFDM
+\end{frame}
+
+\begin{frame}
+\includegraphics[width=\linewidth]{../figures/copied_OFDM_PAPR.png}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+\includegraphics[scale=0.35]{../figures/dsss_oqpsk_equalization.png}
+
+DSSS IEEE 802.15.4 (2006 revision)
+
+Из статьи S. Fang, S. Berber, A. Swain and S. U. Rehman, "A study on DSSS transceivers using OQPSK modulation by IEEE 802.15.4 in AWGN and flat Rayleigh fading channels," 2010 IEEE Region 10 Conference, 2010
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+\includegraphics[scale=0.7]{../figures/mr_ofdm_dsss.png}
+MR-OFDM IEEE 802.15.4g (2012 revision)
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+\includegraphics[scale=0.7]{../figures/mr_ofdm_dsss_EVA.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+\includegraphics[scale=0.4]{../figures/PAPR.png}
+\end{figure}
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,271 @@
+\section{Исследование компенсации неинейных искажений методами не требующими явного вычисления матрицы Гессе}
+Проведём сравнение кривых адаптации, а также значений критерия NMSE, полученных в результате работы блочной реализации градиентного спуска и стохастических методов SGD-SGD, SGD-DCD.
+
+Метод SGD-SGD подразумевает адаптацию обоих слоёв модели Гаммерштейна методом стохастического градиентного спуска. Метод SGD-DCD подразумевает адаптацию блока нелинейности амплитудной характеристики усилителя мощности методом стохастического градиентного спуска и адаптацию КИХ-фильтра стохастической реализацией метода DCD.
+
+Будем строить кривые адаптации по значениям критерия NMSE \eqref{nmse_block}, который подсчитывается после адаптации на блоке сигнала длиной 122880 отсчётов.
+
+На рис. \ref{fig:adapt_curves_rb1_path0} приведены кривые адаптации данных алгоритмов для случая, представленного на рис. \ref{fig:cond_rb1_path0}, при котором ширина полосы сигнала передатчика определяется одним ресурсным блоком, 180 кГц (рис. \ref{fig:tx_rb1}), а канал распространения определяется частотной характеристикой $path_0$ (рис. \ref{fig:path0}).
+
+На рис. \ref{fig:adapt_curves_rb1_path0} по оси абсцисс отмечены порядковые номера блоков длиной 122880 отсчётов.
+
+Помимо кривых адаптации градиентных методов первого порядка на рис. \ref{fig:adapt_curves_rb1_path0} приведена кривая адаптации демпфированного метода Ньютона, отражающая опорные значения критерия NMSE.
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{figures/adapt_curves/adapt_curve_rb1_path0.pdf}
+	\caption{Кривые адаптации модели Гаммерштейна для случая сигнала передатчика с шириной полосы равной 180 кГц и канала распросранения помехи $path_0$}
+	\label{fig:adapt_curves_rb1_path0}
+\end{figure}
+
+Рис. \ref{fig:adapt_curves_rb1_path0} отражает тот факт, что наибольшей скоростью сходимости среди градиентных методов обладает алгоритм SGD-DCD для данных условий формирования помехи. Кроме того, данный метод обеспечивает наилучшее подавление близкое к значениям NMSE, полученным в результате работы демпфированного метода Ньютона.
+
+На рис. \ref{fig:psd_rb1_path0_gd}--\ref{fig:psd_rb1_path0_sgd_dcd} изображены спектральные плотности мощности паразитной помехи, сигнала на выходе модели Гаммерштейна после адаптации, а также отклонения выхода модели Гаммерштейна от сигнала помехи. Значения критериев NMSE в данном случае составляют $-21.0$ dB, $-24.1$ dB и $-24.0$ dB для блочного метода градиентного спуска, SGD-SGD и SGD-DCD соответственно.
+\begin{figure}
+	\begin{subfigure}[b]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_gd_rb1_path0.pdf}
+		\caption{}
+		\label{fig:psd_rb1_path0_gd_reduced}
+	\end{subfigure}
+	\hspace{2ex}
+	\begin{subfigure}[b]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_gd_rb1_path0_expanded.pdf}
+		\caption{}
+		\label{fig:psd_rb1_path0_gd_expanded}
+	\end{subfigure}
+	\caption{Спектральная плотность мощности сигнала паразитной помехи после адаптации блочным методом градиентного спуска. Случай $\{\text{RB1}, path_0\}$}
+	\label{fig:psd_rb1_path0_gd}
+\end{figure}
+\begin{figure}
+	\begin{subfigure}[b]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_sgd_sgd_rb1_path0.pdf}
+		\caption{}
+		\label{fig:psd_rb1_path0_sgd_sgd_reduced}
+	\end{subfigure}
+	\hspace{2ex}
+	\begin{subfigure}[b]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_sgd_sgd_rb1_path0_expanded.pdf}
+		\caption{}
+		\label{fig:psd_rb1_path0_sgd_sgd_expanded}
+	\end{subfigure}
+	\caption{Спектральная плотность мощности сигнала паразитной помехи после адаптации методом SGD-SGD. Случай $\{\text{RB1}, path_0\}$}
+	\label{fig:psd_rb1_path0_sgd_sgd}
+\end{figure}
+\begin{figure}
+	\begin{subfigure}[b]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_sgd_dcd_rb1_path0.pdf}
+		\caption{}
+		\label{fig:psd_rb1_path0_sgd_dcd_reduced}
+	\end{subfigure}
+	\hspace{2ex}
+	\begin{subfigure}[b]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_sgd_dcd_rb1_path0_expanded.pdf}
+		\caption{}
+		\label{fig:psd_rb1_path0_sgd_dcd_expanded}
+	\end{subfigure}
+	\caption{Спектральная плотность мощности сигнала паразитной помехи после адаптации методом SGD-DCD. Случай $\{\text{RB1}, path_0\}$}
+	\label{fig:psd_rb1_path0_sgd_dcd}
+\end{figure}
+%%%%%%
+
+Кривые адаптации данных алгоритмов для случая $\{\text{RB50}, path_1\}$ (рис.~\ref{fig:cond_rb50_path1}) приведены на рис.~\ref{fig:adapt_curves_rb50_path1}. Ширина полосы сигнала передатчика определяется 50-ю ресурсными блоками, 9 МГц (рис. \ref{fig:tx_rb50}), а канал распространения определяется частотной характеристикой $path_1$ (рис. \ref{fig:path1}).
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{figures/adapt_curves/adapt_curve_rb50_path1.pdf}
+	\caption{Кривые адаптации модели Гаммерштейна для случая сигнала передатчика с шириной полосы равной 9 МГц и канала распросранения помехи $path_1$}
+	\label{fig:adapt_curves_rb50_path1}
+\end{figure}
+
+Рис. \ref{fig:adapt_curves_rb50_path1} отражает тот факт, что наибольшей скоростью сходимости среди градиентных методов обладает алгоритм SGD-SGD для данных условий формирования помехи. Кроме того, данный метод обеспечивает наилучшее подавление близкое к значениям NMSE, полученным в результате работы демпфированного метода Ньютона. При этом алгоритм алгоритм SGD-SGD сходится к опорным значениям NMSE более плавно по сравнению с методом SGD-DCD.
+
+Отметим также, что блочная реализация градиентного спуска адаптирует модель Гаммерштейна существенно медленнее, чем алгоритмы SGD-SGD и SGD-DCD.
+
+На рис. \ref{fig:psd_rb50_path1_gd}--\ref{fig:psd_rb50_path1_sgd_dcd} изображены спектральные плотности мощности паразитной помехи, сигнала на выходе модели Гаммерштейна после адаптации, а также отклонения выхода модели Гаммерштейна от сигнала помехи. Значения критериев NMSE в данном случае составляют $-18.8$ dB, $-30.9$ dB и $-30.2$ dB для блочного метода градиентного спуска, SGD-SGD и SGD-DCD соответственно.
+\begin{figure}[h!]
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_gd_rb50_path1.pdf}
+		\caption{}
+		\label{fig:psd_rb50_path1_gd_reduced}
+	\end{subfigure}
+	\hspace{2ex}
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_gd_rb50_path1_expanded.pdf}
+		\caption{}
+		\label{fig:psd_rb50_path1_gd_expanded}
+	\end{subfigure}
+	\caption{Спектральная плотность мощности сигнала паразитной помехи после адаптации блочным методом градиентного спуска. Случай $\{\text{RB50}, path_1\}$}
+	\label{fig:psd_rb50_path1_gd}
+\end{figure}
+\begin{figure}[h!]
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_sgd_sgd_rb50_path1.pdf}
+		\caption{}
+		\label{fig:psd_rb50_path1_sgd_sgd_reduced}
+	\end{subfigure}
+	\hspace{2ex}
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_sgd_sgd_rb50_path1_expanded.pdf}
+		\caption{}
+		\label{fig:psd_rb50_path1_sgd_sgd_expanded}
+	\end{subfigure}
+	\caption{Спектральная плотность мощности сигнала паразитной помехи после адаптации методом SGD-SGD. Случай $\{\text{RB50}, path_1\}$}
+	\label{fig:psd_rb50_path1_sgd_sgd}
+\end{figure}
+\begin{figure}[h!]
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_sgd_dcd_rb50_path1.pdf}
+		\caption{}
+		\label{fig:psd_rb50_path1_sgd_dcd_reduced}
+	\end{subfigure}
+	\hspace{2ex}
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_sgd_dcd_rb50_path1_expanded.pdf}
+		\caption{}
+		\label{fig:psd_rb50_path1_sgd_dcd_expanded}
+	\end{subfigure}
+	\caption{Спектральная плотность мощности сигнала паразитной помехи после адаптации методом SGD-DCD. Случай $\{\text{RB50}, path_1\}$}
+	\label{fig:psd_rb50_path1_sgd_dcd}
+\end{figure} %%%%%%%%%%%%%%%%%%%%%
+
+Кривые адаптации данных алгоритмов для случая $\{\text{RB100}, path_2\}$ (рис.~\ref{fig:cond_rb100_path2}) приведены на рис. \ref{fig:adapt_curves_rb100_path2}. Ширина полосы сигнала передатчика определяется 100 ресурсными блоками, 18~МГц~(рис.~\ref{fig:tx_rb100}), а канал распространения определяется частотной характеристикой $path_2$ (рис. \ref{fig:path2}).
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{figures/adapt_curves/adapt_curve_rb100_path2.pdf}
+	\caption{Кривые адаптации модели Гаммерштейна для случая сигнала передатчика с шириной полосы равной 18 МГц и канала распросранения помехи $path_2$}
+	\label{fig:adapt_curves_rb100_path2}
+\end{figure}
+\begin{figure}[h!]
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_gd_rb100_path2.pdf}
+		\caption{}
+		\label{fig:psd_rb100_path2_gd_reduced}
+	\end{subfigure}
+	\hspace{2ex}
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.39]{figures/psd/psd_gd_rb100_path2_expanded.pdf}
+		\caption{}
+		\label{fig:psd_rb100_path2_gd_expanded}
+	\end{subfigure}
+	\caption{Спектральная плотность мощности сигнала паразитной помехи после адаптации блочным методом градиентного спуска. Случай $\{\text{RB100}, path_2\}$} 
+	\label{fig:psd_rb100_path2_gd}
+\end{figure}
+
+Рис. \ref{fig:adapt_curves_rb100_path2} отражает тот факт, что наибольшей скоростью сходимости среди градиентных методов обладает алгоритм SGD-SGD для данных условий формирования помехи. Кроме того, данный метод обеспечивает наилучшее подавление близкое к значениям NMSE, полученным в результате работы демпфированного метода Ньютона.
+
+На рис. \ref{fig:psd_rb100_path2_gd}--\ref{fig:psd_rb100_path2_sgd_dcd} изображены спектральные плотности мощности паразитной помехи, сигнала на выходе модели Гаммерштейна после адаптации, а также отклонения выхода модели Гаммерштейна от сигнала помехи. Значения критериев NMSE в данном случае составляют $-16.2$ dB, $-29.4$ dB и $-27.8$ dB для блочного метода градиентного спуска, SGD-SGD и SGD-DCD соответственно.
+
+\begin{figure}[h!]
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_sgd_sgd_rb100_path2.pdf}
+		\caption{}
+		\label{fig:psd_rb100_path2_sgd_sgd_reduced}
+	\end{subfigure}
+	\hspace{2ex}
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.39]{figures/psd/psd_sgd_sgd_rb100_path2_expanded.pdf}
+		\caption{}
+		\label{fig:psd_rb100_path2_sgd_sgd_expanded}
+	\end{subfigure}
+	\caption{Спектральная плотность мощности сигнала паразитной помехи после адаптации методом SGD-SGD. Случай $\{\text{RB100}, path_2\}$}
+	\label{fig:psd_rb100_path2_sgd_sgd}
+\end{figure}
+\begin{figure}[h!]
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.45]{figures/psd/psd_sgd_dcd_rb100_path2.pdf}
+		\caption{}
+		\label{fig:psd_rb100_path2_sgd_dcd_reduced}
+	\end{subfigure}
+	\hspace{2ex}
+	\begin{subfigure}[h!]{0.51\textwidth}
+		\includegraphics[scale=0.39]{figures/psd/psd_sgd_dcd_rb100_path2_expanded.pdf}
+		\caption{}
+		\label{fig:psd_rb100_path2_sgd_dcd_expanded}
+	\end{subfigure}
+	\caption{Спектральная плотность мощности сигнала паразитной помехи после адаптации методом SGD-DCD. Случай $\{\text{RB100}, path_2\}$}
+	\label{fig:psd_rb100_path2_sgd_dcd}
+\end{figure}
+
+Кривые адаптации блочного метода градиентного спуска, SGD-SGD, SGD-DCD, а также спектральные плотности мощности помехи после адаптации данными методами для всех случаев формирования помехи из таблицы \ref{tbl:signals} представлены в приложении А2.
+
+Таблица \ref{tbl:nmse_gd} отражает значения критерия NMSE dB, полученные в результате адаптации модели Гаммерштейна блочным методом градиентного спуска на сигналах стационарной помехи длительностью 2457600 отсчётов для каждого случая формирования паразитной помехи (таблица. \ref{tbl:signals}).
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ | l | l | l | l | l | l |}
+		\hline
+		& RB1 & RB25 & RB50 & RB75 & RB100 \\ \hline
+		& & & & & \\
+		$path_0$ & -21.0 & -22.8 & -19.9 & -16.4 & -18.8 \\
+		& & & & & \\ \hline
+		& & & & & \\
+		$path_1$ & -20.0 & -21.2 & -18.8 & -15.0 & -16.3 \\
+		& & & & & \\ \hline
+		& & & & & \\
+		$path_2$ & -21.6 & -23.9 & -20.0 & -15.3 & -16.2 \\
+		& & & & & \\ \hline
+	\end{tabular}
+	\caption{Значения критерия NMSE dB, полученные в результате адаптации блочным методом градиентного спуска для каждого случая формирования паразитной помехи}
+	\label{tbl:nmse_gd}
+\end{table}
+
+Таблица \ref{tbl:nmse_sgd_sgd} отражает значения критерия NMSE dB, полученные в результате адаптации модели Гаммерштейна методом SGD-SGD на сигналах стационарной помехи длительностью 2457600 отсчётов для каждого случая формирования паразитной помехи (таблица. \ref{tbl:signals}).
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ | l | l | l | l | l | l |}
+		\hline
+		& RB1 & RB25 & RB50 & RB75 & RB100 \\ \hline
+		& & & & & \\
+		$path_0$ & -24.1 & -32.3 & -31.4 & -31.4 & -29.1 \\
+		& & & & & \\ \hline
+		& & & & & \\
+		$path_1$ & -22.2 & -30.5 & -30.9 & -30.4 & -28.6 \\
+		& & & & & \\ \hline
+		& & & & & \\
+		$path_2$ & -25.3 & -32.7 & -31.5 & -31.2 & -29.4 \\
+		& & & & & \\ \hline
+	\end{tabular}
+	\caption{Значения критерия NMSE dB, полученные в результате адаптации методом SGD-SGD для каждого случая формирования паразитной помехи}
+	\label{tbl:nmse_sgd_sgd}
+\end{table}
+
+Таблица \ref{tbl:nmse_sgd_dcd} отражает значения критерия NMSE dB, полученные в результате адаптации модели Гаммерштейна методом SGD-DCD на сигналах стационарной помехи длительностью 2457600 отсчётов для каждого случая формирования паразитной помехи (таблица. \ref{tbl:signals}).
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ | l | l | l | l | l | l |}
+		\hline
+		& RB1 & RB25 & RB50 & RB75 & RB100 \\ \hline
+		& & & & & \\
+		$path_0$ & -24.0 & -32.5 & -31.2 & -27.7 & -27.5 \\
+		& & & & & \\ \hline
+		& & & & & \\
+		$path_1$ & -22.0 & -30.5 & -30.2 & -26.1 & -26.8 \\
+		& & & & & \\ \hline
+		& & & & & \\
+		$path_2$ & -25.0 & -32.8 & -30.6 & -27.1 & -27.8 \\
+		& & & & & \\ \hline
+	\end{tabular}
+	\caption{Значения критерия NMSE dB, полученные в результате адаптации методом SGD-DCD для каждого случая формирования паразитной помехи}
+	\label{tbl:nmse_sgd_dcd}
+\end{table}
+
+Из таблицы \ref{tbl:nmse_gd} следует, что за время работы алгоритмов адаптации равное 2457600 отсчётов блочная реализация метода градиентного спуска обеспечивает подавление паразитной помехи не меньше, чем на 20 дБ для случаев сигнала передатчика с шириной полосы равной 180 кГц и 4.5 МГц для рассмотренных случав оценки канала распространения помехи.
+
+Для случая сигнала передатчика с шириной полосы 9 МГц подавление паразитной нелинейной помехи составляет как минимум 18 дБ. 
+
+При этом для случая сигнала передатчика с шириной полосы 13.5 МГц и 28 МГц подавление помехи не хуже 15 дБ.
+
+Из таблицы \ref{tbl:nmse_sgd_dcd} следует, что за 2457600 отсчётов стохастический алгоритм SGD-DCD обеспечивает компенсацию помехи для случая сигнала передатчика с шириной полосы 180 кГц как минимум на 21 дБ для всех рассмотренных каналов распространения, что на 1 дБ больше, чем в случае блочного градиентного спуска. 
+
+Для случая сигналов передатчика с шириной полосы 4.5 МГц и 9 МГц компенсация помехи не хуже 30 дБ, что больше на 9 дБ и 12 дБ соответственно, чем в случае блочного градиентного спуска.
+
+Компенсация паразитной помехи в случае сигнала передатчика шириной полосы 13.5 и 18 МГц не меньше, чем 26 дБ, что больше на 11 дБ и 10 дБ соответственно, чем в случае блочной реализации градиентного спуска. 
+
+Из таблицы \ref{tbl:nmse_sgd_sgd} следует, что за 2457600 отсчётов стохастический алгоритм SGD-SGD компенсирует паразитную помеху не хуже, чем на 22 дБ для всех оценок канала распространения помехи, что на 1 дБ лучше, чем в случае алгоритма SGD-DCD. При этом из графиков кривых адаптаций на рис. \ref{fig:adapt_curves_rb1_path0}, \ref{fig:adapt_curves_rb1_path1}, \ref{fig:adapt_curves_rb1_path2} следует, что скорость сходимости алгоритма SGD-SGD для данного случая выше, чем для SGD-DCD и блочного градиентного спуска.
+
+Подавление нелинейной помехи в случае сигнала передатчика с шириной полосы 4.5 МГц, 9 МГц не меньше, чем 30 дБ, что совпадает с результатом работы алгоритма SGD-DCD за 2457600 отсчётов для всех рассмотренных оценок канала распространения помехи. При этом из графиков кривых адаптаций на рис. \ref{fig:adapt_curves_rb25_path0}, \ref{fig:adapt_curves_rb25_path1}, \ref{fig:adapt_curves_rb25_path2} для сигнала передатчика RB25 и на рис. \ref{fig:adapt_curves_rb50_path0}, \ref{fig:adapt_curves_rb50_path1}, \ref{fig:adapt_curves_rb50_path2} для сигнала передатчика RB50 следует, что скорость сходимости алгоритма SGD-SGD для данных случаев выше, чем скорость сходимости SGD-DCD и блочной реализации метода градиентного спуска.
+
+Компенсация нелинейной помехи в случае сигнала передатчика с шириной полосы 13.5 МГц не меньше, чем 30 дБ, что больше, чем в случае алгоритма SGD-DCD на 4 дБ. Кроме того из графиков кривых адаптаций на рис. \ref{fig:adapt_curves_rb75_path0}, \ref{fig:adapt_curves_rb75_path1}, \ref{fig:adapt_curves_rb75_path2} следует, что скорость сходимости алгоритма SGD-SGD выше, чем скорость сходимости SGD-DCD и блочного метода градиентного спуска.
+
+Для случая сигнала передатчика с шириной полосы 18 МГц подавление паразитной помехи не хуже 28 дБ, что на 1.5 дБ больше, чем в случае алгоритма SGD-DCD. Графики кривых адаптации на рис. \ref{fig:adapt_curves_rb100_path0}, \ref{fig:adapt_curves_rb100_path1}, \ref{fig:adapt_curves_rb100_path2} отражают тот факт, что скорость сходимости SGD-SGD выше, чем в случае SGD-DCD и блочной релизации градиентного спуска.
+
+Таким образом подавление паразитной помехи методами SGD-SGD, SGD-DCD и блочной реализацией градиентного спуска на сигнале длительностью 2457600 отсчётов отличается от опорных значений компенсации, сформированных демпфированным методом Ньютона меньше, чем на 1 дБ, 4 дБ и 15 дБ соответственно, для рассмотренных случаев формирования помехи, представленных в таблице \ref{tbl:signals}.
+
+Отметим также, что за время работы алгоритмов адаптации равное 2457600 отсчётов среди рассмотренных градиентных методов первого порядка наилучшую компенсацию паразитной помехи, а также наибольшую скорость сходимости обеспечивает стохастический метод SGD-SGD для рассмотренных случаев формирования паразитной нелинейной помехи.
