@@ -1,6 +1,6 @@
 \section{Методы второго порядка для адаптации моделей нелинейных искажений}
 
-\subsection{Метод Ньютона}
+\subsection{Метод Ньютона} \label{subsec:newton}
 
 Несмотря на широкое распространение и простоту реализации методов первого порядка, их эффективность существенно снижается в задачах с жёсткими (плохо обусловленными) функциями, где направление антиградиента может существенно отличаться от направления наискорейшего убывания. Для ускорения сходимости и более точного учёта локальной геометрии целевой функции применяются методы второго порядка, использующие информацию не только о градиенте, но и о кривизне поверхности уровня. 
 
@@ -194,7 +194,7 @@
 	}
 \end{algorithm}
 
-\subsection{Смешанный метод Ньютона}
+\subsection{Смешанный метод Ньютона} \label{subsec:mnm}
 
 Смешанный метод Ньютона (Mixed Newton method -- MNM)~--- модификация метода Ньютона~\eqref{newton_method_full} в условиях голоморфности вектора ошибки $\bit{e}=\bit{e}(\bit{z}, \bit{x})$. Иначе говоря смешанный метод Ньютона работает в преположении независимости вектора ошибки от сопряженных параметров $\bit{z}^*$: $\bit{e}=\bit{e}(\bit{x}, \bit{z})$:
 \begin{align}
@@ -220,7 +220,7 @@
 
 Таким образом, учитывая выражения~\eqref{mixed_hessian_holomorphic},~\eqref{grad_descent_сomplex_mse_holomorphic} и~\eqref{mixed_newton_eq} алгоритм смешанного метода Ньютона можно представить следующим разностным уравнением:
 \begin{equation}
-	\bit{z}_{k+1}=\bit{z}_k-\mu ((D_{\bit{z}}\bit{y})^HD_{\bit{z}}\bit{y})^{-1}(D_{\bit{z}}\bit{y})^H\bit{e}.
+	\bit{z}_{k+1}=\bit{z}_k+\mu ((D_{\bit{z}}\bit{y})^HD_{\bit{z}}\bit{y})^{-1}(D_{\bit{z}}\bit{y})^H\bit{e}.
 	\label{mixed_newton_eq_jac}
 \end{equation}
 
@@ -228,93 +228,108 @@
 
 %Кроме того, отметим, что разностное уравнение \eqref{diff_equat_newton_hammerst} метода Ньютона применительно к неквадратичным задачам также представляет собой итеративную LS-оценку.
 
-\subsection{Метод LS}
-Метод LS применим только к однослойным моделям, когда MSE задаётся квадратичной функцией, минимизация которой сводится к решению линейной системы~\cite{convex_opt}. Поэтому LS будем применять к адаптации КИХ-фильтра и модели нелинейности, заданной блоков PLA.
+\subsection{Метод LS} \label{subsec:ls}
+Метод LS -- Least Squares представляет собой один шаг смешанного метода Ньютона с шагом адаптации $\mu=1$~\eqref{mixed_newton_eq_jac}. В случае голоморфной по параметрам модели $\bit{z}$ ошибки $\bit{e}=\bit{e}(\bit{x}, \bit{z})$ и линейности по параметрам модели
+\begin{align}
+	\bit{e}&=\bit{e}(\bit{x}, \bit{z})=\bit{d} - \bit{y}(\bit{x}, \bit{z}), \nonumber \\
+	\bit{y}&=\bit{U}(\bit{x})\bit{z}, \text{  }\bit{U}(\bit{x})\text{ -- матрица входных данных,}
+	\label{ls_1_step_conditions}
+\end{align}
+функция потерь MSE~\eqref{mse_block} является квадратичной по параметрам модели. В этом случае минимизация MSE сводится к решению линейной системы~\cite{convex_opt}. В связи с этим LS находит глобальный оптимум функции потерь за 1 шаг~\cite{convex_opt}.
 
-Рассмотрим адаптацию линейного КИХ-фильтра порядка $M$ с коэффициентами~\bit{w}. Оптимальные коэффициенты с точки зрения среднего квадрата ошибки MSE задаются выражаются уравнением Винера-Хопфа \cite{adapt_filt_haykin}:
+Поскольку глобальный оптимум может быть найден из любой начальной точки, включая $\bit{z}_0=\bit{0}$, то финальный вид LS метода представлен выражением:
 \begin{equation}
-	\bit{w}_{opt}=\bit{R}_{xx}^{-1}\bit{r}_{dx},
-	\label{viner_hopf}
+	\bit{z}_{\text{opt}}=((D_{\bit{z}}\bit{y})^HD_{\bit{z}}\bit{y})^{-1}(D_{\bit{z}}\bit{y})^H\bit{d},
+	\label{ls_eq_jac}
 \end{equation}
-где $\bit{R}_{xx}$ -- корреляционная матрица сигнала \eqref{autokorr_matr}, а $\bit{r}_{dx}$ -- вектор взаимной корреляции, который определяется:
-\begin{equation}
-	\bit{r}_{dx}=\mathbb{E}(\bit{u}_n^*d_n),
-	\label{corr_mutual}
-\end{equation}
-где $\bit{u}_n$ -- вектор состояния фильтра \eqref{fir_state_vec}.
+где $D_{\bit{z}}\bit{y}=\bit{U}(\bit{x})$ ввиду линейности модели~\eqref{ls_1_step_conditions}, $\bit{e}=\bit{d}-\bit{U}\bit{z}_0=\bit{d}$ -- начальная ошибка адаптации.
 
-LS (Least Squares)-оценка является решением уравнения Винера-Хопфа в блочном режиме, то есть при ограниченной длине выборки.
+%Поэтому LS будем применять к адаптации КИХ-фильтра и модели нелинейности, заданной блоков PLA.
 
-Определим задачу поиска оптимальных коэффициентов линейного КИХ-фильтра как задачу поиска решения системы линейных уравнений:
-\begin{equation}
-	\begin{cases}
-		\begin{matrix}
-			\textbf{\textit{d}}=\textbf{\textit{U}}\textbf{\textit{w}}_{opt},\\
-			\textbf{\textit{e}} = \textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}},\\
-			\textbf{\textit{w}}_{opt}=\arg\min_{\textbf{\textit{w}}}(\textbf{\textit{e}}^H\textbf{\textit{e}})
-		\end{matrix}
-	\end{cases}
-	\label{line_eq}
-\end{equation}
-$J(\textbf{\textit{w}})=\textbf{\textit{e}}^H\textbf{\textit{e}}$ -- вещественнозначная функция комплексного вектора $\textbf{\textit{w}}$. Градиент такой функции равен \cite{wirt_deriv_tech_rep}:
-\begin{equation}
-	\nabla_{J}(\textbf{\textit{w}})\equiv\frac{\partial J(\textbf{\textit{w}})}{\partial \textbf{\textit{w}}^H}=
-	\begin{pmatrix}\displaystyle
-		\frac{\partial J(\textbf{\textit{w}})}{\partial w_0^*} & 
-		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_1^*} &
-		\cdots & 
-		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_{M-1}^*}
-	\end{pmatrix}^T,
-	\label{gradient}
-\end{equation}
-\begin{equation}
-	\nabla_{J}^H(\textbf{\textit{w}})\equiv\frac{\partial J(\textbf{\textit{w}})}{\partial \textbf{\textit{w}}}=
-	\begin{pmatrix}
-		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_0} & 
-		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_1} &
-		\cdots & 
-		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_{M-1}}
-	\end{pmatrix},
-	\label{gradient_hermit}
-\end{equation}
-где под выражением $	\frac{\partial J(\textbf{\textit{w}})}{\partial w_i^*} \ \forall i=\overline{0, M-1}$ понимается производная Виртингера функции комплексных переменных \cite{wirt_deriv_book}.
-
-Ввиду того, что средний квадрат ошибки для однослойной модели, в данном случае КИХ-фильтра, является квадратичной функцией, то глобальным минимум метрики MSE может быть найден следующий образом:
-\begin{equation}
-	\frac{\partial J(\textbf{\textit{w}})}{\partial \textbf{\textit{w}}^H}\bigg |_{\textbf{\textit{w}}=\textbf{\textit{w}}_{opt}}=
-	\textbf{\textit{0}}
-\end{equation}
-Найдём экстремум фунции MSE для уравнения \eqref{line_eq}:
-\begin{eqnarray}
-	\nabla_{J}(\textbf{\textit{w}})=
-	\frac{\partial}{\partial \textbf{\textit{w}}^H}(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})^H(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})=\\
-	=\frac{\partial}{\partial \textbf{\textit{w}}^H}(\textbf{\textit{d}}^H-\textbf{\textit{w}}^H\textbf{\textit{U}}^H)(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})=\\
-	=-\textbf{\textit{U}}^H(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})=\textbf{\textit{U}}^H\textbf{\textit{U}}\textbf{\textit{w}}-\textbf{\textit{U}}^H\textbf{\textit{d}}=0
-\end{eqnarray}
-\begin{equation}
-	\hat{\textbf{\textit{w}}}_{opt}=(\textbf{\textit{U}}^H\textbf{\textit{U}})^{-1}\textbf{\textit{U}}^H\textbf{\textit{d}},
-\end{equation}
-где $\hat{\textbf{\textit{w}}}_{opt}$ -- оценка оптимальных коэффициентов. Отметим, что вектор:
-\begin{equation}
-	\check{\textbf{\textit{r}}}_{dx}=\textbf{\textit{U}}^H\textbf{\textit{d}}
-\end{equation}
-представляет собой смещенную оценку вектора взаимной корреляции. В то же время, как отмечалось раннее \eqref{autorokk_matrprod}, матрица:
-\begin{equation}
-	\check{\textbf{\textit{R}}}_{xx}=\textbf{\textit{U}}^H\textbf{\textit{U}}
-\end{equation}
-представляет собой смещенную оценку матрицы корреляции.
-
-Таким образом, оценки оптимальных коэффициентов КИХ-фильтра и блока PLA имеюи вид:
-\begin{equation}
-	\hat{\textbf{\textit{w}}}_{opt}=\check{\bit{R}}_{xx}^{-1}\textbf{\textit{r}}_{dx},
-	\label{viner_hopf_fir}
-\end{equation}
-\begin{equation}
-	\hat{\textbf{\textit{h}}}_{opt}=\check{\bit{R}}_{vv}^{-1}\textbf{\textit{r}}_{dv}.
-	\label{viner_hopf_pla}
-\end{equation}
-Уравнения \eqref{viner_hopf_fir}, \eqref{viner_hopf_pla} отражают связь между LS-оценкой и уравнением Винера-Хопфа для поиска оптимальных коэффициентов линейного КИХ-фильтра \eqref{viner_hopf}. 
-
-Отметим, что метод LS подразумевает накопление корреляционной матрицы, её обращение и выполнение операции матрично-векторного умножения. Такой метод поиска оптимальных коэффициентов трудный с точки зрения вычислительной сложности, однако применяется для оценки оптимальных коэффициентов моделей ввиду сходимости к вектору оптимальных коэффициентов за одну итерацию за счёт квадратичности целевой функции.
-
-Метод LS неприменим к модели Гаммерштейна, однако существует итеративная модификация метода LS. Эта модификация по сути представляет собой метод Ньютона \cite{nesterov}, который будет описан далее.
+%Рассмотрим адаптацию линейного КИХ-фильтра порядка $M$ с коэффициентами~\bit{w}. Оптимальные коэффициенты с точки зрения среднего квадрата ошибки MSE задаются выражаются уравнением Винера-Хопфа \cite{adapt_filt_haykin}:
+%\begin{equation}
+%	\bit{w}_{opt}=\bit{R}_{xx}^{-1}\bit{r}_{dx},
+%	\label{viner_hopf}
+%\end{equation}
+%где $\bit{R}_{xx}$ -- корреляционная матрица сигнала \eqref{autokorr_matr}, а $\bit{r}_{dx}$ -- вектор взаимной корреляции, который определяется:
+%\begin{equation}
+%	\bit{r}_{dx}=\mathbb{E}(\bit{u}_n^*d_n),
+%	\label{corr_mutual}
+%\end{equation}
+%где $\bit{u}_n$ -- вектор состояния фильтра \eqref{fir_state_vec}.
+%
+%LS (Least Squares)-оценка является решением уравнения Винера-Хопфа в блочном режиме, то есть при ограниченной длине выборки.
+%
+%Определим задачу поиска оптимальных коэффициентов линейного КИХ-фильтра как задачу поиска решения системы линейных уравнений:
+%\begin{equation}
+%	\begin{cases}
+%		\begin{matrix}
+%			\textbf{\textit{d}}=\textbf{\textit{U}}\textbf{\textit{w}}_{opt},\\
+%			\textbf{\textit{e}} = \textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}},\\
+%			\textbf{\textit{w}}_{opt}=\arg\min_{\textbf{\textit{w}}}(\textbf{\textit{e}}^H\textbf{\textit{e}})
+%		\end{matrix}
+%	\end{cases}
+%	\label{line_eq}
+%\end{equation}
+%$J(\textbf{\textit{w}})=\textbf{\textit{e}}^H\textbf{\textit{e}}$ -- вещественнозначная функция комплексного вектора $\textbf{\textit{w}}$. Градиент такой функции равен \cite{wirt_deriv_tech_rep}:
+%\begin{equation}
+%	\nabla_{J}(\textbf{\textit{w}})\equiv\frac{\partial J(\textbf{\textit{w}})}{\partial \textbf{\textit{w}}^H}=
+%	\begin{pmatrix}\displaystyle
+%		\frac{\partial J(\textbf{\textit{w}})}{\partial w_0^*} & 
+%		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_1^*} &
+%		\cdots & 
+%		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_{M-1}^*}
+%	\end{pmatrix}^T,
+%	\label{gradient}
+%\end{equation}
+%\begin{equation}
+%	\nabla_{J}^H(\textbf{\textit{w}})\equiv\frac{\partial J(\textbf{\textit{w}})}{\partial \textbf{\textit{w}}}=
+%	\begin{pmatrix}
+%		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_0} & 
+%		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_1} &
+%		\cdots & 
+%		\displaystyle\frac{\partial J(\textbf{\textit{w}})}{\partial w_{M-1}}
+%	\end{pmatrix},
+%	\label{gradient_hermit}
+%\end{equation}
+%где под выражением $	\frac{\partial J(\textbf{\textit{w}})}{\partial w_i^*} \ \forall i=\overline{0, M-1}$ понимается производная Виртингера функции комплексных переменных \cite{wirt_deriv_book}.
+%
+%Ввиду того, что средний квадрат ошибки для однослойной модели, в данном случае КИХ-фильтра, является квадратичной функцией, то глобальным минимум метрики MSE может быть найден следующий образом:
+%\begin{equation}
+%	\frac{\partial J(\textbf{\textit{w}})}{\partial \textbf{\textit{w}}^H}\bigg |_{\textbf{\textit{w}}=\textbf{\textit{w}}_{opt}}=
+%	\textbf{\textit{0}}
+%\end{equation}
+%Найдём экстремум фунции MSE для уравнения \eqref{line_eq}:
+%\begin{eqnarray}
+%	\nabla_{J}(\textbf{\textit{w}})=
+%	\frac{\partial}{\partial \textbf{\textit{w}}^H}(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})^H(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})=\\
+%	=\frac{\partial}{\partial \textbf{\textit{w}}^H}(\textbf{\textit{d}}^H-\textbf{\textit{w}}^H\textbf{\textit{U}}^H)(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})=\\
+%	=-\textbf{\textit{U}}^H(\textbf{\textit{d}}-\textbf{\textit{U}}\textbf{\textit{w}})=\textbf{\textit{U}}^H\textbf{\textit{U}}\textbf{\textit{w}}-\textbf{\textit{U}}^H\textbf{\textit{d}}=0
+%\end{eqnarray}
+%\begin{equation}
+%	\hat{\textbf{\textit{w}}}_{opt}=(\textbf{\textit{U}}^H\textbf{\textit{U}})^{-1}\textbf{\textit{U}}^H\textbf{\textit{d}},
+%\end{equation}
+%где $\hat{\textbf{\textit{w}}}_{opt}$ -- оценка оптимальных коэффициентов. Отметим, что вектор:
+%\begin{equation}
+%	\check{\textbf{\textit{r}}}_{dx}=\textbf{\textit{U}}^H\textbf{\textit{d}}
+%\end{equation}
+%представляет собой смещенную оценку вектора взаимной корреляции. В то же время, как отмечалось раннее \eqref{autorokk_matrprod}, матрица:
+%\begin{equation}
+%	\check{\textbf{\textit{R}}}_{xx}=\textbf{\textit{U}}^H\textbf{\textit{U}}
+%\end{equation}
+%представляет собой смещенную оценку матрицы корреляции.
+%
+%Таким образом, оценки оптимальных коэффициентов КИХ-фильтра и блока PLA имеюи вид:
+%\begin{equation}
+%	\hat{\textbf{\textit{w}}}_{opt}=\check{\bit{R}}_{xx}^{-1}\textbf{\textit{r}}_{dx},
+%	\label{viner_hopf_fir}
+%\end{equation}
+%\begin{equation}
+%	\hat{\textbf{\textit{h}}}_{opt}=\check{\bit{R}}_{vv}^{-1}\textbf{\textit{r}}_{dv}.
+%	\label{viner_hopf_pla}
+%\end{equation}
+%Уравнения \eqref{viner_hopf_fir}, \eqref{viner_hopf_pla} отражают связь между LS-оценкой и уравнением Винера-Хопфа для поиска оптимальных коэффициентов линейного КИХ-фильтра \eqref{viner_hopf}. 
+%
+%Отметим, что метод LS подразумевает накопление корреляционной матрицы, её обращение и выполнение операции матрично-векторного умножения. Такой метод поиска оптимальных коэффициентов трудный с точки зрения вычислительной сложности, однако применяется для оценки оптимальных коэффициентов моделей ввиду сходимости к вектору оптимальных коэффициентов за одну итерацию за счёт квадратичности целевой функции.
+%
+%Метод LS неприменим к модели Гаммерштейна, однако существует итеративная модификация метода LS. Эта модификация по сути представляет собой метод Ньютона \cite{nesterov}, который будет описан далее.

@@ -2391,33 +2391,33 @@
     <bcf:citekey order="25" intorder="1">matrix_comput</bcf:citekey>
     <bcf:citekey order="26" intorder="1">matrix_comput</bcf:citekey>
     <bcf:citekey order="27" intorder="1">convex_opt</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">adapt_filt_haykin</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">wirt_deriv_tech_rep</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">wirt_deriv_book</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">nesterov</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">matrix_comput</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">dcd_alg_thesis</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">dcd_alg_thesis</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">dcd_alg_thesis</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">nesterov</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">fletcher</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">pract_optimiz</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">bb_method</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">bb_method</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">pract_optimiz</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">convex_opt</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">matrix_comput</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">HestenesStiefel1952</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">HestenesStiefel1952</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">HestenesStiefel1952</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">HestenesStiefel1952</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">deLamare2015</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">mnm_paper_alex_degt</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">dcd_alg_thesis</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">dcd_alg_thesis</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">dcd_alg_thesis</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">nesterov</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">fletcher</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">bb_method</bcf:citekey>
     <bcf:citekey order="42" intorder="1">pract_optimiz</bcf:citekey>
-    <bcf:citekey order="43" intorder="1">fletcher</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">matrix_calc</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">bb_method</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">pract_optimiz</bcf:citekey>
     <bcf:citekey order="45" intorder="1">pract_optimiz</bcf:citekey>
-    <bcf:citekey order="46" intorder="1">bfgs_fletcher</bcf:citekey>
-    <bcf:citekey order="47" intorder="1">lbfgs</bcf:citekey>
-    <bcf:citekey order="48" intorder="1">dsp_layons</bcf:citekey>
-    <bcf:citekey order="49" intorder="1">adapt_filt_haykin</bcf:citekey>
-    <bcf:citekey order="50" intorder="1">dsp_oppenheim</bcf:citekey>
-    <bcf:citekey order="51" intorder="1">adapt_filt_haykin</bcf:citekey>
-    <bcf:citekey order="52" intorder="1">marpl_spectr</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">marpl_spectr</bcf:citekey>
-    <bcf:citekey order="54" intorder="1">marpl_spectr</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">fletcher</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">matrix_calc</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">pract_optimiz</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">bfgs_fletcher</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">lbfgs</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">dsp_layons</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">adapt_filt_haykin</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">dsp_oppenheim</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">adapt_filt_haykin</bcf:citekey>
     <bcf:citekey order="55" intorder="1">pa_models</bcf:citekey>
     <bcf:citekey order="56" intorder="1">dpd_models</bcf:citekey>
     <bcf:citekey order="57" intorder="1">dpd_models</bcf:citekey>
@@ -2428,13 +2428,30 @@
     <bcf:citekey order="62" intorder="1">spec_func</bcf:citekey>
     <bcf:citekey order="63" intorder="1">spec_func</bcf:citekey>
     <bcf:citekey order="64" intorder="1">spec_func</bcf:citekey>
-    <bcf:citekey order="65" intorder="1">3gpp_sample_rate</bcf:citekey>
-    <bcf:citekey order="66" intorder="1">3gpp_36_211</bcf:citekey>
-    <bcf:citekey order="67" intorder="1">3gpp_36_211</bcf:citekey>
-    <bcf:citekey order="68" intorder="1">3gpp_36_211</bcf:citekey>
-    <bcf:citekey order="69" intorder="1">fir_quant</bcf:citekey>
-    <bcf:citekey order="70" intorder="1">fir_quant</bcf:citekey>
-    <bcf:citekey order="71" intorder="1">fir_quant</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">dpd_lut</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">dpd_lut</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">volterra1959theory</bcf:citekey>
+    <bcf:citekey order="67" intorder="2">schetzen1980volterra</bcf:citekey>
+    <bcf:citekey order="67" intorder="3">mathews1991adaptive</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">mnm_paper_alex_degt</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">haykin</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">haykin</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">haykin</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">3gpp_sample_rate</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">NCC2020IS2051</bcf:citekey>
+    <bcf:citekey order="74" intorder="1">dpd_thesis</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">3gpp_36_804</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">Dynamic_DPD_RB_Alloc</bcf:citekey>
+    <bcf:citekey order="77" intorder="1">behav_model</bcf:citekey>
+    <bcf:citekey order="78" intorder="1">behav_model</bcf:citekey>
+    <bcf:citekey order="79" intorder="1">dpd_models</bcf:citekey>
+    <bcf:citekey order="79" intorder="2">lut_dpd</bcf:citekey>
+    <bcf:citekey order="80" intorder="1">mixed_newton_global_opt</bcf:citekey>
+    <bcf:citekey order="81" intorder="1">polyak1964some</bcf:citekey>
+    <bcf:citekey order="82" intorder="1">kingma2014adam</bcf:citekey>
+    <bcf:citekey order="83" intorder="1">fir_quant</bcf:citekey>
+    <bcf:citekey order="84" intorder="1">fir_quant</bcf:citekey>
+    <bcf:citekey order="85" intorder="1">fir_quant</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

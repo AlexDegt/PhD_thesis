@@ -2,90 +2,203 @@
 
 Методы второго порядка подразумевают необходимость накопливать матрицу вторых производных для каждого нового блока данных, хранить в памяти, а также обращать, обеспечивая при этом численную устойчивость процедуры инверсии матрицы \cite{matrix_comput}. Такие методы являются вычислительно сложными, кроме того достаточно трудными с точки зрения реализации в целочисленной арифметике. В связи с этим в теории нелинейной обработки сигналов предлагается использовать методы применяющие приближенное вычисление обратной матрицы вторых производных либо приближенное вычисление произведения обратной матрицы и градиента функции потерь.
 
-\subsection{Метод сопряженных градиентов}
+\subsection{Метод сопряженных градиентов} \label{subsec:conj_grad}
+Рассмотрим шаг смешанного метода Ньютона как минимизацию второй нормы ошибки $\bit{e}(\bit{z})$~\eqref{mse_block}, разложенной до членов первого порядка малости. Ввиду голоморфности $\bit{e}$:
+\begin{equation}
+	\Delta\bit{z}_k=\arg\min_{\bit{z}}f(\bit{z})=
+	\arg\min_{\bit{z}}\begin{Vmatrix}
+		\left. \bit{e}(\bit{z}) \right|_{\bit{z} = \bit{z}_k}+\left. D_{\bit{z}}\bit{e}(\bit{z})\right|_{\bit{z} = \bit{z}_k}(\bit{z}-\bit{z}_k)
+	\end{Vmatrix}_2^2.
+	\label{cg_root_task}
+\end{equation}
+Распишем вторую норму разложения ошибки в выражении~\eqref{cg_root_task} и приведем подобные слагаемые, получим следующее выражении для квадратичной формы:
+\begin{align}
+	f(\bit{z})&=(\bit{z}-\bit{z}_k)^H
+	\left. (D_{\bit{z}}\bit{e}(\bit{z}))^H\right|_{\bit{z}=\bit{z}_k}
+	\left. D_{\bit{z}}\bit{e}(\bit{z})\right|_{\bit{z}=\bit{z}_k}
+	(\bit{z}-\bit{z}_k)+ \nonumber \\
+	&+\bit{e}^H(\bit{z}_k)
+	\left. D_{\bit{z}}\bit{e}(\bit{z})\right|_{\bit{z}=\bit{z}_k}(\bit{z}-\bit{z}_k)+
+	(\bit{z}-\bit{z}_k)^H\left. (D_{\bit{z}}\bit{e}(\bit{z}))^H\right|_{\bit{z}=\bit{z}_k}\bit{e}(\bit{z}_k)+ \nonumber \\
+	&+\bit{e}^H(\bit{z}_k)\bit{e}(\bit{z}_k)=
+	\Delta\bit{z}_k^H\bit{M}\Delta\bit{z}_k+
+	\bit{b}^H\Delta\bit{z}_k+\Delta\bit{z}_k^H\bit{b}+c,
+	\label{quadratic_form}
+\end{align}
+где $\bit{M}=\left. [(D_{\bit{z}}\bit{e}(\bit{z}))^HD_{\bit{z}}\bit{e}(\bit{z})]\right|_{\bit{z}=\bit{z}_k}=\left. H_{\bit{z}^*, \bit{z}}J\right|_{\bit{z}=\bit{z}_k}$~---~неотрицательно определенна матрица смешанных производных функции потерь MSE~\eqref{mse_block}, $\bit{b}=\left. (D_{\bit{z}}\bit{e}(\bit{z}))^H\bit{e}(\bit{z}) \right|_{\bit{z}=\bit{z}_k}=(D_{\bit{z}^*}J)^T$~---~градиент функции потерь MSE~\eqref{mse_block}, $c=\bit{e}^H(\bit{z}_k)\bit{e}(\bit{z}_k)$~---~константа. Отметим, что поскольку 
+\begin{equation}
+	\arg\min_{\bit{z}}f(\bit{z})=\arg\min_{\bit{z}}f(\bit{z})-c,
+	\label{get_rid_of_const}
+\end{equation}
+константу $c$ можно отбросить при выводе метода сопряженных градиентов.
 
-\subsection{Метод DCD}
-Метод покоординатного спуска (англ. DCD -- Dichotomous Coordinate Descent) является методом поиска решения систем линейных уравнений с квадратной матрицей и не относится к методам первого порядка \cite{dcd_alg_thesis}. В случае КИХ-фильтра и блоков PLA такие СЛАУ будут иметь вид \eqref{line_eq_fir}, \eqref{line_eq_pla}:
+Для простоты выражений обозначим $\bit{x}\equiv\Delta\bit{z}_k$ и перепишем квадратичную форму:
 \begin{equation}
-	\textbf{\textit{d}}=\textbf{\textit{U}}\textbf{\textit{w}}_{opt},
+	f(\bit{x})=\bit{x}^H\bit{M}\bit{x}+
+	\bit{b}^H\bit{x}+\bit{x}^H\bit{b}, \text{  }M\succcurlyeq 0,
+	\label{quadratic_form_x_arg}
 \end{equation}
+Выведем метод сопряженных градиентов для минимизации квадратичной формы~\eqref{quadratic_form_x_arg} для поиска приращения параметров модели $\bit{x}_k$ на шаге $k$.
+
+Пусть множество векторов $\{\bit{p}_j\}\big|_{j=0}^{K-1}\in\mathbb{C}^{K\times1}$~---~сопряжены относительно матрицы $\bit{M}$, т.е. выполняется условие:
 \begin{equation}
-	\textbf{\textit{U}}^H\textbf{\textit{d}}=\textbf{\textit{U}}^H\textbf{\textit{U}}\textbf{\textit{w}}_{opt},
+	\bit{p}_j^H\bit{M}\bit{p}_l=\bit{0}\text{    }\forall k \neq l,
+	\label{conj_cond}
 \end{equation}
+тогда вектора $\{\bit{p}_j\}\big|_{j=0}^{K-1}$~---~система линейно-независимых векторов по аналогии с вещественным случаем~\cite{HestenesStiefel1952}, т.е. представляют собой базис в пространстве $\mathbb{C}^{K\times1}$. Будем искать приращение $\bit{x}$ минимизирующее~\eqref{quadratic_form_x_arg} методом простой итерации, раскладывая приращение на $i$-ом шаге по линейно-независимым векторам сопряженным относительно $\bit{M}$:
 \begin{equation}
-	\check{\textbf{\textit{r}}}_{xd}=\check{\textbf{\textit{R}}}_{xx}\textbf{\textit{w}}_{opt},
-	\label{line_eq_fir}
+	\bit{x}_{i+1}=\bit{x}_0+\sum_{j=0}^{i}\alpha_j\bit{p}_j,
+	\label{decomp_of_solution}
 \end{equation}
+где $\alpha_j\in\mathbb{C}$~---~коэффициенты разложение по базису, $\bit{x}_0\in\mathbb{C}^{K\times1}$~---~начальное приближение решения \bit{x}. Подставим выражение~\eqref{decomp_of_solution} в квадратичную форму~\eqref{quadratic_form_x_arg}:
 \begin{equation}
-	\check{\textbf{\textit{r}}}_{vd}=\check{\textbf{\textit{R}}}_{vv}\textbf{\textit{h}}_{opt}.
-	\label{line_eq_pla}
+	f(\bit{x}_{i+1})=f(\bit{x}_0)+\sum_{j=0}^{i}
+	\begin{pmatrix}
+		\alpha_j(\bit{M}\bit{x}_0+\bit{b})^H\bit{p}_j+
+		\alpha_j^*\bit{p}_j^H(\bit{M}\bit{x}_0+\bit{b})+
+		|\alpha_j|^2\bit{p}_j^H\bit{M}\bit{p}_j
+	\end{pmatrix},
+	\label{big_bad_expression}
 \end{equation}
-Ввиду эквивалентности \eqref{line_eq_fir} и \eqref{line_eq_pla} с точки зрения зрения решения системы линейных уравнений введём следующие обозначения:
+где $\bit{p}_0=\bit{M}\bit{x}_0+\bit{b}$~---~первый вектор множества сопряженных векторов, инициализируется как градиент функции $f(\bit{x})$, $\alpha_j^*\in\mathbb{C}$~---~комплексно сопряжение коэффициента разложения $\alpha_j$. Найдём коэффициенты разложения $\alpha_j$ из условия минимизации квадратичной формы по коэффициентам разложения $\left. D_{\alpha_j^*}f(\bit{x}, \alpha_j) \right|_{\bit{x}=\bit{x}_{i+1}}=0$:
+\begin{align}
+	&\bit{p}^H_j\bit{p}_0+\alpha_j\bit{p}_j^H\bit{M}\bit{p}_j=\bit{0}, \\
+	&\alpha_j=-\frac{\bit{p}^H_j\bit{p}_0}{\bit{p}_j^H\bit{M}\bit{p}_j}.
+	\label{tmp_equation_zero_cond}
+\end{align}
+Таким образом рекурсивная формула обновления приближения решения $\bit{x}$:
 \begin{equation}
-	\begin{matrix}
-		\text{КИХ-фильтр:} & & \text{блок PLA:}\\
-		\check{\textbf{\textit{r}}}_{xd}\equiv\textbf{\textit{b}} & &  \check{\textbf{\textit{r}}}_{vd}\equiv\textbf{\textit{b}}\\
-		\check{\textbf{\textit{R}}}_{xx}\equiv\textbf{\textit{R}} & & \check{\textbf{\textit{R}}}_{vv}\equiv\textbf{\textit{R}}\\	
-		\textbf{\textit{w}}\equiv\textbf{\textit{h}} & & \textbf{\textit{h}}\equiv\textbf{\textit{h}}\\
-		\check{\textbf{\textit{r}}}_{xd}-\check{\textbf{\textit{R}}}_{xx}\textbf{\textit{w}}\equiv\textbf{\textit{r}} & & \check{\textbf{\textit{r}}}_{vd}-\check{\textbf{\textit{R}}}_{vv}\textbf{\textit{h}}\equiv\textbf{\textit{r}}\\
-		M\equiv P & & L\equiv P
-	\end{matrix}
-	\label{dcd_rename}
+	\bit{x}_{i+1}=\bit{x}_{i}+\alpha_{i}\bit{p}_{i}=\bit{x}_{i}-\frac{\bit{p}^H_{i}\bit{p}_0}{\bit{p}_{i}^H\bit{M}\bit{p}_{i}}\bit{p}_{i}.
+	\label{recoursive_for_solution}
+\end{equation}
+Отметим, что $\bit{p}^H_{i}\bit{p}_0=\bit{p}^H_{i}(\bit{M}\bit{x}_0+\bit{b})=\bit{p}^H_{i}(\bit{M}\bit{x}_i+\bit{b})$ по условию сопряженности векторов~\eqref{conj_cond}. Обозначим градиент функции $f(\bit{x})$ в точке $\bit{x}_i$ как $\left.\bit{r}_i\equiv D_{\bit{x}^*}f(\bit{x}) \right|_{\bit{x}=\bit{x}_i}=\bit{M}\bit{x}_i+\bit{b}$, тогда рекурсивное выражение пересчета приближения решения~\eqref{recoursive_for_solution} представляется как:
+\begin{equation}
+	\bit{x}_{i+1}=\bit{x}_{i}+\alpha_{i}\bit{p}_{i}=\bit{x}_{i}-\frac{\bit{p}^H_{i}\bit{r}_i}{\bit{p}_{i}^H\bit{M}\bit{p}_{i}}\bit{p}_{i}.
+	\label{recoursive_for_solution_modified}
 \end{equation}
 
-Идея алгоритма заключается в том, чтобы упростить процедуру обращения матрицы. Для этого на каждой итерации предлагается выделять наибольший по модулю элемент в векторе ошибки $\textbf{\textit{r}}$, обнулять его и пересчитывать вектор коэффициентов, двигаясь Таким образом, по направленению убывания среднего квадрата ошибки вдоль соответсвующей координаты вектора коэффициентов. Метод DCD для вещественнозначных векторов и матриц \eqref{dcd_rename} описан в алгоритме \ref{alg:dcd_real} \cite{dcd_alg_thesis}.
+В теории метода сопряженного градиента для вещественных систем линейных уравнений методом математической индукции доказывается, что для системы $\left. \{\bit{p}_j\} \right|_{j=0}^{i}$ векторов сопряженных относительно \bit{M}~\eqref{conj_cond} для $i\geqslant 0$ и $j\leqslant i$ справедливо выражение~\cite{HestenesStiefel1952}:
+\begin{equation}
+	\bit{r}_{i+1}^H\bit{p}_j=0.
+	\label{p_physical_property}
+\end{equation}
+Выражение~\eqref{p_physical_property} представляет собой физический смысл векторов $\bit{p}_j$, $\bit{p}_0=\bit{M}\bit{x}_0+\bit{b}$. Он заключается в том, что для упомянутой системы сопряженных векторов градиент квадратичной формы~\eqref{quadratic_form_x_arg} в точке, определяемой итеративным алгоритмом~\eqref{decomp_of_solution} будет ортогонален всем ранее найденным сопряженным направлениям. Иначе говоря градиент в новой точке не будет содержать избыточности.
+
+В связи с физическим смыслом сопряженных векторов~\eqref{p_physical_property} определим выбор сопряженных направлений следующим итеративным алгоритмом:
+\begin{equation}
+	\bit{p}_{i+1}=\bit{r}_{i+1}+\beta_{i+1}\bit{p}_i,
+	\label{conj_direct_recoursive_alg}
+\end{equation}
+где параметры $\beta_i$ определяются также из условия сопряженности~\eqref{conj_cond}:
+\begin{equation}
+	\beta_{i+1}=-\frac{\bit{p}_{i}^H\bit{M}\bit{r}_{i+1}}{\bit{p}_{i}^H\bit{M}\bit{p}_{i}}.
+	\label{beta_param}
+\end{equation}
+Отметим, что все направления найденные таким итеративным методом~\eqref{conj_direct_recoursive_alg},~\eqref{beta_param} будут сопряженными, т.е. верно $\bit{p}_j^H\bit{M}\bit{p}_i=0$ $\forall i>1$, $\forall j<i$~\cite{HestenesStiefel1952}.
+
+Таким образом на основе рекурсивных выражений приближения решения~\eqref{recoursive_for_solution_modified}, поиска сопряженных направлений~\eqref{conj_direct_recoursive_alg},~\eqref{beta_param} метод сопряженных градиентов для приближенного поиска шага смешанного метода Ньютона~\eqref{cg_root_task} представлен алгоритмом~\ref{alg_1}:
+
+\begin{algorithm}[ht!]
+	\caption{Метод сопряженных градиентов}
+	\begin{algorithmic}[1]
+		\REQUIRE $\bit{z}_0$ -- начальные значения параметров модели, $T$ -- число обновлений параметров модели, $L$ -- число итераций метода сопряженных градиентов между обновлениями параметров модели, $\mu$ -- величина шага обновления параметров.
+		\ENSURE $\bit{z}_{T-1}$ — конечное значение параметров модели.
+		
+		\FOR{$t = 1$ \TO $T$}
+		\STATE Получить текущие параметры модели $\bit{z}_t$
+		\STATE Инициализировать приращение $\bit{x}_0$
+		\STATE Вычислить смешанный гессиан MSE $\bit{M}_t=H_{\bit{z}^*, \bit{z}}J$
+		\STATE Вычислить градиент MSE $\bit{b}_t=(D_{\bit{z}^*}J)^T$
+		\STATE Вычислить градиент квадратичной формы $\bit{r}_0=\bit{M}_t\bit{x}_0+\bit{b}_t$
+		\STATE Инициализировать направление $\bit{p}_0=\bit{r}_0$
+		\FOR{$k = 0$ \TO $L-1$}
+		\STATE $\xi_k=\bit{M}_t\bit{p}_k$
+		\STATE $\alpha_k=-\frac{\bit{p}_k^H\bit{r}_k}{\bit{p}_k^H\xi_k}$
+		\STATE $\bit{x}_{k+1}=\bit{x}_{k}+\alpha_k\bit{p}_k$
+		\STATE $\bit{r}_{k+1}=\bit{r}_k+\alpha_k\xi_k$
+		\STATE $\beta_{k+1}=-\frac{\xi_k^H\bit{r}_{k+1}}{\bit{p}_{k}^H\xi_k}$
+		\STATE $\bit{p}_{k+1}=\bit{r}_{k+1}+\beta_{k+1}\bit{p}_k$
+		\ENDFOR
+		\STATE Пересчитать параметры модели: $\bit{z}_{t+1}=\bit{z}_t+\mu\bit{x}_{K-1}$
+		\ENDFOR
+		\STATE \RETURN $\bit{z}_{T-1}$
+	\end{algorithmic}
+	\label{alg_1}
+\end{algorithm}
+
+Метод сопряжённых градиентов итерационно устраняет влияние наиболее значимых собственных значений матрицы $\bit{M}$ при минимизации квадратичной формы~\eqref{quadratic_form_x_arg}~\cite{HestenesStiefel1952}. В случае решения линейной задачи адаптивной фильтрации роль матрицы $M$ играет оценка корреляционной матрицы входного сигнала фильтра. Для узкополосных сигналов число наиболее значимых собственных значений корреляционной матрицы невелико~\cite{deLamare2015}. По этой причине метод сопряженных градиентов сходится за число итераций существенно меньше числа параметров модели тем самым решая проблему высокой вычислительной сложности смешанного метода Ньютона~\cite{mnm_paper_alex_degt} обусловленную обращением матрицы вторых производных.
+
+\subsection{Метод DCD} \label{subsec:dcd}
+Метод покоординатного спуска (англ. DCD -- Dichotomous Coordinate Descent) является методом поиска решения систем линейных уравнений с квадратной матрицей и не относится к методам первого порядка \cite{dcd_alg_thesis}. 
+
+Идея применения алгоритма, заключается также в том, чтобы аппроксимировать шаг метода Ньютона~\eqref{mixed_newton_eq_jac} путем решения оптимизационной задачи~\eqref{quadratic_form_x_arg}. Как было отмечено в разделе~\ref{subsec:conj_grad} поиск шага смешанного метода Ньютона эквивалентен минимизации квадратичной формы~\eqref{quadratic_form_x_arg}, что в свою очередь эквивалентно решению системы линейных уравнений:
+\begin{equation}
+	\bit{M}\bit{x}=-\bit{b},
+	\label{system_of_lin_eq}
+\end{equation}
+где $\bit{M}=\left. [(D_{\bit{z}}\bit{e}(\bit{z}))^HD_{\bit{z}}\bit{e}(\bit{z})]\right|_{\bit{z}=\bit{z}_k}=\left. H_{\bit{z}^*, \bit{z}}J\right|_{\bit{z}=\bit{z}_k}$~---~неотрицательно определенна матрица смешанных производных функции потерь MSE~\eqref{mse_block}, $\bit{b}=\left. (D_{\bit{z}}\bit{e}(\bit{z}))^H\bit{e}(\bit{z}) \right|_{\bit{z}=\bit{z}_k}=(D_{\bit{z}^*}J)^T$~---~градиент функции потерь MSE~\eqref{mse_block}.
+
+Введем вектор невязки следующим образом:
+\begin{equation}
+	\bit{r}=\bit{M}\bit{x}+\bit{b}.
+	\label{system_of_lin_eq_residual}
+\end{equation}
+Идея алгоритма заключается в том, чтобы упростить процедуру обращения матрицы. Для этого на каждой итерации предлагается выделять наибольший по модулю элемент в векторе ошибки $\textbf{\textit{r}}$, обнулять его и пересчитывать вектор коэффициентов, двигаясь Таким образом, по направленению убывания среднего квадрата ошибки вдоль соответсвующей координаты вектора коэффициентов. Метод DCD для вещественнозначных векторов и матриц описан в алгоритме \ref{alg:dcd_real} \cite{dcd_alg_thesis}.
 \begin{algorithm}[!ht]
 	\caption{Real-valued leading DCD algorithm}
 	\label{alg:dcd_real}
-	\KwData{$\textbf{\textit{R}}, \textbf{\textit{r}}, K_1$, $K_2$}
-	\KwResult{Obtain $\Delta\bit{h}$, \bit{r}}
-	Initialization:\\
-	~$\Delta\bit{h}$=\textbf{\textit{0}},~$\alpha=H$,~$m=1$\\
-	\For{$i\in\overline{0,K_1}$}{
-		$k=\arg\max_{p=\overline{0,P-1}}\{|r_p|\}$, go to line \ref{alg:dcd_real:step_cond};\\
-		$m=m+1, \alpha=\alpha/2$;\label{alg:dcd_real:step_div}\\
-		\If{$m>K_2$}{
-			algorithm stops;
+	\KwData{$\textbf{\textit{M}}, \textbf{\textit{r}}, K_1$, $K_2$, $T$, $\mu$}
+	\KwResult{$\bit{z}_{T-1}$, \bit{r}}
+	\For{$t\in\overline{0,T-1}$}{
+		Инициализация:\\
+		~$\Delta\bit{z}$=\bit{0},~$\alpha=H$,~$m=1$\\
+		\For{$i\in\overline{0,K_1}$}{
+			$k=\arg\max_{p=\overline{0,P-1}}\{|r_p|\}$, перейти на строку \ref{alg:dcd_real:step_cond};\\
+			$m=m+1, \alpha=\alpha/2$;\label{alg:dcd_real:step_div}\\
+			\If{$m>K_2$}{
+				завершения алгоритма;
+			}
+			\If{$|r_k|\leqslant(\frac{\alpha}{2})M_{k,k}$} 
+			{ 
+				\label{alg:dcd_real:step_cond}
+				перейти на строку \ref{alg:dcd_real:step_div};
+			}
+			$\Delta z_k=\Delta z_k-\operatorname{sign}(r_k)\alpha$;\\
+			$\bit{r}=\bit{r}+\operatorname{sign}(r_n)\alpha\bit{M}_{;,k}$
 		}
-		\If{$|r_k|\leqslant(\frac{\alpha}{2})R_{k,k}$} 
-		{ 
-			\label{alg:dcd_real:step_cond}
-			go to line \ref{alg:dcd_real:step_div};
-		}
-		$\Delta h_k=\Delta h_k+\operatorname{sign}(r_k)\alpha$;\\
-		$\bit{r}=\bit{r}-\operatorname{sign}(r_n)\alpha\bit{R}_{;,k}$
+		Пересчитать параметры модели: $\bit{z}_{t+1}=\bit{z}_t+\mu\Delta\bit{z}$;
 	}
 \end{algorithm}
 
-Константы $K_1, K_2$ задаются пользователем. $K_1$ определяет количество шагов в направлении уменьшения среднего квадрата ошибки, $K_2$ задаёт число возможных дроблений шага $\alpha$ на каждой итерации перед внесением изменения в вектор приращения $\Delta\bit{h}$. 
+Константы $K_1, K_2$ задаются пользователем. $K_1$ определяет количество шагов в направлении уменьшения среднего квадрата ошибки, $K_2$ задаёт число возможных дроблений шага $\alpha$ на каждой итерации перед внесением изменения в вектор приращения $\Delta\bit{z}$. 
 
-Выбирается индекс $k$ наибольшей по модулю координаты невязки $\textbf{\textit{r}}_k$. Далее алгоритм уменьшает шаг $\alpha$ до тех пор, пока условие строки \ref{alg:dcd_real:step_cond} не станет ложным. Таким образом, шаг $\alpha$ будет уменьшаться до тех пор, пока приращение невязки $\alpha\textbf{\textit{R}}_{;,k}$ не станет меньше модуля самой невязки. Это необходимо для устойчивости алгоритма. 
+Выбирается индекс $k$ наибольшей по модулю координаты невязки $\textbf{\textit{r}}_k$. Далее алгоритм уменьшает шаг $\alpha$ до тех пор, пока условие строки \ref{alg:dcd_real:step_cond} не станет ложным. Таким образом, шаг $\alpha$ будет уменьшаться до тех пор, пока приращение невязки $\alpha\textbf{\textit{M}}_{;,k}$ не станет меньше модуля самой невязки. Это необходимо для устойчивости алгоритма. 
 
-Далее вносится приращение в вектор невязки \bit{r}. Для того, чтобы преобразование было равносильным, из вектора коэффициентов \bit{h} необходимо вычесть поправку $\operatorname{sign}(r_n)\alpha$. Для этого в вектор приращения коэффициентов $\Delta\bit{h}$ вносится поправка $\operatorname{sign}(r_n)\alpha$  по координате с индексом $k$.
+Далее вносится приращение в вектор невязки \bit{r}. Для того, чтобы преобразование было равносильным, из вектора приращения параметров $\Delta\bit{z}$ необходимо добавить поправку $\operatorname{sign}(r_k)\alpha$ по координате с индексом $k$.
 
-Рассмотрим алгоритм DCD для комплекснозначных векторов и матриц \eqref{dcd_rename}. Такой алгоритм можно получить сведением системы комплекснозначных уравнений к системе вещественнозначных уравнений и воспользовашись алгоритмом \ref{alg:dcd_real}. Сгруппируем комплекснозначные вектора и матрицы следующим образом:
+Рассмотрим алгоритм DCD для комплекснозначных векторов и матриц. Такой алгоритм можно получить сведением системы комплекснозначных уравнений к системе вещественнозначных уравнений и воспользовашись алгоритмом \ref{alg:dcd_real}. Сгруппируем комплекснозначные вектора и матрицы следующим образом:
 \begin{equation}
 	\begin{aligned}
-		\textbf{\textit{R}}=\textbf{\textit{R}}_1+j\textbf{\textit{R}}_2, \ \textbf{\textit{R}}\in\mathbb{C}^{P/2\times P/2}\\
-		\textbf{\textit{h}}=\textbf{\textit{h}}_1+j\textbf{\textit{h}}_2, \ \textbf{\textit{h}}\in\mathbb{C}^{P/2\times 1}\\
-		\textbf{\textit{b}}=\textbf{\textit{b}}_1+j\textbf{\textit{b}}_2, \ \textbf{\textit{b}}\in\mathbb{C}^{P/2\times 1},\\
+		\textbf{\textit{M}}=\textbf{\textit{M}}_1+j\textbf{\textit{M}}_2, \ \textbf{\textit{M}}\in\mathbb{C}^{K/2\times K/2}\\
+		\textbf{\textit{z}}=\textbf{\textit{z}}_1+j\textbf{\textit{z}}_2, \ \textbf{\textit{z}}\in\mathbb{C}^{K/2\times 1}\\
+		\textbf{\textit{b}}=\textbf{\textit{b}}_1+j\textbf{\textit{b}}_2, \ \textbf{\textit{b}}\in\mathbb{C}^{K/2\times 1},\\
 	\end{aligned}
 \end{equation}
-где $\textbf{\textit{R}}_1, \textbf{\textit{R}}_2, \textbf{\textit{h}}_1, \textbf{\textit{h}}_2, \textbf{\textit{b}}_1, \textbf{\textit{b}}_2$ -- вещественнозначные объекты. Тогда:
+где $\textbf{\textit{M}}_1, \textbf{\textit{M}}_2, \textbf{\textit{z}}_1, \textbf{\textit{z}}_2, \textbf{\textit{b}}_1, \textbf{\textit{b}}_2$ -- вещественнозначные объекты. Тогда:
 \begin{equation}
-	\textbf{\textit{R}}\textbf{\textit{h}}=
-	(\textbf{\textit{R}}_1\textbf{\textit{h}}_1-
-	\textbf{\textit{R}}_2\textbf{\textit{h}}_2)+
-	j(\textbf{\textit{R}}_2\textbf{\textit{h}}_1-
-	\textbf{\textit{R}}_1\textbf{\textit{h}}_2)=
+	\textbf{\textit{M}}\textbf{\textit{z}}=
+	(\textbf{\textit{M}}_1\textbf{\textit{z}}_1-
+	\textbf{\textit{M}}_2\textbf{\textit{z}}_2)+
+	j(\textbf{\textit{M}}_2\textbf{\textit{z}}_1-
+	\textbf{\textit{M}}_1\textbf{\textit{z}}_2)=
 	\textbf{\textit{c}}_1+j\textbf{\textit{c}}_2,
 \end{equation}
 \begin{equation}
 	\begin{pmatrix}
-		\textbf{\textit{R}}_1\textbf{\textit{h}}_1-
-		\textbf{\textit{R}}_2\textbf{\textit{h}}_2\\
-		\textbf{\textit{R}}_2\textbf{\textit{h}}_1-
-		\textbf{\textit{R}}_1\textbf{\textit{h}}_2
+		\textbf{\textit{M}}_1\textbf{\textit{z}}_1-
+		\textbf{\textit{M}}_2\textbf{\textit{z}}_2\\
+		\textbf{\textit{M}}_2\textbf{\textit{z}}_1-
+		\textbf{\textit{M}}_1\textbf{\textit{z}}_2
 	\end{pmatrix}=
 	\begin{pmatrix}
 		\textbf{\textit{c}}_1\\
@@ -94,279 +207,260 @@
 \end{equation}
 \begin{equation}
 	\begin{pmatrix}
-		\textbf{\textit{R}}_1 & -\textbf{\textit{R}}_2\\
-		\textbf{\textit{R}}_2 & \textbf{\textit{R}}_1
+		\textbf{\textit{M}}_1 & -\textbf{\textit{M}}_2\\
+		\textbf{\textit{M}}_2 & \textbf{\textit{M}}_1
 	\end{pmatrix}
 	\begin{pmatrix}
-		\textbf{\textit{h}}_1\\
-		\textbf{\textit{h}}_2
-	\end{pmatrix}=
+		\textbf{\textit{z}}_1\\
+		\textbf{\textit{z}}_2
+	\end{pmatrix}=-
 	\begin{pmatrix}
 		\textbf{\textit{b}}_1\\
 		\textbf{\textit{b}}_2
 	\end{pmatrix}.
 	\label{dcd_real2compl}
 \end{equation}
-Из матричного уравнения \eqref{dcd_real2compl} следует, что решение системы $P/2$ комплекснозначных уравнений с $P/2$ переменными эквивалентно решению $P$ вещественнозначных уравнений с $P$ переменными. Исходя из этого DCD алгоритм для комплекснозначной системы размерности $P/2\times P/2$ может быть представлен, как алгоритм \ref{alg:dcd_compl} \cite{dcd_alg_thesis}.
+Из матричного уравнения \eqref{dcd_real2compl} следует, что решение системы $K/2$ комплекснозначных уравнений с $K/2$ переменными эквивалентно решению $K$ вещественнозначных уравнений с $K$ переменными. Исходя из этого DCD алгоритм для комплекснозначной системы размерности $K/2\times K/2$ может быть представлен, как алгоритм \ref{alg:dcd_compl} \cite{dcd_alg_thesis}.
 \begin{algorithm}[!ht]
 	\caption{Complex-valued leading DCD algorithm}
 	\label{alg:dcd_compl}
-	\KwData{$\textbf{\textit{R}}, \textbf{\textit{r}}, K_1$, $K_2$}
-	\KwResult{Obtain $\Delta\bit{h}, \bit{r}$}
-	Initialization:\\
-	~$\Delta\bit{h}$=\textbf{\textit{0}},~$\alpha=H$,~$m=1$\\
-	\For{$i\in\overline{0,K_1}$}{
-		$[k,s]=\arg\max_{p=\overline{0,(P-1)/2}}\{|Re(r_p)|, |Im(r_p)|\}$, go to line \ref{alg:dcd_compl:step_cond};\\
-		$m=m+1, \alpha=\alpha/2$;\label{alg:dcd_compl:step_div}\\
-		\If{$m>K_2$}{
-			algorithm stops;
+	\KwData{$\textbf{\textit{M}}, \textbf{\textit{r}}, K_1$, $K_2$, $T$, $\mu$}
+	\KwResult{$\bit{z}_{T-1}, \bit{r}$}
+	\For{$t\in\overline{0,T-1}$}{
+		Инициализация:\\
+		~$\Delta\bit{z}$=\bit{0},~$\alpha=H$,~$m=1$\\
+		\For{$i\in\overline{0,K_1}$}{
+			$[k,s]=\arg\max_{p=\overline{0,(P-1)/2}}\{|Re(r_p)|, |Im(r_p)|\}$, go to line \ref{alg:dcd_compl:step_cond};\\
+			$m=m+1, \alpha=\alpha/2$;\label{alg:dcd_compl:step_div}\\
+			\If{$m>K_2$}{
+				завершение алгоритма;
+			}
+			\If{$s=1$}{
+				$r_{tmp}=Re(r_k)$
+			}
+			\Else{
+				$r_{tmp}=Im(r_k)$
+			}
+			\If{$|r_{tmp}|\leqslant(\frac{\alpha}{2})M_{k,k}$} 
+			{ 
+				\label{alg:dcd_compl:step_cond}
+				перейти на строку \ref{alg:dcd_compl:step_div};
+			}
+			$\Delta z_k=\Delta z_k-\operatorname{sign}(r_k)s\alpha$;\\
+			$\textbf{\textit{r}}=\textbf{\textit{r}}+\operatorname{sign}(r_n)s\alpha\textbf{\textit{M}}_{;,k}$
 		}
-		\If{$s=1$}{
-			$r_{tmp}=Re(r_k)$
-		}
-		\Else{
-			$r_{tmp}=Im(r_k)$
-		}
-		\If{$|r_{tmp}|\leqslant(\frac{\alpha}{2})R_{k,k}$} 
-		{ 
-			\label{alg:dcd_compl:step_cond}
-			go to line \ref{alg:dcd_compl:step_div};
-		}
-		$\Delta h_k=\Delta h_k+\operatorname{sign}(r_k)s\alpha$;\\
-		$\textbf{\textit{r}}=\textbf{\textit{r}}-\operatorname{sign}(r_n)s\alpha\textbf{\textit{R}}_{;,k}$
+		Пересчитать параметры модели: $\bit{z}_{t+1}=\bit{z}_t+\mu\Delta\bit{z}$;
 	}
 \end{algorithm}
 
 Сначала производится поиск индекса $k$ наибольшего модуля среди вещественных и мнимых частей элементов вектора отклонения $\bit{r}$. В переменную $s$ записывается $1$, если в наибольшей по модулю является вещественная часть одной из координат $\bit{r}$, $s=j$, если мнимая. Эта переменная учитывает вещественный или мнимый характер приращения невязки и поправки на вектор коэффициентов.
 
-Затем, как и для вещественнозначного случая, шаг алгоритма уменьшается до тех пор, пока приращение вектора невязки $\bit{r}$ не станет меньше модуля самой невязки. После чего призводится пересчёт вектора приращения коэффициентов $\Delta\bit{h}$ и вектора невязки $\bit{r}$.
+Затем, как и для вещественнозначного случая, шаг алгоритма уменьшается до тех пор, пока приращение вектора невязки $\bit{r}$ не станет меньше модуля самой невязки. После чего призводится пересчёт вектора приращения коэффициентов $\Delta\bit{z}$ и вектора невязки $\bit{r}$.
 
-В результате алгоритм \ref{alg:dcd_compl} выдаёт вектор невязки $\bit{r}$ и вектор приращения коэффициентов $\Delta\bit{h}$, после чего производится обновление коэффициентов.
+В результате алгоритм \ref{alg:dcd_compl} выдаёт вектор невязки $\bit{r}$ и вектор приращения коэффициентов $\Delta\bit{z}$, после чего производится обновление коэффициентов.
 
-Алгоритм является методом приближенного решения системы линейных уравнений и работает интеративно. В связи с приближенным характером решения СЛАУ вблизи точки оптимума процедура DCD не гарантирует монотонной сходимости.
+Алгоритм является методом приближенного решения системы линейных уравнений и работает итеративно. В связи с приближенным характером решения СЛАУ вблизи точки оптимума процедура DCD не гарантирует монотонной сходимости.
 
-Блочный алгоритма DCD применяется к модели Гаммерштейна так же как и блочная реализация градиентного спуска. Выход модели представляется в виде векторно-матричного произведения \eqref{hammerst_out_fir_pla} составной матрицы и вектора \eqref{hammerst_matr_vec_comp}. На вход алгоритма DCD в данном случае поступают матрица \bit{R} и вектор \bit{b} следующего вида:
-\begin{equation}
-	\bit{R}=\bit{V}_{full}^H\bit{V}_{full}=
-	\begin{pmatrix}
-		\bit{V}_f^H\\
-		\bit{U}^H
-	\end{pmatrix}
-	\begin{pmatrix}
-		\bit{V}_f & 
-		\bit{U}
-	\end{pmatrix}=
-	\begin{pmatrix}
-		\bit{V}_f^H\bit{V}_f & \bit{V}_f^H\bit{U}\\
-		\bit{U}^H\bit{V}_f & \bit{U}^H\bit{U}
-	\end{pmatrix},
-\end{equation}
-\begin{equation}
-	\bit{b}=\bit{V}_{full}^H\bit{d}=
-	\begin{pmatrix}
-		\bit{V}_f^H\\
-		\bit{U}^H
-	\end{pmatrix}\bit{d}.
-\end{equation}
-
-\subsection{Квазиньютоновские методы}
+\subsection{Квазиньютоновские методы} \label{subsec:quasi_newton}
 Как отмечалось ранее, метод Ньютона обладает локальной квадратичной сходимость, высокой точностью решения. Кроме того он является аффинно инвариантным~\cite{nesterov}, что означает, что вид разностного уравнения и скорость сходимости не меняются при аффинном преобразовании координат. Однако, для реализации метода требуется хранение гессиана в памяти, также операция обращения гессиана, которая является вычислительно сложной. 
 
 Для снижения вычислительной сложности применяют методы, которые обладают скоростью сходимости выше, чем у градиентного спуска, имея при этом накладные расходы меньше, чем у метода Ньютона. Квазиньютоновские методы объединяют в себе простоту градиентного спуска с точки зрения вычислительной сложности и высокую скорость сходимости. 
 
-Метод Ньютона раскладывает целевую функцию в окрестности точки $\bit{w}_{n-1}$ \eqref{approx_second}:
+Как отмечать в разделе~\ref{subsec:conj_grad} смешанный метод Ньютона раскладывает целевую функцию в окрестности точки~\eqref{quadratic_form} $\bit{z}_{k}$:
 \begin{equation}
 	\begin{matrix}
-		p(\bit{w}_n)=
-		J(\bit{w}_{n-1})+
-		(\bit{w}_n-\bit{w}_{n-1})^H\nabla_{J}(\bit{w}_{n-1})+\\
-		+\frac{1}{2}(\bit{w}_n-\bit{w}_{n-1})^H
-		\bit{H}_J(\bit{w}_{n-1})
-		(\bit{w}_n-\bit{w}_{n-1}).
+		p(\bit{z}_{k+1})=
+		J(\bit{z}_{k})+
+		(\bit{z}_{k+1}-\bit{z}_{k})^H(D_{\bit{z}^*}J)^T+
+		(\bit{z}_{k+1}-\bit{z}_{k})^T(D_{\bit{z}^*}J)^H+\\
+		+\frac{1}{2}(\bit{z}_{k+1}-\bit{z}_{k})^H
+		H_{\bit{z}^*, \bit{z}}\nabla_{J}
+		(\bit{z}_{k+1}-\bit{z}_{k}).
 		\label{approx_second_n}
 	\end{matrix}
 \end{equation}
 
 Идея квазиньютоновских алгоритмов в том, чтобы заменить матрицу Гёссе на её оценку:
 \begin{equation}
-	\bit{H}_J\rightarrow\bit{B}_n, \ \bit{B}_n\succ 0.
+	H_{\bit{z}^*, \bit{z}}\rightarrow\bit{B}_k, \ \bit{B}_k\succ 0.
 	\label{hessian_estim}
 \end{equation}
 Отметим, что искомая оценка гессиана должна быть положительно определённой. Выполним замену:
 \begin{equation}
-	\bit{w}_n-\bit{w}_{n-1}=\din{n-1},
+	\bit{z}_{k+1}-\bit{z}_{k}=\din{k},
 	\label{coef_replace}
 \end{equation}
 тогда из \eqref{approx_second_n}, \eqref{hessian_estim} и \eqref{coef_replace} получим:
 \begin{equation}
 	\begin{matrix}
-		p(\din{n-1}+\bit{w}_{n-1})=
-		J(\bit{w}_{n-1})+
-		\din{n-1}^H\nabla_{J}(\bit{w}_{n-1})+\\
-		+\frac{1}{2}\din{n-1}^H
-		\bit{B}_{n-1}\din{n-1}.
+		p(\din{k}+\bit{z}_{k})=
+		J(\bit{z}_{k})+
+		\din{k}^H(D_{\bit{z}^*_{k}}{J})^T+\\
+		\din{k}^T(D_{\bit{z}^*_{k}}{J})^H+\frac{1}{2}\din{k}^H
+		\bit{B}_{k}\din{k}.
 		\label{approx_second_replace_n}
 	\end{matrix}
 \end{equation}
-По аналогии с методом Ньютона \eqref{newton_alg} квазиньютоновский метод будет иметь вид:
+По аналогии со смешанным методом Ньютона \eqref{mixed_newton_eq} квазиньютоновский метод будет иметь вид:
 \begin{equation}
-	\bit{w}_n=\bit{w}_{n-1}-\mu\bit{B}_{n-1}^{-1}
-	\nabla_{J}(\bit{w}_{n-1})=
-	\bit{w}_{n-1}-\mu\bit{H}_{n-1}
-	\nabla_{J}(\bit{w}_{n-1})
+	\bit{z}_{k+1}=\bit{z}_{k}-\mu\bit{B}_{k}^{-1}
+	\nabla_{J}(\bit{z}_{k})=
+	\bit{z}_{k}-\mu\bit{H}_{k}
+	\nabla_{J}(\bit{z}_{k})
 	\label{kvazi_newton_alg},
 \end{equation}
-где $\bit{B}_n, \bit{H}_n$ -- оценки прмямого и обратного гессиана соответственно.
+где $\bit{B}_k, \bit{H}_k$ -- оценки прмямого и обратного гессиана соответственно.
 
 Требования, которые предъявляютя к оценке гессиана:
 \begin{itemize}
-	\item Быстрое обновление $\bit{B}_{n-1}\rightarrow\bit{B}_n$ в условиях, когда доступны только градиенты
+	\item Быстрое обновление $\bit{B}_{k}\rightarrow\bit{B}_{k+1}$ в условиях, когда доступны только градиенты
 	\item Быстрый поиск направления:
 	\begin{equation}
-		\din{n-1}=\mu\bit{B}_{n-1}^{-1}
-		\nabla_{J}(\bit{w}_{n-1})=
-		\mu\bit{H}_{n-1}
-		\nabla_{J}(\bit{w}_{n-1})
+		\din{k}=\mu\bit{B}_{k}^{-1}
+		\nabla_{J}(\bit{z}_{k})=
+		\mu\bit{H}_{k}
+		\nabla_{J}(\bit{z}_{k})
 	\end{equation}
-	\item Компактное хранение $\bit{B}_n$
+	\item Компактное хранение $\bit{B}_{k+1}$
 	\item Сверхлинейная сходимость
 \end{itemize}
-Получим уравнение на поиск матрицы $\bit{B}_n$. Для этого сформулируем так называемое правило двух градиентов \cite{fletcher}:
+Получим уравнение на поиск матрицы $\bit{B}_{k+1}$. Для этого сформулируем так называемое правило двух градиентов \cite{fletcher}:
 \begin{equation}
-	\left.\frac{\partial p(\din{n}+\bit{w}_n)}{\partial \din{n}^H}
-	\right|_{\din{n}=\bit{0}}=\nabla_{J}(\bit{w}_n),
+	\left.\frac{\partial p(\din{k+1}+\bit{z}_{k+1})}{\partial \din{k+1}^H}
+	\right|_{\din{k+1}=\bit{0}}=(D_{\bit{z}^*_{k+1}}{J})^T,
 	\label{grad_rule_1}
 \end{equation}
 \begin{equation}
-	\left.\frac{\partial p(\din{n}+\bit{w}_n)}{\partial \din{n}^H}
-	\right|_{\din{n}=-\mu\din{n-1}}=\nabla_{J}(\bit{w}_{n-1}).
+	\left.\frac{\partial p(\din{k+1}+\bit{z}_{k+1})}{\partial \din{k+1}^H}
+	\right|_{\din{k+1}=-\mu\din{k}}=(D_{\bit{z}^*_{k}}{J})^T.
 	\label{grad_rule_2}
 \end{equation}
 Требование \eqref{grad_rule_1} следует напрямую из \eqref{approx_second_replace_n}. Вычислим призводную в левой части \eqref{grad_rule_2}:
 \begin{equation}
-	\left.\frac{\partial p(\din{n}+\bit{w}_n)}{\partial \din{n}^H}
-	\right|_{\din{n}=-\mu\din{n-1}}=
-	\nabla_{J}(\bit{w}_{n})-\frac{1}{2}\bit{B}_n\din{n}=
-	\nabla_{J}(\bit{w}_{n})-\mu\bit{B}_n\din{n-1}	
+	\left.\frac{\partial p(\din{k+1}+\bit{z}_{k+1})}{\partial \din{k+1}^H}
+	\right|_{\din{k+1}=-\mu\din{k}}=
+	(D_{\bit{z}^*_{k+1}}J)^T-\frac{1}{2}\bit{B}_{k+1}\din{k+1}=
+	(D_{\bit{z}^*_{k+1}}J)^T-\mu\bit{B}_{k+1}\din{k}	
 \end{equation}
 Требование \eqref{grad_rule_2} приводит к квазиньютоновскому уравнению (англ. Secant equation):
 \begin{equation}
-	\nabla_{J}(\bit{w}_{n})-\nabla_{J}(\bit{w}_{n-1})=
-	\mu\bit{B}_n\din{n-1}	
+	(D_{\bit{z}^*_{k+1}}J)^T-(D_{\bit{z}^*_{k}}J)^T=
+	\mu\bit{B}_{k+1}\din{k}	
 \end{equation}
 Сделаем замену и получим квазиньютоновское уравнение в следующем виде:
 \begin{equation}
-	\bit{s}_{n-1}=\mu(\bit{w}_{n}-\bit{w}_{n-1}),
+	\bit{s}_{k}=\mu(\bit{z}_{k+1}-\bit{z}_{k}),
 	\label{kvazi_newton_s}
 \end{equation}
 \begin{equation}
-	\bit{f}_{n-1}=\nabla_{J}(\bit{w}_{n})-\nabla_{J}(\bit{w}_{n-1}),
+	\bit{f}_{k}=(D_{\bit{z}^*_{k+1}}J)^T-(D_{\bit{z}^*_{k}}J)^T,
 	\label{kvazi_newton_f}
 \end{equation}
 \begin{equation}
-	\bit{B}_n\bit{s}_{n-1}=\bit{f}_{n-1}.
+	\bit{B}_{k+1}\bit{s}_{k}=\bit{f}_{k}.
 	\label{kvazi_newton_secant_eq}
 \end{equation}
 
-В уравнении \eqref{kvazi_newton_secant_eq} векторы $\bit{s}_{n-1}, \bit{f}_{n-1}$ определяются в процессе вычислений. Квазиньютоновское уравнение является уравнением на поиск матрицы $\bit{B}_n$. 
+В уравнении \eqref{kvazi_newton_secant_eq} векторы $\bit{s}_{k}, \bit{f}_{k}$ определяются в процессе вычислений. Квазиньютоновское уравнение является уравнением на поиск матрицы $\bit{B}_{k+1}$. 
 
-Отметим, что ввиду требования положительной определённости $\bit{B}_n$ \eqref{hessian_estim}, уравнение \eqref{kvazi_newton_secant_eq} не будет иметь решение в случае $\bit{s}_{n-1}^T\bit{f}_{n-1}<0$. При выборе шага важно следить за тем, чтобы это произведение было неотрицательным.
+Отметим, что ввиду требования положительной определённости $\bit{B}_{k+1}$ \eqref{hessian_estim}, уравнение \eqref{kvazi_newton_secant_eq} не будет иметь решение в случае $\bit{s}_{k}^T\bit{f}_{k}<0$. При выборе шага важно следить за тем, чтобы это произведение было неотрицательным.
 
-Кроме того, пусть система \eqref{kvazi_newton_secant_eq} имеет $F$ уравнений ($F=M+L$ для модели Гаммерштейна), тогда она будет иметь $\dsp\frac{F(F-1)}{2}$ неизвестных ввиду симметричности оценки гессиана. Это означает, что требуются дополнительные условия для обеспечения единственности решения.
+Кроме того, пусть система \eqref{kvazi_newton_secant_eq} имеет $F$ уравнений, тогда она будет иметь $\dsp\frac{F(F-1)}{2}$ неизвестных ввиду симметричности оценки гессиана. Это означает, что требуются дополнительные условия для обеспечения единственности решения.
 
-Для устойчиовсти алгоритма соседние оценки гессиана $\bit{B}_{n-1}$, $\bit{B}_{n}$ должно быть близки друг к другу. 
+Для устойчиовсти алгоритма соседние оценки гессиана $\bit{B}_{k}$, $\bit{B}_{k+1}$ должно быть близки друг к другу. 
 
-Далее рассмотрим такие примеры квазиньютоновских методов, как DFP, BFGS~\cite{pract_optimiz} и Barzilai-Borwein~\cite{bb_method}.
-\subsection{Метод Barzilai-Borwein}
+Далее рассмотрим следующие примеры квазиньютоновских методов: DFP, BFGS и Barzilai-Borwein~\cite{bb_method}~\cite{pract_optimiz}.
+
+\subsection{Метод Barzilai-Borwein} \label{subsec:quasi_newton_bb}
 Данный метод аппроксимирует гессиан диагональной матрицей. Пусть шаг алгоритма -- величина переменная, подстраиваемая на каждой новой итерации. Распишем алгоритм градиентного спуска:
 \begin{equation}
 	\begin{matrix}
-		\bit{w}_n=\bit{w}_{n-1}-\mu_{n-1}\nabla_{J}(\bit{w}_{n-1})=
-		\bit{w}_{n-1}-\mu_{n-1}\bit{I}\nabla_{J}(\bit{w}_{n-1})=\\
-		=\bit{w}_{n-1}-
+		\bit{z}_{k+1}=\bit{z}_{k}-\mu_{k}(D_{\bit{z}^*_{k}}J)^T=
+		\bit{z}_{k}-\mu_{k}\bit{I}(D_{\bit{z}^*_{k}}J)^T=\\
+		=\bit{z}_{k}-
 		\begin{pmatrix}
-			\frac{1}{\mu_{n-1}}\bit{I}
+			\frac{1}{\mu_{k}}\bit{I}
 		\end{pmatrix}^{-1}
-		\nabla_{J}(\bit{w}_{n-1})=
-		\bit{w}_{n-1}-
-		\bit{B}_{n-1}^{-1}
-		\nabla_{J}(\bit{w}_{n-1}),
+		(D_{\bit{z}^*_{k}}J)^T=
+		\bit{z}_{k}-
+		\bit{B}_{k}^{-1}
+		(D_{\bit{z}^*_{k}}J)^T,
 	\end{matrix}
 \end{equation}
-Квазиньютоновское уравнение будет иметь вид приближенного равенства, поскольку $\bit{s}_{n-1}, \bit{f}_{n-1}$ заранее известны, а $\bit{B}_n$ приближается всего одним числом, чего не достаточно для строгого равенства:
+Квазиньютоновское уравнение будет иметь вид приближенного равенства, поскольку $\bit{s}_{k}, \bit{f}_{k}$ заранее известны, а $\bit{B}_{k+1}$ приближается всего одним числом, чего не достаточно для строгого равенства:
 \begin{equation}
-	\mu_{n-1}^{-1}\bit{s}_{n-2}\approx\bit{f}_{n-2},
+	\mu_{k}^{-1}\bit{s}_{k-1}\approx\bit{f}_{k-1},
 \end{equation}
 где приближенное равенство формализуется следующей задачей минимизации \cite{bb_method}:
 \begin{equation}
-	\min_{\mu_{n-1}}
+	\min_{\mu_{k}}
 	\begin{Vmatrix}
-		\bit{s}_{n-2}-\mu_{n-1}\bit{f}_{n-2}
+		\bit{s}_{k-1}-\mu_{k}\bit{f}_{k}
 	\end{Vmatrix}_2\Rightarrow
-	\mu_{n-1}=\frac{\bit{s}_{n-2}^T\bit{f}_{n-2}}
-	{\bit{f}_{n-2}^T\bit{f}_{n-2}}.
+	\mu_{k}=\frac{\bit{s}_{k-1}^T\bit{f}_{k-1}}
+	{\bit{f}_{k-1}^T\bit{f}_{k-1}}.
 	\label{barzil_borw_step_problem}
 \end{equation}
 Выражение \eqref{barzil_borw_step_problem} задаёт способ обновления шага.
 
 Данный метод не является градиентный спуском, поскольку учитывает два предыдущих вектора коэффициентов и градиента для получения нового вектора коэффициентов.
-\subsection{Метод DFP}
+\subsection{Метод DFP} \label{subsec:quasi_newton_dfp}
 Метод DFP (англ. Davidon-Fletcher-Powell) использует поиск оценки матрицы Гёссе на каждой новой итерации \cite{pract_optimiz}. Учтём ранее упомянутое требование, которое заключается в близости оценок гессианов на соседних итерациях. Формульно такая задача может быть поставлена следующим образом \cite{pract_optimiz}:
 \begin{equation}
 	\begin{cases}
-		\min_{\bit{B}_n}
+		\min_{\bit{B}_{k+1}}
 		\begin{Vmatrix}
-			\bit{B}_{n-1}-\bit{B}_n
+			\bit{B}_{k}-\bit{B}_{k+1}
 		\end{Vmatrix}_2,\\
-		\bit{B}_n=\bit{B}_n^T,\\
-		\bit{B}_n\bit{s}_{n-1}=\bit{f}_{n-1}.
+		\bit{B}_{k+1}=\bit{B}_{k+1}^T,\\
+		\bit{B}_{k+1}\bit{s}_{k}=\bit{f}_{k}.
 	\end{cases}
 	\label{dfp_problem}
 \end{equation}
 Аналитическое решение задачи \eqref{dfp_problem} имеет вид \cite{fletcher}:
 \begin{equation}
-	\bit{B}_n=(\bit{I}-\rho_{n-1}\bit{f}_{n-1}\bit{s}_{n-1}^T)
-	\bit{B}_{n-1}(\bit{I}-\rho_{n-1}\bit{s}_{n-1}\bit{f}_{n-1}^T)+\rho_{n-1}\bit{f}_{n-1}\bit{f}_{n-1}^T,
+	\bit{B}_{k+1}=(\bit{I}-\rho_{k}\bit{f}_{k}\bit{s}_{k}^T)
+	\bit{B}_{k}(\bit{I}-\rho_{k}\bit{s}_{k}\bit{f}_{k}^T)+\rho_{k}\bit{f}_{k}\bit{f}_{k}^T,
 	\label{dfp_solve}
 \end{equation}
 \begin{equation}
-	\rho_{n-1}=\frac{1}{\bit{f}_{n-1}^T\bit{s}_{n-1}}.
+	\rho_{k}=\frac{1}{\bit{f}_{k}^T\bit{s}_{k}}.
 	\label{dfp_solve_rho}
 \end{equation}
 По формуле Шермана-Вудбери-Моррисона \cite{matrix_calc} (лемма об обращении матриц) решение \eqref{dfp_solve} можно преобразовать:
 \begin{equation}
-	\bit{B}_n^{-1}\equiv\bit{H}_n=\bit{H}_{n-1}-
-	\frac{\bit{H}_{n-1}\bit{f}_{n-1}\bit{f}_{n-1}^T\bit{H}_{n-1}}{\bit{f}_{n-1}^T\bit{H}_{n-1}\bit{f}_{n-1}}+
-	\frac{\bit{s}_{n-1}\bit{s}_{n-1}^T}{\bit{f}_{n-1}^T\bit{s}_{n-1}}.
+	\bit{B}_{k+1}^{-1}\equiv\bit{H}_{k+1}=\bit{H}_{k}-
+	\frac{\bit{H}_{k}\bit{f}_{k}\bit{f}_{k}^T\bit{H}_{k}}{\bit{f}_{k}^T\bit{H}_{k}\bit{f}_{k}}+
+	\frac{\bit{s}_{k}\bit{s}_{k}^T}{\bit{f}_{k}^T\bit{s}_{k}}.
 	\label{dfp_hessian_invers}
 \end{equation}
 Формула \eqref{dfp_hessian_invers} задаёт аналитическое выражение для вычисления оценки обратного гессиана. Для вычисления вектора коэффициентов на новой итерации эта оценка подставляется в разностное уравнение \eqref{kvazi_newton_alg}.
 
-Сложность хранения оценки обратной матрицы может быть оценена как $o(M^2)$ -- такая же как и для метода Ньютона. Оценим вычислительную сложность пересчета оценки гессиана. В выражении \eqref{dfp_hessian_invers} сложность подсчета третьего слагаемого оценивается как $o(M^2)$, поскольку $\bit{s}_{n-1}\bit{s}_{n-1}^T$ представляет собой векторное произведение, в результате которого получается матрица размерности $M\times M$.
+Сложность хранения оценки обратной матрицы может быть оценена как $o(K^2)$ -- такая же как и для метода Ньютона. Оценим вычислительную сложность пересчета оценки гессиана. В выражении \eqref{dfp_hessian_invers} сложность подсчета третьего слагаемого оценивается как $o(K^2)$, поскольку $\bit{s}_{k}\bit{s}_{k}^T$ представляет собой векторное произведение, в результате которого получается матрица размерности $K\times K$.
 
-Второе слагаемое также вычисляется за $o(M^2)$. Выражение $\bit{H}_{n-1}\bit{f}_{n-1}$ вычисляется за $o(M^2)$. При этом $\bit{f}_{n-1}^T\bit{H}_{n-1}=(\bit{H}_{n-1}\bit{f}_{n-1})^T$ ввиду симметричности $\bit{H}_{n-1}$. Остается произвести векторное умножение в числителе, сложность которого $o(M^2)$, а в знаменателе скалярное умножение векторов, сложность которого $o(M)$.
+Второе слагаемое также вычисляется за $o(K^2)$. Выражение $\bit{H}_{k}\bit{f}_{k}$ вычисляется за $o(K^2)$. При этом $\bit{f}_{k}^T\bit{H}_{k}=(\bit{H}_{k}\bit{f}_{k})^T$ ввиду симметричности $\bit{H}_{k}$. Остается произвести векторное умножение в числителе, сложность которого $o(K^2)$, а в знаменателе скалярное умножение векторов, сложность которого $o(K)$.
 
-\subsection{Метод BFGS}
+\subsection{Метод BFGS} \label{subsec:quasi_newton_bfgs}
 Метод BFGS (англ. Broyden–Fletcher–Goldfarb–Shanno). Вместо того, чтобы искать оценку гессиана, напрямую поставим задачу поиска оценки обратного гессиана~\cite{pract_optimiz}:
 \begin{equation}
 	\begin{cases}
-		\min_{\bit{H}_n}
+		\min_{\bit{H}_{k+1}}
 		\begin{Vmatrix}
-			\bit{H}_{n-1}-\bit{H}_n
+			\bit{H}_{k}-\bit{H}_{k+1}
 		\end{Vmatrix}_2,\\
-		\bit{H}_n=\bit{H}_n^T,\\
-		\bit{H}_n\bit{f}_{n-1}=\bit{s}_{n-1}.
+		\bit{H}_{k+1}=\bit{H}_{k+1}^T,\\
+		\bit{H}_{k+1}\bit{f}_{k}=\bit{s}_{k}.
 	\end{cases}
 	\label{bfgs_problem}
 \end{equation}
 Аналитическое решение задачи \eqref{bfgs_problem} записывается в виде выражения \cite{bfgs_fletcher}:
 \begin{equation}
-	\bit{H}_n=(\bit{I}-\rho_{n-1}\bit{s}_{n-1}\bit{f}_{n-1}^T)
-	\bit{H}_{n-1}(\bit{I}-\rho_{n-1}\bit{f}_{n-1}\bit{s}_{n-1}^T)+\rho_{n-1}\bit{s}_{n-1}\bit{s}_{n-1}^T,
+	\bit{H}_{k+1}=(\bit{I}-\rho_{k}\bit{s}_{k}\bit{f}_{k}^T)
+	\bit{H}_{k}(\bit{I}-\rho_{k}\bit{f}_{k}\bit{s}_{k}^T)+\rho_{k}\bit{s}_{k}\bit{s}_{k}^T,
 	\label{bfgs_solve}
 \end{equation}
 \begin{equation}
-	\rho_{n-1}=\frac{1}{\bit{f}_{n-1}^T\bit{s}_{n-1}}.
+	\rho_{k}=\frac{1}{\bit{f}_{k}^T\bit{s}_{k}}.
 	\label{bfgs_solve_rho}
 \end{equation}
 
@@ -374,6 +468,6 @@ BFGS обладает локальной сверхлинейной сходим
 
 На практике приведенный метод является наиболее предпочтителным квазиньютоновским методом по поскольку обладает свойством самокоррекции.
 
-Сложность хранения и обращения гессиана оценивается как $o(M^2)$, что следует из формулы \eqref{bfgs_solve}. 
+Сложность хранения и обращения гессиана оценивается как $o(K^2)$, что следует из формулы \eqref{bfgs_solve}. 
 
-Отметим, что для вычисления коэффициентов на новой итерации необходима не сама матрица Гёссе (или обратная к ней), а эффективная процедура умножения матрицы на вектор $\nabla_{J}(\bit{w}_{n-1})$. Кроме того, значения векторов $\bit{f}, \bit{s}$, полученные на первых итерациях могут портить оценки $\bit{B}, \bit{H}$ на более поздних итерациях. Для подсчет оценки обратного гессиана предлагается хранить в очереди и использовать последние $m\ll M$ значений векторов $\bit{f}, \bit{s}$. На этой идее основана модификация Limited-Memory BFGS \cite{lbfgs}.
+Отметим, что для вычисления коэффициентов на новой итерации необходима не сама матрица Гёссе (или обратная к ней), а эффективная процедура умножения матрицы на вектор $(D_{\bit{z}^*_{k}J})^T$. Кроме того, значения векторов $\bit{f}, \bit{s}$, полученные на первых итерациях могут портить оценки $\bit{B}, \bit{H}$ на более поздних итерациях. Для подсчет оценки обратного гессиана предлагается хранить в очереди и использовать последние $m\ll K$ значений векторов $\bit{f}, \bit{s}$. На этой идее основана модификация Limited-Memory BFGS \cite{lbfgs}.

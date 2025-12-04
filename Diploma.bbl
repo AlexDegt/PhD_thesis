@@ -1,0 +1,1059 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{dig_front_end}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d65b99ddd70d10d1ef52da9470ce10ca}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Fa-Long},
+           giveni={F\bibinithyphendelim L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{d65b99ddd70d10d1ef52da9470ce10ca}
+      \strng{fullhash}{d65b99ddd70d10d1ef52da9470ce10ca}
+      \strng{bibnamehash}{d65b99ddd70d10d1ef52da9470ce10ca}
+      \strng{authorbibnamehash}{d65b99ddd70d10d1ef52da9470ce10ca}
+      \strng{authornamehash}{d65b99ddd70d10d1ef52da9470ce10ca}
+      \strng{authorfullhash}{d65b99ddd70d10d1ef52da9470ce10ca}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Digital Front-End in Wireless Communications and Broadcasting. Circuits and Signal Processing}
+      \field{year}{2011}
+    \endentry
+    \entry{3gpp_36_804}{report}{}
+      \list{institution}{1}{%
+        {European Telecommunications Standards Institute}%
+      }
+      \list{location}{1}{%
+        {650 Route des Lucioles - Sophia Antipolis Valbonne - FRANCE}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{3rd Generation Partnership Project; Technical Specification Group Radio Access Network; Evolved Universal Terrestrial Radio Access (E-UTRA); Base Station (BS) radio transmission and reception;}
+      \field{type}{Standard}
+      \field{year}{2008}
+    \endentry
+    \entry{dpd_thesis}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=57eb8d9622eb4f729603dde8e75cda2b}{%
+           family={Tehrani},
+           familyi={T\bibinitperiod},
+           given={Ali\bibnamedelima Soltani},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Chalmers University}%
+      }
+      \strng{namehash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \strng{fullhash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \strng{bibnamehash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \strng{authorbibnamehash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \strng{authornamehash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \strng{authorfullhash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Behavioral modeling of wireless transmitters for distortion mitigation}
+      \field{type}{Thesis for the degree of doctor of philosophy}
+      \field{year}{2012}
+    \endentry
+    \entry{3gpp_36_104}{report}{}
+      \list{institution}{1}{%
+        {European Telecommunications Standards Institute}%
+      }
+      \list{location}{1}{%
+        {650 Route des Lucioles - Sophia Antipolis Valbonne - FRANCE}%
+      }
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{title}{3rd Generation Partnership Project; Technical Specification Group Radio Access Network; Evolved Universal Terrestrial Radio Access (E-UTRA); Base Station (BS) radio transmission and reception;}
+      \field{type}{Standard}
+      \field{year}{2015}
+    \endentry
+    \entry{adapt_filt}{book}{}
+      \name{author}{1}{}{%
+        {{hash=25e14531c61ebe5566756740ee609260}{%
+           family={К.\bibnamedelimi Ф.\bibnamedelimi Н.\bibnamedelimi Коуэн},
+           familyi={К\bibinitperiod\bibinitdelim Ф\bibinitperiod\bibinitdelim Н\bibinitperiod\bibinitdelim К\bibinitperiod},
+           given={П.\bibnamedelimi М.\bibnamedelimi Грант},
+           giveni={П\bibinitperiod\bibinitdelim М\bibinitperiod\bibinitdelim Г\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {"Мир"}%
+      }
+      \strng{namehash}{25e14531c61ebe5566756740ee609260}
+      \strng{fullhash}{25e14531c61ebe5566756740ee609260}
+      \strng{bibnamehash}{25e14531c61ebe5566756740ee609260}
+      \strng{authorbibnamehash}{25e14531c61ebe5566756740ee609260}
+      \strng{authornamehash}{25e14531c61ebe5566756740ee609260}
+      \strng{authorfullhash}{25e14531c61ebe5566756740ee609260}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Адаптивные фильтры}
+      \field{year}{1988}
+    \endentry
+    \entry{adapt_filt_haykin}{book}{}
+      \name{author}{1}{}{%
+        {{hash=91e57481898b943d6a72a1deba06a6a9}{%
+           family={Haykin},
+           familyi={H\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Edinburgh Gate, Harlow, Essex CM20 2JE, England}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Education}%
+      }
+      \strng{namehash}{91e57481898b943d6a72a1deba06a6a9}
+      \strng{fullhash}{91e57481898b943d6a72a1deba06a6a9}
+      \strng{bibnamehash}{91e57481898b943d6a72a1deba06a6a9}
+      \strng{authorbibnamehash}{91e57481898b943d6a72a1deba06a6a9}
+      \strng{authornamehash}{91e57481898b943d6a72a1deba06a6a9}
+      \strng{authorfullhash}{91e57481898b943d6a72a1deba06a6a9}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{title}{Adaptive filters theory}
+      \field{year}{2014}
+    \endentry
+    \entry{convex_opt}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9e2319a5ab99c290fe8eb9226c2598da}{%
+           family={Stephen\bibnamedelima Boyd},
+           familyi={S\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Lieven\bibnamedelima Vandenberghe},
+           giveni={L\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {The Edinburgh Building, Cambridge, CB2 8RU, UK}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{9e2319a5ab99c290fe8eb9226c2598da}
+      \strng{fullhash}{9e2319a5ab99c290fe8eb9226c2598da}
+      \strng{bibnamehash}{9e2319a5ab99c290fe8eb9226c2598da}
+      \strng{authorbibnamehash}{9e2319a5ab99c290fe8eb9226c2598da}
+      \strng{authornamehash}{9e2319a5ab99c290fe8eb9226c2598da}
+      \strng{authorfullhash}{9e2319a5ab99c290fe8eb9226c2598da}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7}
+      \field{title}{Convex Optimization}
+      \field{year}{2009}
+    \endentry
+    \entry{sklyar_dig_telecom}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ac6227a991da1ccc8cc6d590c787e35d}{%
+           family={Скляр},
+           familyi={С\bibinitperiod},
+           given={Бернард},
+           giveni={Б\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Москва, Санкт-Петербург, Киев}%
+      }
+      \list{publisher}{1}{%
+        {Издательские дом: "Вильямс"}%
+      }
+      \strng{namehash}{ac6227a991da1ccc8cc6d590c787e35d}
+      \strng{fullhash}{ac6227a991da1ccc8cc6d590c787e35d}
+      \strng{bibnamehash}{ac6227a991da1ccc8cc6d590c787e35d}
+      \strng{authorbibnamehash}{ac6227a991da1ccc8cc6d590c787e35d}
+      \strng{authornamehash}{ac6227a991da1ccc8cc6d590c787e35d}
+      \strng{authorfullhash}{ac6227a991da1ccc8cc6d590c787e35d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Цифровая Связь. Теоретические Основы и Практическое Применение}
+      \field{year}{2003}
+    \endentry
+    \entry{polyak_optimiz}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5becd4729a0a1c49d960ada2f2878d9d}{%
+           family={Поляк},
+           familyi={П\bibinitperiod},
+           given={Б.Т.},
+           giveni={Б\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {117071, Москва, В-71, Ленинский проспект, 15}%
+      }
+      \list{publisher}{1}{%
+        {Издательство "Наука". Главная редакция физико-математической литературы}%
+      }
+      \strng{namehash}{5becd4729a0a1c49d960ada2f2878d9d}
+      \strng{fullhash}{5becd4729a0a1c49d960ada2f2878d9d}
+      \strng{bibnamehash}{5becd4729a0a1c49d960ada2f2878d9d}
+      \strng{authorbibnamehash}{5becd4729a0a1c49d960ada2f2878d9d}
+      \strng{authornamehash}{5becd4729a0a1c49d960ada2f2878d9d}
+      \strng{authorfullhash}{5becd4729a0a1c49d960ada2f2878d9d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Введение в Оптимизацию}
+      \field{year}{2002}
+    \endentry
+    \entry{wirt_deriv_book}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8fa9042233eb8aee7808ea43e48aa026}{%
+           family={Hjorungnes},
+           familyi={H\bibinitperiod},
+           given={Are},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {The Edinburgh Building, Cambridge, CB2 8RU, UK}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{8fa9042233eb8aee7808ea43e48aa026}
+      \strng{fullhash}{8fa9042233eb8aee7808ea43e48aa026}
+      \strng{bibnamehash}{8fa9042233eb8aee7808ea43e48aa026}
+      \strng{authorbibnamehash}{8fa9042233eb8aee7808ea43e48aa026}
+      \strng{authornamehash}{8fa9042233eb8aee7808ea43e48aa026}
+      \strng{authorfullhash}{8fa9042233eb8aee7808ea43e48aa026}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Complex-Valued Matrix Derivatives. With Applications in Signal Processing and Communications}
+      \field{year}{2011}
+    \endentry
+    \entry{polyak1964}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=86e8da8c20afcbab24c7fbcca00e3f0e}{%
+           family={Polyak},
+           familyi={P\bibinitperiod},
+           given={B.\bibnamedelimi T.},
+           giveni={B\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{86e8da8c20afcbab24c7fbcca00e3f0e}
+      \strng{fullhash}{86e8da8c20afcbab24c7fbcca00e3f0e}
+      \strng{bibnamehash}{86e8da8c20afcbab24c7fbcca00e3f0e}
+      \strng{authorbibnamehash}{86e8da8c20afcbab24c7fbcca00e3f0e}
+      \strng{authornamehash}{86e8da8c20afcbab24c7fbcca00e3f0e}
+      \strng{authorfullhash}{86e8da8c20afcbab24c7fbcca00e3f0e}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{USSR Computational Mathematics and Mathematical Physics (in Russian)}
+      \field{title}{Some methods of speeding up the convergence of iteration methods}
+      \field{year}{1964}
+    \endentry
+    \entry{nesterov1983method}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6b63e7d6be60b3f3876dab7be8db3c17}{%
+           family={Nesterov},
+           familyi={N\bibinitperiod},
+           given={Yurii\bibnamedelima E.},
+           giveni={Y\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{6b63e7d6be60b3f3876dab7be8db3c17}
+      \strng{fullhash}{6b63e7d6be60b3f3876dab7be8db3c17}
+      \strng{bibnamehash}{6b63e7d6be60b3f3876dab7be8db3c17}
+      \strng{authorbibnamehash}{6b63e7d6be60b3f3876dab7be8db3c17}
+      \strng{authornamehash}{6b63e7d6be60b3f3876dab7be8db3c17}
+      \strng{authorfullhash}{6b63e7d6be60b3f3876dab7be8db3c17}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Doklady Akademii Nauk SSSR}
+      \field{number}{3}
+      \field{title}{A method for solving a convex programming problem with convergence rate \(O(1/k^2)\)}
+      \field{volume}{269}
+      \field{year}{1983}
+      \field{pages}{543\bibrangedash 547}
+      \range{pages}{5}
+    \endentry
+    \entry{kingma2014adam}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b6fbd171848aad4edf3925543f1f1522}{%
+           family={Kingma},
+           familyi={K\bibinitperiod},
+           given={Diederik\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=8aa66e8231cc2fdbe67aa4f18ca970c6}{%
+           family={Ba},
+           familyi={B\bibinitperiod},
+           given={Jimmy},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{fullhash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{bibnamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authorbibnamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authornamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authorfullhash}{a09df9f123146b8e2c7f1134c9496932}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1412.6980}
+      \field{title}{Adam: A Method for Stochastic Optimization}
+      \field{year}{2014}
+    \endentry
+    \entry{nesterov}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8a41b35fe7b3d1725cb95bd7eec40b01}{%
+           family={Nesterov},
+           familyi={N\bibinitperiod},
+           given={Yurii},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {101 Philip Drive, Assinippi Park, Norwell, Massachusetts 02061 USA}%
+      }
+      \list{publisher}{1}{%
+        {Kluwer Academic Publishers}%
+      }
+      \strng{namehash}{8a41b35fe7b3d1725cb95bd7eec40b01}
+      \strng{fullhash}{8a41b35fe7b3d1725cb95bd7eec40b01}
+      \strng{bibnamehash}{8a41b35fe7b3d1725cb95bd7eec40b01}
+      \strng{authorbibnamehash}{8a41b35fe7b3d1725cb95bd7eec40b01}
+      \strng{authornamehash}{8a41b35fe7b3d1725cb95bd7eec40b01}
+      \strng{authorfullhash}{8a41b35fe7b3d1725cb95bd7eec40b01}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Introductory Lectures on Convex Optimization: A Basic Course}
+      \field{year}{2004}
+    \endentry
+    \entry{matrix_comput}{book}{}
+      \name{author}{1}{}{%
+        {{hash=48bc089615df693df1f3ca88f0ff89ae}{%
+           family={Watkins},
+           familyi={W\bibinitperiod},
+           given={David\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{2}{%
+        {A John Wiley}%
+        {Sons, Inc.}%
+      }
+      \strng{namehash}{48bc089615df693df1f3ca88f0ff89ae}
+      \strng{fullhash}{48bc089615df693df1f3ca88f0ff89ae}
+      \strng{bibnamehash}{48bc089615df693df1f3ca88f0ff89ae}
+      \strng{authorbibnamehash}{48bc089615df693df1f3ca88f0ff89ae}
+      \strng{authornamehash}{48bc089615df693df1f3ca88f0ff89ae}
+      \strng{authorfullhash}{48bc089615df693df1f3ca88f0ff89ae}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Fundamentals of Matrix Computation}
+      \field{year}{2002}
+    \endentry
+    \entry{deLamare2015}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6bfa07bc353856b096bebfc41d2e78a2}{%
+           family={Lamare},
+           familyi={L\bibinitperiod},
+           given={R.\bibnamedelimi C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{6bfa07bc353856b096bebfc41d2e78a2}
+      \strng{fullhash}{6bfa07bc353856b096bebfc41d2e78a2}
+      \strng{bibnamehash}{6bfa07bc353856b096bebfc41d2e78a2}
+      \strng{authorbibnamehash}{6bfa07bc353856b096bebfc41d2e78a2}
+      \strng{authornamehash}{6bfa07bc353856b096bebfc41d2e78a2}
+      \strng{authorfullhash}{6bfa07bc353856b096bebfc41d2e78a2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1508.00636}
+      \field{title}{Low-Rank Signal Processing: Design, Algorithms for Reduced-Rank Signal Processing}
+      \field{year}{2015}
+    \endentry
+    \entry{mnm_paper_alex_degt}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7e26b0a75f440f1a28fc2064fde2b3b5}{%
+           family={Александр},
+           familyi={А\bibinitperiod},
+           given={Дегтярев},
+           giveni={Д\bibinitperiod}}}%
+        {{hash=8d28b23739e914c64dfeb83c9a304835}{%
+           family={Сергей},
+           familyi={С\bibinitperiod},
+           given={Бахурин},
+           giveni={Б\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d9d3881b64a0c4382aa88c75498af88}
+      \strng{fullhash}{9d9d3881b64a0c4382aa88c75498af88}
+      \strng{bibnamehash}{9d9d3881b64a0c4382aa88c75498af88}
+      \strng{authorbibnamehash}{9d9d3881b64a0c4382aa88c75498af88}
+      \strng{authornamehash}{9d9d3881b64a0c4382aa88c75498af88}
+      \strng{authorfullhash}{9d9d3881b64a0c4382aa88c75498af88}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Компьютерные исследования и моделирование}
+      \field{title}{Компенсация собственных нелинейных помех на основе смешанного метода Ньютона}
+      \field{year}{2024}
+      \field{pages}{1579\bibrangedash 1592}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.20537/2076-7633-2024-16-7-1579-1592
+      \endverb
+    \endentry
+    \entry{dcd_alg_thesis}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=57eb8d9622eb4f729603dde8e75cda2b}{%
+           family={Tehrani},
+           familyi={T\bibinitperiod},
+           given={Ali\bibnamedelima Soltani},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Communications Research Group, Department of Electronics, University of York}%
+      }
+      \strng{namehash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \strng{fullhash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \strng{bibnamehash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \strng{authorbibnamehash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \strng{authornamehash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \strng{authorfullhash}{57eb8d9622eb4f729603dde8e75cda2b}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{DCD Algorithm: Architectures, FPGA Implemenatations and Applications}
+      \field{type}{Thesis for the degree of doctor of philosophy}
+      \field{year}{2008}
+    \endentry
+    \entry{fletcher}{book}{}
+      \name{author}{1}{}{%
+        {{hash=97f8f840c3f242a2ae286e30b4dfd9cc}{%
+           family={Fletcher},
+           familyi={F\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {The Atrium, Southern Gate, Chichester, West Sussex, PO19 8SQ, United Kingdom}%
+      }
+      \list{publisher}{2}{%
+        {John Wiley}%
+        {Sons Ltd}%
+      }
+      \strng{namehash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \strng{fullhash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \strng{bibnamehash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \strng{authorbibnamehash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \strng{authornamehash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \strng{authorfullhash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Practical Methods of Optimization}
+      \field{year}{1987}
+    \endentry
+    \entry{bb_method}{article}{}
+      \name{author}{1}{}{%
+        {{hash=555611c75056f45e755a67d35748ef2f}{%
+           family={J.\bibnamedelimi Barzilai},
+           familyi={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={J.M.\bibnamedelimi Borwein},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Institute of Mathematics}%
+        {its Applications}%
+      }
+      \strng{namehash}{555611c75056f45e755a67d35748ef2f}
+      \strng{fullhash}{555611c75056f45e755a67d35748ef2f}
+      \strng{bibnamehash}{555611c75056f45e755a67d35748ef2f}
+      \strng{authorbibnamehash}{555611c75056f45e755a67d35748ef2f}
+      \strng{authornamehash}{555611c75056f45e755a67d35748ef2f}
+      \strng{authorfullhash}{555611c75056f45e755a67d35748ef2f}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IMA Journal of Numerical Analysis}
+      \field{number}{8}
+      \field{title}{Two-Point Step Size Gradient Methods}
+      \field{year}{1988}
+      \field{pages}{141\bibrangedash 148}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1093/imanum/8.1.141
+      \endverb
+    \endentry
+    \entry{pract_optimiz}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8583d0cb8af8d787329a11f948de647d}{%
+           family={Ф.\bibnamedelimi Гилл},
+           familyi={Ф\bibinitperiod\bibinitdelim Г\bibinitperiod},
+           given={М.\bibnamedelimi Райт},
+           giveni={М\bibinitperiod\bibinitdelim Р\bibinitperiod},
+           suffix={У.\bibnamedelimi Мюррей},
+           suffixi={У\bibinitperiod\bibinitdelim М\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {Издательство "Мир"}%
+      }
+      \strng{namehash}{8583d0cb8af8d787329a11f948de647d}
+      \strng{fullhash}{8583d0cb8af8d787329a11f948de647d}
+      \strng{bibnamehash}{8583d0cb8af8d787329a11f948de647d}
+      \strng{authorbibnamehash}{8583d0cb8af8d787329a11f948de647d}
+      \strng{authornamehash}{8583d0cb8af8d787329a11f948de647d}
+      \strng{authorfullhash}{8583d0cb8af8d787329a11f948de647d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Практическая Оптимизация}
+      \field{year}{1985}
+    \endentry
+    \entry{matrix_calc}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c4d8e30c773b40a2f2d101e051f34e1c}{%
+           family={Gene\bibnamedelimb H.\bibnamedelimi Golub},
+           familyi={G\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Charles\bibnamedelimb F.\bibnamedelimi Van\bibnamedelima Loan},
+           giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {2715 North Charles Street, Baltimore, Maryland 21218-4319, The Johns Hopkins Press Ltd., London}%
+      }
+      \list{publisher}{1}{%
+        {The Johns Hopkins University Press}%
+      }
+      \strng{namehash}{c4d8e30c773b40a2f2d101e051f34e1c}
+      \strng{fullhash}{c4d8e30c773b40a2f2d101e051f34e1c}
+      \strng{bibnamehash}{c4d8e30c773b40a2f2d101e051f34e1c}
+      \strng{authorbibnamehash}{c4d8e30c773b40a2f2d101e051f34e1c}
+      \strng{authornamehash}{c4d8e30c773b40a2f2d101e051f34e1c}
+      \strng{authorfullhash}{c4d8e30c773b40a2f2d101e051f34e1c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Matrix Computations}
+      \field{year}{1996}
+    \endentry
+    \entry{bfgs_fletcher}{article}{}
+      \name{author}{1}{}{%
+        {{hash=97f8f840c3f242a2ae286e30b4dfd9cc}{%
+           family={Fletcher},
+           familyi={F\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Atomic Energy Research Establishment}%
+      }
+      \strng{namehash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \strng{fullhash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \strng{bibnamehash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \strng{authorbibnamehash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \strng{authornamehash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \strng{authorfullhash}{97f8f840c3f242a2ae286e30b4dfd9cc}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Computer Journal}
+      \field{number}{3}
+      \field{title}{A New Approach To Variable Metric Algorithms}
+      \field{volume}{13}
+      \field{year}{1969}
+      \field{pages}{317\bibrangedash 322}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1093/comjnl/13.3.317
+      \endverb
+    \endentry
+    \entry{lbfgs}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3773c3d5aaf3636d59b5d646468683ae}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Dong\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=88a342d927bf795b0d92af8a5613da31}{%
+           family={Nocedal},
+           familyi={N\bibinitperiod},
+           given={Jorge},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{016da99314d2fb9b907bb0a91cc52ecd}
+      \strng{fullhash}{016da99314d2fb9b907bb0a91cc52ecd}
+      \strng{bibnamehash}{016da99314d2fb9b907bb0a91cc52ecd}
+      \strng{authorbibnamehash}{016da99314d2fb9b907bb0a91cc52ecd}
+      \strng{authornamehash}{016da99314d2fb9b907bb0a91cc52ecd}
+      \strng{authorfullhash}{016da99314d2fb9b907bb0a91cc52ecd}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematical Programming}
+      \field{number}{3}
+      \field{title}{On The Limited Memory BFGS Method for Large Scale Optimization}
+      \field{volume}{45}
+      \field{year}{1989}
+      \field{pages}{503\bibrangedash 528}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1007/BF01589116
+      \endverb
+    \endentry
+    \entry{dsp_layons}{book}{}
+      \name{author}{1}{}{%
+        {{hash=6410ff61f0d1d8bbc58089952d1e6f02}{%
+           family={Лайонс},
+           familyi={Л\bibinitperiod},
+           given={Ричард},
+           giveni={Р\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {"БИНОМ"}%
+      }
+      \strng{namehash}{6410ff61f0d1d8bbc58089952d1e6f02}
+      \strng{fullhash}{6410ff61f0d1d8bbc58089952d1e6f02}
+      \strng{bibnamehash}{6410ff61f0d1d8bbc58089952d1e6f02}
+      \strng{authorbibnamehash}{6410ff61f0d1d8bbc58089952d1e6f02}
+      \strng{authornamehash}{6410ff61f0d1d8bbc58089952d1e6f02}
+      \strng{authorfullhash}{6410ff61f0d1d8bbc58089952d1e6f02}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Цифровая обработка сигналов}
+      \field{year}{2006}
+    \endentry
+    \entry{dsp_oppenheim}{book}{}
+      \name{author}{1}{}{%
+        {{hash=f61171bb2e538d44e8277f9cbf76d306}{%
+           family={Alan\bibnamedelimb V.\bibnamedelimi Oppenheim},
+           familyi={A\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim O\bibinitperiod},
+           given={John\bibnamedelimb R.\bibnamedelimi Buck},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim B\bibinitperiod},
+           suffix={Ronald\bibnamedelimb W.\bibnamedelimi Schafer},
+           suffixi={R\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Upper Saddle River, New Jersey 07458}%
+      }
+      \list{publisher}{1}{%
+        {Prentice-Hall}%
+      }
+      \strng{namehash}{f61171bb2e538d44e8277f9cbf76d306}
+      \strng{fullhash}{f61171bb2e538d44e8277f9cbf76d306}
+      \strng{bibnamehash}{f61171bb2e538d44e8277f9cbf76d306}
+      \strng{authorbibnamehash}{f61171bb2e538d44e8277f9cbf76d306}
+      \strng{authornamehash}{f61171bb2e538d44e8277f9cbf76d306}
+      \strng{authorfullhash}{f61171bb2e538d44e8277f9cbf76d306}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Discrete-Time Signal Processing}
+      \field{year}{1998}
+    \endentry
+    \entry{pa_models}{article}{}
+      \name{author}{1}{}{%
+        {{hash=46cff2f47a5019987e4efd4f137cf7c0}{%
+           family={M.\bibnamedelimi Isaksson},
+           familyi={M\bibinitperiod\bibinitdelim I\bibinitperiod},
+           given={D.\bibnamedelimi Ronnow},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           suffix={D.\bibnamedelimi Wisell},
+           suffixi={D\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{46cff2f47a5019987e4efd4f137cf7c0}
+      \strng{fullhash}{46cff2f47a5019987e4efd4f137cf7c0}
+      \strng{bibnamehash}{46cff2f47a5019987e4efd4f137cf7c0}
+      \strng{authorbibnamehash}{46cff2f47a5019987e4efd4f137cf7c0}
+      \strng{authornamehash}{46cff2f47a5019987e4efd4f137cf7c0}
+      \strng{authorfullhash}{46cff2f47a5019987e4efd4f137cf7c0}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Microwave Theory and Techniques}
+      \field{number}{1}
+      \field{title}{A Comparative Analysis of Behavioral Models for RF Power Amplifiers}
+      \field{volume}{54}
+      \field{year}{2006}
+      \field{pages}{348\bibrangedash 359}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/TMTT.2005.860500
+      \endverb
+    \endentry
+    \entry{dpd_models}{book}{}
+      \name{author}{1}{}{%
+        {{hash=a21332e6e855b0d990f3079d87b7f720}{%
+           family={Fadhel\bibnamedelimb M.\bibnamedelimi Ghannouchi},
+           familyi={F\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Mohamed\bibnamedelima Helaoui},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           suffix={Oualid\bibnamedelima Hammi},
+           suffixi={O\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {The Atrium, Southern Gate, Chichester, West Sussex, PO19 8SQ, United Kingdom}%
+      }
+      \list{publisher}{2}{%
+        {John Wiley}%
+        {Sons Ltd}%
+      }
+      \strng{namehash}{a21332e6e855b0d990f3079d87b7f720}
+      \strng{fullhash}{a21332e6e855b0d990f3079d87b7f720}
+      \strng{bibnamehash}{a21332e6e855b0d990f3079d87b7f720}
+      \strng{authorbibnamehash}{a21332e6e855b0d990f3079d87b7f720}
+      \strng{authornamehash}{a21332e6e855b0d990f3079d87b7f720}
+      \strng{authorfullhash}{a21332e6e855b0d990f3079d87b7f720}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Behavioral Modelling and Predistortion of Wideband Wireless Transmitters}
+      \field{year}{2015}
+    \endentry
+    \entry{spec_func}{book}{}
+      \name{author}{1}{}{%
+        {{hash=cced2cc65495649e139cd3bb00f735ea}{%
+           family={Е.\bibnamedelimi Янке},
+           familyi={Е\bibinitperiod\bibinitdelim Я\bibinitperiod},
+           given={Ф.\bibnamedelimi Лёш},
+           giveni={Ф\bibinitperiod\bibinitdelim Л\bibinitperiod},
+           suffix={Ф.\bibnamedelimi Эмде},
+           suffixi={Ф\bibinitperiod\bibinitdelim Э\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {Наука}%
+      }
+      \strng{namehash}{cced2cc65495649e139cd3bb00f735ea}
+      \strng{fullhash}{cced2cc65495649e139cd3bb00f735ea}
+      \strng{bibnamehash}{cced2cc65495649e139cd3bb00f735ea}
+      \strng{authorbibnamehash}{cced2cc65495649e139cd3bb00f735ea}
+      \strng{authornamehash}{cced2cc65495649e139cd3bb00f735ea}
+      \strng{authorfullhash}{cced2cc65495649e139cd3bb00f735ea}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6}
+      \field{title}{Специальные функции (Формулы, графики, таблицы)}
+      \field{year}{1964}
+    \endentry
+    \entry{dpd_lut}{article}{}
+      \name{author}{1}{}{%
+        {{hash=653027f7e141a487971072286b7cf2b1}{%
+           family={A.\bibnamedelimi Molina},
+           familyi={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={K.\bibnamedelimi Azadet},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod},
+           suffix={K.\bibnamedelimi Rajamani},
+           suffixi={K\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{653027f7e141a487971072286b7cf2b1}
+      \strng{fullhash}{653027f7e141a487971072286b7cf2b1}
+      \strng{bibnamehash}{653027f7e141a487971072286b7cf2b1}
+      \strng{authorbibnamehash}{653027f7e141a487971072286b7cf2b1}
+      \strng{authornamehash}{653027f7e141a487971072286b7cf2b1}
+      \strng{authorfullhash}{653027f7e141a487971072286b7cf2b1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Microwave Theory and Techniques}
+      \field{number}{3}
+      \field{title}{Digital Predistortion Using Lookup Tables With Linear Interpolation and Extrapolation: Direct Least Squares Coefficient Adaptation}
+      \field{volume}{65}
+      \field{year}{2017}
+      \field{pages}{980\bibrangedash 987}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/TMTT.2016.2627562
+      \endverb
+    \endentry
+    \entry{3gpp_sample_rate}{report}{}
+      \list{institution}{1}{%
+        {European Telecommunications Standards Institute}%
+      }
+      \list{location}{1}{%
+        {650 Route des Lucioles - Sophia Antipolis Cedex - FRANCE}%
+      }
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labeltitlesource}{title}
+      \field{title}{User Equipment (UE) conformance specification; Radio transmission and reception; Part 2: Range 2 Standalone;}
+      \field{type}{Standard}
+      \field{year}{2019}
+    \endentry
+    \entry{NCC2020IS2051}{report}{}
+      \name{author}{1}{}{%
+        {{hash=61ceffdd74cc2be5f76d8134904235c9}{%
+           family={{National Communications Commission, Taiwan}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {National Communications Commission (NCC), Taiwan}%
+      }
+      \strng{namehash}{61ceffdd74cc2be5f76d8134904235c9}
+      \strng{fullhash}{61ceffdd74cc2be5f76d8134904235c9}
+      \strng{bibnamehash}{61ceffdd74cc2be5f76d8134904235c9}
+      \strng{authorbibnamehash}{61ceffdd74cc2be5f76d8134904235c9}
+      \strng{authornamehash}{61ceffdd74cc2be5f76d8134904235c9}
+      \strng{authorfullhash}{61ceffdd74cc2be5f76d8134904235c9}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Version 1.0}
+      \field{number}{IS2051}
+      \field{title}{Technical Specifications for New Radio Base Station Radio Frequency Equipment of Mobile Broadband Business}
+      \field{type}{Standard}
+      \field{year}{2020}
+    \endentry
+    \entry{Dynamic_DPD_RB_Alloc}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=77767a8ffc26a7be0f529d6f3c2fa70e}{%
+           family={Yin},
+           familyi={Y\bibinitperiod},
+           given={Hang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=82592f124751163dd90f698115b2426c}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Anding},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{24b22fd89afc243f5a160ff187334936}
+      \strng{fullhash}{24b22fd89afc243f5a160ff187334936}
+      \strng{bibnamehash}{24b22fd89afc243f5a160ff187334936}
+      \strng{authorbibnamehash}{24b22fd89afc243f5a160ff187334936}
+      \strng{authornamehash}{24b22fd89afc243f5a160ff187334936}
+      \strng{authorfullhash}{24b22fd89afc243f5a160ff187334936}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2024 IEEE/MTT-S International Microwave Symposium - IMS 2024}
+      \field{title}{Adaptive Kernel Function Sharing for Digital Predistortion of RF Power Amplifiers with Dynamic Resource Block Allocation}
+      \field{year}{2024}
+      \field{pages}{645\bibrangedash 648}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/IMS40175.2024.10600215
+      \endverb
+      \keyw{Radio frequency;Heuristic algorithms;Matching pursuit algorithms;Dynamic scheduling;Microwave theory and techniques;Predistortion;Microwave amplifiers;digital predistortion (DPD);orthogonal matching pursuit (OMP);power amplifiers (PA);resource block (RB)}
+    \endentry
+    \entry{mixed_newton_global_opt}{article}{}
+      \name{author}{4}{}{%
+        {{hash=6705d1e8a01bb630b634ec3b4985d384}{%
+           family={Bakhurin},
+           familyi={B\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=31cab25a66b40ea65c55908780e2bd77}{%
+           family={Hildebrand},
+           familyi={H\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8cf0f12df9b60e219e17953ec56af57c}{%
+           family={Alkousa},
+           familyi={A\bibinitperiod},
+           given={Mohammad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=10e851b5779296b0cc3b29537071292b}{%
+           family={Titov},
+           familyi={T\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d517bc33bbb297c38d9744070f618db1}
+      \strng{fullhash}{f69e853261ff1808bb6443eeccd91e44}
+      \strng{bibnamehash}{d517bc33bbb297c38d9744070f618db1}
+      \strng{authorbibnamehash}{d517bc33bbb297c38d9744070f618db1}
+      \strng{authornamehash}{d517bc33bbb297c38d9744070f618db1}
+      \strng{authorfullhash}{f69e853261ff1808bb6443eeccd91e44}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Global Optimization}
+      \field{number}{3}
+      \field{title}{Optimization in Complex Spaces with the Mixed {N}ewton Method}
+      \field{volume}{88}
+      \field{year}{2024}
+      \field{pages}{637\bibrangedash 668}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1007/s10898-023-01355-z
+      \endverb
+    \endentry
+    \entry{polyak1964some}{article}{}
+      \name{author}{1}{}{%
+        {{hash=83cb78217e5046c7c8c8da6fc9d263df}{%
+           family={Polyak},
+           familyi={P\bibinitperiod},
+           given={Boris\bibnamedelima T.},
+           giveni={B\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{83cb78217e5046c7c8c8da6fc9d263df}
+      \strng{fullhash}{83cb78217e5046c7c8c8da6fc9d263df}
+      \strng{bibnamehash}{83cb78217e5046c7c8c8da6fc9d263df}
+      \strng{authorbibnamehash}{83cb78217e5046c7c8c8da6fc9d263df}
+      \strng{authornamehash}{83cb78217e5046c7c8c8da6fc9d263df}
+      \strng{authorfullhash}{83cb78217e5046c7c8c8da6fc9d263df}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{USSR Computational Mathematics and Mathematical Physics}
+      \field{number}{5}
+      \field{title}{Some Methods of Speeding up the Convergence of Iteration Methods}
+      \field{urlday}{1}
+      \field{urlmonth}{10}
+      \field{urlyear}{2024}
+      \field{volume}{4}
+      \field{year}{1964}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 17}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1016/0041-5553(64)90137-5
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/0041555364901375
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/0041555364901375
+      \endverb
+    \endentry
+    \entry{fir_quant}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=55d1e2bc8cae650e9ba774525fdc8acd}{%
+           family={A.\bibnamedelimi Degtyarev},
+           familyi={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={S.\bibnamedelimi Bakhurin},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod},
+           suffix={K.\bibnamedelimi Saifullin},
+           suffixi={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{55d1e2bc8cae650e9ba774525fdc8acd}
+      \strng{fullhash}{55d1e2bc8cae650e9ba774525fdc8acd}
+      \strng{bibnamehash}{55d1e2bc8cae650e9ba774525fdc8acd}
+      \strng{authorbibnamehash}{55d1e2bc8cae650e9ba774525fdc8acd}
+      \strng{authornamehash}{55d1e2bc8cae650e9ba774525fdc8acd}
+      \strng{authorfullhash}{55d1e2bc8cae650e9ba774525fdc8acd}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2022 24th International Conference on Digital Signal Processing and its Applications (DSPA)}
+      \field{note}{Accepted for publication}
+      \field{title}{High Order FIR Filter Hardware Implementation Complexity Reduction}
+      \field{year}{2022}
+    \endentry
+  \enddatalist
+  \missing{HestenesStiefel1952}
+  \missing{behav_model}
+  \missing{complex_deriv}
+  \missing{haykin}
+  \missing{lut_dpd}
+  \missing{mathews1991adaptive}
+  \missing{mixed_newton}
+  \missing{schetzen1980volterra}
+  \missing{volterra1959theory}
+\endrefsection
+\endinput
+

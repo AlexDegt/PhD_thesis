@@ -20,6 +20,8 @@
 \renewcommand{\footrulewidth}{0pt}
 \addtolength{\headheight}{0.5pt}
 
+\usepackage[HTML]{xcolor}
+
 \fancypagestyle{plain}{%
 	\fancyhead{}   
 	\renewcommand{\headrulewidth}{0pt}
@@ -30,7 +32,10 @@
 \addbibresource{bibliography.bib}
 
 \usepackage{algorithmic}
+%\usepackage{algorithm}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+\usepackage{bm} 
 
 % Привязка нумерации формул к секциям/подсекциям/главам
 %\numberwithin{equation}{section}
@@ -38,7 +43,7 @@
 %\numberwithin{equation}{chapter}
 
 \newcommand{\bit}[1]{\ensuremath{\textbf{\textit{#1}}}}
-\newcommand{\din}[1]{\ensuremath{\Delta\bit{w}_{#1}}}
+\newcommand{\din}[1]{\ensuremath{\Delta\bit{z}_{#1}}}
 \newcommand{\dsp}{\ensuremath{\displaystyle}}
 \newcommand{\wave}[1]{\ensuremath{\widetilde{#1}}}
 
@@ -69,6 +74,8 @@
 \concludecontents
 
 \printbib
+%\printbibliography
+%\bibliography{bibliography}
 
 \backmatter
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.12)  13 OCT 2025 18:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.12)  4 DEC 2025 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -691,6 +691,27 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidth=\dimen184
 \titlewidthlast=\dimen185
 \titlewidthfirst=\dimen186
+)
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color
+.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor
+.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 ) (mipt-thesis-biblatex.sty
 Package: mipt-thesis-biblatex 2014/06/19 Some settings for Biblatex
 
@@ -1038,18 +1059,18 @@ Package: relsize 2013/03/29 ver 4.1
 \c@algocf=\count442
 \algocf@algoframe=\box71
 \algocf@algobox=\box72
+) (C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
+Package: bm 2023/07/08 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup8
+\symboldletters=\mathgroup9
+\symboldsymbols=\mathgroup10
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+Package bm Info: No bold for \T2A/cmr/m/up, using \pmb.
+Package bm Info: No bold for \U/esint/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
-(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
-
-(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color
-.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 149.
-
-(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor
-.ltx))
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
@@ -1061,23 +1082,23 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (Dissertation/chapter_3_folder/chapter_3.aux))
 \openout1 = `Diploma.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Info: Redefining \th on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Info: Redefining \th on input line 58.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1114,7 +1135,7 @@ LaTeX Info: Redefining \th on input line 53.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package translations Info: no dictionary file `translations-basic-dictionary-ru
-ssian.trsl' found. on input line 53.
+ssian.trsl' found. on input line 58.
 
 (C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts
 \translations-basic-dictionary-english.trsl
@@ -1122,7 +1143,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 53.
+or `english'. on input line 58.
 
 (C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-p
 df.mkii
@@ -1172,11 +1193,75 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Diploma.bbl' found.
- (Diploma.bbl)
-Package biblatex Info: Reference section=0 on input line 53.
-Package biblatex Info: Reference segment=0 on input line 53.
+ (Diploma.bbl
 
-Overfull \hbox (17.57585pt too wide) in paragraph at lines 57--57
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                HestenesStiefel1952
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                behav_model
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                complex_deriv
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                haykin
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                lut_dpd
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                mathews1991adaptive
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                mixed_newton
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                schetzen1980volterra
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                volterra1959theory
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
+Package biblatex Info: Reference section=0 on input line 58.
+Package biblatex Info: Reference segment=0 on input line 58.
+
+Overfull \hbox (17.57585pt too wide) in paragraph at lines 62--62
 []\T2A/cmr/m/n/12 Вследствие ком-пакт-но-сти рас-по-ло-же-ния ком-по-нент в RF-
 чипсете мо-биль-но-го устрой-
  []
@@ -1212,49 +1297,63 @@ Overfull \hbox (11.63928pt too wide) in paragraph at lines 9--9
  []
 
 [2]
-Overfull \hbox (0.30548pt too wide) detected at line 34
+Overfull \hbox (5.272pt too wide) in paragraph at lines 29--29
+ [][] []\T2A/cmr/m/n/12 Модель нели-ней-ных ис-ка-же-ний в си-сте-мах свя-зи на
+ ос-но-ве сплай- 
+ []
+
+
+Overfull \hbox (0.30548pt too wide) detected at line 36
 \T2A/cmr/bx/n/12 II.. 
  []
 
 
-Overfull \hbox (6.08774pt too wide) in paragraph at lines 42--42
- [][] []\T2A/cmr/m/n/12 Исследование опор-ных уров-ней ком-пен-са-ции ди-на-ми-
-че-ских нели- 
+Overfull \hbox (10.82346pt too wide) in paragraph at lines 39--39
+ [][] []\T2A/cmr/m/n/12 Формирование обу-ча-ю-щей вы-бор-ки для за-да-чи ком-пе
+н-са-ции нели- 
  []
 
 
-Overfull \hbox (5.70694pt too wide) detected at line 43
+Overfull \hbox (3.64464pt too wide) in paragraph at lines 40--40
+ [][] []\T2A/cmr/m/n/12 Формирование обу-ча-ю-щей вы-бор-ки для за-да-чи ком-пе
+н-са-ции вто- 
+ []
+
+
+Overfull \hbox (10.82341pt too wide) in paragraph at lines 41--41
+ [][] []\T2A/cmr/m/n/12 Формирование обу-ча-ю-щей вы-бор-ки для за-да-чи циф-ро
+-вых предыс- 
+ []
+
+
+Overfull \hbox (10.82341pt too wide) in paragraph at lines 42--42
+ [][] []\T2A/cmr/m/n/12 Формирование обу-ча-ю-щей вы-бор-ки для за-да-чи циф-ро
+-вых предыс- 
+ []
+
+
+Overfull \hbox (1.68262pt too wide) in paragraph at lines 48--48
+ [][] []\T2A/cmr/m/n/12 Компенсация нели-ней-ных ис-ка-же-ний в пе-ре-дат-чи-ке
+ двух-ка-наль- 
+ []
+
+[3]
+Overfull \hbox (5.70694pt too wide) detected at line 49
 \T2A/cmr/bx/n/12 III.. 
  []
 
 
-Overfull \hbox (3.38406pt too wide) in paragraph at lines 43--43
+Overfull \hbox (3.38406pt too wide) in paragraph at lines 49--49
  [][] []\T2A/cmr/bx/n/12 Практическая ре-а-ли-за-ция нели-ней-ных кор-рек-то-ро
 в в си-сте-мах свя- 
  []
 
-[3])
+)
 \tf@toc=\write4
 \openout4 = `Diploma.toc'.
 
  [4]
-
-LaTeX Warning: Citation 'dig_front_end' on page 5 undefined on input line 57.
-
-
-LaTeX Warning: Citation '3gpp_36_804' on page 5 undefined on input line 57.
-
-
-LaTeX Warning: Citation 'dpd_thesis' on page 5 undefined on input line 57.
-
-
-Overfull \hbox (16.37549pt too wide) in paragraph at lines 57--57
-\T2A/cmr/m/n/12 че-рез нели-ней-ные эле-мен-ты, та-кие как дуп-лек-се-ры и уси-
-ли-те-ли мощ-но-сти [[]].
- []
-
-
-Overfull \hbox (2.40457pt too wide) in paragraph at lines 57--57
+Overfull \hbox (2.40457pt too wide) in paragraph at lines 62--62
 []\T2A/cmr/m/n/12 Адаптивная ком-пен-са-ция па-ра-зит-ных нели-ней-ных по-мех п
 оз-во-ля-ет улуч-шить про-
  []
@@ -1276,9 +1375,6 @@ Overfull \hbox (5.18315pt too wide) in paragraph at lines 4--5
 \T2A/cmr/m/n/12 па-ра-зит-ных по-мех, воз-ни-ка-ю-щих на при-јм-ни-ке приемо-пе
 редающего устрой-ства. При-
  []
-
-
-LaTeX Warning: Citation '3gpp_36_104' on page 1 undefined on input line 11.
 
 [1
 
@@ -1312,23 +1408,12 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [2 <./figures/2t2r_interf_propagate_1_harmonic/2t2r_interf_propagate_1_harmonic
 .pdf>]
-
-LaTeX Warning: Citation 'dig_front_end' on page 3 undefined on input line 37.
-
-
-LaTeX Warning: Citation 'adapt_filt' on page 3 undefined on input line 39.
-
-<figures/ident_problem/ident_problem.pdf, id=44, 687.52856pt x 297.02968pt>
+<figures/ident_problem/ident_problem.pdf, id=44, 624.41275pt x 268.12169pt>
 File: figures/ident_problem/ident_problem.pdf Graphic file (type pdf)
 <use figures/ident_problem/ident_problem.pdf>
 Package pdftex.def Info: figures/ident_problem/ident_problem.pdf  used on input
  line 42.
-(pdftex.def)             Requested size: 412.52032pt x 178.21918pt.
-
-Overfull \hbox (13.98172pt too wide) in paragraph at lines 39--46
-\T2A/cmr/m/n/12 ции нели-ней-ной мо-де-ли по кри-те-рию ми-ни-му-ма сред-не-го 
-квад-ра-та ошиб-ки [[]].
- []
+(pdftex.def)             Requested size: 374.65053pt x 160.87425pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -1338,7 +1423,7 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [3 <./figures/interf_example/first_harmonic/first_harmonic.pdf>]
-<figures/tx_digial_distortion/tx_digial_distortion.pdf, id=96, 462.52798pt x 34
+<figures/tx_digial_distortion/tx_digial_distortion.pdf, id=97, 462.52798pt x 34
 6.89601pt>
 File: figures/tx_digial_distortion/tx_digial_distortion.pdf Graphic file (type 
 pdf)
@@ -1360,7 +1445,7 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [4 <./figures/ident_problem/ident_problem.pdf>]
-<figures/dpd_dynamic/dpd_scheme/dpd_scheme.pdf, id=122, 664.40218pt x 293.1753p
+<figures/dpd_dynamic/dpd_scheme/dpd_scheme.pdf, id=128, 664.40218pt x 293.1753p
 t>
 File: figures/dpd_dynamic/dpd_scheme/dpd_scheme.pdf Graphic file (type pdf)
 <use figures/dpd_dynamic/dpd_scheme/dpd_scheme.pdf>
@@ -1379,14 +1464,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 amic/dpd_scheme/dpd_scheme.pdf>])
 (Dissertation/chapter_1_folder/chapter_1_section_2.tex
 
-LaTeX Warning: Citation 'adapt_filt_haykin' on page 6 undefined on input line 4
-3.
-
-
-LaTeX Warning: Citation 'adapt_filt_haykin' on page 6 undefined on input line 4
-5.
-
-
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1394,16 +1471,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [6]
-
-LaTeX Warning: Citation 'convex_opt' on page 7 undefined on input line 51.
-
-
-LaTeX Warning: Citation 'sklyar_dig_telecom' on page 7 undefined on input line 
-65.
-
-
-LaTeX Warning: Citation 'polyak_optimiz' on page 7 undefined on input line 69.
-
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1413,17 +1480,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [7]
 
-LaTeX Warning: Citation 'polyak_optimiz' on page 8 undefined on input line 93.
-
-
-LaTeX Warning: Citation 'wirt_deriv_book' on page 8 undefined on input line 95.
-
-
-
-LaTeX Warning: Citation 'wirt_deriv_book' on page 8 undefined on input line 108
-.
-
-
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1432,9 +1488,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [8]
 
-LaTeX Warning: Citation 'polyak1964' on page 9 undefined on input line 148.
-
-
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1442,14 +1495,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [9]
-
-LaTeX Warning: Citation 'nesterov1983method' on page 10 undefined on input line
- 159.
-
-
-LaTeX Warning: Citation 'kingma2014adam' on page 10 undefined on input line 171
-.
-
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1470,18 +1515,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 LaTeX Warning: Citation 'complex_deriv' on page 12 undefined on input line 26.
 
 
-LaTeX Warning: Citation 'wirt_deriv_book' on page 12 undefined on input line 90
-.
-
-
-Overfull \hbox (13.9243pt too wide) in paragraph at lines 89--91
-\T2A/cmr/m/n/12 клад-ках [] ис-поль-зо-ва-но свой-ство $[]\OT1/cmr/m/n/12 (\OML
-/cmm/m/it/12 ABC\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 C[] \OMS/cmsy/m/n/12 
- \OML/cmm/m/it/12 A\OT1/cmr/m/n/12 )[](\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 )$ \T2
-A/cmr/m/n/12 [[]]. 
- []
-
-
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1490,14 +1523,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [12]
 
-LaTeX Warning: Citation 'polyak_optimiz' on page 13 undefined on input line 138
-.
-
-
-LaTeX Warning: Citation 'polyak_optimiz' on page 13 undefined on input line 140
-.
-
-
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1505,9 +1530,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [13]
-
-LaTeX Warning: Citation 'nesterov' on page 14 undefined on input line 152.
-
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1529,25 +1551,10 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[15]
-
-LaTeX Warning: Citation 'matrix_comput' on page 16 undefined on input line 227.
-
-
-
-LaTeX Warning: Citation 'matrix_comput' on page 16 undefined on input line 227.
-
-
-
-LaTeX Warning: Citation 'convex_opt' on page 16 undefined on input line 232.
-
-
-LaTeX Warning: Citation 'adapt_filt_haykin' on page 16 undefined on input line 
-234.
-
-
-LaTeX Warning: Citation 'wirt_deriv_tech_rep' on page 16 undefined on input lin
-e 259.
+[15]) (Dissertation/chapter_1_folder/chapter_1_section_4.tex
+Overfull \hbox (3.22873pt too wide) in paragraph at lines 1--1
+\T2A/cmr/bx/n/17.28 ний не тре-бу-ю-щие яв-но-го вы-чис-ле-ния мат-ри-цы Гес-
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -1557,9 +1564,16 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [16]
+Overfull \hbox (8.53806pt too wide) in paragraph at lines 27--29
+\T2A/cmr/m/n/12 ри-ца сме-шан-ных про-из-вод-ных функ-ции по-терь MSE [], $[] \
+OT1/cmr/m/n/12 = [][] =
+ []
 
-LaTeX Warning: Citation 'wirt_deriv_book' on page 17 undefined on input line 28
-0.
+
+Overfull \hbox (14.80232pt too wide) in paragraph at lines 40--42
+\T2A/cmr/m/n/12 Выведем ме-тод со-пря-жен-ных гра-ди-ен-тов для ми-ни-ми-за-ции
+ квад-ра-тич-ной фор-мы []
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -1570,18 +1584,18 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [17]
 
-LaTeX Warning: Citation 'nesterov' on page 18 undefined on input line 320.
+LaTeX Warning: Citation 'HestenesStiefel1952' on page 18 undefined on input lin
+e 48.
 
-) (Dissertation/chapter_1_folder/chapter_1_section_4.tex
-Overfull \hbox (3.22873pt too wide) in paragraph at lines 1--1
-\T2A/cmr/bx/n/17.28 ний не тре-бу-ю-щие яв-но-го вы-чис-ле-ния мат-ри-цы Гес-
+
+LaTeX Warning: Citation 'HestenesStiefel1952' on page 18 undefined on input lin
+e 80.
+
+
+Overfull \hbox (6.79805pt too wide) in paragraph at lines 80--81
+\T2A/cmr/m/n/12 урав-не-ний ме-то-дом ма-те-ма-ти-че-ской ин-дук-ции до-ка-зы-в
+а-ет-ся, что для си-сте-мы $[][]$
  []
-
-
-LaTeX Warning: Citation 'matrix_comput' on page 18 undefined on input line 3.
-
-
-LaTeX Warning: Citation 'dcd_alg_thesis' on page 18 undefined on input line 8.
 
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -1592,8 +1606,23 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [18]
 
-LaTeX Warning: Citation 'dcd_alg_thesis' on page 19 undefined on input line 36.
+LaTeX Warning: Citation 'HestenesStiefel1952' on page 19 undefined on input lin
+e 97.
 
+
+Overfull \hbox (9.9111pt too wide) in paragraph at lines 96--98
+\T2A/cmr/m/n/12 Отметим, что все на-прав-ле-ния най-ден-ные та-ким ите-ра-тив-н
+ым ме-то-дом [], []
+ []
+
+
+Overfull \hbox (17.62482pt too wide) detected at line 127
+[][] 
+ []
+
+
+LaTeX Warning: Citation 'HestenesStiefel1952' on page 19 undefined on input lin
+e 129.
 
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -1603,22 +1632,9 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [19]
-
-LaTeX Warning: Citation 'dcd_alg_thesis' on page 20 undefined on input line 110
-.
-
-
-LaTeX Warning: Reference `hammerst_out_fir_pla' on page 20 undefined on input l
-ine 148.
-
-
-LaTeX Warning: Reference `hammerst_matr_vec_comp' on page 20 undefined on input
- line 148.
-
-
-Overfull \hbox (20.6837pt too wide) in paragraph at lines 148--149
-\T2A/cmr/m/n/12 блоч-ная ре-а-ли-за-ция гра-ди-ент-но-го спус-ка. Вы-ход мо-де-
-ли пред-став-ля-ет-ся в ви-де векторно-
+Overfull \hbox (8.53806pt too wide) in paragraph at lines 138--140
+\T2A/cmr/m/n/12 ри-ца сме-шан-ных про-из-вод-ных функ-ции по-терь MSE [], $[] \
+OT1/cmr/m/n/12 = [][] =
  []
 
 
@@ -1630,13 +1646,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [20]
 
-LaTeX Warning: Citation 'nesterov' on page 21 undefined on input line 173.
-
-
-LaTeX Warning: Reference `approx_second' on page 21 undefined on input line 177
-.
-
-
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1645,12 +1654,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [21]
 
-LaTeX Warning: Reference `newton_alg' on page 22 undefined on input line 211.
-
-
-LaTeX Warning: Citation 'fletcher' on page 22 undefined on input line 234.
-
-
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1658,24 +1661,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [22]
-Overfull \hbox (5.18599pt too wide) in paragraph at lines 251--253
-\T2A/cmr/m/n/12 Требование [] при-во-дит к ква-зи-нью-то-нов-ско-му урав-не-нию
- (ан-гл. Secant equation): 
- []
-
-
-LaTeX Warning: Citation 'pract_optimiz' on page 23 undefined on input line 279.
-
-
-
-LaTeX Warning: Citation 'bb_method' on page 23 undefined on input line 279.
-
-
-Overfull \hbox (79.2211pt too wide) in paragraph at lines 279--280
-[]\T2A/cmr/m/n/12 Далее рас-смот-рим та-кие при-ме-ры ква-зи-нью-то-нов-ских ме
--то-дов, как DFP, BFGS [[]]
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1684,34 +1669,16 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [23]
-
-LaTeX Warning: Citation 'bb_method' on page 24 undefined on input line 300.
-
-
-Overfull \hbox (45.26216pt too wide) in paragraph at lines 299--301
-\T2A/cmr/m/n/12 где при-бли-жен-ное ра-вен-ство фор-ма-ли-зу-ет-ся сле-ду-ю-щей
- за-да-чей ми-ни-ми-за-ции [[]]: 
+Overfull \hbox (5.18599pt too wide) in paragraph at lines 344--346
+\T2A/cmr/m/n/12 Требование [] при-во-дит к ква-зи-нью-то-нов-ско-му урав-не-нию
+ (ан-гл. Secant equation): 
  []
 
 
-Overfull \hbox (1.7533pt too wide) in paragraph at lines 312--313
-[]\T2A/cmr/m/n/12 Данный ме-тод не яв-ля-ет-ся гра-ди-ент-ный спус-ком, по-скол
-ь-ку учи-ты-ва-ет два преды-
+Overfull \hbox (3.71172pt too wide) in paragraph at lines 366--367
+[]\T2A/cmr/m/n/12 Отметим, что вви-ду тре-бо-ва-ния по-ло-жи-тель-ной опре-де-л
+јн-но-сти $[][]$ [], урав-
  []
-
-
-LaTeX Warning: Citation 'pract_optimiz' on page 24 undefined on input line 314.
-
-
-
-LaTeX Warning: Citation 'pract_optimiz' on page 24 undefined on input line 314.
-
-
-
-LaTeX Warning: Citation 'fletcher' on page 24 undefined on input line 326.
-
-
-LaTeX Warning: Citation 'matrix_calc' on page 24 undefined on input line 336.
 
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -1721,24 +1688,11 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [24]
-
-LaTeX Warning: Citation 'pract_optimiz' on page 25 undefined on input line 350.
-
-
-
-LaTeX Warning: Citation 'bfgs_fletcher' on page 25 undefined on input line 362.
-
-
-
-Overfull \hbox (11.27536pt too wide) in paragraph at lines 361--363
-\T2A/cmr/m/n/12 Аналитическое ре-ше-ние за-да-чи [] за-пи-сы-ва-ет-ся в ви-де в
-ы-ра-же-ния [[]]: 
+Overfull \hbox (1.7533pt too wide) in paragraph at lines 406--407
+[]\T2A/cmr/m/n/12 Данный ме-тод не яв-ля-ет-ся гра-ди-ент-ный спус-ком, по-скол
+ь-ку учи-ты-ва-ет два преды-
  []
 
-
-LaTeX Warning: Citation 'lbfgs' on page 25 undefined on input line 379.
-
-) (Dissertation/chapter_1_folder/chapter_1_section_5.tex
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1746,14 +1700,7 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[25]
-
-LaTeX Warning: Citation 'dsp_layons' on page 26 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'adapt_filt_haykin' on page 26 undefined on input line 
-40.
-
+[25]) (Dissertation/chapter_1_folder/chapter_1_section_5.tex
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1762,27 +1709,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [26]
-Overfull \hbox (0.12823pt too wide) in paragraph at lines 63--65
-\T2A/cmr/m/n/12 рав-ную по-ло-вине дли-ны филь-тра. Та-кой спо-соб вы-ра-же-ния
- вы-ход-ных от-сче-тов филь-
- []
-
-
-LaTeX Warning: Citation 'dsp_oppenheim' on page 27 undefined on input line 66.
-
-
-LaTeX Warning: Citation 'adapt_filt_haykin' on page 27 undefined on input line 
-68.
-
-
-LaTeX Warning: Citation 'marpl_spectr' on page 27 undefined on input line 68.
-
-
-Overfull \hbox (1.491pt too wide) in paragraph at lines 66--69
-\T2A/cmr/m/n/12 Кор-ре-ля-ци-он-ная мат-ри-ца [[]] яв-ля-ет-ся цен-траль-ным об
-ъ-ек-том при
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1791,11 +1717,10 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [27]
-
-LaTeX Warning: Citation 'marpl_spectr' on page 28 undefined on input line 114.
-
-
-LaTeX Warning: Citation 'marpl_spectr' on page 28 undefined on input line 136.
+Overfull \hbox (0.12823pt too wide) in paragraph at lines 63--65
+\T2A/cmr/m/n/12 рав-ную по-ло-вине дли-ны филь-тра. Та-кой спо-соб вы-ра-же-ния
+ вы-ход-ных от-сче-тов филь-
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -1814,37 +1739,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [29]
 
-LaTeX Warning: Citation 'pa_models' on page 30 undefined on input line 212.
-
-
-LaTeX Warning: Citation 'dpd_models' on page 30 undefined on input line 212.
-
-
-Overfull \hbox (28.41245pt too wide) in paragraph at lines 212--213
-\T2A/cmr/m/n/12 мощ-но-сти [[]], та-ких как мо-дель Ви-не-ра, Гам-мер-штей-на, 
-Винера-Гаммерштейна,
- []
-
-
-LaTeX Warning: Reference `fig:hammerstein' on page 30 undefined on input line 2
-14.
-
-
-LaTeX Warning: Reference `fig:hammerstein' on page 30 undefined on input line 2
-20.
-
-
-LaTeX Warning: Citation 'dpd_models' on page 30 undefined on input line 220.
-
-
-LaTeX Warning: Reference `fig:hammerstein' on page 30 undefined on input line 2
-25.
-
-
-LaTeX Warning: Reference `fig:hammerstein' on page 30 undefined on input line 2
-32.
-
-
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1853,12 +1747,6 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [30]
 
-LaTeX Warning: Citation 'dpd_models' on page 31 undefined on input line 234.
-
-
-LaTeX Warning: Citation 'dpd_models' on page 31 undefined on input line 245.
-
-
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1866,16 +1754,14 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [31]
-Underfull \hbox (badness 10000) detected at line 323
- []$[]   \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 :$ [][]  
- []
 
-
-LaTeX Warning: Citation 'dpd_models' on page 32 undefined on input line 327.
-
-
-LaTeX Warning: Citation 'spec_func' on page 32 undefined on input line 331.
-
+pdfTeX warning: pdflatex.exe (file ./figures/1dpla/1dpla.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+<figures/1dpla/1dpla.pdf, id=287, 69.9413pt x 138.82866pt>
+File: figures/1dpla/1dpla.pdf Graphic file (type pdf)
+<use figures/1dpla/1dpla.pdf>
+Package pdftex.def Info: figures/1dpla/1dpla.pdf  used on input line 415.
+(pdftex.def)             Requested size: 97.91713pt x 194.35875pt.
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1885,50 +1771,21 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 [32]
 
-LaTeX Warning: Citation 'spec_func' on page 33 undefined on input line 341.
+LaTeX Warning: Citation 'volterra1959theory' on page 33 undefined on input line
+ 464.
 
 
-LaTeX Warning: Citation 'spec_func' on page 33 undefined on input line 351.
+LaTeX Warning: Citation 'schetzen1980volterra' on page 33 undefined on input li
+ne 464.
 
 
-LaTeX Warning: Citation 'spec_func' on page 33 undefined on input line 361.
+LaTeX Warning: Citation 'mathews1991adaptive' on page 33 undefined on input lin
+e 464.
 
 
-LaTeX Warning: Reference `hammerstein_out_scalar' on page 33 undefined on input
- line 485.
-
-
-LaTeX Warning: Reference `nonlin_pa_out_pla' on page 33 undefined on input line
- 485.
-
-
-LaTeX Warning: Reference `fir_input' on page 33 undefined on input line 487.
-
-
-Package fancyhdr Warning: \headheight is too small (12.5pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
-
-[33]
-
-LaTeX Warning: Reference `state_matr_pla' on page 34 undefined on input line 50
-1.
-
-
-
-pdfTeX warning: pdflatex.exe (file ./figures/submatrix_q/submatrix_q.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/submatrix_q/submatrix_q.pdf, id=287, 404.47108pt x 211.7511pt>
-File: figures/submatrix_q/submatrix_q.pdf Graphic file (type pdf)
-<use figures/submatrix_q/submatrix_q.pdf>
-Package pdftex.def Info: figures/submatrix_q/submatrix_q.pdf  used on input lin
-e 506.
-(pdftex.def)             Requested size: 485.36287pt x 254.10002pt.
-
-Overfull \hbox (30.11876pt too wide) in paragraph at lines 506--507
- [][] 
+Overfull \hbox (1.42575pt too wide) in paragraph at lines 464--465
+\T2A/cmr/m/n/12 тив-ной об-ра-бот-ки сиг-на-лов и яв-ля-ет-ся функ-ци-о-наль-ны
+м обоб-ще-ни-ем ли-ней-ной сверт-
  []
 
 
@@ -1938,7 +1795,7 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[34 <./figures/submatrix_q/submatrix_q.pdf>]))
+[33 <./figures/1dpla/1dpla.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1946,49 +1803,182 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[35]
+[34]
+<figures/models/hammerstein/hammerstein.pdf, id=305, 472.64577pt x 85.2786pt>
+File: figures/models/hammerstein/hammerstein.pdf Graphic file (type pdf)
+<use figures/models/hammerstein/hammerstein.pdf>
+Package pdftex.def Info: figures/models/hammerstein/hammerstein.pdf  used on in
+put line 500.
+(pdftex.def)             Requested size: 378.11713pt x 68.22295pt.
+
+
+LaTeX Warning: Citation 'haykin' on page 35 undefined on input line 510.
+
+
+LaTeX Warning: Citation 'haykin' on page 35 undefined on input line 533.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[35 <./figures/models/hammerstein/hammerstein.pdf>]
+<figures/models/wiener/wiener.pdf, id=330, 467.82779pt x 85.2786pt>
+File: figures/models/wiener/wiener.pdf Graphic file (type pdf)
+<use figures/models/wiener/wiener.pdf>
+Package pdftex.def Info: figures/models/wiener/wiener.pdf  used on input line 5
+87.
+(pdftex.def)             Requested size: 374.26274pt x 68.22295pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[36]
+
+LaTeX Warning: Citation 'haykin' on page 37 undefined on input line 598.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[37 <./figures/models/wiener/wiener.pdf>]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[38]
+Overfull \hbox (20.51053pt too wide) in paragraph at lines 697--699
+\T2A/cmr/m/n/12 Получим вы-ра-же-ние для вто-ро-го сла-га-е-мо-го сум-мы [] ис-
+поль-зуя вы-ра-же-ние []: 
+ []
+
+
+Overfull \hbox (4.52568pt too wide) in paragraph at lines 729--731
+\T2A/cmr/m/n/12 ри-цы мо-жет быть пред-став-ле-но в ви-де численно-эффективной 
+опе-ра-ции по-стобцового
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[39]
+<figures/models/wiener_hammerstein/wiener_hammerstein.pdf, id=366, 552.14282pt 
+x 86.2422pt>
+File: figures/models/wiener_hammerstein/wiener_hammerstein.pdf Graphic file (ty
+pe pdf)
+<use figures/models/wiener_hammerstein/wiener_hammerstein.pdf>
+Package pdftex.def Info: figures/models/wiener_hammerstein/wiener_hammerstein.p
+df  used on input line 742.
+(pdftex.def)             Requested size: 441.71486pt x 68.99384pt.
+
+Overfull \hbox (3.22305pt too wide) in paragraph at lines 739--746
+\T2A/cmr/m/n/12 свой-ства ка-на-ла пе-ре-дат-чи-ка, безы-нер-ци-он-ную нели-ней
+-ность, а так-же вы-ход-ной адап-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[40 <./figures/models/wiener_hammerstein/wiener_hammerstein.pdf>]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[41]
+<figures/models/mlp/mlp.pdf, id=395, 702.70526pt x 277.9986pt>
+File: figures/models/mlp/mlp.pdf Graphic file (type pdf)
+<use figures/models/mlp/mlp.pdf>
+Package pdftex.def Info: figures/models/mlp/mlp.pdf  used on input line 834.
+(pdftex.def)             Requested size: 421.62642pt x 166.80043pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[42 <./figures/models/mlp/mlp.pdf>]
+Overfull \hbox (4.22104pt too wide) in paragraph at lines 862--862
+|[]\T2A/cmr/bx/n/14.4 Применение ка-но-ни-че-ско-го тен-зор-но-го раз-ло-же-ния
+ для ап-
+ []
+
+))
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[43]
 \openout2 = `Dissertation/chapter_2_folder/chapter_2.aux'.
 
  (Dissertation/chapter_2_folder/chapter_2.tex
 Р“Р»Р°РІР° II.
 (Dissertation/chapter_2_folder/chapter_2_section_1.tex
-<figures/install/install.pdf, id=303, 1373.13pt x 637.42137pt>
-File: figures/install/install.pdf Graphic file (type pdf)
-<use figures/install/install.pdf>
-Package pdftex.def Info: figures/install/install.pdf  used on input line 8.
-(pdftex.def)             Requested size: 480.6027pt x 223.10081pt.
-
-Overfull \hbox (25.3586pt too wide) in paragraph at lines 8--9
- [][] 
- []
+<figures/testbench/testbench.pdf, id=414, 275.44807pt x 158.76915pt>
+File: figures/testbench/testbench.pdf Graphic file (type pdf)
+<use figures/testbench/testbench.pdf>
+Package pdftex.def Info: figures/testbench/testbench.pdf  used on input line 12
+.
+(pdftex.def)             Requested size: 275.4474pt x 158.76875pt.
 
 
-LaTeX Warning: Citation '3gpp_sample_rate' on page 36 undefined on input line 1
-5.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/capture/capture.pdf, id=304, 462.52798pt x 345.4506pt>
+<figures/capture/capture.pdf, id=415, 462.52798pt x 345.4506pt>
 File: figures/capture/capture.pdf Graphic file (type pdf)
 <use figures/capture/capture.pdf>
 Package pdftex.def Info: figures/capture/capture.pdf  used on input line 20.
-(pdftex.def)             Requested size: 370.02287pt x 276.36086pt.
-<figures/signal_generation/tx_rb75.pdf, id=305, 505.89pt x 361.35pt>
-File: figures/signal_generation/tx_rb75.pdf Graphic file (type pdf)
-<use figures/signal_generation/tx_rb75.pdf>
-Package pdftex.def Info: figures/signal_generation/tx_rb75.pdf  used on input l
-ine 28.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/signal_generation/pa_out_rb75.pdf, id=306, 505.89pt x 361.35pt>
-File: figures/signal_generation/pa_out_rb75.pdf Graphic file (type pdf)
-<use figures/signal_generation/pa_out_rb75.pdf>
-Package pdftex.def Info: figures/signal_generation/pa_out_rb75.pdf  used on inp
-ut line 34.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+(pdftex.def)             Requested size: 323.76736pt x 241.81377pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/data_for_thesis/IBFD_single_band/tx.pdf, id=416, 505.89pt x 361.35pt>
+File: figures/data_for_thesis/IBFD_single_band/tx.pdf Graphic file (type pdf)
+<use figures/data_for_thesis/IBFD_single_band/tx.pdf>
+Package pdftex.def Info: figures/data_for_thesis/IBFD_single_band/tx.pdf  used 
+on input line 28.
+(pdftex.def)             Requested size: 212.47234pt x 151.76596pt.
+<figures/data_for_thesis/IBFD_single_band/pa_out.pdf, id=417, 505.89pt x 361.35
+pt>
+File: figures/data_for_thesis/IBFD_single_band/pa_out.pdf Graphic file (type pd
+f)
+<use figures/data_for_thesis/IBFD_single_band/pa_out.pdf>
+Package pdftex.def Info: figures/data_for_thesis/IBFD_single_band/pa_out.pdf  u
+sed on input line 34.
+(pdftex.def)             Requested size: 212.47234pt x 151.76596pt.
 
 Overfull \hbox (24.65164pt too wide) in paragraph at lines 27--38
 [][]   [] 
  []
 
-[36
+) (Dissertation/chapter_2_folder/chapter_2_section_2.tex [44
 
 
 
@@ -2001,122 +1991,52 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[37 <./figures/install/install.pdf> <./figures/capture/capture.pdf>]
-<figures/freq_resp/path2.pdf, id=347, 505.89pt x 361.35pt>
-File: figures/freq_resp/path2.pdf Graphic file (type pdf)
-<use figures/freq_resp/path2.pdf>
-Package pdftex.def Info: figures/freq_resp/path2.pdf  used on input line 55.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/signal_generation/rx_rb75_path2.pdf, id=348, 505.89pt x 361.35pt>
-File: figures/signal_generation/rx_rb75_path2.pdf Graphic file (type pdf)
-<use figures/signal_generation/rx_rb75_path2.pdf>
-Package pdftex.def Info: figures/signal_generation/rx_rb75_path2.pdf  used on i
-nput line 61.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+[45 <./figures/testbench/testbench.pdf> <./figures/capture/capture.pdf>]
+Overfull \hbox (1.27303pt too wide) in paragraph at lines 11--12
+\T2A/cmr/m/up/12 стра-не-ния от пе-ре-дат-чи-ка к при-јм-ни-ку про-из-во-дит-ся
+ свјрт-ка мас-си-ва от-счј-тов $[]\OT1/cmr/m/n/12 ([])$
+ []
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 54--65
+<figures/data_for_thesis/IBFD_single_band/channel_fir.pdf, id=520, 505.89pt x 3
+61.35pt>
+File: figures/data_for_thesis/IBFD_single_band/channel_fir.pdf Graphic file (ty
+pe pdf)
+<use figures/data_for_thesis/IBFD_single_band/channel_fir.pdf>
+Package pdftex.def Info: figures/data_for_thesis/IBFD_single_band/channel_fir.p
+df  used on input line 21.
+(pdftex.def)             Requested size: 212.47234pt x 151.76596pt.
+<figures/data_for_thesis/IBFD_single_band/rx.pdf, id=521, 505.89pt x 361.35pt>
+File: figures/data_for_thesis/IBFD_single_band/rx.pdf Graphic file (type pdf)
+<use figures/data_for_thesis/IBFD_single_band/rx.pdf>
+Package pdftex.def Info: figures/data_for_thesis/IBFD_single_band/rx.pdf  used 
+on input line 27.
+(pdftex.def)             Requested size: 212.47234pt x 151.76596pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 20--31
 [][]   [] 
  []
 
-) (Dissertation/chapter_2_folder/chapter_2_section_2.tex
 
-LaTeX Warning: Citation '3gpp_36_211' on page 38 undefined on input line 2.
-
-
-LaTeX Warning: Citation '3gpp_36_211' on page 38 undefined on input line 4.
-
-
-Package fancyhdr Warning: \headheight is too small (12.5pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
-
-[38 <./figures/signal_generation/tx_rb75.pdf> <./figures/signal_generation/pa_o
-ut_rb75.pdf>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Citation '3gpp_36_211' on page 39 undefined on input line 37.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (Dissertation/chapter_2_folder/chapter_2_section_3.tex
-
-Package fancyhdr Warning: \headheight is too small (12.5pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
-
-[39 <./figures/freq_resp/path2.pdf> <./figures/signal_generation/rx_rb75_path2.
-pdf>]
-
-Package fancyhdr Warning: \headheight is too small (12.5pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
-
-[40]
-<figures/adapt_curves/newton_simple_stogn_20_epoch.pdf, id=511, 462.52798pt x 3
-46.89601pt>
-File: figures/adapt_curves/newton_simple_stogn_20_epoch.pdf Graphic file (type 
-pdf)
-<use figures/adapt_curves/newton_simple_stogn_20_epoch.pdf>
-Package pdftex.def Info: figures/adapt_curves/newton_simple_stogn_20_epoch.pdf 
- used on input line 15.
-(pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
-<figures/adapt_curves/newton_simple_stogn_400_epoch.pdf, id=512, 462.52798pt x 
-346.89601pt>
-File: figures/adapt_curves/newton_simple_stogn_400_epoch.pdf Graphic file (type
- pdf)
-<use figures/adapt_curves/newton_simple_stogn_400_epoch.pdf>
-Package pdftex.def Info: figures/adapt_curves/newton_simple_stogn_400_epoch.pdf
-  used on input line 21.
-(pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
-
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 14--25
-[][]   [] 
+Overfull \hbox (9.25914pt too wide) in paragraph at lines 37--38
+[]\T2A/cmr/m/up/12 Ввиду слож-но-сти обес-пе-че-ния изо-ля-ции дуп-лекс-но-го ф
+иль-тра приемо-передатчики,
  []
 
-<figures/tx/tx_rb1.pdf, id=513, 505.89pt x 361.35pt>
-File: figures/tx/tx_rb1.pdf Graphic file (type pdf)
-<use figures/tx/tx_rb1.pdf>
-Package pdftex.def Info: figures/tx/tx_rb1.pdf  used on input line 38.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/freq_resp/path0.pdf, id=514, 505.89pt x 361.35pt>
-File: figures/freq_resp/path0.pdf Graphic file (type pdf)
-<use figures/freq_resp/path0.pdf>
-Package pdftex.def Info: figures/freq_resp/path0.pdf  used on input line 44.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/testbench/testbench_imd2.pdf, id=522, 346.892pt x 213.84694pt>
+File: figures/testbench/testbench_imd2.pdf Graphic file (type pdf)
+<use figures/testbench/testbench_imd2.pdf>
+Package pdftex.def Info: figures/testbench/testbench_imd2.pdf  used on input li
+ne 42.
+(pdftex.def)             Requested size: 346.89114pt x 213.8464pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 37--48
-[]$[]$   $[]$ 
+Overfull \hbox (0.77725pt too wide) in paragraph at lines 39--47
+[]\T2A/cmr/m/up/12 Схема ге-не-ра-ции нели-ней-ных ис-ка-же-ний вто-ро-го по-ря
+д-ка пред-став-ле-на на рис. 15[].
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/psd/psd_newton_rb1_path0.pdf, id=515, 505.89pt x 361.35pt>
-File: figures/psd/psd_newton_rb1_path0.pdf Graphic file (type pdf)
-<use figures/psd/psd_newton_rb1_path0.pdf>
-Package pdftex.def Info: figures/psd/psd_newton_rb1_path0.pdf  used on input li
-ne 55.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_newton_rb1_path0_expanded.pdf, id=516, 505.89pt x 361.35pt>
-File: figures/psd/psd_newton_rb1_path0_expanded.pdf Graphic file (type pdf)
-<use figures/psd/psd_newton_rb1_path0_expanded.pdf>
-Package pdftex.def Info: figures/psd/psd_newton_rb1_path0_expanded.pdf  used on
- input line 61.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 54--65
-[]$[]$   $[]$ 
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2124,49 +2044,98 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[41 <./figures/adapt_curves/newton_simple_stogn_20_epoch.pdf> <./figures/adapt_
-curves/newton_simple_stogn_400_epoch.pdf>]
-<figures/tx/tx_rb50.pdf, id=595, 505.89pt x 361.35pt>
-File: figures/tx/tx_rb50.pdf Graphic file (type pdf)
-<use figures/tx/tx_rb50.pdf>
-Package pdftex.def Info: figures/tx/tx_rb50.pdf  used on input line 72.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/freq_resp/path1.pdf, id=596, 505.89pt x 361.35pt>
-File: figures/freq_resp/path1.pdf Graphic file (type pdf)
-<use figures/freq_resp/path1.pdf>
-Package pdftex.def Info: figures/freq_resp/path1.pdf  used on input line 78.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+[46 <./figures/data_for_thesis/IBFD_single_band/tx.pdf> <./figures/data_for_the
+sis/IBFD_single_band/pa_out.pdf>]
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 71--82
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[47 <./figures/data_for_thesis/IBFD_single_band/channel_fir.pdf> <./figures/dat
+a_for_thesis/IBFD_single_band/rx.pdf> <./figures/testbench/testbench_imd2.pdf>]
+<figures/data_for_thesis/SIC_second_harmonic_single_band/tx.pdf, id=717, 505.89
+pt x 361.35pt>
+File: figures/data_for_thesis/SIC_second_harmonic_single_band/tx.pdf Graphic fi
+le (type pdf)
+<use figures/data_for_thesis/SIC_second_harmonic_single_band/tx.pdf>
+Package pdftex.def Info: figures/data_for_thesis/SIC_second_harmonic_single_ban
+d/tx.pdf  used on input line 55.
+(pdftex.def)             Requested size: 212.47234pt x 151.76596pt.
+<figures/data_for_thesis/SIC_second_harmonic_single_band/rx.pdf, id=718, 505.89
+pt x 361.35pt>
+File: figures/data_for_thesis/SIC_second_harmonic_single_band/rx.pdf Graphic fi
+le (type pdf)
+<use figures/data_for_thesis/SIC_second_harmonic_single_band/rx.pdf>
+Package pdftex.def Info: figures/data_for_thesis/SIC_second_harmonic_single_ban
+d/rx.pdf  used on input line 61.
+(pdftex.def)             Requested size: 212.47234pt x 151.76596pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 54--65
 [][]   [] 
  []
 
-<figures/psd/psd_newton_rb50_path1.pdf, id=597, 505.89pt x 361.35pt>
-File: figures/psd/psd_newton_rb50_path1.pdf Graphic file (type pdf)
-<use figures/psd/psd_newton_rb50_path1.pdf>
-Package pdftex.def Info: figures/psd/psd_newton_rb50_path1.pdf  used on input l
-ine 89.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_newton_rb50_path1_expanded.pdf, id=598, 505.89pt x 361.35pt>
-File: figures/psd/psd_newton_rb50_path1_expanded.pdf Graphic file (type pdf)
-<use figures/psd/psd_newton_rb50_path1_expanded.pdf>
-Package pdftex.def Info: figures/psd/psd_newton_rb50_path1_expanded.pdf  used o
-n input line 95.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/testbench/testbench_2ch.pdf, id=719, 704.6325pt x 238.97281pt>
+File: figures/testbench/testbench_2ch.pdf Graphic file (type pdf)
+<use figures/testbench/testbench_2ch.pdf>
+Package pdftex.def Info: figures/testbench/testbench_2ch.pdf  used on input lin
+e 74.
+(pdftex.def)             Requested size: 422.78278pt x 143.38478pt.
+<figures/data_for_thesis/DPD_double_band/x.pdf, id=720, 893.97992pt x 391.70338
+pt>
+File: figures/data_for_thesis/DPD_double_band/x.pdf Graphic file (type pdf)
+<use figures/data_for_thesis/DPD_double_band/x.pdf>
+Package pdftex.def Info: figures/data_for_thesis/DPD_double_band/x.pdf  used on
+ input line 81.
+(pdftex.def)             Requested size: 446.98886pt x 195.85121pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 88--99
-[][]   [] 
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/tx/tx_rb100.pdf, id=599, 505.89pt x 361.35pt>
-File: figures/tx/tx_rb100.pdf Graphic file (type pdf)
-<use figures/tx/tx_rb100.pdf>
-Package pdftex.def Info: figures/tx/tx_rb100.pdf  used on input line 106.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-File: figures/freq_resp/path2.pdf Graphic file (type pdf)
-<use figures/freq_resp/path2.pdf>
-Package pdftex.def Info: figures/freq_resp/path2.pdf  used on input line 112.
-(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/data_for_thesis/DPD_double_band/d.pdf, id=721, 893.97992pt x 391.70338
+pt>
+File: figures/data_for_thesis/DPD_double_band/d.pdf Graphic file (type pdf)
+<use figures/data_for_thesis/DPD_double_band/d.pdf>
+Package pdftex.def Info: figures/data_for_thesis/DPD_double_band/d.pdf  used on
+ input line 89.
+(pdftex.def)             Requested size: 446.98886pt x 195.85121pt.
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[48 <./figures/data_for_thesis/SIC_second_harmonic_single_band/tx.pdf> <./figur
+es/data_for_thesis/SIC_second_harmonic_single_band/rx.pdf>]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[49 <./figures/testbench/testbench_2ch.pdf> <./figures/data_for_thesis/DPD_doub
+le_band/x.pdf> <./figures/data_for_thesis/DPD_double_band/d.pdf>]
+<figures/data_for_thesis/DPD_double_band/errorA.pdf, id=872, 505.89pt x 361.35p
+t>
+File: figures/data_for_thesis/DPD_double_band/errorA.pdf Graphic file (type pdf
+)
+<use figures/data_for_thesis/DPD_double_band/errorA.pdf>
+Package pdftex.def Info: figures/data_for_thesis/DPD_double_band/errorA.pdf  us
+ed on input line 106.
+(pdftex.def)             Requested size: 212.47234pt x 151.76596pt.
+<figures/data_for_thesis/DPD_double_band/errorB.pdf, id=873, 505.89pt x 361.35p
+t>
+File: figures/data_for_thesis/DPD_double_band/errorB.pdf Graphic file (type pdf
+)
+<use figures/data_for_thesis/DPD_double_band/errorB.pdf>
+Package pdftex.def Info: figures/data_for_thesis/DPD_double_band/errorB.pdf  us
+ed on input line 112.
+(pdftex.def)             Requested size: 212.47234pt x 151.76596pt.
 
 Overfull \hbox (24.65164pt too wide) in paragraph at lines 105--116
 [][]   [] 
@@ -2179,7 +2148,288 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[42 <./figures/tx/tx_rb1.pdf> <./figures/freq_resp/path0.pdf> <./figures/psd/ps
+[50 <./figures/data_for_thesis/DPD_double_band/errorA.pdf> <./figures/data_for_
+thesis/DPD_double_band/errorB.pdf>]
+<figures/data_for_thesis/DPD_dynamic_single_band/input_power_dynamic_range.pdf,
+ id=934, 462.52798pt x 346.89601pt>
+File: figures/data_for_thesis/DPD_dynamic_single_band/input_power_dynamic_range
+.pdf Graphic file (type pdf)
+<use figures/data_for_thesis/DPD_dynamic_single_band/input_power_dynamic_range.
+pdf>
+Package pdftex.def Info: figures/data_for_thesis/DPD_dynamic_single_band/input_
+power_dynamic_range.pdf  used on input line 143.
+(pdftex.def)             Requested size: 194.26042pt x 145.69533pt.
+<figures/data_for_thesis/DPD_dynamic_single_band/output_power_dynamic_range.pdf
+, id=935, 462.52798pt x 346.89601pt>
+File: figures/data_for_thesis/DPD_dynamic_single_band/output_power_dynamic_rang
+e.pdf Graphic file (type pdf)
+<use figures/data_for_thesis/DPD_dynamic_single_band/output_power_dynamic_range
+.pdf>
+Package pdftex.def Info: figures/data_for_thesis/DPD_dynamic_single_band/output
+_power_dynamic_range.pdf  used on input line 149.
+(pdftex.def)             Requested size: 194.26042pt x 145.69533pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 142--153
+[][]   [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/data_for_thesis/DPD_dynamic_single_band/tx.pdf, id=936, 505.89pt x 361
+.35pt>
+File: figures/data_for_thesis/DPD_dynamic_single_band/tx.pdf Graphic file (type
+ pdf)
+<use figures/data_for_thesis/DPD_dynamic_single_band/tx.pdf>
+Package pdftex.def Info: figures/data_for_thesis/DPD_dynamic_single_band/tx.pdf
+  used on input line 163.
+(pdftex.def)             Requested size: 212.47234pt x 151.76596pt.
+<figures/data_for_thesis/DPD_dynamic_single_band/pa_out.pdf, id=937, 505.89pt x
+ 361.35pt>
+File: figures/data_for_thesis/DPD_dynamic_single_band/pa_out.pdf Graphic file (
+type pdf)
+<use figures/data_for_thesis/DPD_dynamic_single_band/pa_out.pdf>
+Package pdftex.def Info: figures/data_for_thesis/DPD_dynamic_single_band/pa_out
+.pdf  used on input line 169.
+(pdftex.def)             Requested size: 212.47234pt x 151.76596pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 162--173
+[][]   [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (Dissertation/chapter_2_folder/chapter_2_section_3.tex
+Overfull \hbox (49.87209pt too wide) in paragraph at lines 1--1
+\T2A/cmr/bx/n/17.28 ком-пен-са-ции па-ра-зит-ной по-ме-хи на при-јм-ни-ке устро
+йств
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[51]
+
+LaTeX Warning: Citation 'behav_model' on page 52 undefined on input line 7.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[52 <./figures/data_for_thesis/DPD_dynamic_single_band/input_power_dynamic_rang
+e.pdf> <./figures/data_for_thesis/DPD_dynamic_single_band/output_power_dynamic_
+range.pdf> <./figures/data_for_thesis/DPD_dynamic_single_band/tx.pdf> <./figure
+s/data_for_thesis/DPD_dynamic_single_band/pa_out.pdf>]
+
+LaTeX Warning: Citation 'behav_model' on page 53 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'lut_dpd' on page 53 undefined on input line 13.
+
+
+Overfull \hbox (6.23427pt too wide) in paragraph at lines 19--20
+[]\T2A/cmr/m/up/12 В дан-ном экс-пе-ри-мен-те про-во-дит-ся срав-не-ние блоч-но
+-го гра-ди-ент-но-го спус-ка (BGD,
+ []
+
+
+Overfull \hbox (10.9293pt too wide) in paragraph at lines 19--20
+\T2A/cmr/m/up/12 Block Gradient Descent), сто-ха-сти-че-ско-го гра-ди-ент-но-го
+ спус-ка (SGD, Stochastic Gradient
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[53]
+<figures/results/mnm_crm/mnm_bgd.pdf, id=1099, 462.52798pt x 346.89601pt>
+File: figures/results/mnm_crm/mnm_bgd.pdf Graphic file (type pdf)
+<use figures/results/mnm_crm/mnm_bgd.pdf>
+Package pdftex.def Info: figures/results/mnm_crm/mnm_bgd.pdf  used on input lin
+e 33.
+(pdftex.def)             Requested size: 295.90588pt x 221.93858pt.
+<figures/results/mnm_crm/mnm_sgd.pdf, id=1100, 462.52798pt x 346.89601pt>
+File: figures/results/mnm_crm/mnm_sgd.pdf Graphic file (type pdf)
+<use figures/results/mnm_crm/mnm_sgd.pdf>
+Package pdftex.def Info: figures/results/mnm_crm/mnm_sgd.pdf  used on input lin
+e 40.
+(pdftex.def)             Requested size: 295.90588pt x 221.93858pt.
+
+Overfull \hbox (13.32626pt too wide) in paragraph at lines 29--44
+[]\T2A/cmr/m/up/12 В сле-ду-ю-щих си-му-ля-ци-ях нор-ми-ро-ван-ная сред-не-квад
+-ра-тич-ная ошиб-ка NMSE []
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[54 <./figures/results/mnm_crm/mnm_bgd.pdf>]
+<figures/results/mnm_crm/psd.pdf, id=1157, 505.89pt x 361.35pt>
+File: figures/results/mnm_crm/psd.pdf Graphic file (type pdf)
+<use figures/results/mnm_crm/psd.pdf>
+Package pdftex.def Info: figures/results/mnm_crm/psd.pdf  used on input line 55
+.
+(pdftex.def)             Requested size: 295.90588pt x 211.36409pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[55 <./figures/results/mnm_crm/mnm_sgd.pdf> <./figures/results/mnm_crm/psd.pdf>
+]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[56]
+<figures/adapt_curves/newton_simple_stogn_20_epoch.pdf, id=1272, 462.52798pt x 
+346.89601pt>
+File: figures/adapt_curves/newton_simple_stogn_20_epoch.pdf Graphic file (type 
+pdf)
+<use figures/adapt_curves/newton_simple_stogn_20_epoch.pdf>
+Package pdftex.def Info: figures/adapt_curves/newton_simple_stogn_20_epoch.pdf 
+ used on input line 115.
+(pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
+<figures/adapt_curves/newton_simple_stogn_400_epoch.pdf, id=1273, 462.52798pt x
+ 346.89601pt>
+File: figures/adapt_curves/newton_simple_stogn_400_epoch.pdf Graphic file (type
+ pdf)
+<use figures/adapt_curves/newton_simple_stogn_400_epoch.pdf>
+Package pdftex.def Info: figures/adapt_curves/newton_simple_stogn_400_epoch.pdf
+  used on input line 121.
+(pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 114--125
+[][]   [] 
+ []
+
+
+LaTeX Warning: Reference `tbl:signals' on page 57 undefined on input line 133.
+
+<figures/tx/tx_rb1.pdf, id=1274, 505.89pt x 361.35pt>
+File: figures/tx/tx_rb1.pdf Graphic file (type pdf)
+<use figures/tx/tx_rb1.pdf>
+Package pdftex.def Info: figures/tx/tx_rb1.pdf  used on input line 138.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/freq_resp/path0.pdf, id=1275, 505.89pt x 361.35pt>
+File: figures/freq_resp/path0.pdf Graphic file (type pdf)
+<use figures/freq_resp/path0.pdf>
+Package pdftex.def Info: figures/freq_resp/path0.pdf  used on input line 144.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 137--148
+[]$[]$   $[]$ 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/psd/psd_newton_rb1_path0.pdf, id=1276, 505.89pt x 361.35pt>
+File: figures/psd/psd_newton_rb1_path0.pdf Graphic file (type pdf)
+<use figures/psd/psd_newton_rb1_path0.pdf>
+Package pdftex.def Info: figures/psd/psd_newton_rb1_path0.pdf  used on input li
+ne 155.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_newton_rb1_path0_expanded.pdf, id=1277, 505.89pt x 361.35pt>
+File: figures/psd/psd_newton_rb1_path0_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_newton_rb1_path0_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_newton_rb1_path0_expanded.pdf  used on
+ input line 161.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 154--165
+[]$[]$   $[]$ 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[57 <./figures/adapt_curves/newton_simple_stogn_20_epoch.pdf> <./figures/adapt_
+curves/newton_simple_stogn_400_epoch.pdf>]
+<figures/tx/tx_rb50.pdf, id=1356, 505.89pt x 361.35pt>
+File: figures/tx/tx_rb50.pdf Graphic file (type pdf)
+<use figures/tx/tx_rb50.pdf>
+Package pdftex.def Info: figures/tx/tx_rb50.pdf  used on input line 172.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/freq_resp/path1.pdf, id=1357, 505.89pt x 361.35pt>
+File: figures/freq_resp/path1.pdf Graphic file (type pdf)
+<use figures/freq_resp/path1.pdf>
+Package pdftex.def Info: figures/freq_resp/path1.pdf  used on input line 178.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 171--182
+[][]   [] 
+ []
+
+<figures/psd/psd_newton_rb50_path1.pdf, id=1358, 505.89pt x 361.35pt>
+File: figures/psd/psd_newton_rb50_path1.pdf Graphic file (type pdf)
+<use figures/psd/psd_newton_rb50_path1.pdf>
+Package pdftex.def Info: figures/psd/psd_newton_rb50_path1.pdf  used on input l
+ine 189.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/psd/psd_newton_rb50_path1_expanded.pdf, id=1359, 505.89pt x 361.35pt>
+File: figures/psd/psd_newton_rb50_path1_expanded.pdf Graphic file (type pdf)
+<use figures/psd/psd_newton_rb50_path1_expanded.pdf>
+Package pdftex.def Info: figures/psd/psd_newton_rb50_path1_expanded.pdf  used o
+n input line 195.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 188--199
+[][]   [] 
+ []
+
+<figures/tx/tx_rb100.pdf, id=1360, 505.89pt x 361.35pt>
+File: figures/tx/tx_rb100.pdf Graphic file (type pdf)
+<use figures/tx/tx_rb100.pdf>
+Package pdftex.def Info: figures/tx/tx_rb100.pdf  used on input line 206.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+<figures/freq_resp/path2.pdf, id=1361, 505.89pt x 361.35pt>
+File: figures/freq_resp/path2.pdf Graphic file (type pdf)
+<use figures/freq_resp/path2.pdf>
+Package pdftex.def Info: figures/freq_resp/path2.pdf  used on input line 212.
+(pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
+
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 205--216
+[][]   [] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[58 <./figures/tx/tx_rb1.pdf> <./figures/freq_resp/path0.pdf> <./figures/psd/ps
 d_newton_rb1_path0.pdf> <./figures/psd/psd_newton_rb1_path0_expanded.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -2188,24 +2438,31 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[43 <./figures/tx/tx_rb50.pdf> <./figures/freq_resp/path1.pdf> <./figures/psd/p
+[59 <./figures/tx/tx_rb50.pdf> <./figures/freq_resp/path1.pdf> <./figures/psd/p
 sd_newton_rb50_path1.pdf> <./figures/psd/psd_newton_rb50_path1_expanded.pdf>]
-<figures/psd/psd_newton_rb100_path2.pdf, id=931, 505.89pt x 361.35pt>
+<figures/psd/psd_newton_rb100_path2.pdf, id=1693, 505.89pt x 361.35pt>
 File: figures/psd/psd_newton_rb100_path2.pdf Graphic file (type pdf)
 <use figures/psd/psd_newton_rb100_path2.pdf>
 Package pdftex.def Info: figures/psd/psd_newton_rb100_path2.pdf  used on input 
-line 123.
+line 223.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_newton_rb100_path2_expanded.pdf, id=932, 505.89pt x 361.35pt>
+<figures/psd/psd_newton_rb100_path2_expanded.pdf, id=1694, 505.89pt x 361.35pt>
+
 File: figures/psd/psd_newton_rb100_path2_expanded.pdf Graphic file (type pdf)
 <use figures/psd/psd_newton_rb100_path2_expanded.pdf>
 Package pdftex.def Info: figures/psd/psd_newton_rb100_path2_expanded.pdf  used 
-on input line 129.
+on input line 229.
 (pdftex.def)             Requested size: 197.2963pt x 140.92593pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 122--133
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 222--233
 [][]   [] 
  []
+
+
+LaTeX Warning: Reference `tbl:signals' on page 60 undefined on input line 237.
+
+
+LaTeX Warning: Reference `tbl:signals' on page 60 undefined on input line 239.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -2217,12 +2474,24 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[44 <./figures/tx/tx_rb100.pdf> <./figures/psd/psd_newton_rb100_path2.pdf> <./f
-igures/psd/psd_newton_rb100_path2_expanded.pdf>])
-(Dissertation/chapter_2_folder/chapter_2_section_4.tex
-Overfull \hbox (14.87245pt too wide) in paragraph at lines 10--10
-|[]\T2A/cmr/bx/n/14.4 Аппроксимация ди-на-ми-че-ской нели-ней-но-сти на ос-но-в
-е клас-
+[60 <./figures/tx/tx_rb100.pdf> <./figures/freq_resp/path2.pdf> <./figures/psd/
+psd_newton_rb100_path2.pdf> <./figures/psd/psd_newton_rb100_path2_expanded.pdf>
+]) (Dissertation/chapter_2_folder/chapter_2_section_4.tex
+Overfull \hbox (48.81409pt too wide) in paragraph at lines 1--1
+\T2A/cmr/bx/n/17.28 ком-пен-са-ции нели-ней-ных по-мех в пе-ре-дат-чи-ке устрой
+ств
+ []
+
+
+Overfull \hbox (28.1448pt too wide) in paragraph at lines 10--10
+|[]\T2A/cmr/bx/n/14.4 Компенсация нели-ней-ных ис-ка-же-ний в пе-ре-дат-чи-ке у
+стройств
+ []
+
+
+Overfull \hbox (3.19511pt too wide) in paragraph at lines 10--10
+\T2A/cmr/bx/n/14.4 свя-зи в усло-ви-ях ди-на-ми-че-ско-го из-ме-не-ния вы-ход-н
+ой мощ-
  []
 
 ))
@@ -2233,7 +2502,7 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[45]
+[61]
 \openout2 = `Dissertation/chapter_3_folder/chapter_3.aux'.
 
  (Dissertation/chapter_3_folder/chapter_3.tex
@@ -2244,76 +2513,76 @@ Overfull \hbox (2.2276pt too wide) in paragraph at lines 6--6
  []
 
 (Dissertation/chapter_3_folder/chapter_3_section_1.tex
-<figures/adapt_curves/adapt_curve_rb1_path0.pdf, id=1065, 462.52798pt x 346.896
+<figures/adapt_curves/adapt_curve_rb1_path0.pdf, id=1865, 462.52798pt x 346.896
 01pt>
 File: figures/adapt_curves/adapt_curve_rb1_path0.pdf Graphic file (type pdf)
 <use figures/adapt_curves/adapt_curve_rb1_path0.pdf>
 Package pdftex.def Info: figures/adapt_curves/adapt_curve_rb1_path0.pdf  used o
-n input line 15.
+n input line 16.
 (pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
- [46
+ [62
 
 
 
 
 ]
-<figures/psd/psd_gd_rb1_path0.pdf, id=1069, 505.89pt x 361.35pt>
+<figures/psd/psd_gd_rb1_path0.pdf, id=1870, 505.89pt x 361.35pt>
 File: figures/psd/psd_gd_rb1_path0.pdf Graphic file (type pdf)
 <use figures/psd/psd_gd_rb1_path0.pdf>
 Package pdftex.def Info: figures/psd/psd_gd_rb1_path0.pdf  used on input line 2
-5.
+6.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_gd_rb1_path0_expanded.pdf, id=1070, 505.89pt x 361.35pt>
+<figures/psd/psd_gd_rb1_path0_expanded.pdf, id=1871, 505.89pt x 361.35pt>
 File: figures/psd/psd_gd_rb1_path0_expanded.pdf Graphic file (type pdf)
 <use figures/psd/psd_gd_rb1_path0_expanded.pdf>
 Package pdftex.def Info: figures/psd/psd_gd_rb1_path0_expanded.pdf  used on inp
-ut line 31.
+ut line 32.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 24--35
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 25--36
 [][]   [] 
  []
 
-<figures/psd/psd_sgd_sgd_rb1_path0.pdf, id=1071, 505.89pt x 361.35pt>
+<figures/psd/psd_sgd_sgd_rb1_path0.pdf, id=1872, 505.89pt x 361.35pt>
 File: figures/psd/psd_sgd_sgd_rb1_path0.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_sgd_rb1_path0.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb1_path0.pdf  used on input l
-ine 40.
+ine 41.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_sgd_sgd_rb1_path0_expanded.pdf, id=1072, 505.89pt x 361.35pt>
+<figures/psd/psd_sgd_sgd_rb1_path0_expanded.pdf, id=1873, 505.89pt x 361.35pt>
 File: figures/psd/psd_sgd_sgd_rb1_path0_expanded.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_sgd_rb1_path0_expanded.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb1_path0_expanded.pdf  used o
-n input line 46.
+n input line 47.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 39--50
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 40--51
 [][]   [] 
  []
 
-<figures/psd/psd_sgd_dcd_rb1_path0.pdf, id=1073, 505.89pt x 361.35pt>
+<figures/psd/psd_sgd_dcd_rb1_path0.pdf, id=1874, 505.89pt x 361.35pt>
 File: figures/psd/psd_sgd_dcd_rb1_path0.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_dcd_rb1_path0.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb1_path0.pdf  used on input l
-ine 55.
+ine 56.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_sgd_dcd_rb1_path0_expanded.pdf, id=1074, 505.89pt x 361.35pt>
+<figures/psd/psd_sgd_dcd_rb1_path0_expanded.pdf, id=1875, 505.89pt x 361.35pt>
 File: figures/psd/psd_sgd_dcd_rb1_path0_expanded.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_dcd_rb1_path0_expanded.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb1_path0_expanded.pdf  used o
-n input line 61.
+n input line 62.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 54--65
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 55--66
 [][]   [] 
  []
 
-<figures/adapt_curves/adapt_curve_rb50_path1.pdf, id=1075, 462.52798pt x 346.89
+<figures/adapt_curves/adapt_curve_rb50_path1.pdf, id=1876, 462.52798pt x 346.89
 601pt>
 File: figures/adapt_curves/adapt_curve_rb50_path1.pdf Graphic file (type pdf)
 <use figures/adapt_curves/adapt_curve_rb50_path1.pdf>
 Package pdftex.def Info: figures/adapt_curves/adapt_curve_rb50_path1.pdf  used 
-on input line 73.
+on input line 74.
 (pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2325,7 +2594,7 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[47 <./figures/adapt_curves/adapt_curve_rb1_path0.pdf> <./figures/psd/psd_gd_rb
+[63 <./figures/adapt_curves/adapt_curve_rb1_path0.pdf> <./figures/psd/psd_gd_rb
 1_path0.pdf> <./figures/psd/psd_gd_rb1_path0_expanded.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -2334,59 +2603,59 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[48 <./figures/psd/psd_sgd_sgd_rb1_path0.pdf> <./figures/psd/psd_sgd_sgd_rb1_pa
+[64 <./figures/psd/psd_sgd_sgd_rb1_path0.pdf> <./figures/psd/psd_sgd_sgd_rb1_pa
 th0_expanded.pdf> <./figures/psd/psd_sgd_dcd_rb1_path0.pdf> <./figures/psd/psd_
 sgd_dcd_rb1_path0_expanded.pdf>]
-<figures/psd/psd_gd_rb50_path1.pdf, id=1390, 505.89pt x 361.35pt>
+<figures/psd/psd_gd_rb50_path1.pdf, id=2191, 505.89pt x 361.35pt>
 File: figures/psd/psd_gd_rb50_path1.pdf Graphic file (type pdf)
 <use figures/psd/psd_gd_rb50_path1.pdf>
 Package pdftex.def Info: figures/psd/psd_gd_rb50_path1.pdf  used on input line 
-85.
+86.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_gd_rb50_path1_expanded.pdf, id=1391, 505.89pt x 361.35pt>
+<figures/psd/psd_gd_rb50_path1_expanded.pdf, id=2192, 505.89pt x 361.35pt>
 File: figures/psd/psd_gd_rb50_path1_expanded.pdf Graphic file (type pdf)
 <use figures/psd/psd_gd_rb50_path1_expanded.pdf>
 Package pdftex.def Info: figures/psd/psd_gd_rb50_path1_expanded.pdf  used on in
-put line 91.
+put line 92.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 84--95
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 85--96
 []$[]$   $[]$ 
  []
 
-<figures/psd/psd_sgd_sgd_rb50_path1.pdf, id=1392, 505.89pt x 361.35pt>
+<figures/psd/psd_sgd_sgd_rb50_path1.pdf, id=2193, 505.89pt x 361.35pt>
 File: figures/psd/psd_sgd_sgd_rb50_path1.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_sgd_rb50_path1.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb50_path1.pdf  used on input 
-line 100.
+line 101.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_sgd_sgd_rb50_path1_expanded.pdf, id=1393, 505.89pt x 361.35pt>
+<figures/psd/psd_sgd_sgd_rb50_path1_expanded.pdf, id=2194, 505.89pt x 361.35pt>
 
 File: figures/psd/psd_sgd_sgd_rb50_path1_expanded.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_sgd_rb50_path1_expanded.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb50_path1_expanded.pdf  used 
-on input line 106.
+on input line 107.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 99--110
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 100--111
 []$[]$   $[]$ 
  []
 
-<figures/psd/psd_sgd_dcd_rb50_path1.pdf, id=1394, 505.89pt x 361.35pt>
+<figures/psd/psd_sgd_dcd_rb50_path1.pdf, id=2195, 505.89pt x 361.35pt>
 File: figures/psd/psd_sgd_dcd_rb50_path1.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_dcd_rb50_path1.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb50_path1.pdf  used on input 
-line 115.
+line 116.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_sgd_dcd_rb50_path1_expanded.pdf, id=1395, 505.89pt x 361.35pt>
+<figures/psd/psd_sgd_dcd_rb50_path1_expanded.pdf, id=2196, 505.89pt x 361.35pt>
 
 File: figures/psd/psd_sgd_dcd_rb50_path1_expanded.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_dcd_rb50_path1_expanded.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb50_path1_expanded.pdf  used 
-on input line 121.
+on input line 122.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 114--125
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 115--126
 []$[]$   $[]$ 
  []
 
@@ -2396,27 +2665,27 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/adapt_curves/adapt_curve_rb100_path2.pdf, id=1396, 462.52798pt x 346.8
+<figures/adapt_curves/adapt_curve_rb100_path2.pdf, id=2197, 462.52798pt x 346.8
 9601pt>
 File: figures/adapt_curves/adapt_curve_rb100_path2.pdf Graphic file (type pdf)
 <use figures/adapt_curves/adapt_curve_rb100_path2.pdf>
 Package pdftex.def Info: figures/adapt_curves/adapt_curve_rb100_path2.pdf  used
- on input line 132.
+ on input line 133.
 (pdftex.def)             Requested size: 231.26341pt x 173.44757pt.
-<figures/psd/psd_gd_rb100_path2.pdf, id=1397, 505.89pt x 361.35pt>
+<figures/psd/psd_gd_rb100_path2.pdf, id=2198, 505.89pt x 361.35pt>
 File: figures/psd/psd_gd_rb100_path2.pdf Graphic file (type pdf)
 <use figures/psd/psd_gd_rb100_path2.pdf>
 Package pdftex.def Info: figures/psd/psd_gd_rb100_path2.pdf  used on input line
- 138.
+ 139.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_gd_rb100_path2_expanded.pdf, id=1398, 505.89pt x 361.35pt>
+<figures/psd/psd_gd_rb100_path2_expanded.pdf, id=2199, 505.89pt x 361.35pt>
 File: figures/psd/psd_gd_rb100_path2_expanded.pdf Graphic file (type pdf)
 <use figures/psd/psd_gd_rb100_path2_expanded.pdf>
 Package pdftex.def Info: figures/psd/psd_gd_rb100_path2_expanded.pdf  used on i
-nput line 144.
+nput line 145.
 (pdftex.def)             Requested size: 197.2963pt x 140.92593pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 137--148
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 138--149
 []$[]$   $[]$ 
  []
 
@@ -2427,7 +2696,7 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[49 <./figures/adapt_curves/adapt_curve_rb50_path1.pdf> <./figures/psd/psd_gd_r
+[65 <./figures/adapt_curves/adapt_curve_rb50_path1.pdf> <./figures/psd/psd_gd_r
 b50_path1.pdf> <./figures/psd/psd_gd_rb50_path1_expanded.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2439,43 +2708,43 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[50 <./figures/psd/psd_sgd_sgd_rb50_path1.pdf> <./figures/psd/psd_sgd_sgd_rb50_
+[66 <./figures/psd/psd_sgd_sgd_rb50_path1.pdf> <./figures/psd/psd_sgd_sgd_rb50_
 path1_expanded.pdf> <./figures/psd/psd_sgd_dcd_rb50_path1.pdf> <./figures/psd/p
 sd_sgd_dcd_rb50_path1_expanded.pdf> <./figures/adapt_curves/adapt_curve_rb100_p
 ath2.pdf>]
-<figures/psd/psd_sgd_sgd_rb100_path2.pdf, id=1757, 505.89pt x 361.35pt>
+<figures/psd/psd_sgd_sgd_rb100_path2.pdf, id=2557, 505.89pt x 361.35pt>
 File: figures/psd/psd_sgd_sgd_rb100_path2.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_sgd_rb100_path2.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb100_path2.pdf  used on input
- line 158.
+ line 159.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_sgd_sgd_rb100_path2_expanded.pdf, id=1758, 505.89pt x 361.35pt
+<figures/psd/psd_sgd_sgd_rb100_path2_expanded.pdf, id=2558, 505.89pt x 361.35pt
 >
 File: figures/psd/psd_sgd_sgd_rb100_path2_expanded.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_sgd_rb100_path2_expanded.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_sgd_rb100_path2_expanded.pdf  used
- on input line 164.
+ on input line 165.
 (pdftex.def)             Requested size: 197.2963pt x 140.92593pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 157--168
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 158--169
 []$[]$   $[]$ 
  []
 
-<figures/psd/psd_sgd_dcd_rb100_path2.pdf, id=1759, 505.89pt x 361.35pt>
+<figures/psd/psd_sgd_dcd_rb100_path2.pdf, id=2559, 505.89pt x 361.35pt>
 File: figures/psd/psd_sgd_dcd_rb100_path2.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_dcd_rb100_path2.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb100_path2.pdf  used on input
- line 173.
+ line 174.
 (pdftex.def)             Requested size: 227.64839pt x 162.60599pt.
-<figures/psd/psd_sgd_dcd_rb100_path2_expanded.pdf, id=1760, 505.89pt x 361.35pt
+<figures/psd/psd_sgd_dcd_rb100_path2_expanded.pdf, id=2560, 505.89pt x 361.35pt
 >
 File: figures/psd/psd_sgd_dcd_rb100_path2_expanded.pdf Graphic file (type pdf)
 <use figures/psd/psd_sgd_dcd_rb100_path2_expanded.pdf>
 Package pdftex.def Info: figures/psd/psd_sgd_dcd_rb100_path2_expanded.pdf  used
- on input line 179.
+ on input line 180.
 (pdftex.def)             Requested size: 197.2963pt x 140.92593pt.
 
-Overfull \hbox (24.65164pt too wide) in paragraph at lines 172--183
+Overfull \hbox (24.65164pt too wide) in paragraph at lines 173--184
 []$[]$   $[]$ 
  []
 
@@ -2483,17 +2752,29 @@ Overfull \hbox (24.65164pt too wide) in paragraph at lines 172--183
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+LaTeX Warning: Reference `tbl:signals' on page 67 undefined on input line 188.
+
+
+LaTeX Warning: Reference `tbl:signals' on page 67 undefined on input line 190.
+
+
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[51 <./figures/psd/psd_gd_rb100_path2.pdf> <./figures/psd/psd_gd_rb100_path2_ex
+[67 <./figures/psd/psd_gd_rb100_path2.pdf> <./figures/psd/psd_gd_rb100_path2_ex
 panded.pdf> <./figures/psd/psd_sgd_sgd_rb100_path2.pdf> <./figures/psd/psd_sgd_
 sgd_rb100_path2_expanded.pdf>]
 
+LaTeX Warning: Reference `tbl:signals' on page 68 undefined on input line 210.
+
+
 LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `tbl:signals' on page 68 undefined on input line 230.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -2505,15 +2786,15 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[52 <./figures/psd/psd_sgd_dcd_rb100_path2.pdf> <./figures/psd/psd_sgd_dcd_rb10
+[68 <./figures/psd/psd_sgd_dcd_rb100_path2.pdf> <./figures/psd/psd_sgd_dcd_rb10
 0_path2_expanded.pdf>]
 
-LaTeX Warning: Reference `fig:adapt_curves_rb1_path1' on page 53 undefined on i
-nput line 261.
+LaTeX Warning: Reference `fig:adapt_curves_rb1_path1' on page 69 undefined on i
+nput line 262.
 
 
-LaTeX Warning: Reference `fig:adapt_curves_rb1_path2' on page 53 undefined on i
-nput line 261.
+LaTeX Warning: Reference `fig:adapt_curves_rb1_path2' on page 69 undefined on i
+nput line 262.
 
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -2522,46 +2803,49 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[53]
+[69]
 
-LaTeX Warning: Reference `fig:adapt_curves_rb25_path0' on page 54 undefined on 
-input line 263.
-
-
-LaTeX Warning: Reference `fig:adapt_curves_rb25_path1' on page 54 undefined on 
-input line 263.
+LaTeX Warning: Reference `fig:adapt_curves_rb25_path0' on page 70 undefined on 
+input line 264.
 
 
-LaTeX Warning: Reference `fig:adapt_curves_rb25_path2' on page 54 undefined on 
-input line 263.
+LaTeX Warning: Reference `fig:adapt_curves_rb25_path1' on page 70 undefined on 
+input line 264.
 
 
-LaTeX Warning: Reference `fig:adapt_curves_rb50_path0' on page 54 undefined on 
-input line 263.
+LaTeX Warning: Reference `fig:adapt_curves_rb25_path2' on page 70 undefined on 
+input line 264.
 
 
-LaTeX Warning: Reference `fig:adapt_curves_rb50_path2' on page 54 undefined on 
-input line 263.
+LaTeX Warning: Reference `fig:adapt_curves_rb50_path0' on page 70 undefined on 
+input line 264.
 
 
-LaTeX Warning: Reference `fig:adapt_curves_rb75_path0' on page 54 undefined on 
-input line 265.
+LaTeX Warning: Reference `fig:adapt_curves_rb50_path2' on page 70 undefined on 
+input line 264.
 
 
-LaTeX Warning: Reference `fig:adapt_curves_rb75_path1' on page 54 undefined on 
-input line 265.
+LaTeX Warning: Reference `fig:adapt_curves_rb75_path0' on page 70 undefined on 
+input line 266.
 
 
-LaTeX Warning: Reference `fig:adapt_curves_rb75_path2' on page 54 undefined on 
-input line 265.
+LaTeX Warning: Reference `fig:adapt_curves_rb75_path1' on page 70 undefined on 
+input line 266.
 
 
-LaTeX Warning: Reference `fig:adapt_curves_rb100_path0' on page 54 undefined on
- input line 267.
+LaTeX Warning: Reference `fig:adapt_curves_rb75_path2' on page 70 undefined on 
+input line 266.
 
 
-LaTeX Warning: Reference `fig:adapt_curves_rb100_path1' on page 54 undefined on
- input line 267.
+LaTeX Warning: Reference `fig:adapt_curves_rb100_path0' on page 70 undefined on
+ input line 268.
+
+
+LaTeX Warning: Reference `fig:adapt_curves_rb100_path1' on page 70 undefined on
+ input line 268.
+
+
+LaTeX Warning: Reference `tbl:signals' on page 70 undefined on input line 270.
 
 ) (Dissertation/chapter_3_folder/chapter_3_section_2.tex
 Overfull \hbox (12.76907pt too wide) in paragraph at lines 1--1
@@ -2575,13 +2859,12 @@ Overfull \hbox (12.76907pt too wide) in paragraph at lines 1--1
 
  []
 
-
-Overfull \hbox (12.76907pt too wide) in paragraph at lines 3--3
-|[]\T2A/cmr/bx/n/17.28 Сокращение ре-сур-сов при ре-а-ли-за-ции мо-де-лей нели-
-
+) (Dissertation/chapter_3_folder/chapter_3_section_4.tex
+Overfull \hbox (17.32793pt too wide) in paragraph at lines 3--3
+|[]\T2A/cmr/bx/n/14.4 Методы эко-но-мии ре-сур-сов при ре-а-ли-за-ции циф-ро-вы
+х филь-
  []
 
-) (Dissertation/chapter_3_folder/chapter_3_section_4.tex
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2589,7 +2872,7 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[54]
+[70]
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2597,33 +2880,26 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[55]
-
-LaTeX Warning: Citation 'fir_quant' on page 56 undefined on input line 14.
-
-
-LaTeX Warning: Citation 'fir_quant' on page 56 undefined on input line 24.
-
-
-Overfull \hbox (12.03079pt too wide) in paragraph at lines 26--27
+[71]
+Overfull \hbox (12.03079pt too wide) in paragraph at lines 29--30
 []\T2A/cmr/m/up/12 Приведјм при-ме-ры ра-бо-ты ал-го-рит-ма для со-кра-ще-ния ч
 ис-ла умно-жи-те-лей линейно-
  []
 
-<figures/linear_phase_lpf/LPF_ir.pdf, id=2043, 275.5906pt x 228.20659pt>
+<figures/linear_phase_lpf/LPF_ir.pdf, id=2844, 275.5906pt x 228.20659pt>
 File: figures/linear_phase_lpf/LPF_ir.pdf Graphic file (type pdf)
 <use figures/linear_phase_lpf/LPF_ir.pdf>
 Package pdftex.def Info: figures/linear_phase_lpf/LPF_ir.pdf  used on input lin
-e 33.
+e 36.
 (pdftex.def)             Requested size: 275.58992pt x 228.20602pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/linear_phase_lpf/LPF_spectrum.pdf, id=2044, 293.7133pt x 256.97908pt>
+<figures/linear_phase_lpf/LPF_spectrum.pdf, id=2845, 293.7133pt x 256.97908pt>
 File: figures/linear_phase_lpf/LPF_spectrum.pdf Graphic file (type pdf)
 <use figures/linear_phase_lpf/LPF_spectrum.pdf>
 Package pdftex.def Info: figures/linear_phase_lpf/LPF_spectrum.pdf  used on inp
-ut line 43.
+ut line 46.
 (pdftex.def)             Requested size: 293.71259pt x 256.97845pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2635,12 +2911,12 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[56]
-<figures/linear_phase_bpf/BPF_ir.pdf, id=2049, 287.81226pt x 224.56898pt>
+[72]
+<figures/linear_phase_bpf/BPF_ir.pdf, id=2849, 287.81226pt x 224.56898pt>
 File: figures/linear_phase_bpf/BPF_ir.pdf Graphic file (type pdf)
 <use figures/linear_phase_bpf/BPF_ir.pdf>
 Package pdftex.def Info: figures/linear_phase_bpf/BPF_ir.pdf  used on input lin
-e 53.
+e 56.
 (pdftex.def)             Requested size: 287.81154pt x 224.56842pt.
 
 
@@ -2653,13 +2929,13 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[57 <./figures/linear_phase_lpf/LPF_ir.pdf> <./figures/linear_phase_lpf/LPF_spe
+[73 <./figures/linear_phase_lpf/LPF_ir.pdf> <./figures/linear_phase_lpf/LPF_spe
 ctrum.pdf>]
-<figures/linear_phase_bpf/BPF_spectrum.pdf, id=2109, 293.7133pt x 256.97908pt>
+<figures/linear_phase_bpf/BPF_spectrum.pdf, id=2907, 293.7133pt x 256.97908pt>
 File: figures/linear_phase_bpf/BPF_spectrum.pdf Graphic file (type pdf)
 <use figures/linear_phase_bpf/BPF_spectrum.pdf>
 Package pdftex.def Info: figures/linear_phase_bpf/BPF_spectrum.pdf  used on inp
-ut line 63.
+ut line 66.
 (pdftex.def)             Requested size: 293.71259pt x 256.97845pt.
 
 
@@ -2669,29 +2945,26 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[58 <./figures/linear_phase_bpf/BPF_ir.pdf> <./figures/linear_phase_bpf/BPF_spe
+[74 <./figures/linear_phase_bpf/BPF_ir.pdf> <./figures/linear_phase_bpf/BPF_spe
 ctrum.pdf>]
-<figures/minimum_phase_lpf/min_phase_LPF_ir.pdf, id=2161, 287.81226pt x 224.573
+<figures/minimum_phase_lpf/min_phase_LPF_ir.pdf, id=2960, 287.81226pt x 224.573
 pt>
 File: figures/minimum_phase_lpf/min_phase_LPF_ir.pdf Graphic file (type pdf)
 <use figures/minimum_phase_lpf/min_phase_LPF_ir.pdf>
 Package pdftex.def Info: figures/minimum_phase_lpf/min_phase_LPF_ir.pdf  used o
-n input line 76.
+n input line 79.
 (pdftex.def)             Requested size: 287.81154pt x 224.57243pt.
-<figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf, id=2162, 298.71399pt x 2
+<figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf, id=2961, 298.71399pt x 2
 57.39865pt>
 File: figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf Graphic file (type p
 df)
 <use figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf>
 Package pdftex.def Info: figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf  
-used on input line 88.
+used on input line 91.
 (pdftex.def)             Requested size: 298.71326pt x 257.39801pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Citation 'fir_quant' on page 59 undefined on input line 92.
 
 ))
 
@@ -2701,7 +2974,7 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[59 <./figures/minimum_phase_lpf/min_phase_LPF_ir.pdf>]
+[75 <./figures/minimum_phase_lpf/min_phase_LPF_ir.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2709,16 +2982,103 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[60 <./figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf>] [61
+[76 <./figures/minimum_phase_lpf/min_phase_LPF_spectrum.pdf>] [77
 
 
 
 
 ]
+Overfull \hbox (5.21608pt too wide) in paragraph at lines 79--79
+\T2A/cmr/m/it/12 radio transmission and reception; \T2A/cmr/m/up/12 Standard. 6
+50 Route des Lucioles - Sophia Antipolis
+ []
 
-LaTeX Warning: Empty bibliography on input line 71.
 
-(Diploma.aux (Dissertation/chapter_1_folder/chapter_1.aux)
+Overfull \hbox (5.21608pt too wide) in paragraph at lines 79--79
+\T2A/cmr/m/it/12 radio transmission and reception; \T2A/cmr/m/up/12 Standard. 6
+50 Route des Lucioles - Sophia Antipolis
+ []
+
+
+Overfull \hbox (27.86717pt too wide) in paragraph at lines 79--79
+\T2A/cmr/m/up/12 ский про-спект, 15: Из-да-тель-ство "На-у-ка". Глав-ная ре-дак
+-ция физико-математической
+ []
+
+[78
+
+]
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
+76.
+
+(C:\Users\dwx1065688\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmtt.f
+d
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Overfull \hbox (9.66058pt too wide) in paragraph at lines 79--79
+\T2A/cmr/m/up/12 Applications''. Thesis for the degree of doctor of philosophy.
+ Communications Research
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[79]
+Overfull \hbox (15.6453pt too wide) in paragraph at lines 79--79
+[]\T2A/cmr/m/up/12 John R. Buck Alan V. Oppenheim Ronald W. Schafer. \T2A/cmr/m
+/it/12 Discrete-Time Signal Processing\T2A/cmr/m/up/12 .
+ []
+
+
+Overfull \hbox (36.29637pt too wide) in paragraph at lines 79--79
+\T2A/cmr/m/up/12 With Linear Interpolation and Extrapolation: Direct Least Squa
+res Coefficient Adaptation''.
+ []
+
+
+Overfull \hbox (7.07617pt too wide) in paragraph at lines 79--79
+\T2A/cmr/m/up/12 Standard IS2051. Version 1.0. National Communications Commissi
+on (NCC), Taiwan,
+ []
+
+
+Overfull \hbox (4.22626pt too wide) in paragraph at lines 79--79
+\T2A/cmr/m/up/12 of RF Power Amplifiers with Dynamic Resource Block Allocation'
+'. \T2A/cmr/m/it/12 2024 IEEE/MTT-
+ []
+
+
+Overfull \hbox (10.76236pt too wide) in paragraph at lines 79--79
+\T2A/cmr/m/up/12 с. 1^^V17. \T2A/cmr/m/sc/12 doi\T2A/cmr/m/up/12 : $\T2A/cmtt/m
+/n/12 10 . 1016 / 0041 -[] 5553(64 ) 90137 -[] 5$\T2A/cmr/m/up/12 . \T2A/cmr/m/
+sc/12 url\T2A/cmr/m/up/12 : $\T2A/cmtt/m/n/12 https : / / www . sciencedirect .
+
+ []
+
+
+Overfull \hbox (21.63963pt too wide) in paragraph at lines 79--79
+[]\T2A/cmr/m/up/12 S. Bakhurin A. Degtyarev K. Saifullin. ``High Order FIR Filt
+er Hardware Implementation
+ []
+
+
+Overfull \hbox (20.33492pt too wide) in paragraph at lines 79--79
+\T2A/cmr/m/up/12 Complexity Reduction''. \T2A/cmr/m/it/12 2022 24th Internation
+al Conference on Digital Signal Processing
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[80] (Diploma.aux (Dissertation/chapter_1_folder/chapter_1.aux)
 (Dissertation/chapter_2_folder/chapter_2.aux)
 (Dissertation/chapter_3_folder/chapter_3.aux))
  ***********
@@ -2732,11 +3092,6 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                Diploma
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'Diploma.run.xml'.
 \openout1 = `Diploma.run.xml'.
 
@@ -2746,50 +3101,59 @@ Package logreq Info: Writing requests to 'Diploma.run.xml'.
 ### semi simple group (level 1) entered at line 38 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 22433 strings out of 474485
- 479249 string characters out of 5741373
- 1949542 words of memory out of 5000000
- 44378 multiletter control sequences out of 15000+600000
- 580664 words of font info for 84 fonts, out of 8000000 for 9000
+ 23440 strings out of 474485
+ 504189 string characters out of 5741373
+ 1948542 words of memory out of 5000000
+ 45356 multiletter control sequences out of 15000+600000
+ 590392 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,23n,108p,1592b,11811s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,23n,108p,1670b,12292s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/l
-h-t2a/dpi600\larm1095.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/lj
-four/lh/lh-t2a/dpi600\labx0800.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fo
-nts/pk/ljfour/lh/lh-t2a/dpi600\lati1200.pk> <C:\Users\dwx1065688\AppData\Local\
-MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm0800.pk> <C:\Users\dwx1065688\AppDa
-ta\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labi0800.pk> <C:\Users\dwx1065
-688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labi1200.pk> <C:\User
-s\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.p
-k> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
-abx1440.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
-/dpi600\labx1728.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/
-lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/p
-k/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\dwx1065688\AppData\Local\MiKTe
-X\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2488.pk><C:/Users/dwx1065688/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/dwx10656
-88/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb>
-<C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmmi10.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmmi12.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/dwx1065688/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/dwx1065688/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/dw
-x1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr12.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr6.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/dwx1065688/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/dwx1065688/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/dwx10
-65688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C
+h-t2a/dpi600\latt1200.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/lj
+four/lh/lh-t2a/dpi600\lacc1200.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fo
+nts/pk/ljfour/lh/lh-t2a/dpi600\larm1095.pk> <C:\Users\dwx1065688\AppData\Local\
+MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati0800.pk> <C:\Users\dwx1065688\AppDa
+ta\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\dwx1065
+688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx0800.pk> <C:\User
+s\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati1200.pk>
+ <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lar
+m0800.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/d
+pi600\labi0800.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh
+/lh-t2a/dpi600\labi1200.pk> <C:\Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\dwx1065688\AppData\Local\MiKTe
+X\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\dwx1065688\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\dwx1065688\A
+ppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\dwx
+1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\
+Users\dwx1065688\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2488
+.pk><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmex10.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/dwx1065688/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/dwx1065688/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/dwx10
+65688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C
 :/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/symbols/msam10.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Diploma.pdf (66 pages, 3355557 bytes).
+/cmmi6.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/dwx1065688/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/dwx1065688/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/dwx1
+065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmr12.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr6.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/dwx1065688/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/dwx1065688/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/dwx106568
+8/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
+sers/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy6.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb><C:/Users/dwx1065688/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/symbols/msam10.pfb><C:/Users/dwx1065688/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Diploma.pdf (85 pages, 3911555 bytes).
 PDF statistics:
- 2799 PDF objects out of 2984 (max. 8388607)
+ 3806 PDF objects out of 4296 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 361 words of extra memory for PDF output out of 10000 (max. 10000000)
 
