@@ -1,0 +1,236 @@
+\relax 
+\@writefile{toc}{\contentsline {chapter}{\numberline {III.}Практическая реализация нелинейных корректоров в системах связи}{83}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{chapter:implement}{{III}{83}{Компенсация нелинейных искажений в передатчике устройств связи в условиях динамического изменения выходной мощности нелинейного усилителя}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Исследование компенсации неинейных искажений методами не требующими явного обращения матрицы Гёссе}{83}{}\protected@file@percent }
+\newlabel{sec:conj_grad}{{1}{83}{Исследование компенсации неинейных искажений методами не требующими явного обращения матрицы Гёссе}{}{}}
+\newlabel{linear_scheduler}{{1.1}{83}{Исследование компенсации неинейных искажений методами не требующими явного обращения матрицы Гёссе}{}{}}
+\newlabel{hessian_grad_accum}{{1.3}{84}{Исследование компенсации неинейных искажений методами не требующими явного обращения матрицы Гёссе}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces Кривые сходимости. Сравнение смешанного метода Ньютона, BGD с оптимизатором Adam и линейно-убывающим шагов, метода сопряженных градиентов с различным числом итераций на одного обновление параметров модели.}}{84}{}\protected@file@percent }
+\newlabel{fig:lc_mnm_bgd}{{35}{84}{Исследование компенсации неинейных искажений методами не требующими явного обращения матрицы Гёссе}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Сравнение уровня компенсации помехи и скорости сходимости}}{85}{}\protected@file@percent }
+\newlabel{tab:conj_grad_table_of_results}{{5}{85}{Исследование компенсации неинейных искажений методами не требующими явного обращения матрицы Гёссе}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Сокращение ресурсов при реализации моделей нелинейных искажений засчет канонического тензорного разложения}{86}{}\protected@file@percent }
+\newlabel{dpd_model_2d_tensor}{{2.1}{87}{Сокращение ресурсов при реализации моделей нелинейных искажений засчет канонического тензорного разложения}{}{}}
+\newlabel{dpd_model_2d_tensor_1branch}{{2.2}{87}{Сокращение ресурсов при реализации моделей нелинейных искажений засчет канонического тензорного разложения}{}{}}
+\newlabel{dimens_curse_solution}{{2.3}{87}{Сокращение ресурсов при реализации моделей нелинейных искажений засчет канонического тензорного разложения}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Число параметров двумерной модели, а также моделей на основе рангового разложения}}{88}{}\protected@file@percent }
+\newlabel{tab:tensor_2d_param_num}{{6}{88}{Сокращение ресурсов при реализации моделей нелинейных искажений засчет канонического тензорного разложения}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces Сравнение уровень компенсации внеполосных искажений в передатчике устройства связи засчет адаптации двумерной модели~\eqref  {dpd_model_2d} методом LS, а также модели на основе рангового разложения~\eqref  {dpd_model_2d_tensor} смешанным методом Ньютона для различных $R$}}{88}{}\protected@file@percent }
+\newlabel{fig:perform_all_data_dynamic_tensor}{{36}{88}{Сокращение ресурсов при реализации моделей нелинейных искажений засчет канонического тензорного разложения}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Сравнение характеристик моделей}}{89}{}\protected@file@percent }
+\newlabel{tab:tensor_vs_2d_results}{{7}{89}{Сокращение ресурсов при реализации моделей нелинейных искажений засчет канонического тензорного разложения}{}{}}
+\newlabel{tensor_param_num_reduction}{{2.4}{89}{Сокращение ресурсов при реализации моделей нелинейных искажений засчет канонического тензорного разложения}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Методы экономии ресурсов при реализации цифровых фильтров в моделях компенсации нелинейных искажений}{89}{}\protected@file@percent }
+\newlabel{fir_opt_criteria_1}{{3.1}{90}{Методы экономии ресурсов при реализации цифровых фильтров в моделях компенсации нелинейных искажений}{}{}}
+\newlabel{fir_opt_criteria_2}{{3.2}{90}{Методы экономии ресурсов при реализации цифровых фильтров в моделях компенсации нелинейных искажений}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{91}{}\protected@file@percent }
+\newlabel{subsec:cqa}{{3.1}{91}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\newlabel{quant_fir_example}{{3.1}{91}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\newlabel{transform_matrix_output}{{3.2}{92}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\newlabel{transform_matrix}{{3.3}{92}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\newlabel{J}{{3.4}{92}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces Линейно-фазовый Фильтр Нижних Частот. Исходная импульсная характеристика $h_n$ и отклонение $h_n-g_n$}}{93}{}\protected@file@percent }
+\newlabel{fig:quant_lin_phase_lpf_ir}{{37}{93}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {38}{\ignorespaces Линейно-фазовый Фильтр Нижних Частот. Исходная частотная характеристика $H(\omega )$, частотная характеристика $G(\omega )$ и отклонение $E(\omega )$}}{93}{}\protected@file@percent }
+\newlabel{fig:quant_lin_phase_lpf_fr}{{38}{93}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {39}{\ignorespaces Линейно-фазовый Полосовой Фильтр. Исходная импульсная характеристика $h_n$ и отклонение $h_n-g_n$}}{94}{}\protected@file@percent }
+\newlabel{fig:quant_lin_phase_bpf_ir}{{39}{94}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {40}{\ignorespaces Линейно-фазовый Полосовой Фильтр. Исходная частотная характеристика $H(\omega )$, частотная характеристика $G(\omega )$ и отклонение $E(\omega )$}}{94}{}\protected@file@percent }
+\newlabel{fig:quant_lin_phase_bpf_fr}{{40}{94}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {41}{\ignorespaces Минимально фазовый Фильтр Нижних Частот. Исходная импульсная характеристика $h_n$ и отклонение $h_n-g_n$}}{95}{}\protected@file@percent }
+\newlabel{fig:quant_min_phase_lpf_ir}{{41}{95}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {42}{\ignorespaces Минимально фазовый Фильтр Нижних Частот. Исходная частотная характеристика $H(\omega )$, частотная характеристика $G(\omega )$ и отклонение $E(\omega )$}}{96}{}\protected@file@percent }
+\newlabel{fig:quant_min_phase_lpf_fr}{{42}{96}{Метод экономии ресурсов при реализации цифровых фильтров засчет квантования параметров}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Метод экономии ресурсов при реализации цифровых передискретизаторов}{96}{}\protected@file@percent }
+\newlabel{subsec:half_band_filters}{{3.2}{96}{Метод экономии ресурсов при реализации цифровых передискретизаторов}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {43}{\ignorespaces Структура нелинейной обработки сигнала при передискретизации с коэффициентом $L$}}{97}{}\protected@file@percent }
+\newlabel{fig:resample_lpf}{{43}{97}{Метод экономии ресурсов при реализации цифровых передискретизаторов}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {44}{\ignorespaces Преобразование спектра белого гауссовского шума в схеме передискретизации с~$L=2$}}{98}{}\protected@file@percent }
+\newlabel{fig:hbf_proc}{{44}{98}{Метод экономии ресурсов при реализации цифровых передискретизаторов}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {45}{\ignorespaces Подстройка параметров фильтра половинной полосы}}{99}{}\protected@file@percent }
+\newlabel{fig:filter_change}{{45}{99}{Метод экономии ресурсов при реализации цифровых передискретизаторов}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {46}{\ignorespaces Параметры искажений вносимых схемой передискретизации с аппаратно оптимизированными фильтрами половинной полосы. $M$ -- число умножителей. Чёрный прямоугольник указывает на область, представленную в увеличенном масштабе на основном рисунке.}}{100}{}\protected@file@percent }
+\newlabel{fig:hbf32_full}{{46}{100}{Метод экономии ресурсов при реализации цифровых передискретизаторов}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Оценка ресурсов аппаратно оптимизированных HBF-фильтров}}{101}{}\protected@file@percent }
+\newlabel{tab:article_summary}{{8}{101}{Метод экономии ресурсов при реализации цифровых передискретизаторов}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Метод экономии ресурсов при реализации цифровых фильтров при помощи алгоритма MCM}{102}{}\protected@file@percent }
+\newlabel{subsec:mcm}{{3.3}{102}{Метод экономии ресурсов при реализации цифровых фильтров при помощи алгоритма MCM}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {47}{\ignorespaces Обобщённая базовая операция $A_{(l_1,l_2,s,r)}(u,v)$}}{103}{}\protected@file@percent }
+\newlabel{fig:mcm_general_base_operation}{{47}{103}{Метод экономии ресурсов при реализации цифровых фильтров при помощи алгоритма MCM}{}{}}
+\newlabel{eq:general_operation}{{3.5}{103}{Метод экономии ресурсов при реализации цифровых фильтров при помощи алгоритма MCM}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {48}{\ignorespaces АЧХ исходного -- кривая 1, аппаратно оптимизированного -- кривая 2 и их разность -- кривая 3 для фильтров половинной полосы 30 и 94 порядков соответственно}}{104}{}\protected@file@percent }
+\newlabel{fig:mcm_freq_response_30_94_orders}{{48}{104}{Метод экономии ресурсов при реализации цифровых фильтров при помощи алгоритма MCM}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Сравнение аппаратных ресурсов HBF фильтров до и после аппаратной оптимизации}}{105}{}\protected@file@percent }
+\newlabel{tab:cqa_mcm_comparison}{{9}{105}{Метод экономии ресурсов при реализации цифровых фильтров при помощи алгоритма MCM}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Параметры тестовых фильтров}}{105}{}\protected@file@percent }
+\newlabel{tab:test_filters}{{10}{105}{Метод экономии ресурсов при реализации цифровых фильтров при помощи алгоритма MCM}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Сравнение ресурсов аппаратной реализации фильтров и времени расчёта}}{106}{}\protected@file@percent }
+\newlabel{tab:resource_comparison}{{11}{106}{Метод экономии ресурсов при реализации цифровых фильтров при помощи алгоритма MCM}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Сокращение ресурсов при реализации классических моделей нелинейных искажений засчет оптимизации структуры цифровых фильтров}{107}{}\protected@file@percent }
+\newlabel{dpd_2ch_wiener_model}{{3.1}{107}{Сокращение ресурсов при реализации классических моделей нелинейных искажений засчет оптимизации структуры цифровых фильтров}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {49}{\ignorespaces Модель адаптивной компенсации нелинейных искажений в двухканальной системе связи на основе модели Винера}}{108}{}\protected@file@percent }
+\newlabel{fig:wiener_2ch}{{49}{108}{Сокращение ресурсов при реализации классических моделей нелинейных искажений засчет оптимизации структуры цифровых фильтров}{}{}}
+\newlabel{cqa_quant_error}{{3.2}{109}{Сокращение ресурсов при реализации классических моделей нелинейных искажений засчет оптимизации структуры цифровых фильтров}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {50}{\ignorespaces Спектральность мощности сигнала передатчика до и после компенсации DPD при различных уровнях ошибки квантования коэффициентов фильтров $\max _i \Delta H_i$}}{110}{}\protected@file@percent }
+\newlabel{fig:wiener_perform_psd}{{50}{110}{Сокращение ресурсов при реализации классических моделей нелинейных искажений засчет оптимизации структуры цифровых фильтров}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {51}{\ignorespaces Спектральность мощности сигнала разности сигнала передатчика при включенном DPD до и после квантования коэффициентов фильтров при различных уровнях ошибки квантования $\max _i \Delta H_i$}}{110}{}\protected@file@percent }
+\newlabel{fig:wiener_perform_psd_delta}{{51}{110}{Сокращение ресурсов при реализации классических моделей нелинейных искажений засчет оптимизации структуры цифровых фильтров}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Сравнение уровня компенсации и аппаратных ресурсов для реализации для модели на основе модели Винера с предобученными аппаратно оптимизированными коэффициентыми фильтров}}{111}{}\protected@file@percent }
+\newlabel{tab:algorithms}{{12}{111}{Сокращение ресурсов при реализации классических моделей нелинейных искажений засчет оптимизации структуры цифровых фильтров}{}{}}
+\@setckpt{Dissertation/chapter_3_folder/chapter_3}{
+\setcounter{page}{113}
+\setcounter{equation}{2}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{3}
+\setcounter{section}{3}
+\setcounter{subsection}{4}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{51}
+\setcounter{table}{12}
+\setcounter{parentequation}{4}
+\setcounter{lofdepth}{1}
+\setcounter{lotdepth}{1}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\setcounter{subfigure}{0}
+\setcounter{subtable}{0}
+\setcounter{rlistctr}{0}
+\setcounter{tabx@nest}{0}
+\setcounter{listtotal}{0}
+\setcounter{listcount}{0}
+\setcounter{liststart}{0}
+\setcounter{liststop}{0}
+\setcounter{citecount}{0}
+\setcounter{citetotal}{0}
+\setcounter{multicitecount}{0}
+\setcounter{multicitetotal}{0}
+\setcounter{instcount}{189}
+\setcounter{maxnames}{3}
+\setcounter{minnames}{1}
+\setcounter{maxitems}{3}
+\setcounter{minitems}{1}
+\setcounter{citecounter}{0}
+\setcounter{maxcitecounter}{0}
+\setcounter{savedcitecounter}{0}
+\setcounter{uniquelist}{0}
+\setcounter{uniquename}{0}
+\setcounter{refsection}{0}
+\setcounter{refsegment}{0}
+\setcounter{maxextratitle}{0}
+\setcounter{maxextratitleyear}{0}
+\setcounter{maxextraname}{2}
+\setcounter{maxextradate}{0}
+\setcounter{maxextraalpha}{0}
+\setcounter{abbrvpenalty}{50}
+\setcounter{highnamepenalty}{50}
+\setcounter{lownamepenalty}{25}
+\setcounter{maxparens}{3}
+\setcounter{parenlevel}{0}
+\setcounter{blx@maxsection}{0}
+\setcounter{mincomprange}{10}
+\setcounter{maxcomprange}{100000}
+\setcounter{mincompwidth}{1}
+\setcounter{afterword}{0}
+\setcounter{savedafterword}{0}
+\setcounter{annotator}{0}
+\setcounter{savedannotator}{0}
+\setcounter{author}{0}
+\setcounter{savedauthor}{0}
+\setcounter{bookauthor}{0}
+\setcounter{savedbookauthor}{0}
+\setcounter{commentator}{0}
+\setcounter{savedcommentator}{0}
+\setcounter{editor}{0}
+\setcounter{savededitor}{0}
+\setcounter{editora}{0}
+\setcounter{savededitora}{0}
+\setcounter{editorb}{0}
+\setcounter{savededitorb}{0}
+\setcounter{editorc}{0}
+\setcounter{savededitorc}{0}
+\setcounter{foreword}{0}
+\setcounter{savedforeword}{0}
+\setcounter{holder}{0}
+\setcounter{savedholder}{0}
+\setcounter{introduction}{0}
+\setcounter{savedintroduction}{0}
+\setcounter{namea}{0}
+\setcounter{savednamea}{0}
+\setcounter{nameb}{0}
+\setcounter{savednameb}{0}
+\setcounter{namec}{0}
+\setcounter{savednamec}{0}
+\setcounter{translator}{0}
+\setcounter{savedtranslator}{0}
+\setcounter{shortauthor}{0}
+\setcounter{savedshortauthor}{0}
+\setcounter{shorteditor}{0}
+\setcounter{savedshorteditor}{0}
+\setcounter{labelname}{0}
+\setcounter{savedlabelname}{0}
+\setcounter{institution}{0}
+\setcounter{savedinstitution}{0}
+\setcounter{lista}{0}
+\setcounter{savedlista}{0}
+\setcounter{listb}{0}
+\setcounter{savedlistb}{0}
+\setcounter{listc}{0}
+\setcounter{savedlistc}{0}
+\setcounter{listd}{0}
+\setcounter{savedlistd}{0}
+\setcounter{liste}{0}
+\setcounter{savedliste}{0}
+\setcounter{listf}{0}
+\setcounter{savedlistf}{0}
+\setcounter{location}{0}
+\setcounter{savedlocation}{0}
+\setcounter{organization}{0}
+\setcounter{savedorganization}{0}
+\setcounter{origlocation}{0}
+\setcounter{savedoriglocation}{0}
+\setcounter{origpublisher}{0}
+\setcounter{savedorigpublisher}{0}
+\setcounter{publisher}{0}
+\setcounter{savedpublisher}{0}
+\setcounter{language}{0}
+\setcounter{savedlanguage}{0}
+\setcounter{origlanguage}{0}
+\setcounter{savedoriglanguage}{0}
+\setcounter{pageref}{0}
+\setcounter{savedpageref}{0}
+\setcounter{textcitecount}{0}
+\setcounter{textcitetotal}{0}
+\setcounter{textcitemaxnames}{0}
+\setcounter{biburlbigbreakpenalty}{100}
+\setcounter{biburlbreakpenalty}{200}
+\setcounter{biburlnumpenalty}{0}
+\setcounter{biburlucpenalty}{0}
+\setcounter{biburllcpenalty}{0}
+\setcounter{smartand}{1}
+\setcounter{bbx:relatedcount}{0}
+\setcounter{bbx:relatedtotal}{0}
+\setcounter{cbx@tempcnta}{0}
+\setcounter{cbx@tempcntb}{88}
+\setcounter{cbx@tempcntc}{0}
+\setcounter{cbx@tempcntd}{-1}
+\setcounter{ALC@unique}{19}
+\setcounter{ALC@line}{19}
+\setcounter{ALC@rem}{0}
+\setcounter{ALC@depth}{0}
+\setcounter{nlinenum}{0}
+\setcounter{AlgoLine}{17}
+\setcounter{algocfline}{5}
+\setcounter{algocfproc}{5}
+\setcounter{algocf}{5}
+}

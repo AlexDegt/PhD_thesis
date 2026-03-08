@@ -1,0 +1,87 @@
+\documentclass [tikz] {standalone}
+
+\input{header.htex}
+\usetikzlibrary{calc}
+
+
+\begin {document}
+
+\begin{tikzpicture}
+	
+	\node(in) at (-1.5, 0) [none] {$x_n$}; 
+	\node(out) at ( 11, -2) [none] {$y_n$}; 
+	
+	
+	\foreach \i in {0,1,4, 5}
+	{
+		\node(del\i) at (1.2*\i, 0)  [delay] {$z^{-2}$};
+		\node(pnt\i) at (1.2*\i - 0.6, 0) [pnt, fill = black] {};
+	}
+
+	\foreach \j in {2,3}
+{
+	\node(del\j) at (1.2*\j, 0)  [delay] {$z^{-1}$};
+	\node(pnt\j) at (1.2*\j - 0.6, 0) [pnt, fill = black] {};
+}
+	
+	\draw[->] (in) -- (del0);
+	\draw[->] (del0) -- (del1);
+	\draw[->] (del1) -- (del2);
+	\draw[->] (del2) -- (del3);
+	\draw[->] (del3) -- (del4);
+	\draw[->] (del4) -- (del5);
+
+
+	\node(sumshift2) at (3, -1) [sum] {$+$}; 
+	\draw[->] (pnt2) -- (1.8, -0.7) -- (2.2, -0.7) -- (sumshift2);
+	\draw[->] (pnt4) -- (4.2, -0.7) -- (3.8, -0.7) -- (sumshift2);
+	
+	\node(sumshift3) at (3, -2.5) [sum] {$+$}; 
+	\draw[->] (pnt1) -- (0.6, -1.7) -- (2.5, -1.7) -- (sumshift3);
+	\draw[->] (pnt5) -- (5.4, -1.7) -- (3.5, -1.7) -- (sumshift3);
+
+	\node(sumshift4) at (3, -4) [sum] {$+$}; 
+	\draw[->] (pnt0) -- (-0.6, -2.7) -- (2.5, -2.7) -- (sumshift4);
+	\draw[->] (del5) -| (6.6, -2.7) -- (3.5, -2.7) -- (sumshift4);
+	
+	
+	\node(mtap1) at (8, -1.5) [sum] {$\times$};
+	\draw[->](sumshift2) |- (mtap1) ;
+	
+	\node(b0) at (8, -1) [none, above] {$638$};
+	\draw[->] (b0) -- (mtap1);
+
+	\node(mtap2) at (8, -3) [sum] {$\times$};
+	\draw[->](sumshift3) |- (mtap2) ;
+	
+	\node(b1) at (8, -2.5) [none, above] {$-182$};
+	\draw[->] (b1) -- (mtap2);
+
+	\node(mtap3) at (8, -4.5) [sum] {$\times$};
+	\draw[->](sumshift4) |- (mtap3) ;
+	
+	\node(b2) at (8, -4) [none, above] {$77$};
+	\draw[->] (b2) -- (mtap3);
+	
+	\node(mtap4) at (3,1) [sum] {$\times$};
+	\draw[->] (pnt3) -- (mtap4);
+	
+	\node(b1) at (2, 0.75) [none, above] {$1024$};
+	\draw[->] (b1) -- (mtap4);	
+	
+%	\node(shift10) at (3, 1) [delay] {$\gg 1$};
+%	\draw[->] (pnt3)--(shift10);	
+	
+	\node(sumout) at (10, -2) [sum] {$+$};
+	\draw[->] (mtap1)--(8.5, -1.5) -- (9.5, -1.5) -- (sumout);
+	\draw[->] (mtap2)--(9.5, -3) -- (9.5, -3) -- (sumout);			
+	\draw[->] (mtap3)--(8.5, -4.5) -- (9.5, -4.5) -- (sumout);	
+	\draw[->] (mtap4)--(3.5, 1) -- (9.5, 1) -- (sumout);
+	
+	\draw[->] (sumout) -- (out);
+
+	
+	
+\end{tikzpicture}
+
+\end {document}

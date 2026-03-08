@@ -1,0 +1,28 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\begin {document}
+\begin{tikzpicture}
+	
+	\draw[dashed] (-0.8, 2.2) rectangle (4.0, -0.2);
+	\node[above] at  (1.6, 2.2) {${f_s} / {2}$ clock region};
+	
+	\node(H0E)[draw, fill = white, minimum height=0.8cm,minimum width=1.5cm] at (2.4, 1.5) {$H_0(z)$};
+	\node(H1E)[draw, fill = white, minimum height=0.8cm,minimum width=1.5cm] at (2.4, 0.5) {$H_1(z)$};
+	
+	\node(inE) at (0.1, 1.0)  [none, left] {$x_{2k}$};
+	\node(p) at (0.8,  1.0) [pnt, fill = black]{};
+	\node(outE) at (4.6, 1.5)  [none, right] {$y_{2k}$};
+	\node(outO) at (4.6, 0.5)  [none, right] {$y_{2k+1}$};
+	
+	\draw[] (inE) -- (p);
+	\draw[->] (p) |- (H0E);
+	\draw[->] (p) |- (H1E);
+	
+	\draw[->] (H0E) -- (outE);
+	\draw[->] (H1E) -- (outO);
+	
+	
+	
+\end{tikzpicture}
+\end {document}

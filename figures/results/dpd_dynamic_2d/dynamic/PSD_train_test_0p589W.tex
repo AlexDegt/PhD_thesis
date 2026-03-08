@@ -1,0 +1,50 @@
+\documentclass [tikz] {standalone}
+
+\input{header.htex}
+% \usepackage{fontspec}
+% \setmainfont{Times New Roman}
+
+\newcommand{\semibold}[1]{{\fontseries{m}\selectfont #1}} % Custom command for semibold
+
+
+\begin {document}
+\begin{tikzpicture}
+	% \draw[thin] (-2,-1) rectangle (10.5, 6.5);
+	\begin{axis}[
+		width=10cm,
+		height = 6cm,
+		scale only axis,
+		xshift = 0cm, 
+		ylabel={\semibold{СПМ, дБВт/ГГц}},
+		xlabel={\semibold{частота, ГГц}},
+		xmin = 1.68,
+		xmax = 1.92,
+		ymin = -105,
+		ymax = -10,
+		% xtick={-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6},
+		%xticklabels={0, 10, 20, 30, 40, 50, 60},
+		label style={font=\large},
+		grid = major,
+		minor tick num=4,
+		% Настройки легенды
+		legend style={
+			at={(0.5,0.15)},        % Позиция
+			anchor=center,           % Якорь
+			font=\small,             % Уменьшенный шрифт
+			cells={anchor=west},     % Выравнивание текста по левому краю
+			legend columns=1,        % Одна колонка
+			/tikz/every even column/.append style={column sep=0.5cm}
+		}]
+		
+		\addplot + [thick, solid, draw=red, mark = none, line width = 1.25] table {data_text/psd_dpd_off_0_589W.txt};
+		\addlegendentry{DPD выкл.};
+		
+		\addplot + [thick, solid, draw=green, mark = none, line width = 1.25] table {data_text/psd_dpd_on_0_589Wto0_589W.txt};
+		\addlegendentry{DPD вкл., обуч. на 0.589 Вт, примен. к 0.589 Вт};
+		
+		\addplot + [thick, solid, draw=blue, mark = none, line width = 1.25] table {data_text/psd_dpd_on_0_741Wto0_589W.txt};
+		\addlegendentry{DPD вкл., обуч. на 0.741 Вт, примен. к 0.589 Вт};
+		
+	\end{axis}
+\end{tikzpicture}
+\end {document}

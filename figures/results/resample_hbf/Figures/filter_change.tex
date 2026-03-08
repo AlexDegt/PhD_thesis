@@ -1,0 +1,59 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+
+\begin {document}
+\begin{tikzpicture}
+	
+	\begin{axis}[
+		width = 12cm,
+		height = 7cm,
+		xshift = 0cm,
+		xmin = 0,
+		xmax = 1.0,
+		ymin = -0.3,
+		ymax = 1.5,
+		xlabel = {Нормированная частота, $f/f_д$},
+		ylabel = {Амплитуда}, 
+		xtick={0, 0.25 , 0.5, 0.75, 1.0},
+		xticklabels={0, 0.125 , 0.25, 0.375, 0.5},
+		grid = major,
+		minor tick num=3]
+		\node [fill = white, above, rotate = 0]  at (axis cs: 0.45, 0.5){$\alpha$};
+		\node [fill = white, above, rotate = 0]  at (axis cs: 0.55, 0.5){$\alpha$};
+		
+		\addplot + [line width = 1.5 pt,  draw=black, mark = none,] table {../text data/filter_change.txt};
+        \addlegendentry{$\text{АЧХ HBF-фильтра}$};
+        
+        \draw[-] (axis cs: 0, 0.95) -- (axis cs: 0.46, 0.95);
+        \draw[-] (axis cs: 0, 1.05) -- (axis cs: 0.46, 1.05);
+        \draw[->] (axis cs: 0.08, 1.05) -- (axis cs: 0.08, 1.25);
+        \draw[->] (axis cs: 0.08, 0.95) -- (axis cs: 0.08, 0.75);
+        \node [fill = white, above, rotate = 0]  at (axis cs: 0.36, 1.07){Пульсации в полосе пропускания};
+        
+        \draw[-] (axis cs: 0.55, 0) -- (axis cs: 1, 0);
+        \draw[-] (axis cs: 0.55, 0.05) -- (axis cs: 1, 0.05);
+        \draw[->] (axis cs: 0.625, 0.05) -- (axis cs: 0.625, 0.255);
+        \draw[->] (axis cs: 0.625, 0) -- (axis cs: 0.625, -0.21);
+%        \node [fill = white, above, rotate = 0]  at (axis cs: 0.7, 0.06){Пульсации в полосе \\ задерживания};
+		\node[
+		fill=white,
+		above,
+		rotate=0,
+		align=center
+		]
+		at (axis cs: 0.8, 0.06)
+		{Пульсации в полосе\\задерживания};
+        
+        \draw[-] (axis cs: 0.4, 1.1) -- (axis cs: 0.4, -0.1);
+        \draw[-] (axis cs: 0.6, 1.1) -- (axis cs: 0.6, -0.1);
+        
+        \draw[<->] (axis cs: 0.4, 0.5) -- (axis cs: 0.5, 0.5);
+        \draw[<->] (axis cs: 0.5, 0.5) -- (axis cs: 0.6, 0.5);\
+        \draw[->] (axis cs: 0.4, 0.6) -- (axis cs: 0.30, 0.6);
+        \draw[->] (axis cs: 0.6, 0.6) -- (axis cs: 0.70, 0.6);
+        
+    \end{axis}
+			
+\end{tikzpicture}
+\end {document}

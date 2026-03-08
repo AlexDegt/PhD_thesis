@@ -1,0 +1,90 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\usepackage{pgfplots}
+ \usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\usepgfplotslibrary{fillbetween}
+
+\begin {document}
+\begin{tikzpicture}
+
+%\begin{axis}[
+%width=10cm,
+%height = 4cm,
+%xshift = 0cm,
+%xmin = -2,
+%xmax = 2,
+%ymin = -90,
+%ymax = 10,
+%ylabel = {$|N(\omega)|^2$, }, 
+%xtick={-2, -1, 0, 1, 2},
+%xticklabels={, , ,  ,  },
+%grid = major,
+%minor tick num=3]
+%\addplot + [thick,  draw=black, mark = none, name path=curve1] table {HBF_proc/Filtering_step_1.txt};
+%\addplot+[mark=none, draw=none, name path=curve1_zero] {-87};
+%\end{axis}
+
+\begin{axis}[
+width=10cm,
+height = 4cm,
+xshift = 0cm,
+yshift = -2.7cm,
+xmin = -2,
+xmax = 2,
+ymin = -90,
+ymax = 10,
+xtick={-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2},
+xticklabels={ , , , , , , , ,},
+ylabel = {$Q(f)$, дБ}, 
+grid = major,
+minor tick num=3]
+\addplot + [thick,  draw=black, mark = none,] table {../text data/Filtering_step_2.txt};
+\end{axis}
+
+\begin{axis}[
+width=10cm,
+height = 4cm,
+xshift = 0cm,
+yshift = -5.4cm,
+xmin = -2,
+xmax = 2,
+ymin = -90,
+ymax = 10,
+xtick={-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2},
+xticklabels={ , , , , , , , ,},
+ylabel = {$Y(f)$, дБ},
+grid = major,
+minor tick num=3]
+\addplot + [thick,  draw=black, mark = none,] table {../text data/Filtering_step_3.txt};
+\addplot + [thick,  draw=black, mark = none,] table {../text data/Filtering_step_34.txt};	
+\end{axis}
+
+\begin{axis}[
+	width=10cm,
+	height = 6cm,
+	xshift = 0cm,
+	yshift = -10.1cm,
+	xmin = -2,
+	xmax = 2,
+	ymin = -90,
+	ymax = 10,
+	xtick={-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2},
+	xticklabels={-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1},
+	xlabel = {Нормированная частота, $f/f_д$}, 
+	ylabel = {$E(f)$, дБ}, 
+	grid = major,
+	minor tick num=3]
+	\addplot + [thick,  draw=black, mark = none,] table {../text data/Filtering_step_34.txt};	
+	\draw[<->] (axis cs: -0.75, -59.5) -- (axis cs: -0.75, 0);
+	\node [fill = none, above, rotate = 270, scale=0.85]  at (axis cs: -0.75, -23){Уровень искажений};
+	\draw[<->] (axis cs: -0.78, -55) -- (axis cs: 0.78, -55);
+	\node [fill = none, above, rotate = 0, scale=0.8]  at (axis cs: 0, -55){Рабочая полоса};
+\end{axis}
+
+
+\end{tikzpicture}
+\end {document}

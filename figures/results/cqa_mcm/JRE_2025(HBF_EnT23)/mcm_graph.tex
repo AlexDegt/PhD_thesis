@@ -1,0 +1,86 @@
+% \begin{figure}[ht!]
+%\begin{center}
+\documentclass [tikz] {standalone}
+
+\input{header.htex}
+\usetikzlibrary{calc}
+
+
+\begin {document}
+
+\begin{tikzpicture}
+
+\node(in) at (0, -1.5) [none] {$x$}; 
+\node(pnt1) at (0, -0.5) [pnt, fill = black] {};
+
+
+
+\node[delay] (shift32) at (2,0.5){$\ll 5$};
+\node[sum](sum31) at (2,2){$+$};
+\node[delay](shift16) at (2,3.5){$\ll 4$};
+\node[sum](sum487) at (2,5){$+$};
+\node(out487) at (2, 6.5) [none] {$487x$}; 
+
+\node[delay] (shift8) at (0,0.5){$\ll 3$};
+\node[sum](sum9) at (0,2){$+$};
+\node[delay] (shift321) at (0,3.5){$\ll 5$};
+\node[sum](sum287) at (0,5){$+$};
+\node(out287) at (0, 6.5) [none] {$287x$}; 
+
+\node(out307) at (-3, 6.5) [none] {$307x$}; 
+
+
+\node[delay] (shift40) at (-2,0.5) {$\ll 2$};
+\node[sum] (sum5) at (-2,2) {$+$};
+%\node(pnt2) at (-1.5, -0.5) [pnt, fill = black] {};
+\node[delay] (shift41) at (-2,3.5) {$\ll 2$};
+\node[sum] (sum307) at (-2,5) {$+$};
+
+
+\draw[->] (in) -- (shift8);
+
+
+\node(pnt3) at (1, -0.5) [pnt, fill = black] {};
+\node(pnt4) at (1,   2) [pnt, fill = black] {};
+\node(pnt5) at (-1, -0.5) [pnt, fill = black] {};
+\node(pnt6) at (-1, 2) [pnt, fill = black] {};
+\node(pnt7) at (0, 2.75) [pnt, fill = black] {};
+\node[left] at (0, 2.75){$9x$};
+
+\node(pnt8) at (0, 5.75) [pnt, fill = black] {};
+
+\draw[->] (pnt3) -| (shift32);
+\draw[-] (pnt1) -- (pnt3);
+
+\draw[-] (pnt3) -- (pnt4);
+\draw[->] (pnt4) -- (sum31) node [below,xshift = -0.5cm]{$-$};
+\draw[->] (pnt4) -- (sum9);
+
+\draw[-] (pnt1) -- (pnt5);
+\draw[->] (pnt5) -| (shift40);
+\draw[-] (pnt5) -- (pnt6);
+\draw[->] (pnt6) |- (sum287)  node [below,xshift = -0.5cm]{$-$};
+\draw[->] (shift40) -- (sum5) node [midway, left]{$4x$};
+\draw[->] (pnt6) -- (sum5);
+\draw[->] (sum5) -- (shift41) node [midway, left]{$5x$};
+\draw[->] (shift41) -- (sum307) node [midway, left]{$20x$};;
+
+\draw[->] (shift8) -- (sum9) node [midway, left]{$8x$};
+\draw[-] (sum9) -- (pnt7);
+\draw[->] (pnt7) -- (shift321);
+\draw[->] (shift321) -- (sum287) node [midway, above, rotate = 90]{$288x$};
+\draw[-] (sum287) -- (pnt8);
+\draw[->] (pnt8) -- (out287);
+\draw[->] (pnt8) -|  (sum307);
+\draw[->] (sum307) -|  (out307);
+%\node(pnt6) at (0.75,   2) [pnt, fill = black] {};
+
+\draw[->] (shift32) --  (sum31)node [midway, right]{$32x$};
+\draw[->] (sum31) --  (shift16)node [midway, right]{$31x$};
+\draw[->] (shift16) --  (sum487)node [midway, right]{$496x$};;
+\draw[->] (sum487) --  (out487);
+\draw[->] (pnt7) -- ++(1,0) |- (sum487) node [below,xshift = -0.5cm]{$-$};
+
+\end{tikzpicture}
+
+\end {document}

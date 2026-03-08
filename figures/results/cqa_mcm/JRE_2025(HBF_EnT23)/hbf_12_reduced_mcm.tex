@@ -1,0 +1,136 @@
+\documentclass [tikz] {standalone}
+
+\input{header.htex}
+\usetikzlibrary{calc}
+
+
+\begin {document}
+
+\begin{tikzpicture}
+	
+	\node(in) at (-1.5, 0) [none] {$x_n$}; 	
+	
+	\foreach \i in {0,1,4, 5}
+	{
+		\node(del\i) at (1.2*\i, 0)  [delay] {$z^{-2}$};
+		\node(pnt\i) at (1.2*\i - 0.6, 0) [pnt, fill = black] {};
+	}
+	
+	\foreach \j in {2,3}
+	{
+		\node(del\j) at (1.2*\j, 0)  [delay] {$z^{-1}$};
+		\node(pnt\j) at (1.2*\j - 0.6, 0) [pnt, fill = black] {};
+	}
+	
+	\draw[->] (in) -- (del0);
+	\draw[->] (del0) -- (del1);
+	\draw[->] (del1) -- (del2);
+	\draw[->] (del2) -- (del3);
+	\draw[->] (del3) -- (del4);
+	\draw[->] (del4) -- (del5);
+%	\draw[-] (del5) -- (6.6, 0);
+%	\node(pnt6)	at (6.6, 0) [pnt, fill = black] {};
+	
+	\node(sumshift2) at (4.2, -1) [sum] {$+$}; 
+	\draw[->] (pnt2) |- (sumshift2);
+	\draw[->] (pnt4) -- (sumshift2);
+	
+	\node(sumshift3) at (5.4, -3) [sum] {$+$}; 
+	\draw[->] (pnt1) |- (sumshift3);
+	\draw[->] (pnt5) -- (sumshift3);
+	
+	\node(sumshift4) at (6.6, -5) [sum] {$+$}; 
+	\draw[->] (pnt0) |- (sumshift4);
+	\draw[->] (del5) -| (sumshift4);
+	
+	
+%	\node(mtap1) at (8, -1.5) [sum] {$\times$};
+%	\draw[->](sumshift2) |- (mtap1) ;
+%	
+%	\node(b0) at (8, -1) [none, above] {$0.312$};
+%	\draw[->] (b0) -- (mtap1);
+%	
+%	\node(mtap2) at (8, -3) [sum] {$\times$};
+%	\draw[->](sumshift3) |- (mtap2) ;
+%	
+%	\node(b1) at (8, -2.5) [none, above] {$-0.089$};
+%	\draw[->] (b1) -- (mtap2);
+%	
+%	\node(mtap3) at (8, -4.5) [sum] {$\times$};
+%	\draw[->](sumshift4) |- (mtap3) ;
+%	
+%	\node(b2) at (8, -4) [none, above] {$0.038$};
+%	\draw[->] (b2) -- (mtap3);
+%	
+%	\node(mtap4) at (3,1) [sum] {$\times$};
+%	\draw[->] (pnt3) -- (mtap4);
+%	
+%	\node(b1) at (2, 0.75) [none, above] {$0.5$};
+%	\draw[->] (b1) -- (mtap4);	
+	
+	\node[delay] (shift1) at (8.5,0.75) {$\gg 10$};
+	\draw[->] (pnt3)|-(shift1);
+	
+	%in2
+	\node(pnt7)	at (7.5, -1.0) [pnt, fill = black] {};
+	\draw[-](sumshift2) -- (pnt7) ;
+	\node(shift2) at (8.5, -1.5) [delay] {$\gg 7$};
+	\node(shift3) at (8.5, -0.5) [delay] {$\gg 1$};
+	\draw[->](pnt7) |- (shift2) ;
+	\draw[->](pnt7) |- (shift3) ;
+	
+	%in1
+	\node(pnt8)	at (7.5, -3) [pnt, fill = black] {};
+	\draw[-](sumshift3) --  (pnt8) ;
+	\node(shift4) at (8.5, -3.5) [delay] {$\gg 6$};
+	\node(shift5) at (8.5, -2.5) [delay] {$\gg 1$};
+	\draw[->](pnt8) |- (shift4) ;
+	\draw[->](pnt8) |- (shift5) ;
+
+	%in0
+	\node(pnt9)	at (7.5, -5.0) [pnt, fill = black] {};
+	\draw[-](sumshift4) -- (pnt9) ;
+
+	\node(shift7) at (8.5, -4.5) [delay] {$\gg 4$};	\draw[->](pnt9) ;
+	\draw[->](pnt9) |- (shift7) ;
+
+	\node(sumshift5) at (11, -4.25) [sum] {$+$};
+	\node(sumshift6) at (10, -2.5) [sum] {$+$}; 
+	%\node(sumshift7) at (10, -2.5) [sum] {$+$}; 
+	
+	\draw[->](shift4) -| (sumshift5) node[below left, xshift = -0.1cm, yshift = 0.6cm]{$-$};
+	\draw[->](pnt9) -| (sumshift5) node[below left, xshift = -0.1cm, yshift = -0.1cm]{$-$};
+	
+	\draw[->](shift5) -- (sumshift6) ;
+	\draw[->](shift2) -| (sumshift6) ;
+	%\draw[->](sumshift6) -- (sumshift7) ;
+	\draw[->](shift7) -| (sumshift6) ;
+	
+	\node(pnt9)	at (11.8, -4.25) [pnt, fill = black] {};
+	\draw[-](sumshift5) -- (pnt9) ;
+	\node(shift8) at (12.5, -3.5) [delay] {$\gg 2$};
+	\draw[->](pnt9) |- (shift8) ;
+
+	\node(pnt10) at (11.8, -2.5) [pnt, fill = black] {};
+	\draw[-](sumshift6) -- (pnt10) ;
+	\node(shift9) at (12.5, -1.5) [delay] {$\gg 2$};
+	\draw[->](pnt10) |- (shift9) ;
+
+
+	\node(sumshift8) at (14, -2.5) [sum] {$+$}; 
+	\draw[->] (shift3) -- (13.3, -0.5) -- (sumshift8) node[right, xshift = -0.9cm, yshift = -0.1cm]{$-$};
+	\draw[->] (shift9) -- (13.2, -1.5)-- (sumshift8);
+	\draw[->] (pnt9) -| (sumshift8)  node[below right, xshift = 0.1cm, yshift = -0.1cm]{$-$};
+	\draw[->] (shift8) -- (13.2, -3.5) -- (sumshift8);
+	\draw[->] (pnt10)  -- (sumshift8);
+	\draw[->] (shift1) -|  (sumshift8);
+ 
+
+	\node(out) at ( 15.5, -2.5) [none] {$y_n$}; 			
+	\draw[->] (sumshift8) -- (out);
+
+%	\node(pnt11) at (0, -7) [pnt, fill = none] {};
+%	\node(pnt12) at (0, 4) [pnt, fill = none] {};
+\end{tikzpicture}
+
+\end {document}

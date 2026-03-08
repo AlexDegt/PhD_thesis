@@ -1,0 +1,63 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\begin {document}
+\begin{tikzpicture}
+
+
+\node(z0)[draw, minimum height=0.8cm] at (0, 0) {$z^{-1}$};
+\node(z1)[draw, minimum height=0.8cm] at (2, 0) {$z^{-1}$};
+\node(z2)[draw, minimum height=0.8cm] at (4, 0) {$z^{-1}$};
+\node(z3)[draw, minimum height=0.8cm] at (6, 0) {$z^{-1}$};
+
+
+\node(s0)[draw, minimum height=0.6cm] at (-1, -1) {$\gg2$};
+\node(s1)[draw, minimum height=0.6cm] at (1, -1) {$\gg1$};
+\node(s2)[draw, minimum height=0.6cm] at (5, -1) {$\gg1$};
+
+
+\node(sum0)[sum] at (1, -2) {$+$};
+\node(sum1)[sum] at (3, -2) {$+$};
+\node(sum2)[sum] at (7, -1) {$+$};
+
+\node(mul0)[sum] at (5, -2) {$\times$};
+\node(mul1)[sum] at (7, -2) {$\times$};
+
+\node(sumOut)[sum] at (7, -3) {$+$};
+\node(h4) at (6,  -2)  [none, right] {$4$};
+\node(h6) at (8, -2)  [none, right] {$6$};
+
+\node(x) at (-2,  0)  [none, left] {$x_{k}$};
+\node(y) at (8,  -3)  [none, right] {$y_{k}$};
+
+\node(p0) at (-1,  0) [pnt, fill = black]{};
+\node(p1) at (1,  0) [pnt, fill = black]{};
+\node(p2) at (3,  0) [pnt, fill = black]{};
+\node(p3) at (5,  0) [pnt, fill = black]{};
+
+\draw[->] (x) --(z0);
+\draw[->] (z0) --(z1);
+\draw[->] (z1) --(z2);
+\draw[->] (z2) --(z3);
+\draw[->] (z3) -|(sum2);
+
+\draw[->] (p0) -- (s0);
+\draw[->] (p1) -- (s1);
+\draw[->] (p2) -- (sum1);
+\draw[->] (p3) -- (s2);
+
+\draw[->] (s0) |- (sum0);
+\draw[->] (s1) -- (sum0);
+\draw[->] (sum0) -- (sum1);
+\draw[->] (sum1) -- (mul0);
+\draw[->] (h4) -- (mul0);
+\draw[->] (s2) -- (sum2);
+\draw[->] (sum2) -- (mul1);
+\draw[->] (h6) -- (mul1);
+
+\draw[->] (mul0) |- (sumOut);
+\draw[->] (mul1) -- (sumOut);
+\draw[->]  (sumOut) -- (y);
+
+\end{tikzpicture}
+\end {document}

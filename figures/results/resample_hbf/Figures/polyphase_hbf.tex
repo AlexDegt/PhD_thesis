@@ -1,0 +1,56 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\begin{document}
+\pagestyle{empty}
+%
+\tikzstyle{int}=[draw, minimum size=2em]
+\tikzstyle{init} = [pin edge={to-,thin,black}]
+
+% Definition of blocks:
+\tikzset{%
+  block/.style    = {draw, thick, rectangle, minimum height = 3em,
+    minimum width = 3em},
+  sum/.style      = {draw, circle, minimum size=0.1mm, node distance = 1.5cm}, % Adder
+  input/.style    = {coordinate}, % Input
+  output/.style   = {coordinate} % Output
+}
+% Defining string as labels of certain blocks.
+\newcommand{\suma}{\tiny$+$}
+\newcommand{\inte}{$\displaystyle \int$}
+\newcommand{\derv}{\huge$\frac{d}{dt}$}
+
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']{}
+
+    \node [int] (a) {$h[2n]$};
+    \node (b) [left of=a,node distance=3cm, coordinate] {a};
+    \path[*-] (b) edge node {$x[2n]$} (a);
+
+    \node [int] (c) at (0, -1) {$h[2n+1]$};
+    \node (d) [left of=c,node distance=3cm, coordinate] {c};
+    \path[*-] (d) edge node {$x[2n+1]$} (c);
+
+    \node (e) at (-3.5, -0.5) {};
+    \node (f) [left of=e,node distance=1cm, coordinate] {e};
+    \path[-] (f) edge node {$x[n]$} (e);
+
+    \node (g) at (-3.755, -0.395) {};
+    \node (h) at (-3, -1) {};
+    \path[-*] (g) edge node{} (h);
+
+    \node (a1) at (-3.45, 0) {};
+    \node (a2) at (-3.45, -1) {};
+    \draw[auto,bend right,->] (a2) to node[below,pos=0.5] {} (a1);
+
+    \node [sum, right of=a] (suma1) {\suma};
+    \path[-] (a) edge node{} (suma1);
+    \draw[<-] (suma1.south) |- (c.east);
+
+    \path[->] (suma1.east) edge node {$y[2n]$} (3.35, 0);
+
+\end{tikzpicture}
+ 
+\end{document}

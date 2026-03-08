@@ -1,0 +1,39 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+
+\begin {document}
+\begin{tikzpicture}
+	
+	\begin{axis}[
+		legend pos = north west,
+		width = 12cm,
+		height = 7cm,
+		xshift = 0cm,
+		 xmin = -0.125,
+		 xmax = 0.125,
+%        xmin = -0.05,
+%		xmax = 0.05,
+		ymin = -75,
+		ymax = -15,
+		ylabel = {СПМ, дБ},
+		xlabel = {Частота, МГц},
+		xtick={-0.12, -0.09, -0.06, -0.03, 0, 0.03, 0.06, 0.09, 0.12},
+		xticklabels={-20, -15, -10, -5, 0, 5, 10, 15, 20},
+		tick label style={style={font=\Large}},
+		label style={style={font=\Large}},
+		legend style={style={font=\Large}},
+		grid = major,
+		minor tick num=3]
+		\addplot + [line width = 1.25 pt,  draw=red, mark = none,] table {Data/psd_d.txt};
+		\addlegendentry{Исходная помеха};
+		\addplot + [line width = 1.25 pt,  draw=black, mark = none,] table {Data/psd_e_3lut.txt};
+		\addlegendentry{Полином, LS};
+		\addplot + [line width = 1.25 pt,  draw=blue, mark = none,] table {Data/psd_e_lbfgs.txt};
+		\addlegendentry{Перцептрон, L-BFGS};
+		
+
+	\end{axis}
+	
+\end{tikzpicture}
+\end {document}

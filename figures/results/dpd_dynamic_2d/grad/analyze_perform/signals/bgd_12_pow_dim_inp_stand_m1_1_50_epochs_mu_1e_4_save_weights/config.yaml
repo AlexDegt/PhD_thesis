@@ -1,0 +1,65 @@
+# Simulation description
+trial_descript: Training of 1D Chebyshev polynomial-based model
+# If trial_name == 'None', then name to the experiment is given automatically,
+# otherwise it is set name set by user 
+# trial_name: 1_pow_dim_lin_scale_corr_fraq_del_aligned_gain_mw_m16_0dBm
+# trial_name: ls_4_pow_dim_lin_scale_corr_fraq_del_aligned_gain_mw_m16_0dBm
+# trial_name: sgd_4_pow_dim_stand_tx_rx
+# trial_name: sgd_4_pow_dim_no_stand_tx_rx
+# trial_name: sgd_4_pow_dim_stand_tx
+# trial_name: sgd_adam_10k_epochs_4_pow_dim_mu_5e_3_stand_tx
+# trial_name: sgd_adam_20k_epochs_4_pow_dim_mu_3e_4_stand_tx_interv_m1_1
+
+# trial_name: sgd_adam_500_epochs_4_pow_dim_mu_3e_4_stand_tx_pow_interv_m1_1
+# trial_name: ls_4_pow_dim_stand_tx_pow_interv_m1_1
+# trial_name: ls_8_pow_dim_stand_tx_interv_m1_1
+# trial_name: ls_4_pow_dim_stand_tx_interv_m1_1
+# trial_name: ls_interv_no_stand
+# trial_name: ls_interv_scale_all_to_interv_0_1
+# trial_name: ls_interv_scale_all_to_interv_0_1_rcond_1e_m18
+# trial_name: ls_interv_scale_all_to_interv_m1_1
+# trial_name: ls_interv_scale_each_to_interv_0_1
+# trial_name: ls_interv_scale_each_to_interv_m1_1
+# trial_name: tmp
+
+# trial_name: 1_pow_dim
+# trial_name: ls_12_pow_dim_inp_stand_m1_1_reg_m13
+# trial_name: ls_1_pow_dim_inp_stand_m1_1_reg_m13
+trial_name: bgd_12_pow_dim_inp_stand_m1_1_50_epochs_mu_1e_4_save_weights
+# trial_name: bgd_1_pow_dim_inp_stand_m1_1_reg_m13
+
+# trial_name: sgd_full_grad_adam_10k_epochs_4_pow_dim_mu_1e_3_stand_tx
+# trial_name: test
+# Simulation parameters
+# Number of parameters per power dimension. For single-dimensional model it equals 1
+pow_param_num: 12
+# Chebyshev polynomal order
+param_num: 8 # 24
+# Model is parallel Chebyshev polynomials, summed at the output
+# Each polynomail is fed by the signals x_n, delayd by delay
+# from the range [-delay_num, delay_num].
+delay_num: 4 # 18
+batch_size: 1
+# chunk_num is important parameter, which allows to divide whole signal
+# into chunk_num blocks. LS method is implemented to accumulate 
+# hessian and gradient along the whole signal length and save GPU memory.
+# Increase this parameter if you obtain out of memory error.
+chunk_num: 17112 # 17112
+aggregate_power: batch
+# aggregate_power: concat
+dtype: complex128
+device: "cuda:3"
+# dtype: complex64
+# Path to the folder with data
+data_path: '../../data/single_band_dynamic'
+# Allow to overwrite folder with saved results or not
+overwrite_file: True
+
+# Algorithm parameters 
+# train_type: ls # LS-solution
+train_type: sgd_auto # SGD
+# train_type: mnm_lev_marq # Mixed Newton with Levenberg-Marquardt adaptive regularization control
+epochs: 50 # Used in SGD and Mixed Newton
+lr: 0.0001 # Used only in SGD
+betas: [0.9, 0.9] # Used only in SGD
+accum_grad: False

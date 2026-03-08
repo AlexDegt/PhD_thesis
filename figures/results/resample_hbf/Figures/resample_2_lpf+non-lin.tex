@@ -1,0 +1,24 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\begin {document}
+\begin{tikzpicture}
+
+%\node(title) at (2.2, 0.8) {$Resampling$ $in$ $2$ $times$};
+\node(z0)[draw, minimum height=0.6cm] at (0, 0) {$\uparrow  2$};
+\node(z1)[draw, minimum height=0.6cm] at (1.5, 0) {$HBF$};
+\node(z2)[draw, minimum height=0.6cm] at (3.5, 0) {$Processing$};
+\node(z3)[draw, minimum height=0.6cm] at (5.5, 0) {$HBF$};
+\node(z4)[draw, minimum height=0.6cm] at (7, 0) {$\downarrow 2$};
+
+\node(x) at (-1,  0)  [none, left] {$x_{k}$};
+\node(y) at (8,  0)  [none, right] {$y_{k}$};
+\draw[->] (x) --(z0);
+\draw[->] (z0) --(z1);
+\draw[->] (z1) --(z2);
+\draw[->] (z2) --(z3);
+\draw[->] (z3) --(z4);
+\draw[->] (z4)--(y);
+
+\end{tikzpicture}
+\end {document}

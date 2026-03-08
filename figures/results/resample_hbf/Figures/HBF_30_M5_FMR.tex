@@ -1,0 +1,37 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+
+\begin {document}
+\begin{tikzpicture}
+	
+	\begin{axis}[
+		width = 12cm,
+		height = 7cm,
+		xshift = 0cm,
+		xmin = 0,
+		xmax = 0.5,
+		ymin = -90,
+		ymax = 19,
+		xlabel = {Normalized frequency, $f/f_s$},
+		ylabel = {Magnitude, dB}, 
+%		xlabel = {f, Hz}, 
+		xtick={0, 0.25, 0.5},
+		xticklabels={0 ,0.25, 0.5},
+		tick label style={style={font=\large}},
+		label style={style={font=\large}},
+		legend style={style={font=\large}},
+		grid = major,
+		minor tick num=3]
+		\addplot + [line width = 1.5 pt,  draw=black, mark = none,] table {text data/H_N30.txt};
+        \addlegendentry{Initial filter $H(f)$, $M = 8$};
+        
+        \addplot + [line width = 1 pt,  draw=green, mark = none,] table {text data/H_compr_N30.txt};
+        \addlegendentry{Reduced filter $H_r(f)$, $M = 5$};
+        
+        \addplot + [line width = 0.9 pt,  draw=red, mark = none,] table {text data/H_delta_N30.txt};
+        \addlegendentry{Difference $H(f)-H_r(f)$};
+    \end{axis}
+			
+\end{tikzpicture}
+\end {document}

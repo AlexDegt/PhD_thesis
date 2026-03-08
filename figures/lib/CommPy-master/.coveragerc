@@ -1,0 +1,6 @@
+[run]
+branch = True
+source = commpy
+include = */commpy/*
+omit =
+    */setup.py

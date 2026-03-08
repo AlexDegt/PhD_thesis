@@ -1,0 +1,48 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+
+\begin {document}
+\begin{tikzpicture}
+	
+	\begin{axis}[
+		legend pos = north west ,
+		width=15cm,
+		height = 12cm,
+		xshift = 0cm,
+		xmin = 0.38,
+		xmax = 0.9,
+		ymin = -170,
+		ymax = -20,
+		xlabel = {Рабочая полоса, $f/f_д$}, 
+		ylabel = {Уровень искажений, дБ}, 
+		xtick={0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9},
+		xticklabels={0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9},
+		tick label style={style={font=\Large}},
+		label style={style={font=\Large}},
+		legend style={style={font=\Large}},
+		legend image post style={scale=2.9},
+		grid = major,
+		minor tick num=3]
+		\addplot + [  only marks, mark = *, mark size = 0.5mm, mark options= {draw=blue, fill=blue}] table {text data/points_N32_M4.txt};
+		%\node[fill = white] at (axis cs: -0.75, -20) {PSD of input signal};
+		%\addplot + [ only marks, mark = *, mark size = 0.4mm, mark options= {draw=yellow, fill=yellow}] table {text data/points_N32_M4.txt};
+		%\node[fill = white] at (axis cs: -0.75, -50) {PSD of error signal};.
+		\addplot + [ only marks, mark = *, mark size = 0.5mm, mark options= {draw=green, fill=green}] table {text data/points_N32_M6.txt};
+		%\node[fill = white] at (axis cs: -0.75, -50) {PSD of error signal};
+		%\addplot + [ only marks, mark = *, mark size = 0.4mm, mark options= {draw=red, fill=red}] table {text data/points_N32_M6.txt};
+		%\node[fill = white] at (axis cs: -0.75, -20) {PSD of input signal};
+		\addplot + [ only marks, mark = *, mark size = 0.5mm, mark options= {draw=red, fill=red}] table {text data/points_N32_M8.txt};
+		%\node[fill = white] at (axis cs: -0.75, -50) {PSD of error signal};.
+		%\addplot + [ only marks, mark = *, mark size = 0.4mm, mark options= {draw=brown, fill=brown}] table {text data/points_N32_M8.txt};
+		%\node[fill = white] at (axis cs: -0.75, -50) {PSD of error signal};
+		\addplot + [ only marks, mark = *, mark size = 0.5mm, mark options= {draw=black, fill=black}] table {text data/points_N32_M9.txt};
+		%\node[fill = white] at (axis cs: -0.75, -50) {PSD of error signal};
+		
+%		\draw [black](axis cs: 0.55, -150) rectangle (axis cs: 0.75, -70); 
+		\legend{ \ $M=3$, \ $M=5$, \ $M=7$, \ $M=8$}
+	\end{axis}
+
+	
+\end{tikzpicture}
+\end {document}

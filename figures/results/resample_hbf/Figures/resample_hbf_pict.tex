@@ -1,0 +1,25 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\begin {document}
+\begin{tikzpicture}
+
+\node(title) at (2.2, 0.8) {$Resampling$ $in$ $2$ $times$};
+\node(z0)[draw, minimum height=0.6cm] at (0, 0) {$\uparrow  2$};
+\node(z1)[draw, minimum height=0.6cm] at (1.5, 0) {$HBF$};
+\node(z2)[draw, minimum height=0.6cm] at (3, 0) {$HBF$};
+\node(z3)[draw, minimum height=0.6cm] at (2.2, -1.5) {$Non-linear$ $processing$};
+\node(z4)[draw, minimum height=0.6cm] at (4.5, 0) {$\downarrow 2$};
+
+\node(x) at (-1,  0)  [none, left] {$x_{k}$};
+\node(y) at (6,  0)  [none, right] {$y_{k}$};
+\filldraw[black] (2.2,0) circle (1pt) node[anchor=west]{};
+\draw[->] (x) --(z0);
+\draw[->] (z0) --(z1);
+\draw[->] (z1) --(z2);
+\draw[<-] (2.2, 0) --(z3);
+\draw[->] (z2) --(z4);
+\draw[->] (z4)--(y);
+
+\end{tikzpicture}
+\end {document}

@@ -1,0 +1,13 @@
+\babel@toc {russian}{}
+\beamer@sectionintoc {1}{Введение}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Актуальность}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Цель и задачи}{5}{0}{1}
+\beamer@sectionintoc {2}{Синхронизация}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{Грубая временная и частотная синхронизация}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{Точная временная синхронизация}{9}{0}{2}
+\beamer@subsectionintoc {2}{3}{Точная частотная синхронизация}{11}{0}{2}
+\beamer@subsectionintoc {2}{4}{Оценка канальной характеристики}{12}{0}{2}
+\beamer@subsectionintoc {2}{5}{Оценка отношения сигнал/шум}{13}{0}{2}
+\beamer@sectionintoc {3}{Результаты}{14}{0}{3}
+\beamer@sectionintoc {4}{Выводы}{15}{0}{4}
+\beamer@sectionintoc {5}{Приложение}{16}{0}{5}

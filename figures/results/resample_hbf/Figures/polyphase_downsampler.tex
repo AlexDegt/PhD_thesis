@@ -1,0 +1,32 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\begin {document}
+\begin{tikzpicture}
+	
+	\draw[dashed] (-0.3, 2.2) rectangle (5.7, -0.2);
+	\node[above] at  (2.8, 2.2) {${f_s} / {2}$ clock region};
+	
+	\node(H0E)[draw, fill = white, minimum height=0.8cm,minimum width=1.5cm] at (1, 1.5) {$H_0(z)$};
+	\node(H1E)[draw, fill = white, minimum height=0.8cm,minimum width=1.5cm] at (1, 0.5) {$H_1(z)$};
+	\node(z)[draw, fill = white, minimum height=0.6cm,minimum width=0.9cm] at (3, 0.5) {$z^{-1}$};
+	
+	\node(sumE) at (4, 1.5) [sum ] {$+$};
+	
+	\node(inE) at (-0.6, 1.5)  [none, left] {$x_{2k}$};
+	\node(inO) at (-0.6, 0.5)  [none, left] {$x_{2k+1}$};
+	\node(outE) at (4.9, 1.5)  [none, right] {$y_{2k}$};
+	
+	\draw[->] (inE) -- (H0E);
+	\draw[->] (inO) -- (H1E);
+	
+	\draw[->] (H1E) -- (z);
+	
+	\draw[->] (H0E) -- (sumE);
+	\draw[->] (z) -| (sumE);
+	
+	\draw[->] (sumE) --(outE);
+	
+	
+\end{tikzpicture}
+\end {document}

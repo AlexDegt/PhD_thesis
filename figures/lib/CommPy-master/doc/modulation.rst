@@ -1,0 +1,2 @@
+.. automodule:: commpy.modulation
+    :members:

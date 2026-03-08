@@ -1,0 +1,47 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\begin {document}
+\begin{tikzpicture}
+	
+	\begin{axis}[
+		width = 12cm,
+		height = 8cm,
+		xshift = 0cm,
+		xmin = 0,
+		xmax = 0.5,
+		ymin = -80,
+		ymax = 5,
+		xlabel = {$f/f_{\text{д}}$},
+		ylabel = {$A(f/f_{\text{д}})$, дБ}, 
+		xtick={0, 0.25, 0.5},
+		xticklabels={0 ,0.25, 0.5},
+		tick label style={style={font=\large}},
+		label style={style={font=\large}},
+		legend style={style={font=\large}},
+		grid = major,
+		minor tick num=3]
+		
+		\addplot +[line width=1.5pt, draw=black, mark=none] table {text data/H_ex_N12.txt};
+		\addplot +[line width=1pt, draw=black, mark=none, style=dotted] table {text data/H_ex_compr_N12.txt};
+		\addplot +[line width=0.9pt, draw=black, mark=none, style=dashed] table {text data/H_ex_delta_N12.txt};
+		
+		% Стрелка и метка для графика 1 (чёрная линия)
+		\node at (axis cs:0.35,-15) [anchor=south west, font=\sffamily\large
+		] {\emph{1}};
+		\draw[->, thick] (axis cs:0.36,-16) -- (axis cs:0.34,-29);
+		
+		% Стрелка и метка для графика 2 (зелёная пунктирная)
+		\node at (axis cs:0.4,-20) [anchor=east, font=\sffamily\large
+		] {\emph{2}};
+		\draw[->, thick] (axis cs:0.39,-23) -- (axis cs:0.41,-31);
+		
+		% Стрелка и метка для графика 3 (красная штриховая)
+		\node at (axis cs:0.32,-20) [anchor=west, font=\sffamily\large
+		] {\emph{3}};
+		\draw[->, thick] (axis cs:0.33,-23) -- (axis cs:0.3,-36);
+		
+	\end{axis}
+	
+\end{tikzpicture}
+\end{document}

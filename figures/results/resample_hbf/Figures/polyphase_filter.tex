@@ -1,0 +1,51 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\begin {document}
+\begin{tikzpicture}
+
+\draw[dashed] (-1, 2.2) rectangle (5.5, -2.2);
+\node[above] at  (2.25, 2.2) {${F_s} / {2}$ clock region};
+
+\node(p0) at (-0.5,  1) [pnt, fill = black]{};
+\node(p1) at (-0.5, -1) [pnt, fill = black]{};
+
+\node(H0E)[draw, fill = white, minimum height=0.8cm,minimum width=1.5cm] at (1, 1.5) {$H_0(z)$};
+\node(H1E)[draw, fill = white, minimum height=0.8cm,minimum width=1.5cm] at (1, 0.5) {$H_1(z)$};
+
+\node(H0O)[draw, fill = white, minimum height=0.8cm,minimum width=1.5cm] at (1, -0.5) {$H_0(z)$};
+\node(H1O)[draw, fill = white, minimum height=0.8cm,minimum width=1.5cm] at (1, -1.5) {$H_1(z)$};
+
+
+\node(sumE) at (4, 1.5) [sum ] {$+$};
+\node(sumO) at (5, -0.5) [sum ] {$+$};
+
+\node(z)[draw, minimum height=0.8cm] at (3, -1.5) {$z^{-1}$};
+
+\node(inE) at (-2,  1)  [none, left] {$x_{2k}$};
+\node(inO) at (-2, -1)  [none, left] {$x_{2k+1}$};
+\node(outE) at (6,   1.5)  [none, right] {$y_{2k}$};
+\node(outO) at (6,  -0.5)  [none, right] {$y_{2k+1}$};
+
+\draw[] (inE) -- (p0);
+\draw[->] (p0) |- (H0E);
+\draw[->] (p0) |- (H1E);
+
+
+\draw[] (inO) -- (p1);
+\draw[->] (p1) |- (H0O);
+\draw[->] (p1) |- (H1O);
+
+\draw[->] (H0E) -- (sumE);
+\draw[->] (H1E) -| (sumO);
+
+\draw[->] (H0O) -|(sumE);
+\draw[->] (H1O) |- (z);
+\draw[->] (z) -| (sumO);
+
+\draw[->] (sumE) --(outE);
+\draw[->] (sumO) --(outO);
+
+
+\end{tikzpicture}
+\end {document}

@@ -1,0 +1,211 @@
+% \begin{figure}[ht!]
+%\begin{center}
+\documentclass [tikz] {standalone}
+
+%common figure styles
+\input{header.htex}
+\usetikzlibrary{calc}
+
+
+\begin {document}
+
+\begin{tikzpicture}
+
+\node(in) at (-1.5, 0) [none] {$x_n$}; 
+\node(out) at ( 23, 0) [none] {$y_n$}; 
+
+
+\foreach \i in {0,1,2, ..., 6}
+{
+	 \node(del\i) at (1.2*\i, 0)  [delay] {$z^{-2}$};
+	 \node(pnt\i) at (1.2*\i - 0.6, 0) [pnt, fill = black] {};
+}
+
+\foreach \i in {7,8}
+{
+	\node(del\i) at (1.2*\i, 0)  [delay] {$z^{-1}$};
+	\node(pnt\i) at (1.2*\i - 0.6, 0) [pnt, fill = black] {};
+}
+
+\foreach \i in {9,10,11,...,15}
+{
+	\node(del\i) at (1.2*\i, 0)  [delay] {$z^{-2}$};
+	\node(pnt\i) at (1.2*\i - 0.6, 0) [pnt, fill = black] {};
+}
+
+
+%delay connection
+\draw[->] (in) -- (del0);
+\draw[->] (del0) -- (del1);
+\draw[->] (del1) -- (del2);
+\draw[->] (del2) -- (del3);
+\draw[->] (del3) -- (del4);
+\draw[->] (del4) -- (del5);
+\draw[->] (del5) -- (del6);
+\draw[->] (del6) -- (del7);
+\draw[->] (del7) -- (del8);
+\draw[->] (del8) -- (del9); 
+ 
+\draw[->] (del9) -- (del10);
+\draw[->] (del10) -- (del11);
+\draw[->] (del11) -- (del12);  
+\draw[->] (del12) -- (del13);
+\draw[->] (del13) -- (del14); 
+\draw[->] (del14) -- (del15);
+ 
+ 
+\node(shift90) at (-0.6, 1) [delay] {$\gg 9$};
+\node(shift91) at (18.6, 1) [delay] {$\gg 9$};
+ 
+\node(shift70) at (0.6, 1) [delay] {$\gg 7$};
+\node(shift71) at (17.4, 1) [delay] {$\gg 7$};
+
+\node(shift40) at (1.8, 1) [delay] {$\gg 4$};
+\node(shift41) at (16.2, 1) [delay] {$\gg 4$}; 
+ 
+% Shift 4 processing 
+\node(sumshift4) at (9.0, 2.0) [sum] {$+$}; 
+\draw[->] (pnt2) -- (shift40);
+\draw[->] (shift40) -- (1.8, 1.5) -- (8.5, 1.5) -- (sumshift4);
+
+
+\draw[->] (pnt14) -- (shift41);
+\draw[->] (shift41) -- (16.2, 1.5) -- (9.5, 1.5) -- (sumshift4);
+
+\draw[->] (pnt6) -- (6.6, 1.3) -- (8.75, 1.3) -- (sumshift4);
+\draw[->] (pnt10) -- (11.4, 1.3) -- (9.25, 1.3) -- (sumshift4);
+
+\node(mshift4) at (20, 2.5)[sum] {$\times$};
+\draw[->](sumshift4) |- (mshift4) ;
+
+% Shift 7 and 9 processing
+\node(sumshift79) at (9.0, 4.0) [sum] {$+$}; 
+\draw[->] (pnt7) -- (7.8, 3.1) -- (8.75, 3.1) -- (sumshift79);
+\draw[->] (pnt9) -- (10.2, 3.1) --(9.25, 3.1) -- (sumshift79);
+
+\draw[->] (pnt0) -- (shift90);
+\draw[->] (shift90) --(-0.6, 3.5) -- (8.25, 3.5) -- (sumshift79) node[below left, xshift = -0.4cm]{$-$};
+
+\draw[->] (del15) -| (shift91);
+\draw[->] (shift91) --(18.6, 3.5) --  (9.75, 3.5) -- (sumshift79) node[below right, xshift = 0.4cm]{$-$};;
+
+\draw[->] (pnt1) -- (shift70);
+\draw[->] (shift70) --(0.6, 3.3) -- (8.5, 3.3) -- (sumshift79);
+
+\draw[->] (pnt15) -- (shift71);
+\draw[->] (shift71) --(17.4, 3.3) -- (9.5, 3.3) -- (sumshift79);
+
+\node(mshif79) at (20, 4.5) [sum] {$\times$};
+\draw[->](sumshift79) |- (mshif79) ;
+
+
+
+%tap 3
+\node(sumtap3) at (9.0, 6.0) [sum] {$+$}; 
+\draw[->] (pnt3)  -- (3.0, 5.5) -- (8.5, 5.5) -- (sumtap3);
+\draw[->] (pnt13) -- (15, 5.5) -- (9.5, 5.5) -- (sumtap3);
+
+\node(mtap3) at (20, 6.5) [sum] {$\times$};
+\draw[->](sumtap3) |- (mtap3) ;
+
+% cental tap
+\node(shift2) at (9.0, -1) [delay] {$\gg 1$};
+\draw[->] (pnt8)--(shift2);
+%tap4
+\node(sumtap4) at (9.0, -4.5) [sum] {$+$};
+\draw[->] (pnt4) --(4.2, -4.0) -- (8.5, -4.0) -- (sumtap4);
+\draw[->] (pnt12) --(13.8, -4.0) -- (9.5, -4.0) -- (sumtap4);
+\node(mtap4) at (20, -5) [sum] {$\times$};
+\draw[->](sumtap4) |- (mtap4) ;
+%tap5
+\node(sumtap5) at (9.0, -3) [sum] {$+$};
+\draw[->] (pnt5) --(5.4, -2.5) -- (8.5, -2.5) -- (sumtap5);
+\draw[->] (pnt11) --(12.6, -2.5) -- (9.5, -2.5) -- (sumtap5);
+\node(mtap5) at (20, -3.5) [sum] {$\times$};
+\draw[->](sumtap5) |- (mtap5);
+
+
+% out sum
+\node(sumout) at (22, 0) [sum] {$+$};
+\draw[->] (mtap3) -- (21.4, 6.5) -- (21.4, 0.75)-- (sumout);
+\draw[->] (mtap4) -- (21.4, -5.0) -- (21.4, -0.75) -- (sumout);
+\draw[->] (mshift4) -- (21, 2.5)-- (21, 0.25) -- (sumout);
+\draw[->] (shift2) -- (9, -2)-- (21, -2) -- (21, -0.25) -- (sumout);
+
+\draw[->] (mshif79) -- (21.2, 4.5)-- (21.2, 0.5) -- (sumout);
+\draw[->] (mtap5) -- (21.2, -3.5)-- (21.2, -0.5) -- (sumout);
+
+\draw[->] (sumout) -- (out);
+
+\node(b0) at (20, 7.2) [none, above] {$0.0130198$};
+\draw[->] (b0) -- (mtap3);
+
+\node(b1) at (20, 5.2) [none, above] {$0.314701$};
+\draw[->] (b1) -- (mshif79);
+
+
+\node(b2) at (20, 3.2) [none, above] {$-0.0956861$};
+\draw[->] (b2) -- (mshift4);
+
+\node(b3) at (20, -2.8) [none, above] {$0.0475747$};
+\draw[->] (b3) -- (mtap5);
+
+\node(b4) at (20, -4.4) [none, above] {$-0.0253495$};
+\draw[->] (b4) -- (mtap4);
+
+\begin{scope}[yshift = -6cm, xshift = 11cm]
+
+
+\foreach \x in {-15, -14, ..., 15}
+{
+\node[none] at (\x*0.7cm,  0) {$0$};
+\node[none] at (\x*0.7cm, -0.6) {$0$};
+\node[none] at (\x*0.7cm, -1.2) {$0$};
+\node[none] at (\x*0.7cm, -1.8) {$0$};
+\node[none] at (\x*0.7cm, -2.4) {$0$};
+\node[none] at (\x*0.7cm, -3.0) {$0$};
+}
+
+\node [fill = white, draw = black] at (-6.3, 0) {$1$};
+\node [fill = white, draw = black] at ( 6.3, 0) {$1$};
+
+\node [fill = white, draw = black] at (-4.9, -0.6) {$1$};
+\node [fill = white, draw = black] at ( 4.9, -0.6) {$1$};
+
+\node [fill = white, draw = black] at (-3.5, -1.2) {$1$};
+\node [fill = white, draw = black] at ( 3.5, -1.2) {$1$};
+
+\node [fill = white, draw = black] at (-2.1, -1.8) {$1$};
+\node [fill = white, draw = black] at ( 2.1, -1.8) {$1$};
+
+\node [fill = white, draw = black] at (-7.7, -1.8) {$\frac{1}{16}$};
+\node [fill = white, draw = black] at ( 7.7, -1.8) {$\frac{1}{16}$};
+
+\node [fill = white, draw = black] at (-0.7, -2.4) {$1$};
+\node [fill = white, draw = black] at ( 0.7, -2.4) {$1$};
+
+\node [fill = white, draw = black] at (-9.1, -2.4) {$\frac{1}{128}$};
+\node [fill = white, draw = black] at ( 9.1, -2.4) {$\frac{1}{128}$};
+
+\node [fill = white, draw = black] at (-10.5, -2.4) {$\frac{-1}{512}$};
+\node [fill = white, draw = black] at ( 10.5, -2.4) {$\frac{-1}{512}$};
+
+\node [fill = white, draw = black] at (0, -3) {$\frac{1}{2}$};
+
+\draw (-10.8, 0.3) -- ++(-0.2,0) -- ++(0, -3.6) --++(0.2, 0); 
+\draw ( 10.8, 0.3) -- ++(0.2,0)  -- ++(0, -3.6) --++(-0.2, 0);
+\node at (-11.6, -1.5) {$T = $};
+\node at (11.3, 0.4) {$T$};
+
+\end{scope}
+
+\end{tikzpicture}
+
+\end {document}
+  
+%\caption{Повторение выборки дискретного сигнала во времени}\label{dft:fig2}
+%\end{center}
+%\end{figure}
+
+
+

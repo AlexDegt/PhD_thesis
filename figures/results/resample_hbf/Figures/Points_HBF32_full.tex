@@ -1,0 +1,59 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\usepackage{pgfplots}
+\usepackage{amsmath}
+
+\newlength\figureheight
+\newlength\figurewidth
+
+\newcommand \marksize{0.4mm}
+
+\begin {document}
+\begin{tikzpicture}
+	
+	\begin{axis}[
+		width=15cm,
+		height = 10cm,
+		xshift = 0cm,
+		xmin = 0.35,
+		xmax = 0.9,
+		ymin = -170,
+		ymax = -10,
+%		xmin = 0.737,
+%		xmax = 0.753,
+%		ymin = -62,
+%		ymax = -58,
+		ylabel = {Error level, dB}, 
+		xlabel = {Error bandwidth, $f_s$},
+%		xtick={0.738, 0.74, 0.742, 0.744, 0.746, 0.748, 0.75, 0.752},
+%		xticklabels={$1.476\pi$, $1.48\pi$, $1.484\pi$, $1.488\pi$, $1.492\pi$, $1.496\pi$, $1.5\pi$, $1.504\pi$},
+		xtick={0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9},
+		xticklabels={0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9},
+		grid = major,
+		legend pos={north west},
+		legend style={legend cell align=left},
+		minor tick num=3]
+		%\addplot + [  only marks, mark = *, mark size = 0.4mm, mark options= {draw=blue, fill=blue}] table {text data/points_N32_M3.txt};
+		%\node[fill = white] at (axis cs: -0.75, -20) {PSD of input signal};
+		\addplot + [ only marks, mark = *, mark size = \marksize, mark options= {draw=blue, fill=blue}] table {../text data/points_N32_M4.txt};
+		%\node[fill = white] at (axis cs: -0.75, -50) {PSD of error signal};.
+		%\addplot + [ only marks, mark = *, mark size = 0.4mm, mark options= {draw=green, fill=green}, ] table {text data/points_N32_M5.txt};
+		%\node[fill = white] at (axis cs: -0.75, -50) {PSD of error signal};
+		\addplot + [ only marks, mark = *, mark size = \marksize, mark options= {draw=green, fill=green}] table {../text data/points_N32_M6.txt};
+		%\node[fill = white] at (axis cs: -0.75, -20) {PSD of input signal};
+		%\addplot + [ only marks, mark = *, mark size = 0.4mm, mark options= {draw=magenta, fill=magenta}] table {text data/points_N32_M7.txt};
+		%\node[fill = white] at (axis cs: -0.75, -50) {PSD of error signal};.
+		\addplot + [ only marks, mark = *, mark size = \marksize, mark options= {draw=magenta, fill=magenta}] table {../text data/points_N32_M8.txt};
+		%\node[fill = white] at (axis cs: -0.75, -50) {PSD of error signal};
+		\addplot + [ only marks, mark = *, mark size = \marksize, mark options= {draw=pink, fill=pink}] table {../text data/points_N32_M9.txt};
+		%\node[fill = white] at (axis cs: -0.75, -50) {PSD of error signal};
+		\legend{3 multipliers,
+				5 multipliers,
+				7 multipliers, 
+				8 multipliers}
+		
+	\end{axis}
+%	\filldraw[color=black, fill=none, very thick](5.57, 4.4) circle (0.7);
+\end{tikzpicture}
+\end {document}

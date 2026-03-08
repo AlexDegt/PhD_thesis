@@ -1,0 +1,88 @@
+\relax 
+\providecommand\babel@aux[2]{}
+\@nameuse{bbl@beforestart}
+\catcode `"\active 
+\abx@aux@refcontext{none/global//global/global}
+\abx@aux@cite{0}{audio_resampler}
+\abx@aux@segm{0}{0}{audio_resampler}
+\abx@aux@cite{0}{resampler_telecom}
+\abx@aux@segm{0}{0}{resampler_telecom}
+\abx@aux@cite{0}{resample_sync}
+\abx@aux@segm{0}{0}{resample_sync}
+\abx@aux@cite{0}{dsp_oppenheim}
+\abx@aux@segm{0}{0}{dsp_oppenheim}
+\abx@aux@cite{0}{lyons_multi_hbf}
+\abx@aux@segm{0}{0}{lyons_multi_hbf}
+\abx@aux@cite{0}{mults_complex}
+\abx@aux@segm{0}{0}{mults_complex}
+\abx@aux@cite{0}{mults_power_are_consum}
+\abx@aux@segm{0}{0}{mults_power_are_consum}
+\abx@aux@cite{0}{ch12_gockler}
+\abx@aux@segm{0}{0}{ch12_gockler}
+\abx@aux@cite{0}{ch12_gockler}
+\abx@aux@segm{0}{0}{ch12_gockler}
+\abx@aux@cite{0}{ren_multi_band}
+\abx@aux@segm{0}{0}{ren_multi_band}
+\babel@aux{english}{}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Signal processing scheme with~$L$ times resampling}}{1}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:resample_lpf}{{1}{1}{}{}{}}
+\abx@aux@cite{0}{vaidyanathan}
+\abx@aux@segm{0}{0}{vaidyanathan}
+\abx@aux@cite{0}{fir_quant}
+\abx@aux@segm{0}{0}{fir_quant}
+\abx@aux@cite{0}{fir_quant}
+\abx@aux@segm{0}{0}{fir_quant}
+\abx@aux@cite{0}{fir_quant}
+\abx@aux@segm{0}{0}{fir_quant}
+\abx@aux@cite{0}{fir_quant}
+\abx@aux@segm{0}{0}{fir_quant}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Resampling structures hardware implementation resources reduction}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Polyphase structure appoach}{2}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The upsampling operation by polyphase HBF}}{2}{}\protected@file@percent }
+\newlabel{fig:polyphase_hbf_up}{{2}{2}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The downsampling operation by polyphase HBF}}{2}{}\protected@file@percent }
+\newlabel{fig:polyphase_hbf_down}{{3}{2}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Coefficients quantization approach}{2}{}\protected@file@percent }
+\newlabel{reduced_filter_vector}{{1}{2}{}{}{}}
+\newlabel{transform_matrix}{{2}{2}{}{}{}}
+\newlabel{problem_formulation}{{3}{2}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Half-band filters hardware optimization}{2}{}\protected@file@percent }
+\newlabel{hbf_research}{{III}{2}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Filters hardware optimization influence on the resampled signal}{2}{}\protected@file@percent }
+\abx@aux@cite{0}{fir_quant}
+\abx@aux@segm{0}{0}{fir_quant}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Преобразование спектра белого гауссовского шума в схеме передискретизации с~$L=2$}}{3}{}\protected@file@percent }
+\newlabel{fig:hbf_proc}{{4}{3}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}HBF quantization}{3}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Подстройка параметров фильтра половинной полосы}}{3}{}\protected@file@percent }
+\newlabel{fig:filter_change}{{5}{3}{}{}{}}
+\abx@aux@cite{0}{fir_quant}
+\abx@aux@segm{0}{0}{fir_quant}
+\abx@aux@cite{0}{fir_quant}
+\abx@aux@segm{0}{0}{fir_quant}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Параметры искажений вносимых схемой передискретизации с аппаратно оптимизированными фильтрами половинной полосы.~$M$ -- число умножителей. Чёрный прямоугольник указывает на область, представленную в увеличенном масштабе на основном рисунке.}}{4}{}\protected@file@percent }
+\newlabel{fig:hbf32_full}{{6}{4}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Half-band filters complexity reduction examples}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Frequency response of the HBF order 30. $M$ -- filter multipliers number}}{4}{}\protected@file@percent }
+\newlabel{fig:hbf30_m5}{{7}{4}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Power spectral density of the resampling scheme input white gaussian noise, resampling scheme output and difference of input and output}}{4}{}\protected@file@percent }
+\newlabel{fig:hbf62_m6}{{8}{4}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Оценка ресурсов аппаратно оптимизированных фильтров половинной полосы}}{5}{}\protected@file@percent }
+\newlabel{tbl:article_summary}{{I}{5}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces HBF order 30 structure and transposed transformation matrix of quantization algorithm}}{6}{}\protected@file@percent }
+\newlabel{fig:hbf30_str}{{9}{6}{}{}{}}
+\abx@aux@read@bbl@mdfivesum{53D0A6268EAE53EAC19C78EC7BE99532}
+\abx@aux@defaultrefcontext{0}{audio_resampler}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{resampler_telecom}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{resample_sync}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{dsp_oppenheim}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{lyons_multi_hbf}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{mults_complex}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{mults_power_are_consum}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ch12_gockler}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ren_multi_band}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{vaidyanathan}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{fir_quant}{none/global//global/global}
+\gdef \@abspage@last{6}

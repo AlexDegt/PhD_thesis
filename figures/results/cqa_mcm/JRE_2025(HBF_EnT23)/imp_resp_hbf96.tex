@@ -1,0 +1,35 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+\usepackage{pgfplotstable}
+
+
+\begin {document}
+\begin{tikzpicture}
+	\begin{axis}[
+		width=13cm,
+		height = 6cm,
+		xshift = 0cm, 
+		ylabel={$h_n$},
+		xlabel={$n$},
+		xmin = 1,
+		xmax = 95,
+		ymin = -0.12,
+		ymax = 1.05,
+		xtick={1, 11, 21, 31, 41, 51, 61, 71, 81, 91},
+		xticklabels={0, 10, 20, 30, 40, 50, 60, 70, 80, 90},
+		tick label style={style={font=\large}},
+		label style={style={font=\large}},
+		legend style={style={font=\large}},
+		grid = major,
+		minor tick num=3]
+		
+		\addplot + [thick, ycomb, draw=black, mark = *, mark options={scale=0.8, fill = black}] table {text data/h_hbf94.txt};
+		
+		\addlegendentry{$H(f)$ ($M = 25$)};
+		
+		\addplot + [thick, ycomb, draw=red, mark = *, mark options={scale=0.5, fill = none}] table {text data/w_hbf94.txt};
+		\addlegendentry{$H_r(f)$ ($M = 7$)};
+	\end{axis}
+	
+\end{tikzpicture}
+\end {document}

@@ -1,0 +1,43 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+%\usepgfplotslibrary{external}
+%\tikzexternalize
+
+\begin {document}
+\begin{tikzpicture}
+	
+	\begin{axis}[
+		legend pos = north east,
+		width = 12cm,
+		height = 7cm,
+		xshift = 0cm,
+		xmin = -100,
+		xmax = 20000,
+		ymin = -24,
+		ymax = -20,
+		ylabel = {NMSE, дБ},
+		xlabel = {Эпох},
+%		xtick={1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000},
+%		xticklabels={1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500},
+		tick label style={style={font=\large}},
+		label style={style={font=\large}},
+		legend style={style={font=\large}},
+		grid = major,
+		minor tick num=3]
+
+		\addplot + [line width = 1.25 pt,  draw=green, mark = none,] table {Data/lc_adam_20000_every_20.txt};
+		\addlegendentry{Adam, Полносвязная модель};
+		\addplot + [line width = 1.25 pt,  draw=black, mark = none,] table {Data/lc_lbfgs_20000_every_20.txt};
+		\addlegendentry{L-BFGS, Полносвязная модель};
+
+        \addplot + [line width = 1.25 pt,  draw=green, mark = none, loosely dashed] table {Data/lc_cheby_adam_20000.txt};
+		\addlegendentry{Adam Полиномиальная модель};
+		\addplot + [line width = 1.25 pt,  draw=black, mark = none, dashed] table {Data/lc_cheby_lbfgs_20000.txt};
+		\addlegendentry{L-BFGS Полиномиальная модель};
+
+
+	\end{axis}
+	
+\end{tikzpicture}
+\end {document}

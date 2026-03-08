@@ -1,0 +1,38 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\usepackage{pgfplots}
+ \usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\usepgfplotslibrary{fillbetween}
+
+\begin {document}
+\begin{tikzpicture}
+
+\begin{axis}[
+	width=10cm,
+	height = 5.5cm,
+	xshift = 0cm,
+	yshift = 0cm,
+	xmin = -1,
+	xmax = 1,
+	ymin = -90,
+	ymax = 10,
+	xtick={-1, -0.5, 0, 0.5, 1},
+	xticklabels={$-\pi$, $-\frac{\pi}{2}$ ,$0$, $\frac{\pi}{2}$  , $\pi$ },
+	xlabel = $\omega$, 
+	ylabel = {$|E(\omega)|^2$, dB}, 
+	grid = major,
+	minor tick num=3]
+	\addplot + [thick,  draw=black, mark = none,] table {text data/Filtering_step_34.txt};	
+	\draw[<->] (axis cs: -0.45, -60) -- (axis cs: -0.45, 0);
+	\node [fill = white, above, rotate = 90]  at (axis cs: -0.45, -30){Error level};
+	\draw[<->] (axis cs: -0.58, -55) -- (axis cs: 0.58, -55);
+	\node [fill = white, above, rotate = 0]  at (axis cs: 0, -55){Error bandwidth};
+\end{axis}
+
+
+\end{tikzpicture}
+\end {document}

@@ -1,0 +1,42 @@
+% \begin{figure}[ht!]
+	%\begin{center}
+	\documentclass [tikz] {standalone}
+	
+	\input{header.htex}
+	\usetikzlibrary{calc}
+	
+	
+	\begin {document}
+	
+	\begin{tikzpicture}
+		
+		\node(in) at (-1.5, 0) [none,] {$u$};
+		\node(in2) at (-1.5, -1.5) [none] {$v$};
+		\node(out) at ( 5, -0.75) [none] {$w$}; 
+
+		\node(shift1) at (-0.5, 0) [delay] {$\ll l_1$};
+		\node(shift2) at (-0.5, -1.5) [delay] {$\ll l_2$};
+		
+		\node(mult1) at (0.5, -1.5) [sum] {$\times$};
+		\node(b0) at (1, -1.75) [none, below] {$(-1)^s$};
+		\node(sum1) at (1.5, -0.75) [sum] {$+$};
+		
+		\node(abs) at (2.5, -0.75) [delay] {$|\cdot|$};
+		\node(shift3) at (3.75, -0.75) [delay] {$\gg r$};
+		
+		\draw[->] (in) -- (shift1);
+		\draw[->] (in2) -- (shift2);
+		\draw[->] (shift1) -| (sum1);
+		\draw[->] (shift2) -- (mult1);
+		\draw[->] (mult1) -| (sum1);
+		\draw[->] (sum1) -- (abs);
+		\draw[->] (abs) -- (shift3);
+		\draw[->] (shift3) -- (out);
+%		
+%		
+%		\draw[->] (sumout) -- (out);	
+		
+		
+	\end{tikzpicture}
+	
+	\end {document}

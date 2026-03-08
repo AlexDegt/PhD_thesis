@@ -1,0 +1,37 @@
+# Simulation description
+trial_descript: Training of 1D Chebyshev polynomial-based model
+# If trial_name == 'None', then name to the experiment is given automatically,
+# otherwise it is set name set by user 
+trial_name: wiener_branch_4_taps_11_no_power_ramp_lr_10
+
+# Simulation parameters
+# Chebyshev polynomal order
+param_num: [6, 6]
+# AFIRs parameters number
+tap_num: 11
+# Model is parallel branches, summed at the output
+branch_num: 4
+batch_size: 1
+# Whole signal length 213504
+block_size: 256
+# chunk_num is important paracmeter, which allows to divide whole signal
+# into chunk_num blocks. LS method is implemented to accumulate 
+# hessian and gradient along the whole signal length and save GPU memory.
+# Increase this parameter if you obtain out of memory error.
+chunk_num: 1
+# dtype: float32
+device: "cuda:1"
+# device: "cpu"
+dtype: complex128
+# Path to the folder with data
+data_path: '/home/alex-degt/Non-linear-terms-discrete-search/data/data2d.mat'
+# Channel to compensate: A or B
+channel: B
+# Allow to overwrite folder with saved results or not
+overwrite_file: True
+
+# SGD algorithm parameters 
+epochs: 200 # Used in SGD and Mixed Newton
+lr: 10.0 # Used only in SGD
+betas: [0.9, 0.9] # Used only in SGD
+accum_grad: False

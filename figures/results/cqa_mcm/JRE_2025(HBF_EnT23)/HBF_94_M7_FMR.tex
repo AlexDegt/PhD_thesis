@@ -1,0 +1,53 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+	
+\begin {document}
+\begin{tikzpicture}
+	
+	\begin{axis}[
+        legend pos = south east,
+		width = 12cm,
+		height = 8cm,
+		xshift = 0cm,
+		xmin = -0.5,
+		xmax = 0.5,
+		ymin = -120,
+		ymax = 0,
+		xlabel = {$f/f_{\text{д}}$},
+		ylabel = {$|H(f)|^2$, дБ}, 
+		%		xlabel = {f, Hz}, 
+		xtick={-0.5, -0.25, 0, 0.25, 0.5},
+		xticklabels={-0.5, -0.25, 0 ,0.25, 0.5},
+		tick label style={style={font=\large}},
+		label style={style={font=\large}},
+		legend style={style={font=\large}},
+		grid = major,
+		minor tick num=3]
+		\addplot + [line width = 1.5 pt,  draw=black, mark = none,] table {text data/H_ex_N96.txt};
+        
+        \addplot + [line width = 1.2 pt,  draw=black, mark = none, style = dotted] table {text data/H_ex_compr_N96.txt};
+        
+        \addplot + [line width = 1 pt,  draw=black, mark = none, style = dashed] table {text data/H_ex_delta_N96.txt};
+%        \legend{$H(f)$ ($M = 25$), $H_r(f)$ ($M = 7$), $H(f)-H_r(f)$}
+        \draw[<->] (axis cs: 0, 1) -- (axis cs: 0, -68);
+        \node [fill = white, above, rotate = 0]  at (axis cs: 0.1, -24){$>70 \: дБ$};
+        
+                % Стрелка и метка для графика 1 (чёрная линия)
+        \node at (axis cs:0.4,-50) [anchor=south west, font=\sffamily\large
+        ] {\textit{1}};
+        \draw[->, thick] (axis cs:0.42,-51) -- (axis cs:0.49,-60);
+        
+        \node at (axis cs:0.37,-45) [anchor=east, font=\sffamily\large
+        ] {\textit{2}};
+        \draw[->, thick] (axis cs:0.35,-51) -- (axis cs:0.38,-62);
+        
+        \node at (axis cs:0.2,-45) [anchor=west, font=\sffamily\large] {\textit{3}};
+        \draw[->, thick] (axis cs:0.22,-48) -- (axis cs:0.20,-73);
+        
+        
+	\end{axis}
+
+	
+\end{tikzpicture}
+\end {document}

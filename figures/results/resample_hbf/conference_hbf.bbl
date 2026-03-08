@@ -1,0 +1,348 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{audio_resampler}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5842473275a8dc28d88847f47dc810c5}{%
+           family={Wen\bibnamedelima Jin},
+           familyi={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Alexander\bibnamedelima Iliev},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod},
+           suffix={Michael\bibnamedelimb S.\bibnamedelimi Scordilis},
+           suffixi={M\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Pacific Grove, CA, USA}%
+      }
+      \strng{namehash}{5842473275a8dc28d88847f47dc810c5}
+      \strng{fullhash}{5842473275a8dc28d88847f47dc810c5}
+      \strng{bibnamehash}{5842473275a8dc28d88847f47dc810c5}
+      \strng{authorbibnamehash}{5842473275a8dc28d88847f47dc810c5}
+      \strng{authornamehash}{5842473275a8dc28d88847f47dc810c5}
+      \strng{authorfullhash}{5842473275a8dc28d88847f47dc810c5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Conference Record of the Thirty-Eighth Asilomar Conference on Signals, Systems and Computers}
+      \field{title}{Comparison and Implementation of a 16-bit Fixed-point Audio Resampler}
+      \field{year}{2005}
+      \field{pages}{1798\bibrangedash 1800}
+      \range{pages}{3}
+    \endentry
+    \entry{resampler_telecom}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0d8fc602f7c49c43a87a20cf2a980c00}{%
+           family={Michal\bibnamedelima Stala},
+           familyi={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Rakesh\bibnamedelima Gangarajaiah},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           suffix={Can\bibnamedelima Bilgin},
+           suffixi={C\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=36b3e1d6369f090e07137b51348c80d6}{%
+           family={Rodrigues},
+           familyi={R\bibinitperiod},
+           given={Joachim\bibnamedelima Neves},
+           giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Miami, FL, USA}%
+      }
+      \strng{namehash}{918176db59752b92415f0e22f20fbfb5}
+      \strng{fullhash}{918176db59752b92415f0e22f20fbfb5}
+      \strng{bibnamehash}{918176db59752b92415f0e22f20fbfb5}
+      \strng{authorbibnamehash}{918176db59752b92415f0e22f20fbfb5}
+      \strng{authornamehash}{918176db59752b92415f0e22f20fbfb5}
+      \strng{authorfullhash}{918176db59752b92415f0e22f20fbfb5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Global Telecommunications Conference GLOBECOM 2010}
+      \field{title}{Hardware Implementation of an Iterative Sampling Rate Converter for Wireless Communication}
+      \field{year}{2011}
+    \endentry
+    \entry{resample_sync}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8bce3b76a4218dbe642a20c3e0c861c9}{%
+           family={K.\bibnamedelimi Molnar},
+           familyi={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={L.\bibnamedelimi Sujbert},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=002d986b4078414ca6e45950b7791df7}{%
+           family={Peceli},
+           familyi={P\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{5f8dbf077a453c6580390e6eb0059826}
+      \strng{fullhash}{5f8dbf077a453c6580390e6eb0059826}
+      \strng{bibnamehash}{5f8dbf077a453c6580390e6eb0059826}
+      \strng{authorbibnamehash}{5f8dbf077a453c6580390e6eb0059826}
+      \strng{authornamehash}{5f8dbf077a453c6580390e6eb0059826}
+      \strng{authorfullhash}{5f8dbf077a453c6580390e6eb0059826}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE International Symposium on Intelligent Signal Processing}
+      \field{title}{Synchronization of sampling in distributed signal processing systems}
+      \field{year}{2003}
+      \field{pages}{21\bibrangedash 26}
+      \range{pages}{6}
+    \endentry
+    \entry{dsp_oppenheim}{book}{}
+      \name{author}{1}{}{%
+        {{hash=f61171bb2e538d44e8277f9cbf76d306}{%
+           family={Alan\bibnamedelimb V.\bibnamedelimi Oppenheim},
+           familyi={A\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim O\bibinitperiod},
+           given={John\bibnamedelimb R.\bibnamedelimi Buck},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim B\bibinitperiod},
+           suffix={Ronald\bibnamedelimb W.\bibnamedelimi Schafer},
+           suffixi={R\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Upper Saddle River, New Jersey 07458}%
+      }
+      \list{publisher}{1}{%
+        {Prentice-Hall}%
+      }
+      \strng{namehash}{f61171bb2e538d44e8277f9cbf76d306}
+      \strng{fullhash}{f61171bb2e538d44e8277f9cbf76d306}
+      \strng{bibnamehash}{f61171bb2e538d44e8277f9cbf76d306}
+      \strng{authorbibnamehash}{f61171bb2e538d44e8277f9cbf76d306}
+      \strng{authornamehash}{f61171bb2e538d44e8277f9cbf76d306}
+      \strng{authorfullhash}{f61171bb2e538d44e8277f9cbf76d306}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Discrete-Time Signal Processing}
+      \field{year}{1998}
+    \endentry
+    \entry{lyons_multi_hbf}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=747154ea07eff6aab9d10dc0d84cd88a}{%
+           family={Lyons},
+           familyi={L\bibinitperiod},
+           given={Rick},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{747154ea07eff6aab9d10dc0d84cd88a}
+      \strng{fullhash}{747154ea07eff6aab9d10dc0d84cd88a}
+      \strng{bibnamehash}{747154ea07eff6aab9d10dc0d84cd88a}
+      \strng{authorbibnamehash}{747154ea07eff6aab9d10dc0d84cd88a}
+      \strng{authornamehash}{747154ea07eff6aab9d10dc0d84cd88a}
+      \strng{authorfullhash}{747154ea07eff6aab9d10dc0d84cd88a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Optimizing the {Half}-band {Filters} in {Multistage} {Decimation} and {Interpolation} - {Rick} {Lyons}}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.dsprelated.com/showarticle/903.php
+      \endverb
+      \verb{url}
+      \verb https://www.dsprelated.com/showarticle/903.php
+      \endverb
+    \endentry
+    \entry{mults_complex}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f6bb4c8c0b8f5431b3dc7eefc2f15099}{%
+           family={Mohanty},
+           familyi={M\bibinitperiod},
+           given={Basant},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5e067323b606fefe6d4e6fb79465588b}{%
+           family={Tiwari},
+           familyi={T\bibinitperiod},
+           given={Vikas},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{8940a1c0bc93c7d406c065997bef6328}
+      \strng{fullhash}{8940a1c0bc93c7d406c065997bef6328}
+      \strng{bibnamehash}{8940a1c0bc93c7d406c065997bef6328}
+      \strng{authorbibnamehash}{8940a1c0bc93c7d406c065997bef6328}
+      \strng{authornamehash}{8940a1c0bc93c7d406c065997bef6328}
+      \strng{authorfullhash}{8940a1c0bc93c7d406c065997bef6328}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Circuits, Systems and Signal Processing}
+      \field{title}{Modified PEB Formulation for Hardware-Efficient Fixed-Width Booth Multiplier}
+      \field{year}{2014}
+      \field{pages}{3981\bibrangedash 3994}
+      \range{pages}{14}
+    \endentry
+    \entry{mults_power_are_consum}{article}{}
+      \name{author}{1}{}{%
+        {{hash=160380fe69b3d122b74a8fb2bcdb46fe}{%
+           family={Mohan\bibnamedelima Shoba},
+           familyi={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Rangaswamy\bibnamedelima Nakkeeran},
+           giveni={R\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{160380fe69b3d122b74a8fb2bcdb46fe}
+      \strng{fullhash}{160380fe69b3d122b74a8fb2bcdb46fe}
+      \strng{bibnamehash}{160380fe69b3d122b74a8fb2bcdb46fe}
+      \strng{authorbibnamehash}{160380fe69b3d122b74a8fb2bcdb46fe}
+      \strng{authornamehash}{160380fe69b3d122b74a8fb2bcdb46fe}
+      \strng{authorfullhash}{160380fe69b3d122b74a8fb2bcdb46fe}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Engineering Science and Technology, an International Journal}
+      \field{title}{Energy and area efficient hierarchy multiplier architecture based on Vedic mathematics and GDI logic}
+      \field{year}{2017}
+      \field{pages}{321\bibrangedash 331}
+      \range{pages}{11}
+    \endentry
+    \entry{ch12_gockler}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4a4c25d881162ac78345cc1a29d260e3}{%
+           family={Gockler},
+           familyi={G\bibinitperiod},
+           given={H.\bibnamedelimi G.},
+           giveni={H\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Ed. Rijeka, Croatia}%
+      }
+      \list{publisher}{1}{%
+        {InTech}%
+      }
+      \strng{namehash}{4a4c25d881162ac78345cc1a29d260e3}
+      \strng{fullhash}{4a4c25d881162ac78345cc1a29d260e3}
+      \strng{bibnamehash}{4a4c25d881162ac78345cc1a29d260e3}
+      \strng{authorbibnamehash}{4a4c25d881162ac78345cc1a29d260e3}
+      \strng{authornamehash}{4a4c25d881162ac78345cc1a29d260e3}
+      \strng{authorfullhash}{4a4c25d881162ac78345cc1a29d260e3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Chapter 12: Most Efficient Digital Filter Structures: The Potential of Halfband Filters in Digital Signal Processing}
+      \field{year}{2011}
+      \verb{doi}
+      \verb http://dx.doi.org/10.5772/26146
+      \endverb
+    \endentry
+    \entry{ren_multi_band}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9e044d6f947123b5e835293bcf7bf9de}{%
+           family={Renfors},
+           familyi={R\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=928a23e5366e123abeba73b62e23f132}{%
+           family={Kupiainen},
+           familyi={K\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Rhodes}%
+      }
+      \strng{namehash}{6a1dea47299d74134b8ec582ffe30a01}
+      \strng{fullhash}{6a1dea47299d74134b8ec582ffe30a01}
+      \strng{bibnamehash}{6a1dea47299d74134b8ec582ffe30a01}
+      \strng{authorbibnamehash}{6a1dea47299d74134b8ec582ffe30a01}
+      \strng{authornamehash}{6a1dea47299d74134b8ec582ffe30a01}
+      \strng{authorfullhash}{6a1dea47299d74134b8ec582ffe30a01}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ESPICO'98}
+      \field{title}{Versatile building blocks for multirate processing of bandpass signals}
+      \field{year}{1998}
+      \field{pages}{273\bibrangedash 276}
+      \range{pages}{4}
+    \endentry
+    \entry{vaidyanathan}{book}{}
+      \name{author}{1}{}{%
+        {{hash=41275ff01120f685c4b30f95b4b0055b}{%
+           family={P.},
+           familyi={P\bibinitperiod},
+           given={Vaidyanathan\bibnamedelima P.},
+           giveni={V\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Hoboken, New Jersey, United States}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{41275ff01120f685c4b30f95b4b0055b}
+      \strng{fullhash}{41275ff01120f685c4b30f95b4b0055b}
+      \strng{bibnamehash}{41275ff01120f685c4b30f95b4b0055b}
+      \strng{authorbibnamehash}{41275ff01120f685c4b30f95b4b0055b}
+      \strng{authornamehash}{41275ff01120f685c4b30f95b4b0055b}
+      \strng{authorfullhash}{41275ff01120f685c4b30f95b4b0055b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Multirate Systems and Filter Banks Prentice-Hall}
+      \field{year}{1993}
+    \endentry
+    \entry{fir_quant}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=4de74d0594e78830c2b0af784b199d13}{%
+           family={A.\bibnamedelimi Degtyarev},
+           familyi={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={K.\bibnamedelimi Saifullin},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=e46b86b6c8318f6feab8deeca392a5e1}{%
+           family={Bakhurin},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{73f2c5fa1084b578a30ac04e4688fa71}
+      \strng{fullhash}{73f2c5fa1084b578a30ac04e4688fa71}
+      \strng{bibnamehash}{73f2c5fa1084b578a30ac04e4688fa71}
+      \strng{authorbibnamehash}{73f2c5fa1084b578a30ac04e4688fa71}
+      \strng{authornamehash}{73f2c5fa1084b578a30ac04e4688fa71}
+      \strng{authorfullhash}{73f2c5fa1084b578a30ac04e4688fa71}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2022 24th International Conference on Digital Signal Processing and its Applications (DSPA)}
+      \field{title}{High Order FIR Filter Hardware Implementation Complexity Reduction}
+      \field{year}{2022}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

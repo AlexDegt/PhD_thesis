@@ -1,0 +1,36 @@
+\documentclass [tikz] {standalone}
+\input{header.htex}
+
+\begin {document}
+\begin{tikzpicture}
+
+\draw [color=gray,thick](-0.7,-1) rectangle (4.8,1);
+\node at (-0.5,1) [above=2mm, right=0mm] {\textsc{Interpolation stage}};
+ 
+\draw [color=gray,thick](4.9,-1) rectangle (10.7,1);
+\node at (6.7,1) [above=2mm, right=5mm] {\textsc{Decimation stage}};
+
+\node(u0)[draw, minimum height=0.6cm] at (0, 0) {$\uparrow  2$};
+\node(u1)[draw, minimum height=0.6cm] at (1.35, 0) {$LPF_1$};
+\node(u2)[draw, minimum height=0.6cm] at (2.75, 0) {$\uparrow  2$};
+\node(u3)[draw, minimum height=0.6cm] at (4.15, 0) {$LPF_2$};
+
+\node(d0)[draw, minimum height=0.6cm] at (5.75, 0) {$LPF_2$};
+\node(d1)[draw, minimum height=0.6cm] at (7.15, 0) {$\downarrow 2$};
+\node(d2)[draw, minimum height=0.6cm] at (8.55, 0) {$LPF_1$};
+\node(d3)[draw, minimum height=0.6cm] at (10, 0) {$\downarrow 2$};
+
+\node(x) at (-1,  0)  [none, left] {$x_{k}$};
+\node(y) at (11.35,  0)  [none, right] {$y_{k}$};
+\draw[->] (x) --(u0);
+\draw[->] (u0) --(u1);
+\draw[->] (u1) --(u2);
+\draw[->] (u2) --(u3);
+\draw[->] (u3) -- (d0);
+\draw[->] (d0) -- (d1);
+\draw[->] (d1) -- (d2);
+\draw[->] (d2) -- (d3);
+\draw[->] (d3)--(y);
+
+\end{tikzpicture}
+\end {document}
